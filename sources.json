@@ -1,0 +1,96 @@
+{
+  "sources": {
+    "ai": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-gemini.list","kind":"list","source":"MetaCubeX/meta-rules-dat: google-gemini"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.list","kind":"list","source":"MetaCubeX/meta-rules-dat: openai"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.list","kind":"list","source":"MetaCubeX/meta-rules-dat: anthropic"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-chat-!cn.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-ai-chat-!cn"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Gemini"}
+    ],
+    "biliintl": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/biliintl.list","kind":"list","source":"MetaCubeX/meta-rules-dat: biliintl"}
+    ],
+    "direct": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.list","kind":"list","source":"MetaCubeX/meta-rules-dat: cn"},
+      {"url":"https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt","kind":"clash","source":"Loyalsoldier/clash-rules: direct"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: BiliBili"}
+    ],
+    "ads": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-ads-all"},
+      {"url":"https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt","kind":"clash","source":"Loyalsoldier/clash-rules: reject"}
+    ],
+    "download": [
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Download"}
+    ],
+    "google": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.list","kind":"list","source":"MetaCubeX/meta-rules-dat: google"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Google"}
+    ],
+    "apple": [
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Apple"}
+    ],
+    "microsoft": [
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Microsoft"}
+    ],
+    "games": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.list","kind":"list","source":"MetaCubeX/meta-rules-dat: steam"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-!cn.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-games-!cn"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Steam"}
+    ],
+    "youtube": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.list","kind":"list","source":"MetaCubeX/meta-rules-dat: youtube"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: YouTube"}
+    ],
+    "telegram": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.list","kind":"list","source":"MetaCubeX/meta-rules-dat: telegram"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Telegram","dropTypes":["IP-ASN"]}
+    ],
+    "twitter": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.list","kind":"list","source":"MetaCubeX/meta-rules-dat: twitter"}
+    ],
+    "spotify": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.list","kind":"list","source":"MetaCubeX/meta-rules-dat: spotify"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Spotify"}
+    ],
+    "netflix": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.list","kind":"list","source":"MetaCubeX/meta-rules-dat: netflix"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Netflix"}
+    ],
+    "tiktok": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.list","kind":"list","source":"MetaCubeX/meta-rules-dat: tiktok"}
+    ],
+    "social": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/facebook.list","kind":"list","source":"MetaCubeX/meta-rules-dat: facebook"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/discord.list","kind":"list","source":"MetaCubeX/meta-rules-dat: discord"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/reddit.list","kind":"list","source":"MetaCubeX/meta-rules-dat: reddit"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/whatsapp.list","kind":"list","source":"MetaCubeX/meta-rules-dat: whatsapp"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/instagram.list","kind":"list","source":"MetaCubeX/meta-rules-dat: instagram"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/linkedin.list","kind":"list","source":"MetaCubeX/meta-rules-dat: linkedin"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/zoom.list","kind":"list","source":"MetaCubeX/meta-rules-dat: zoom"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/slack.list","kind":"list","source":"MetaCubeX/meta-rules-dat: slack"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-communication.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-communication"}
+    ],
+    "dev": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.list","kind":"list","source":"MetaCubeX/meta-rules-dat: github"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gitlab.list","kind":"list","source":"MetaCubeX/meta-rules-dat: gitlab"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gitbook.list","kind":"list","source":"MetaCubeX/meta-rules-dat: gitbook"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/docker.list","kind":"list","source":"MetaCubeX/meta-rules-dat: docker"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/kubernetes.list","kind":"list","source":"MetaCubeX/meta-rules-dat: kubernetes"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-dev.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-dev"}
+    ],
+    "cloud": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/dropbox.list","kind":"list","source":"MetaCubeX/meta-rules-dat: dropbox"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.list","kind":"list","source":"MetaCubeX/meta-rules-dat: onedrive"}
+    ],
+    "finance": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/paypal.list","kind":"list","source":"MetaCubeX/meta-rules-dat: paypal"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-finance.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-finance"}
+    ],
+    "shopping": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/amazon.list","kind":"list","source":"MetaCubeX/meta-rules-dat: amazon"}
+    ],
+    "proxy-extra": [
+      {"url":"https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt","kind":"clash","source":"Loyalsoldier/clash-rules: proxy"}
+    ]
+  }
+}
