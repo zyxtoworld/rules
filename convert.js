@@ -444,97 +444,97 @@ function buildConfig(proxies) {
       asn: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb'
     },
     'rule-providers': {
-      'zyx-ai': remoteRuleProvider(
+      'ai': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/ai.yaml',
-        './rule-providers/zyx-ai.yaml', 'classical', 'yaml'
+        './rule-providers/ai.yaml', 'classical', 'yaml'
       ),
-      'zyx-crypto': remoteRuleProvider(
+      'crypto': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/crypto.yaml',
-        './rule-providers/zyx-crypto.yaml', 'classical', 'yaml'
+        './rule-providers/crypto.yaml', 'classical', 'yaml'
       ),
-      'zyx-biliintl': remoteRuleProvider(
+      'biliintl': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/biliintl.yaml',
-        './rule-providers/zyx-biliintl.yaml', 'classical', 'yaml'
+        './rule-providers/biliintl.yaml', 'classical', 'yaml'
       ),
-      'zyx-direct': remoteRuleProvider(
+      'direct': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/direct.yaml',
-        './rule-providers/zyx-direct.yaml', 'classical', 'yaml'
+        './rule-providers/direct.yaml', 'classical', 'yaml'
       ),
-      'zyx-ads': remoteRuleProvider(
+      'ads': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/ads.yaml',
-        './rule-providers/zyx-ads.yaml', 'classical', 'yaml'
+        './rule-providers/ads.yaml', 'classical', 'yaml'
       ),
-      'zyx-download': remoteRuleProvider(
+      'download': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/download.yaml',
-        './rule-providers/zyx-download.yaml', 'classical', 'yaml'
+        './rule-providers/download.yaml', 'classical', 'yaml'
       ),
-      'zyx-google': remoteRuleProvider(
+      'google': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/google.yaml',
-        './rule-providers/zyx-google.yaml', 'classical', 'yaml'
+        './rule-providers/google.yaml', 'classical', 'yaml'
       ),
-      'zyx-apple': remoteRuleProvider(
+      'apple': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/apple.yaml',
-        './rule-providers/zyx-apple.yaml', 'classical', 'yaml'
+        './rule-providers/apple.yaml', 'classical', 'yaml'
       ),
-      'zyx-microsoft': remoteRuleProvider(
+      'microsoft': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/microsoft.yaml',
-        './rule-providers/zyx-microsoft.yaml', 'classical', 'yaml'
+        './rule-providers/microsoft.yaml', 'classical', 'yaml'
       ),
-      'zyx-games': remoteRuleProvider(
+      'games': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/games.yaml',
-        './rule-providers/zyx-games.yaml', 'classical', 'yaml'
+        './rule-providers/games.yaml', 'classical', 'yaml'
       ),
-      'zyx-youtube': remoteRuleProvider(
+      'youtube': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/youtube.yaml',
-        './rule-providers/zyx-youtube.yaml', 'classical', 'yaml'
+        './rule-providers/youtube.yaml', 'classical', 'yaml'
       ),
-      'zyx-telegram': remoteRuleProvider(
+      'telegram': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/telegram.yaml',
-        './rule-providers/zyx-telegram.yaml', 'classical', 'yaml'
+        './rule-providers/telegram.yaml', 'classical', 'yaml'
       ),
-      'zyx-twitter': remoteRuleProvider(
+      'twitter': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/twitter.yaml',
-        './rule-providers/zyx-twitter.yaml', 'classical', 'yaml'
+        './rule-providers/twitter.yaml', 'classical', 'yaml'
       ),
-      'zyx-spotify': remoteRuleProvider(
+      'spotify': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/spotify.yaml',
-        './rule-providers/zyx-spotify.yaml', 'classical', 'yaml'
+        './rule-providers/spotify.yaml', 'classical', 'yaml'
       ),
-      'zyx-netflix': remoteRuleProvider(
+      'netflix': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/netflix.yaml',
-        './rule-providers/zyx-netflix.yaml', 'classical', 'yaml'
+        './rule-providers/netflix.yaml', 'classical', 'yaml'
       ),
-      'zyx-tiktok': remoteRuleProvider(
+      'tiktok': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/tiktok.yaml',
-        './rule-providers/zyx-tiktok.yaml', 'classical', 'yaml'
+        './rule-providers/tiktok.yaml', 'classical', 'yaml'
       ),
-      'zyx-media': remoteRuleProvider(
+      'media': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/media.yaml',
-        './rule-providers/zyx-media.yaml', 'classical', 'yaml'
+        './rule-providers/media.yaml', 'classical', 'yaml'
       ),
-      'zyx-social': remoteRuleProvider(
+      'social': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/social.yaml',
-        './rule-providers/zyx-social.yaml', 'classical', 'yaml'
+        './rule-providers/social.yaml', 'classical', 'yaml'
       ),
-      'zyx-dev': remoteRuleProvider(
+      'dev': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/dev.yaml',
-        './rule-providers/zyx-dev.yaml', 'classical', 'yaml'
+        './rule-providers/dev.yaml', 'classical', 'yaml'
       ),
-      'zyx-cloud': remoteRuleProvider(
+      'cloud': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/cloud.yaml',
-        './rule-providers/zyx-cloud.yaml', 'classical', 'yaml'
+        './rule-providers/cloud.yaml', 'classical', 'yaml'
       ),
-      'zyx-finance': remoteRuleProvider(
+      'finance': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/finance.yaml',
-        './rule-providers/zyx-finance.yaml', 'classical', 'yaml'
+        './rule-providers/finance.yaml', 'classical', 'yaml'
       ),
-      'zyx-shopping': remoteRuleProvider(
+      'shopping': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/shopping.yaml',
-        './rule-providers/zyx-shopping.yaml', 'classical', 'yaml'
+        './rule-providers/shopping.yaml', 'classical', 'yaml'
       ),
-      'zyx-proxy-extra': remoteRuleProvider(
+      'proxy-extra': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/proxy-extra.yaml',
-        './rule-providers/zyx-proxy-extra.yaml', 'classical', 'yaml'
+        './rule-providers/proxy-extra.yaml', 'classical', 'yaml'
       )
     }
   };
@@ -984,16 +984,16 @@ function buildConfig(proxies) {
     ...privateIpRules,
 
     // 2. 高优先级服务：使用自有聚合文件，GeoSite 保留为兜底。
-    `RULE-SET,zyx-ai,${POLICY.ai}`,
+    `RULE-SET,ai,${POLICY.ai}`,
     geosite('google-gemini', POLICY.ai),
     geosite('openai', POLICY.ai),
     geosite('anthropic', POLICY.ai),
     geosite('category-ai-chat-!cn', POLICY.ai),
-    `RULE-SET,zyx-biliintl,${POLICY.bilibili}`,
+    `RULE-SET,biliintl,${POLICY.bilibili}`,
     geosite('biliintl', POLICY.bilibili),
 
     // 3. 加密货币与国内服务：国内例外优先于广告和宽分类。
-    `RULE-SET,zyx-crypto,${POLICY.crypto}`,
+    `RULE-SET,crypto,${POLICY.crypto}`,
     ...cryptoRules,
     geosite('category-cryptocurrency', POLICY.crypto),
     geosite('google@cn', DIRECT),
@@ -1005,30 +1005,30 @@ function buildConfig(proxies) {
     geosite('icloud@cn', DIRECT),
     geosite('microsoft@cn', DIRECT),
     geosite('cn', DIRECT),
-    `RULE-SET,zyx-direct,${DIRECT}`,
+    `RULE-SET,direct,${DIRECT}`,
 
     // 4. 广告：自有聚合集先行，MetaCubeX GeoSite 作兜底。
-    `RULE-SET,zyx-ads,${POLICY.ads}`,
+    `RULE-SET,ads,${POLICY.ads}`,
     geosite('category-ads-all', POLICY.ads),
 
     // 5. 下载器和明确下载资源。
-    `RULE-SET,zyx-download,${POLICY.lowRateDownload}`,
+    `RULE-SET,download,${POLICY.lowRateDownload}`,
     ...lowRateDownloadRules,
 
     // 6. 服务分类：专用服务优先，开发/社交/云/金融等分类补齐遗漏。
-    `RULE-SET,zyx-youtube,${POLICY.youtube}`,
+    `RULE-SET,youtube,${POLICY.youtube}`,
     ...youtubeRules,
     geosite('youtube', POLICY.youtube),
-    `RULE-SET,zyx-google,${POLICY.google}`,
+    `RULE-SET,google,${POLICY.google}`,
     geosite('google', POLICY.google),
     geosite('github', POLICY.github),
-    `RULE-SET,zyx-dev,${POLICY.dev}`,
+    `RULE-SET,dev,${POLICY.dev}`,
     ...telegramRules,
-    `RULE-SET,zyx-telegram,${POLICY.telegram}`,
+    `RULE-SET,telegram,${POLICY.telegram}`,
     geosite('telegram', POLICY.telegram),
     geosite('twitter', POLICY.twitter),
-    `RULE-SET,zyx-twitter,${POLICY.twitter}`,
-    `RULE-SET,zyx-social,${POLICY.social}`,
+    `RULE-SET,twitter,${POLICY.twitter}`,
+    `RULE-SET,social,${POLICY.social}`,
     geosite('facebook', POLICY.social),
     geosite('discord', POLICY.social),
     geosite('reddit', POLICY.social),
@@ -1038,35 +1038,35 @@ function buildConfig(proxies) {
     geosite('zoom', POLICY.social),
     geosite('slack', POLICY.social),
     geosite('category-communication', POLICY.social),
-    `RULE-SET,zyx-netflix,${POLICY.netflix}`,
+    `RULE-SET,netflix,${POLICY.netflix}`,
     ...netflixRules,
     geosite('netflix', POLICY.netflix),
-    `RULE-SET,zyx-spotify,${POLICY.spotify}`,
+    `RULE-SET,spotify,${POLICY.spotify}`,
     ...spotifyRules,
     geosite('spotify', POLICY.spotify),
-    `RULE-SET,zyx-apple,${POLICY.apple}`,
+    `RULE-SET,apple,${POLICY.apple}`,
     geosite('icloud', POLICY.apple),
     geosite('apple', POLICY.apple),
-    `RULE-SET,zyx-cloud,${POLICY.cloud}`,
+    `RULE-SET,cloud,${POLICY.cloud}`,
     geosite('dropbox', POLICY.cloud),
     geosite('onedrive', POLICY.cloud),
-    `RULE-SET,zyx-microsoft,${POLICY.microsoft}`,
+    `RULE-SET,microsoft,${POLICY.microsoft}`,
     geosite('microsoft', POLICY.microsoft),
-    `RULE-SET,zyx-finance,${POLICY.finance}`,
+    `RULE-SET,finance,${POLICY.finance}`,
     geosite('paypal', POLICY.finance),
     geosite('category-finance', POLICY.finance),
-    `RULE-SET,zyx-shopping,${POLICY.shopping}`,
+    `RULE-SET,shopping,${POLICY.shopping}`,
     geosite('amazon', POLICY.shopping),
-    `RULE-SET,zyx-tiktok,${POLICY.tiktok}`,
+    `RULE-SET,tiktok,${POLICY.tiktok}`,
     geosite('tiktok', POLICY.tiktok),
-    `RULE-SET,zyx-media,${POLICY.media}`,
+    `RULE-SET,media,${POLICY.media}`,
     geosite('speedtest', POLICY.speedtest),
 
     // 7. 自有代理补充集：排除 MetaCubeX 中国域名和中国 IP。
-    `AND,((RULE-SET,zyx-proxy-extra),(NOT,((GEOSITE,cn))),(NOT,((GEOIP,CN)))),${POLICY.manual}`,
+    `AND,((RULE-SET,proxy-extra),(NOT,((GEOSITE,cn))),(NOT,((GEOIP,CN)))),${POLICY.manual}`,
 
     // 8. 游戏/媒体宽分类必须在所有服务特例之后。
-    `RULE-SET,zyx-games,${POLICY.games}`,
+    `RULE-SET,games,${POLICY.games}`,
     geosite('category-games-!cn', POLICY.games),
     geosite('category-entertainment', POLICY.media),
 
