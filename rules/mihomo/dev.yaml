@@ -120,11 +120,17 @@ payload:
   - DOMAIN-SUFFIX,archlinuxcn.org
   - DOMAIN-SUFFIX,artixlinux.org
   - DOMAIN-SUFFIX,askubuntu.com
+  - DOMAIN-SUFFIX,atl-paas.net
+  - DOMAIN-SUFFIX,atlassian-dev.net
+  - DOMAIN-SUFFIX,atlassian.com
+  - DOMAIN-SUFFIX,atlassian.net
   - DOMAIN-SUFFIX,atom.io
   - DOMAIN-SUFFIX,atscaleconference.com
   - DOMAIN-SUFFIX,azurecr.io
   - DOMAIN-SUFFIX,badgen.net
   - DOMAIN-SUFFIX,bintray.com
+  - DOMAIN-SUFFIX,bitbucket.io
+  - DOMAIN-SUFFIX,bitbucket.org
   - DOMAIN-SUFFIX,bitvise.com
   - DOMAIN-SUFFIX,blazor.net
   - DOMAIN-SUFFIX,blogoverflow.com
@@ -246,6 +252,7 @@ payload:
   - DOMAIN-SUFFIX,freebsd.org
   - DOMAIN-SUFFIX,freebuff.com
   - DOMAIN-SUFFIX,frescolib.org
+  - DOMAIN-SUFFIX,fsdn.com
   - DOMAIN-SUFFIX,fury.blog
   - DOMAIN-SUFFIX,fury.co
   - DOMAIN-SUFFIX,fury.dev
@@ -339,6 +346,7 @@ payload:
   - DOMAIN-SUFFIX,jetbrains.team
   - DOMAIN-SUFFIX,jfrog.com
   - DOMAIN-SUFFIX,jfrog.org
+  - DOMAIN-SUFFIX,jira.com
   - DOMAIN-SUFFIX,jquery.com
   - DOMAIN-SUFFIX,jquerymobile.com
   - DOMAIN-SUFFIX,jqueryui.com
@@ -537,16 +545,20 @@ payload:
   - DOMAIN-SUFFIX,sentry.io
   - DOMAIN-SUFFIX,serverfault.com
   - DOMAIN-SUFFIX,servicetalk.io
+  - DOMAIN-SUFFIX,sf.net
   - DOMAIN-SUFFIX,shellcheck.net
   - DOMAIN-SUFFIX,shields.io
   - DOMAIN-SUFFIX,snap-telemetry.io
   - DOMAIN-SUFFIX,snapcraft.io
   - DOMAIN-SUFFIX,snapstore.io
+  - DOMAIN-SUFFIX,sourceforge.com
+  - DOMAIN-SUFFIX,sourceforge.net
   - DOMAIN-SUFFIX,sourcegraph.com
   - DOMAIN-SUFFIX,sourcehut.org
   - DOMAIN-SUFFIX,sqlite.org
   - DOMAIN-SUFFIX,sqlserveronlinux.com
   - DOMAIN-SUFFIX,sr.ht
+  - DOMAIN-SUFFIX,ss-inf.net
   - DOMAIN-SUFFIX,sstatic.net
   - DOMAIN-SUFFIX,stackage.org
   - DOMAIN-SUFFIX,stackapps.com
@@ -565,6 +577,7 @@ payload:
   - DOMAIN-SUFFIX,stackoverflowsolutions.com
   - DOMAIN-SUFFIX,stackoverflowteams.com
   - DOMAIN-SUFFIX,stacksnippets.net
+  - DOMAIN-SUFFIX,statuspage.io
   - DOMAIN-SUFFIX,stockagainstphotography.com
   - DOMAIN-SUFFIX,strikingly.com
   - DOMAIN-SUFFIX,strikinglycdn.com
@@ -593,6 +606,8 @@ payload:
   - DOMAIN-SUFFIX,timelinestoryteller.com
   - DOMAIN-SUFFIX,timestamp.apple.com
   - DOMAIN-SUFFIX,topcoder.com
+  - DOMAIN-SUFFIX,trello.com
+  - DOMAIN-SUFFIX,trellocdn.com
   - DOMAIN-SUFFIX,ubuntu-touch.io
   - DOMAIN-SUFFIX,ubuntu.com
   - DOMAIN-SUFFIX,ubuntu.net
@@ -627,6 +642,7 @@ payload:
   - DOMAIN-SUFFIX,vscodeedu.app
   - DOMAIN-SUFFIX,vscodeedu.com
   - DOMAIN-SUFFIX,w.org
+  - DOMAIN-SUFFIX,w3schools.com
   - DOMAIN-SUFFIX,wapm.io
   - DOMAIN-SUFFIX,wasmer.io
   - DOMAIN-SUFFIX,webflow.com
