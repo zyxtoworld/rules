@@ -80,7 +80,10 @@ payload:
   - DOMAIN-SUFFIX,bankline.ru
   - DOMAIN-SUFFIX,bankmellat.ir
   - DOMAIN-SUFFIX,banksepah.ir
+  - DOMAIN-SUFFIX,bbgevent.com
+  - DOMAIN-SUFFIX,bbhub.io
   - DOMAIN-SUFFIX,bbr.ru
+  - DOMAIN-SUFFIX,bbthat.com
   - DOMAIN-SUFFIX,bcs-bank.ru
   - DOMAIN-SUFFIX,bcs.ru
   - DOMAIN-SUFFIX,beibao.cn
@@ -88,6 +91,7 @@ payload:
   - DOMAIN-SUFFIX,beibao.com.cn
   - DOMAIN-SUFFIX,best2pay.net
   - DOMAIN-SUFFIX,bfa.ru
+  - DOMAIN-SUFFIX,bgov.com
   - DOMAIN-SUFFIX,bill-safe.com
   - DOMAIN-SUFFIX,billmelater.com
   - DOMAIN-SUFFIX,billmelater.info
@@ -95,10 +99,56 @@ payload:
   - DOMAIN-SUFFIX,bim.ir
   - DOMAIN-SUFFIX,bk.mufg.jp
   - DOMAIN-SUFFIX,blanc.ru
+  - DOMAIN-SUFFIX,bloomberg
+  - DOMAIN-SUFFIX,bloomberg.cn
+  - DOMAIN-SUFFIX,bloomberg.co.jp
+  - DOMAIN-SUFFIX,bloomberg.co.kr
+  - DOMAIN-SUFFIX,bloomberg.com
+  - DOMAIN-SUFFIX,bloomberg.com.br
+  - DOMAIN-SUFFIX,bloomberg.fm
+  - DOMAIN-SUFFIX,bloomberg.tv
+  - DOMAIN-SUFFIX,bloombergapps.com
+  - DOMAIN-SUFFIX,bloombergarcade.com
+  - DOMAIN-SUFFIX,bloombergbeta.com
+  - DOMAIN-SUFFIX,bloombergbna.com
+  - DOMAIN-SUFFIX,bloombergbreakaway.com
+  - DOMAIN-SUFFIX,bloombergbriefs.com
+  - DOMAIN-SUFFIX,bloombergchina.com
+  - DOMAIN-SUFFIX,bloombergenvironment.com
+  - DOMAIN-SUFFIX,bloombergforeducation.com
+  - DOMAIN-SUFFIX,bloomberggovernment.com
+  - DOMAIN-SUFFIX,bloombergindices.com
+  - DOMAIN-SUFFIX,bloombergindustry.com
+  - DOMAIN-SUFFIX,bloomberglabs.com
+  - DOMAIN-SUFFIX,bloomberglaw.com
+  - DOMAIN-SUFFIX,bloomberglive.com
+  - DOMAIN-SUFFIX,bloomberglp.com
+  - DOMAIN-SUFFIX,bloombergmedia.com
+  - DOMAIN-SUFFIX,bloombergnext.com
+  - DOMAIN-SUFFIX,bloombergpolarlake.com
+  - DOMAIN-SUFFIX,bloombergprep.com
+  - DOMAIN-SUFFIX,bloombergquint.com
+  - DOMAIN-SUFFIX,bloombergradio.com
+  - DOMAIN-SUFFIX,bloombergsef.com
+  - DOMAIN-SUFFIX,bloombergspace.com
+  - DOMAIN-SUFFIX,bloombergstatus.com
+  - DOMAIN-SUFFIX,bloombergsurvey.com
+  - DOMAIN-SUFFIX,bloombergtax.com
+  - DOMAIN-SUFFIX,bloombergtax1.com
+  - DOMAIN-SUFFIX,bloombergtaxtech.com
+  - DOMAIN-SUFFIX,bloombergtradingchallenge.com
+  - DOMAIN-SUFFIX,bloombergtv.mn
+  - DOMAIN-SUFFIX,bloombergvault.com
+  - DOMAIN-SUFFIX,bloombergview.com
+  - DOMAIN-SUFFIX,blpcareers.com
+  - DOMAIN-SUFFIX,blpevents.com
+  - DOMAIN-SUFFIX,blpprofessional.com
   - DOMAIN-SUFFIX,blubank.com
   - DOMAIN-SUFFIX,bm-bank.ru
   - DOMAIN-SUFFIX,bmi.ir
+  - DOMAIN-SUFFIX,bmia.org
   - DOMAIN-SUFFIX,bml.info
+  - DOMAIN-SUFFIX,bnef.com
   - DOMAIN-SUFFIX,boj.or.jp
   - DOMAIN-SUFFIX,booking-tec.ru
   - DOMAIN-SUFFIX,bpi.ir
@@ -116,7 +166,10 @@ payload:
   - DOMAIN-SUFFIX,broker.ru
   - DOMAIN-SUFFIX,bsi.ir
   - DOMAIN-SUFFIX,bspb.ru
+  - DOMAIN-SUFFIX,businessweek.com
+  - DOMAIN-SUFFIX,businessweekmag.com
   - DOMAIN-SUFFIX,buyfast-paysmart.net
+  - DOMAIN-SUFFIX,bwbx.io
   - DOMAIN-SUFFIX,capitalt.ru
   - DOMAIN-SUFFIX,card.io
   - DOMAIN-SUFFIX,cardsmobile.ru
@@ -135,6 +188,7 @@ payload:
   - DOMAIN-SUFFIX,chugokubank.co.jp
   - DOMAIN-SUFFIX,citibank.co.jp
   - DOMAIN-SUFFIX,citydrive.ru
+  - DOMAIN-SUFFIX,citylab.com
   - DOMAIN-SUFFIX,cloud.ru
   - DOMAIN-SUFFIX,cloudru.cn
   - DOMAIN-SUFFIX,codeseason.by
@@ -208,6 +262,7 @@ payload:
   - DOMAIN-SUFFIX,gitverse.ru
   - DOMAIN-SUFFIX,gmoney.org
   - DOMAIN-SUFFIX,gosdolgi.ru
+  - DOMAIN-SUFFIX,gotraffic.net
   - DOMAIN-SUFFIX,gpb.ru
   - DOMAIN-SUFFIX,gunmabank.co.jp
   - DOMAIN-SUFFIX,hibank24.com
@@ -362,6 +417,7 @@ payload:
   - DOMAIN-SUFFIX,loanbuilder.com
   - DOMAIN-SUFFIX,login-paypal.com
   - DOMAIN-SUFFIX,login-paypal.info
+  - DOMAIN-SUFFIX,londonmithraeum.com
   - DOMAIN-SUFFIX,longbridge.cloud
   - DOMAIN-SUFFIX,longbridge.cn
   - DOMAIN-SUFFIX,longbridge.com
@@ -414,6 +470,8 @@ payload:
   - DOMAIN-SUFFIX,n26.com
   - DOMAIN-SUFFIX,nantobank.co.jp
   - DOMAIN-SUFFIX,neon.click
+  - DOMAIN-SUFFIX,neweconomyforum.com
+  - DOMAIN-SUFFIX,newenergyfinance.com
   - DOMAIN-SUFFIX,nishinipponbank.co.jp
   - DOMAIN-SUFFIX,nochubank.or.jp
   - DOMAIN-SUFFIX,noosferabank.ru
@@ -616,6 +674,7 @@ payload:
   - DOMAIN-SUFFIX,pypl.net
   - DOMAIN-SUFFIX,pypl.tv
   - DOMAIN-SUFFIX,qmb.ir
+  - DOMAIN-SUFFIX,quicktake.video
   - DOMAIN-SUFFIX,raiffeisen-media.ru
   - DOMAIN-SUFFIX,raiffeisen.ru
   - DOMAIN-SUFFIX,rakuten-bank.co.jp
@@ -772,9 +831,11 @@ payload:
   - DOMAIN-SUFFIX,tcsbank.ru
   - DOMAIN-SUFFIX,tdev.by
   - DOMAIN-SUFFIX,tech26.de
+  - DOMAIN-SUFFIX,techatbloomberg.com
   - DOMAIN-SUFFIX,tejaratbank.ir
   - DOMAIN-SUFFIX,thepaypalshop.com
   - DOMAIN-SUFFIX,theshoppingexpresslane.net
+  - DOMAIN-SUFFIX,tictoc.video
   - DOMAIN-SUFFIX,tigerbbs.cn
   - DOMAIN-SUFFIX,tigerbbs.com
   - DOMAIN-SUFFIX,time-messenger.ru
