@@ -2,6 +2,8 @@
 payload:
   - DOMAIN,bybit-exchange.github.io
   - DOMAIN,bybit.ada.support
+  - DOMAIN-SUFFIX,bitflyer.com
+  - DOMAIN-SUFFIX,bitflyer.jp
   - DOMAIN-SUFFIX,byabcde.com
   - DOMAIN-SUFFIX,byapis.com
   - DOMAIN-SUFFIX,byapps.net
