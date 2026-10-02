@@ -448,6 +448,10 @@ function buildConfig(proxies) {
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/ai.yaml',
         './rule-providers/zyx-ai.yaml', 'classical', 'yaml'
       ),
+      'zyx-crypto': remoteRuleProvider(
+        'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/crypto.yaml',
+        './rule-providers/zyx-crypto.yaml', 'classical', 'yaml'
+      ),
       'zyx-biliintl': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/biliintl.yaml',
         './rule-providers/zyx-biliintl.yaml', 'classical', 'yaml'
@@ -503,6 +507,10 @@ function buildConfig(proxies) {
       'zyx-tiktok': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/tiktok.yaml',
         './rule-providers/zyx-tiktok.yaml', 'classical', 'yaml'
+      ),
+      'zyx-media': remoteRuleProvider(
+        'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/media.yaml',
+        './rule-providers/zyx-media.yaml', 'classical', 'yaml'
       ),
       'zyx-social': remoteRuleProvider(
         'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/social.yaml',
@@ -985,6 +993,7 @@ function buildConfig(proxies) {
     geosite('biliintl', POLICY.bilibili),
 
     // 3. 加密货币与国内服务：国内例外优先于广告和宽分类。
+    `RULE-SET,zyx-crypto,${POLICY.crypto}`,
     ...cryptoRules,
     geosite('category-cryptocurrency', POLICY.crypto),
     geosite('google@cn', DIRECT),
@@ -1050,6 +1059,7 @@ function buildConfig(proxies) {
     geosite('amazon', POLICY.shopping),
     `RULE-SET,zyx-tiktok,${POLICY.tiktok}`,
     geosite('tiktok', POLICY.tiktok),
+    `RULE-SET,zyx-media,${POLICY.media}`,
     geosite('speedtest', POLICY.speedtest),
 
     // 7. 自有代理补充集：排除 MetaCubeX 中国域名和中国 IP。
