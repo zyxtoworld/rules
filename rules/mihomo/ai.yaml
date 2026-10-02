@@ -36,6 +36,7 @@ payload:
   - DOMAIN-SUFFIX,aida.googleapis.com
   - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
   - DOMAIN-SUFFIX,aistudio.google.com
+  - DOMAIN-SUFFIX,aixcoder.com
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,antigravity-unleash.goog
   - DOMAIN-SUFFIX,antigravity.google
@@ -52,6 +53,7 @@ payload:
   - DOMAIN-SUFFIX,cici.com
   - DOMAIN-SUFFIX,ciciai.com
   - DOMAIN-SUFFIX,ciciaicdn.com
+  - DOMAIN-SUFFIX,civitai.com
   - DOMAIN-SUFFIX,clau.de
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,claude.com
@@ -143,6 +145,7 @@ payload:
   - DOMAIN-SUFFIX,moonshot.ai
   - DOMAIN-SUFFIX,mozilla.ai
   - DOMAIN-SUFFIX,muse.ai
+  - DOMAIN-SUFFIX,nnthink.com
   - DOMAIN-SUFFIX,notebook.google
   - DOMAIN-SUFFIX,notebook.google.com
   - DOMAIN-SUFFIX,notebooklm.google
