@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T08:26:13.594Z",
+  "generatedAt": "2026-10-02T09:17:40.986Z",
   "sources": {
     "ai": [
       {
@@ -57,6 +57,11 @@
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/kraken.list",
         "source": "MetaCubeX/meta-rules-dat: kraken",
+        "rules": 2
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bitflyer.list",
+        "source": "MetaCubeX/meta-rules-dat: bitflyer",
         "rules": 2
       }
     ],
@@ -145,6 +150,26 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-tvplus.list",
         "source": "MetaCubeX/meta-rules-dat: apple-tvplus",
         "rules": 8
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-intelligence.list",
+        "source": "MetaCubeX/meta-rules-dat: apple-intelligence",
+        "rules": 5
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleID/AppleID.yaml",
+        "source": "blackmatrix7/ios_rule_script: AppleID",
+        "rules": 4
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleMail/AppleMail.yaml",
+        "source": "blackmatrix7/ios_rule_script: AppleMail",
+        "rules": 2
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml",
+        "source": "blackmatrix7/ios_rule_script: AppleNews",
+        "rules": 2
       }
     ],
     "microsoft": [
@@ -169,6 +194,41 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml",
         "source": "blackmatrix7/ios_rule_script: Steam",
         "rules": 54
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.yaml",
+        "source": "blackmatrix7/ios_rule_script: Nintendo",
+        "rules": 125
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Xbox/Xbox.yaml",
+        "source": "blackmatrix7/ios_rule_script: Xbox",
+        "rules": 42
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PlayStation/PlayStation.yaml",
+        "source": "blackmatrix7/ios_rule_script: PlayStation",
+        "rules": 4
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Garena/Garena.yaml",
+        "source": "blackmatrix7/ios_rule_script: Garena",
+        "rules": 15
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Riot/Riot.yaml",
+        "source": "blackmatrix7/ios_rule_script: Riot",
+        "rules": 55
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Rockstar/Rockstar.yaml",
+        "source": "blackmatrix7/ios_rule_script: Rockstar",
+        "rules": 5
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.yaml",
+        "source": "blackmatrix7/ios_rule_script: Blizzard",
+        "rules": 39
       }
     ],
     "youtube": [
@@ -181,6 +241,11 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml",
         "source": "blackmatrix7/ios_rule_script: YouTube",
         "rules": 183
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml",
+        "source": "blackmatrix7/ios_rule_script: YouTubeMusic",
+        "rules": 1
       }
     ],
     "telegram": [
@@ -358,6 +423,81 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Viki/Viki.yaml",
         "source": "blackmatrix7/ios_rule_script: Viki",
         "rules": 8
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/archiveofourown.list",
+        "source": "MetaCubeX/meta-rules-dat: archiveofourown",
+        "rules": 4
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/artstation.list",
+        "source": "MetaCubeX/meta-rules-dat: artstation",
+        "rules": 2
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bahamut.list",
+        "source": "MetaCubeX/meta-rules-dat: bahamut",
+        "rules": 5
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/wikimedia.list",
+        "source": "MetaCubeX/meta-rules-dat: wikimedia",
+        "rules": 18
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/c-span.list",
+        "source": "MetaCubeX/meta-rules-dat: c-span",
+        "rules": 2
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/catchplay.list",
+        "source": "MetaCubeX/meta-rules-dat: catchplay",
+        "rules": 2
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/amc.list",
+        "source": "MetaCubeX/meta-rules-dat: amc",
+        "rules": 5
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Overcast/Overcast.yaml",
+        "source": "blackmatrix7/ios_rule_script: Overcast",
+        "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Pandora/Pandora.yaml",
+        "source": "blackmatrix7/ios_rule_script: Pandora",
+        "rules": 2
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SlideShare/SlideShare.yaml",
+        "source": "blackmatrix7/ios_rule_script: SlideShare",
+        "rules": 3
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AbemaTV/AbemaTV.yaml",
+        "source": "blackmatrix7/ios_rule_script: AbemaTV",
+        "rules": 22
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HamiVideo/HamiVideo.yaml",
+        "source": "blackmatrix7/ios_rule_script: HamiVideo",
+        "rules": 3
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/myTVSUPER/myTVSUPER.yaml",
+        "source": "blackmatrix7/ios_rule_script: myTVSUPER",
+        "rules": 4
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ViuTV/ViuTV.yaml",
+        "source": "blackmatrix7/ios_rule_script: ViuTV",
+        "rules": 8
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Voxmedia/Voxmedia.yaml",
+        "source": "blackmatrix7/ios_rule_script: Voxmedia",
+        "rules": 16
       }
     ],
     "social": [
@@ -485,6 +625,11 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/patreon.list",
         "source": "MetaCubeX/meta-rules-dat: patreon",
         "rules": 4
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Line/Line.yaml",
+        "source": "blackmatrix7/ios_rule_script: Line",
+        "rules": 24
       }
     ],
     "dev": [
@@ -532,6 +677,26 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/W3schools/W3schools.yaml",
         "source": "blackmatrix7/ios_rule_script: W3schools",
         "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Figma/Figma.yaml",
+        "source": "blackmatrix7/ios_rule_script: Figma",
+        "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/FreeCodeCamp/FreeCodeCamp.yaml",
+        "source": "blackmatrix7/ios_rule_script: FreeCodeCamp",
+        "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Unity/Unity.yaml",
+        "source": "blackmatrix7/ios_rule_script: Unity",
+        "rules": 9
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/autodesk.list",
+        "source": "MetaCubeX/meta-rules-dat: autodesk",
+        "rules": 558
       }
     ],
     "cloud": [
@@ -619,6 +784,26 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/synology.list",
         "source": "MetaCubeX/meta-rules-dat: synology",
         "rules": 20
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/MEGA/MEGA.yaml",
+        "source": "blackmatrix7/ios_rule_script: MEGA",
+        "rules": 13
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bandwagonhost.list",
+        "source": "MetaCubeX/meta-rules-dat: bandwagonhost",
+        "rules": 7
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/LastPass/LastPass.yaml",
+        "source": "blackmatrix7/ios_rule_script: LastPass",
+        "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WIX/WIX.yaml",
+        "source": "blackmatrix7/ios_rule_script: WIX",
+        "rules": 9
       }
     ],
     "finance": [
@@ -683,6 +868,16 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nike/Nike.yaml",
         "source": "blackmatrix7/ios_rule_script: Nike",
         "rules": 11
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/booking.list",
+        "source": "MetaCubeX/meta-rules-dat: booking",
+        "rules": 3
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/airbnb.list",
+        "source": "MetaCubeX/meta-rules-dat: airbnb",
+        "rules": 83
       }
     ],
     "proxy-extra": [
@@ -700,7 +895,7 @@
     },
     "crypto": {
       "path": "rules/mihomo/crypto.yaml",
-      "rules": 28
+      "rules": 30
     },
     "biliintl": {
       "path": "rules/mihomo/biliintl.yaml",
@@ -724,7 +919,7 @@
     },
     "apple": {
       "path": "rules/mihomo/apple.yaml",
-      "rules": 108
+      "rules": 120
     },
     "microsoft": {
       "path": "rules/mihomo/microsoft.yaml",
@@ -732,11 +927,11 @@
     },
     "games": {
       "path": "rules/mihomo/games.yaml",
-      "rules": 863
+      "rules": 891
     },
     "youtube": {
       "path": "rules/mihomo/youtube.yaml",
-      "rules": 184
+      "rules": 185
     },
     "telegram": {
       "path": "rules/mihomo/telegram.yaml",
@@ -760,19 +955,19 @@
     },
     "media": {
       "path": "rules/mihomo/media.yaml",
-      "rules": 488
+      "rules": 562
     },
     "social": {
       "path": "rules/mihomo/social.yaml",
-      "rules": 828
+      "rules": 837
     },
     "dev": {
       "path": "rules/mihomo/dev.yaml",
-      "rules": 671
+      "rules": 1238
     },
     "cloud": {
       "path": "rules/mihomo/cloud.yaml",
-      "rules": 468
+      "rules": 495
     },
     "finance": {
       "path": "rules/mihomo/finance.yaml",
@@ -780,7 +975,7 @@
     },
     "shopping": {
       "path": "rules/mihomo/shopping.yaml",
-      "rules": 576
+      "rules": 662
     },
     "proxy-extra": {
       "path": "rules/mihomo/proxy-extra.yaml",
