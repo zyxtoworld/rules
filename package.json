@@ -1,0 +1,8 @@
+{
+  "name": "zyxtoworld-rules",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-rules.mjs"
+  }
+}
