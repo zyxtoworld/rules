@@ -33,7 +33,15 @@ format: yaml
 - `direct`：MetaCubeX 中国大陆集合、Loyalsoldier direct、国内 Bilibili 补充。
 - `ads`：MetaCubeX 广告集合 + Loyalsoldier reject 集合。
 - `proxy-extra`：Loyalsoldier proxy 补充；`convert.js` 仍负责排除中国域名和中国 IP。
-- 服务文件按 AI、Google、Apple、Microsoft、游戏、媒体、社交、开发、云服务、金融和购物等策略组拆分，避免所有流量进入一个过宽的代理集合。
+- 服务文件按 AI、加密货币、Google、Apple、Microsoft、游戏、媒体、社交、开发、云服务、金融和购物等策略组拆分；媒体文件只聚合已核验的具体服务，避免所有流量进入一个过宽的代理集合。
 - `IP-ASN` 规则会在生成时过滤，避免普通 iOS 客户端因 ASN 数据下载阻塞启动。
 
 上游项目的规则内容遵循各自项目的许可证和使用说明；本仓库只维护生成脚本、来源清单和聚合结果。
+
+## 上游与许可证
+
+- [MetaCubeX/meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat)：GPL-3.0，提供 GeoSite 与服务域名数据。
+- [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)：GPL-2.0，提供 Clash classical 服务规则。
+- [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules)：GPL-3.0，提供 direct、reject 和 proxy 基础集合。
+
+本仓库的 `LICENSE` 仅覆盖本仓库脚本、元数据和编排内容；生成规则的具体条目仍遵循各上游项目的许可证和使用说明，完整来源与过滤选项记录在 `sources.json`。
