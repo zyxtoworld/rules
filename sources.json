@@ -13,7 +13,8 @@
     "crypto": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bybit.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bybit"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/okx.list","kind":"list","source":"MetaCubeX/meta-rules-dat: okx"},
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/kraken.list","kind":"list","source":"MetaCubeX/meta-rules-dat: kraken"}
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/kraken.list","kind":"list","source":"MetaCubeX/meta-rules-dat: kraken"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bitflyer.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bitflyer"}
     ],
     "biliintl": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/biliintl.list","kind":"list","source":"MetaCubeX/meta-rules-dat: biliintl"}
@@ -40,7 +41,11 @@
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-dev.list","kind":"list","source":"MetaCubeX/meta-rules-dat: apple-dev"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-music.list","kind":"list","source":"MetaCubeX/meta-rules-dat: apple-music"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-podcasts.list","kind":"list","source":"MetaCubeX/meta-rules-dat: apple-podcasts"},
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-tvplus.list","kind":"list","source":"MetaCubeX/meta-rules-dat: apple-tvplus"}
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-tvplus.list","kind":"list","source":"MetaCubeX/meta-rules-dat: apple-tvplus"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-intelligence.list","kind":"list","source":"MetaCubeX/meta-rules-dat: apple-intelligence"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleID/AppleID.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: AppleID"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleMail/AppleMail.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: AppleMail"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: AppleNews"}
     ],
     "microsoft": [
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Microsoft"}
@@ -48,11 +53,19 @@
     "games": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.list","kind":"list","source":"MetaCubeX/meta-rules-dat: steam"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-!cn.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-games-!cn"},
-      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Steam"}
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Steam"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Nintendo","dropTypes":["IP-CIDR"]},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Xbox/Xbox.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Xbox"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PlayStation/PlayStation.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: PlayStation"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Garena/Garena.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Garena"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Riot/Riot.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Riot"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Rockstar/Rockstar.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Rockstar"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Blizzard","dropTypes":["IP-CIDR"]}
     ],
     "youtube": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.list","kind":"list","source":"MetaCubeX/meta-rules-dat: youtube"},
-      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: YouTube"}
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: YouTube"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: YouTubeMusic"}
     ],
     "telegram": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.list","kind":"list","source":"MetaCubeX/meta-rules-dat: telegram"},
@@ -97,7 +110,22 @@
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/lastfm.list","kind":"list","source":"MetaCubeX/meta-rules-dat: lastfm"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/imdb.list","kind":"list","source":"MetaCubeX/meta-rules-dat: imdb"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/niconico.list","kind":"list","source":"MetaCubeX/meta-rules-dat: niconico"},
-      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Viki/Viki.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Viki","dropTypes":["PROCESS-NAME"]}
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Viki/Viki.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Viki","dropTypes":["PROCESS-NAME"]},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/archiveofourown.list","kind":"list","source":"MetaCubeX/meta-rules-dat: archiveofourown"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/artstation.list","kind":"list","source":"MetaCubeX/meta-rules-dat: artstation"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bahamut.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bahamut"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/wikimedia.list","kind":"list","source":"MetaCubeX/meta-rules-dat: wikimedia"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/c-span.list","kind":"list","source":"MetaCubeX/meta-rules-dat: c-span"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/catchplay.list","kind":"list","source":"MetaCubeX/meta-rules-dat: catchplay"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/amc.list","kind":"list","source":"MetaCubeX/meta-rules-dat: amc"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Overcast/Overcast.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Overcast","dropTypes":["PROCESS-NAME"]},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Pandora/Pandora.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Pandora","dropTypes":["PROCESS-NAME"]},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SlideShare/SlideShare.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: SlideShare"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AbemaTV/AbemaTV.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: AbemaTV","dropTypes":["DOMAIN-KEYWORD"]},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HamiVideo/HamiVideo.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: HamiVideo","dropTypes":["DOMAIN-KEYWORD"]},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/myTVSUPER/myTVSUPER.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: myTVSUPER","dropTypes":["DOMAIN-KEYWORD"]},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ViuTV/ViuTV.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: ViuTV","dropTypes":["PROCESS-NAME"]},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Voxmedia/Voxmedia.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Voxmedia"}
     ],
     "social": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/facebook.list","kind":"list","source":"MetaCubeX/meta-rules-dat: facebook"},
@@ -124,7 +152,8 @@
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disqus.list","kind":"list","source":"MetaCubeX/meta-rules-dat: disqus"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/imgur.list","kind":"list","source":"MetaCubeX/meta-rules-dat: imgur"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pixiv.list","kind":"list","source":"MetaCubeX/meta-rules-dat: pixiv"},
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/patreon.list","kind":"list","source":"MetaCubeX/meta-rules-dat: patreon"}
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/patreon.list","kind":"list","source":"MetaCubeX/meta-rules-dat: patreon"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Line/Line.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Line"}
     ],
     "dev": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.list","kind":"list","source":"MetaCubeX/meta-rules-dat: github"},
@@ -135,7 +164,11 @@
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-dev.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-dev"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/atlassian.list","kind":"list","source":"MetaCubeX/meta-rules-dat: atlassian"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SourceForge/SourceForge.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: SourceForge"},
-      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/W3schools/W3schools.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: W3schools"}
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/W3schools/W3schools.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: W3schools"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Figma/Figma.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Figma"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/FreeCodeCamp/FreeCodeCamp.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: FreeCodeCamp"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Unity/Unity.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Unity","dropTypes":["PROCESS-NAME"]},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/autodesk.list","kind":"list","source":"MetaCubeX/meta-rules-dat: autodesk"}
     ],
     "cloud": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/dropbox.list","kind":"list","source":"MetaCubeX/meta-rules-dat: dropbox"},
@@ -154,7 +187,11 @@
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Zoho/Zoho.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Zoho"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/mega.list","kind":"list","source":"MetaCubeX/meta-rules-dat: mega"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/terabox.list","kind":"list","source":"MetaCubeX/meta-rules-dat: terabox"},
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/synology.list","kind":"list","source":"MetaCubeX/meta-rules-dat: synology"}
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/synology.list","kind":"list","source":"MetaCubeX/meta-rules-dat: synology"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/MEGA/MEGA.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: MEGA","dropTypes":["PROCESS-NAME"]},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bandwagonhost.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bandwagonhost"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/LastPass/LastPass.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: LastPass","dropTypes":["PROCESS-NAME"]},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WIX/WIX.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: WIX"}
     ],
     "finance": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/paypal.list","kind":"list","source":"MetaCubeX/meta-rules-dat: paypal"},
@@ -170,7 +207,9 @@
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PChome/PChome.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: PChome"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/ikea.list","kind":"list","source":"MetaCubeX/meta-rules-dat: ikea"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/adidas.list","kind":"list","source":"MetaCubeX/meta-rules-dat: adidas"},
-      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nike/Nike.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Nike"}
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nike/Nike.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Nike"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/booking.list","kind":"list","source":"MetaCubeX/meta-rules-dat: booking"},
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/airbnb.list","kind":"list","source":"MetaCubeX/meta-rules-dat: airbnb"}
     ],
     "proxy-extra": [
       {"url":"https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt","kind":"clash","source":"Loyalsoldier/clash-rules: proxy"}
