@@ -1,0 +1,383 @@
+{
+  "generatedAt": "2026-10-02T02:30:08.509Z",
+  "sources": {
+    "ai": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-gemini.list",
+        "source": "MetaCubeX/meta-rules-dat: google-gemini",
+        "rules": 46
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.list",
+        "source": "MetaCubeX/meta-rules-dat: openai",
+        "rules": 22
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.list",
+        "source": "MetaCubeX/meta-rules-dat: anthropic",
+        "rules": 8
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-chat-!cn.list",
+        "source": "MetaCubeX/meta-rules-dat: category-ai-chat-!cn",
+        "rules": 187
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml",
+        "source": "blackmatrix7/ios_rule_script: Gemini",
+        "rules": 13
+      }
+    ],
+    "biliintl": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/biliintl.list",
+        "source": "MetaCubeX/meta-rules-dat: biliintl",
+        "rules": 11
+      }
+    ],
+    "direct": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.list",
+        "source": "MetaCubeX/meta-rules-dat: cn",
+        "rules": 111224
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+        "source": "Loyalsoldier/clash-rules: direct",
+        "rules": 111353
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml",
+        "source": "blackmatrix7/ios_rule_script: BiliBili",
+        "rules": 129
+      }
+    ],
+    "ads": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.list",
+        "source": "MetaCubeX/meta-rules-dat: category-ads-all",
+        "rules": 910
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt",
+        "source": "Loyalsoldier/clash-rules: reject",
+        "rules": 186434
+      }
+    ],
+    "download": [
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml",
+        "source": "blackmatrix7/ios_rule_script: Download",
+        "rules": 34
+      }
+    ],
+    "google": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.list",
+        "source": "MetaCubeX/meta-rules-dat: google",
+        "rules": 1075
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml",
+        "source": "blackmatrix7/ios_rule_script: Google",
+        "rules": 701
+      }
+    ],
+    "apple": [
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml",
+        "source": "blackmatrix7/ios_rule_script: Apple",
+        "rules": 33
+      }
+    ],
+    "microsoft": [
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml",
+        "source": "blackmatrix7/ios_rule_script: Microsoft",
+        "rules": 670
+      }
+    ],
+    "games": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.list",
+        "source": "MetaCubeX/meta-rules-dat: steam",
+        "rules": 60
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-!cn.list",
+        "source": "MetaCubeX/meta-rules-dat: category-games-!cn",
+        "rules": 859
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml",
+        "source": "blackmatrix7/ios_rule_script: Steam",
+        "rules": 54
+      }
+    ],
+    "youtube": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.list",
+        "source": "MetaCubeX/meta-rules-dat: youtube",
+        "rules": 178
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml",
+        "source": "blackmatrix7/ios_rule_script: YouTube",
+        "rules": 183
+      }
+    ],
+    "telegram": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.list",
+        "source": "MetaCubeX/meta-rules-dat: telegram",
+        "rules": 21
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml",
+        "source": "blackmatrix7/ios_rule_script: Telegram",
+        "rules": 41
+      }
+    ],
+    "twitter": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.list",
+        "source": "MetaCubeX/meta-rules-dat: twitter",
+        "rules": 24
+      }
+    ],
+    "spotify": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.list",
+        "source": "MetaCubeX/meta-rules-dat: spotify",
+        "rules": 28
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml",
+        "source": "blackmatrix7/ios_rule_script: Spotify",
+        "rules": 30
+      }
+    ],
+    "netflix": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.list",
+        "source": "MetaCubeX/meta-rules-dat: netflix",
+        "rules": 24
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml",
+        "source": "blackmatrix7/ios_rule_script: Netflix",
+        "rules": 38
+      }
+    ],
+    "tiktok": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.list",
+        "source": "MetaCubeX/meta-rules-dat: tiktok",
+        "rules": 37
+      }
+    ],
+    "social": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/facebook.list",
+        "source": "MetaCubeX/meta-rules-dat: facebook",
+        "rules": 397
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/discord.list",
+        "source": "MetaCubeX/meta-rules-dat: discord",
+        "rules": 28
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/reddit.list",
+        "source": "MetaCubeX/meta-rules-dat: reddit",
+        "rules": 12
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/whatsapp.list",
+        "source": "MetaCubeX/meta-rules-dat: whatsapp",
+        "rules": 13
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/instagram.list",
+        "source": "MetaCubeX/meta-rules-dat: instagram",
+        "rules": 74
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/linkedin.list",
+        "source": "MetaCubeX/meta-rules-dat: linkedin",
+        "rules": 12
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/zoom.list",
+        "source": "MetaCubeX/meta-rules-dat: zoom",
+        "rules": 3
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/slack.list",
+        "source": "MetaCubeX/meta-rules-dat: slack",
+        "rules": 11
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-communication.list",
+        "source": "MetaCubeX/meta-rules-dat: category-communication",
+        "rules": 151
+      }
+    ],
+    "dev": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.list",
+        "source": "MetaCubeX/meta-rules-dat: github",
+        "rules": 64
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gitlab.list",
+        "source": "MetaCubeX/meta-rules-dat: gitlab",
+        "rules": 5
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gitbook.list",
+        "source": "MetaCubeX/meta-rules-dat: gitbook",
+        "rules": 2
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/docker.list",
+        "source": "MetaCubeX/meta-rules-dat: docker",
+        "rules": 6
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/kubernetes.list",
+        "source": "MetaCubeX/meta-rules-dat: kubernetes",
+        "rules": 2
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-dev.list",
+        "source": "MetaCubeX/meta-rules-dat: category-dev",
+        "rules": 665
+      }
+    ],
+    "cloud": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/dropbox.list",
+        "source": "MetaCubeX/meta-rules-dat: dropbox",
+        "rules": 16
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.list",
+        "source": "MetaCubeX/meta-rules-dat: onedrive",
+        "rules": 16
+      }
+    ],
+    "finance": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/paypal.list",
+        "source": "MetaCubeX/meta-rules-dat: paypal",
+        "rules": 245
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-finance.list",
+        "source": "MetaCubeX/meta-rules-dat: category-finance",
+        "rules": 615
+      }
+    ],
+    "shopping": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/amazon.list",
+        "source": "MetaCubeX/meta-rules-dat: amazon",
+        "rules": 246
+      }
+    ],
+    "proxy-extra": [
+      {
+        "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+        "source": "Loyalsoldier/clash-rules: proxy",
+        "rules": 27109
+      }
+    ]
+  },
+  "outputs": {
+    "ai": {
+      "path": "rules/mihomo/ai.yaml",
+      "rules": 191
+    },
+    "biliintl": {
+      "path": "rules/mihomo/biliintl.yaml",
+      "rules": 11
+    },
+    "direct": {
+      "path": "rules/mihomo/direct.yaml",
+      "rules": 113312
+    },
+    "ads": {
+      "path": "rules/mihomo/ads.yaml",
+      "rules": 186915
+    },
+    "download": {
+      "path": "rules/mihomo/download.yaml",
+      "rules": 34
+    },
+    "google": {
+      "path": "rules/mihomo/google.yaml",
+      "rules": 1090
+    },
+    "apple": {
+      "path": "rules/mihomo/apple.yaml",
+      "rules": 33
+    },
+    "microsoft": {
+      "path": "rules/mihomo/microsoft.yaml",
+      "rules": 670
+    },
+    "games": {
+      "path": "rules/mihomo/games.yaml",
+      "rules": 863
+    },
+    "youtube": {
+      "path": "rules/mihomo/youtube.yaml",
+      "rules": 184
+    },
+    "telegram": {
+      "path": "rules/mihomo/telegram.yaml",
+      "rules": 44
+    },
+    "twitter": {
+      "path": "rules/mihomo/twitter.yaml",
+      "rules": 24
+    },
+    "spotify": {
+      "path": "rules/mihomo/spotify.yaml",
+      "rules": 36
+    },
+    "netflix": {
+      "path": "rules/mihomo/netflix.yaml",
+      "rules": 37
+    },
+    "tiktok": {
+      "path": "rules/mihomo/tiktok.yaml",
+      "rules": 36
+    },
+    "social": {
+      "path": "rules/mihomo/social.yaml",
+      "rules": 643
+    },
+    "dev": {
+      "path": "rules/mihomo/dev.yaml",
+      "rules": 655
+    },
+    "cloud": {
+      "path": "rules/mihomo/cloud.yaml",
+      "rules": 32
+    },
+    "finance": {
+      "path": "rules/mihomo/finance.yaml",
+      "rules": 858
+    },
+    "shopping": {
+      "path": "rules/mihomo/shopping.yaml",
+      "rules": 246
+    },
+    "proxy-extra": {
+      "path": "rules/mihomo/proxy-extra.yaml",
+      "rules": 27107
+    }
+  }
+}
