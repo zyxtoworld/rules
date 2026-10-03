@@ -146,6 +146,7 @@ function buildConfig(proxies) {
   // 文字关键词 -> ISO。中文名从 ISO_CN 自动生成（覆盖 250 国），再并入城市/英文/繁体别名。
   // 按关键词长度降序匹配，避免子串截胡（如"印度尼西亚"先于"印度"命中）。
   const EXTRA_ALIAS = [
+    ['中国|中國|China|Mainland|大陆|大陸', 'CN'],
     ['台灣|Taiwan', 'TW'], ['澳門|Macao|Macau', 'MO'],
     ['HongKong|Hong Kong', 'HK'], ['狮城|Singapore', 'SG'],
     ['东京|大阪|Japan|Tokyo|Osaka', 'JP'], ['首尔|韓國|Korea|Seoul', 'KR'],
@@ -322,49 +323,6 @@ function buildConfig(proxies) {
     return flagPairIso(a, b);
   }
 
-  proxies = dedupeProxies(Array.isArray(proxies) ? proxies : [], proxy => regionRank(proxy.name));
-
-  // ===== 先纠正/补全国旗，再分组 =====
-  for (const p of proxies) {
-    p.name = String(p.name || '未命名节点').trim() || '未命名节点';
-    const target = regionTargetText(p.name);
-    const textIso = isoByText(p.name);   // 文字判定（最可信）
-    const targetIso = textIso || isoFromFlag(target) || isoFromAbbr(target);
-    const leadingIso = leadingFlagIso(p.name);
-    const flagIso = isoFromFlag(p.name); // 现有旗帜
-    if (targetIso) {
-      if (leadingIso !== targetIso) p.name = `${flagFromIso(targetIso)}${stripLeadingFlag(p.name)}`;
-      continue;
-    }
-    if (flagIso) continue;               // 文字判不出但有旗帜，保持
-    const abbrIso = isoFromAbbr(regionTargetText(p.name)) || isoFromAbbr(p.name);
-    if (abbrIso) { p.name = `${flagFromIso(abbrIso)}${p.name}`; continue; }
-    for (const [re, label] of MACRO_REGIONS) {
-      if (re.test(p.name)) { p.name = `${label.split(' ')[0]}${p.name}`; break; }
-    }
-  }
-  ensureUniqueProxyNames(proxies);
-
-  // 按地区聚合（有节点才建组），按节点数从多到少排序；无法识别的节点放入独立兜底组。
-  const regionMap = {};
-  const regionOrder = [];
-  const unknownRegionLabel = '❓ 未识别地区';
-  const unknownRegionProxies = [];
-  for (const p of proxies) {
-    const r = detectRegion(p.name);
-    if (!r) {
-      unknownRegionProxies.push(p.name);
-      continue;
-    }
-    if (!regionMap[r]) { regionMap[r] = []; regionOrder.push(r); }
-    regionMap[r].push(p.name);
-  }
-  regionOrder.sort((a, b) => regionMap[b].length - regionMap[a].length);
-  const allRegionGroups = unknownRegionProxies.length
-    ? [...regionOrder, unknownRegionLabel]
-    : regionOrder.slice();
-  const allProxyNames = proxies.map(p => p.name);
-
   const DIRECT = 'DIRECT';
   const REJECT = 'REJECT';
   const POLICY = {
@@ -399,6 +357,80 @@ function buildConfig(proxies) {
     speedtest: '📡 Speedtest',
     leak: '🐟 漏网之鱼'
   };
+
+  proxies = dedupeProxies(Array.isArray(proxies) ? proxies : [], proxy => regionRank(proxy.name));
+
+  // ===== 先纠正/补全国旗，再分组 =====
+  for (const p of proxies) {
+    p.name = String(p.name || '未命名节点').trim() || '未命名节点';
+    const target = regionTargetText(p.name);
+    const textIso = isoByText(p.name);   // 文字判定（最可信）
+    const targetIso = textIso || isoFromFlag(target) || isoFromAbbr(target);
+    const leadingIso = leadingFlagIso(p.name);
+    const flagIso = isoFromFlag(p.name); // 现有旗帜
+    if (targetIso) {
+      if (leadingIso !== targetIso) p.name = `${flagFromIso(targetIso)}${stripLeadingFlag(p.name)}`;
+      continue;
+    }
+    if (flagIso) continue;               // 文字判不出但有旗帜，保持
+    const abbrIso = isoFromAbbr(regionTargetText(p.name)) || isoFromAbbr(p.name);
+    if (abbrIso) { p.name = `${flagFromIso(abbrIso)}${p.name}`; continue; }
+    for (const [re, label] of MACRO_REGIONS) {
+      if (re.test(p.name)) { p.name = `${label.split(' ')[0]}${p.name}`; break; }
+    }
+  }
+  // Mihomo reserves DIRECT/REJECT and treats proxy-group names as references.
+  // A subscription node with one of those names would create duplicate names
+  // or self-referencing groups, so rename only the conflicting node.
+  const reservedProxyNames = new Set([
+    DIRECT,
+    REJECT,
+    'PASS',
+    'REJECT-DROP',
+    'COMPATIBLE',
+    'INCOMPATIBLE',
+    ...Object.values(POLICY),
+    '❓ 未识别地区',
+  ]);
+  for (const proxy of proxies) {
+    const region = detectRegion(proxy.name);
+    if (region && proxy.name === region) reservedProxyNames.add(region);
+  }
+  const existingProxyNames = new Set(proxies.map(proxy => proxy.name));
+  for (const proxy of proxies) {
+    if (!reservedProxyNames.has(proxy.name)) continue;
+    const originalName = proxy.name;
+    existingProxyNames.delete(originalName);
+    let suffix = 1;
+    let safeName = `节点-${originalName}`;
+    while (reservedProxyNames.has(safeName) || existingProxyNames.has(safeName)) {
+      suffix += 1;
+      safeName = `节点-${originalName} #${suffix}`;
+    }
+    proxy.name = safeName;
+    existingProxyNames.add(safeName);
+  }
+  ensureUniqueProxyNames(proxies);
+
+  // 按地区聚合（有节点才建组），按节点数从多到少排序；无法识别的节点放入独立兜底组。
+  const regionMap = {};
+  const regionOrder = [];
+  const unknownRegionLabel = '❓ 未识别地区';
+  const unknownRegionProxies = [];
+  for (const p of proxies) {
+    const r = detectRegion(p.name);
+    if (!r) {
+      unknownRegionProxies.push(p.name);
+      continue;
+    }
+    if (!regionMap[r]) { regionMap[r] = []; regionOrder.push(r); }
+    regionMap[r].push(p.name);
+  }
+  regionOrder.sort((a, b) => regionMap[b].length - regionMap[a].length);
+  const allRegionGroups = unknownRegionProxies.length
+    ? [...regionOrder, unknownRegionLabel]
+    : regionOrder.slice();
+  const allProxyNames = proxies.map(p => p.name);
   function unique(list) {
     return [...new Set(list.filter(Boolean))];
   }

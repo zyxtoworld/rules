@@ -371,10 +371,13 @@ function minimizeRules(input) {
     result.push(rule);
   }
   const order = new Map(['DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD', 'IP-CIDR', 'IP-CIDR6', 'IP-ASN', 'PROCESS-NAME', 'PROCESS-PATH'].map((type, index) => [type, index]));
+  // Avoid locale-dependent ordering: the builder runs on Windows locally and
+  // Linux in GitHub Actions, and localeCompare can produce different MRS bytes.
+  const compareText = (left, right) => left < right ? -1 : left > right ? 1 : 0;
   return result.sort((left, right) => {
     const leftType = left.split(',', 1)[0];
     const rightType = right.split(',', 1)[0];
-    return (order.get(leftType) ?? 99) - (order.get(rightType) ?? 99) || left.localeCompare(right);
+    return (order.get(leftType) ?? 99) - (order.get(rightType) ?? 99) || compareText(left, right);
   });
 }
 
