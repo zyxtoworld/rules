@@ -12,6 +12,12 @@ const outputManifestPath = join(repoRoot, 'rules', 'manifest.json');
 const outputRoot = join(repoRoot, 'rules', 'mihomo');
 const userAgent = 'zyxtoworld-rules-builder/2.0';
 const retryCount = 3;
+// Keep this layout synchronized with convert.js ruleProviderParts.
+// A stable provider layout prevents scheduled upstream refreshes from creating
+// missing or unreferenced RULE-SET names in the Sub-Store converter.
+const fixedMrsPartitions = {
+  ads: { domain: 2 },
+};
 const maxMrsBytes = 1_400_000;
 
 async function fetchText(url) {
@@ -172,18 +178,25 @@ async function convertYamlToMrs(binary, behavior, rules, outputPath, tempRoot, g
 }
 
 async function splitMrsPartitions(binary, behavior, rules, tempRoot, group, part = 1) {
-  const candidatePath = join(tempRoot, `${group}-${behavior}-${part}-${rules.length}.mrs`);
-  await convertYamlToMrs(binary, behavior, rules, candidatePath, tempRoot, group, part);
-  const bytes = (await stat(candidatePath)).size;
-  if (bytes <= maxMrsBytes || rules.length <= 1) {
-    return [{ rules, candidatePath, bytes }];
+  const partitionCount = fixedMrsPartitions[group]?.[behavior] || 1;
+  if (rules.length < partitionCount) {
+    throw new Error(`${group}/${behavior} needs ${partitionCount} non-empty MRS partitions, got ${rules.length} rules`);
   }
 
-  await rm(candidatePath, { force: true });
-  const midpoint = Math.ceil(rules.length / 2);
-  const left = await splitMrsPartitions(binary, behavior, rules.slice(0, midpoint), tempRoot, group, part * 2);
-  const right = await splitMrsPartitions(binary, behavior, rules.slice(midpoint), tempRoot, group, part * 2 + 1);
-  return [...left, ...right];
+  const chunkSize = Math.ceil(rules.length / partitionCount);
+  const artifacts = [];
+  for (let index = 0; index < partitionCount; index += 1) {
+    const partRules = rules.slice(index * chunkSize, (index + 1) * chunkSize);
+    const part = index + 1;
+    const candidatePath = join(tempRoot, `${group}-${behavior}-${part}-${partRules.length}.mrs`);
+    await convertYamlToMrs(binary, behavior, partRules, candidatePath, tempRoot, group, part);
+    const bytes = (await stat(candidatePath)).size;
+    if (bytes > maxMrsBytes) {
+      throw new Error(`${group}/${behavior}/${part} is ${bytes} bytes; increase its fixed partition count and update convert.js`);
+    }
+    artifacts.push({ rules: partRules, candidatePath, bytes });
+  }
+  return artifacts;
 }
 
 function collectPreviousOutputPaths(previousManifest) {

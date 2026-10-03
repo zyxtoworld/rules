@@ -20,7 +20,7 @@ behavior: domain # 或 ipcidr
 format: mrs
 ```
 
-MRS 不能表达的 `DOMAIN-KEYWORD`、`PROCESS-NAME`、`PROCESS-PATH` 等规则保留在体积很小的 `*-classical.yaml` provider 中。超出单文件阈值的 MRS 会自动分片，例如 `ads.mrs` 和 `ads-2.mrs`；转换脚本会为每个分片生成对应的 `RULE-SET`。
+MRS 不能表达的 `DOMAIN-KEYWORD`、`PROCESS-NAME`、`PROCESS-PATH` 等规则保留在体积很小的 `*-classical.yaml` provider 中。`ads` 固定拆成 `ads.mrs` 和 `ads-2.mrs`，构建脚本会在固定分片超出大小上限时失败，要求同步更新构建布局和 `convert.js`，避免生成未被订阅引用的分片。
 
 ## 目录
 

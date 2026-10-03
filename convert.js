@@ -32,10 +32,9 @@ async function main(config) {
 
 // 订阅/集合入口；mihomoProfile 场景下主动抛错以回退到 main
 function operator(proxies) {
-  if (proxies && !Array.isArray(proxies) &&
-      (proxies.$file || proxies.$content || proxies.$files)) {
-    throw new Error('fallback to nodeFunc/main for mihomoProfile');
-  }
+  // Sub-Store passes node lists as arrays. Any object input belongs to the
+  // mihomoProfile/file path and must fall back instead of becoming 0 nodes.
+  if (proxies && !Array.isArray(proxies)) throw new Error('fallback to nodeFunc/main for non-array input');
   return buildConfig(Array.isArray(proxies) ? proxies : []);
 }
 
@@ -438,6 +437,7 @@ function buildConfig(proxies) {
     crypto: ['domain'],
     biliintl: ['domain'],
     direct: ['domain', 'ipcidr', 'classical'],
+    // Keep synchronized with fixedMrsPartitions.ads.domain in build-rules.mjs.
     ads: ['domain', 'domain-2'],
     download: ['domain', 'classical'],
     google: ['domain', 'ipcidr', 'classical'],
@@ -1044,7 +1044,7 @@ function buildConfig(proxies) {
     `GEOIP,google,${POLICY.google},no-resolve`,
     `GEOIP,netflix,${POLICY.netflix},no-resolve`,
     `GEOIP,twitter,${POLICY.twitter},no-resolve`,
-    `GEOIP,facebook,${POLICY.media},no-resolve`,
+    `GEOIP,facebook,${POLICY.social},no-resolve`,
     `IP-CIDR6,::/0,${POLICY.manual},no-resolve`,
     geosite('geolocation-!cn', POLICY.manual),
     `MATCH,${POLICY.leak}`
