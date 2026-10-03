@@ -393,7 +393,6 @@ function buildConfig(proxies) {
     spotify: '🎵 Spotify',
     netflix: '🎥 Netflix',
     speedtest: '📡 Speedtest',
-    ads: '🛑 广告拦截',
     leak: '🐟 漏网之鱼'
   };
   function unique(list) {
@@ -560,7 +559,6 @@ function buildConfig(proxies) {
     [POLICY.spotify, [...prefThenAll(['HK', 'TW', 'SG', 'JP', 'US']), POLICY.manual, DIRECT]],
     [POLICY.netflix, [POLICY.manual, ...prefThenAll(['SG', 'JP', 'US', 'HK', 'TW'])]],
     [POLICY.speedtest, [DIRECT, POLICY.manual, POLICY.auto]],
-    [POLICY.ads, [REJECT, DIRECT, POLICY.manual]],
     [POLICY.leak, [POLICY.manual, DIRECT, POLICY.auto]]
   ];
   for (const [name, groupProxies] of featureGroups) addSelectGroup(name, groupProxies);
@@ -729,8 +727,8 @@ function buildConfig(proxies) {
     // 2. 严格广告拦截：广告规则优先于所有服务、直连和代理规则。
     // This intentionally takes precedence over policy-group providers as well;
     // shared ad/telemetry hosts are rejected instead of routed to a service.
-    ...providerRuleSet('ads', POLICY.ads),
-    geosite('category-ads-all', POLICY.ads),
+    ...providerRuleSet('ads', REJECT),
+    geosite('category-ads-all', REJECT),
 
     // 3. 高优先级服务：使用自有聚合文件，GeoSite 保留为兜底。
     ...providerRuleSet('ai', POLICY.ai),
