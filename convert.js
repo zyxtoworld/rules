@@ -982,6 +982,15 @@ function buildConfig(proxies) {
     geosite('apple@cn', DIRECT),
     geosite('icloud@cn', DIRECT),
     geosite('microsoft@cn', DIRECT),
+    // Keep the six Siri/Apple Intelligence hosts ahead of the broad
+    // CN/direct provider. The full Apple provider remains below so Chinese
+    // Apple traffic keeps its existing CN exceptions.
+    `DOMAIN,guzzoni.apple.com,${POLICY.apple}`,
+    `DOMAIN-SUFFIX,smoot.apple.com,${POLICY.apple}`,
+    `DOMAIN,apple-relay.cloudflare.com,${POLICY.apple}`,
+    `DOMAIN,apple-relay.fastly-edge.com,${POLICY.apple}`,
+    `DOMAIN,cp4.cloudflare.com,${POLICY.apple}`,
+    `DOMAIN,apple-relay.apple.com,${POLICY.apple}`,
     geosite('cn', DIRECT),
     ...providerRuleSet('direct', DIRECT),
 
@@ -1025,11 +1034,13 @@ function buildConfig(proxies) {
     ...providerRuleSet('apple', POLICY.apple),
     geosite('icloud', POLICY.apple),
     geosite('apple', POLICY.apple),
+    // Microsoft-specific rules must precede the broader cloud bucket;
+    // otherwise OneDrive and Microsoft endpoints are labeled as generic cloud.
+    ...providerRuleSet('microsoft', POLICY.microsoft),
+    geosite('microsoft', POLICY.microsoft),
     ...providerRuleSet('cloud', POLICY.cloud),
     geosite('dropbox', POLICY.cloud),
     geosite('onedrive', POLICY.cloud),
-    ...providerRuleSet('microsoft', POLICY.microsoft),
-    geosite('microsoft', POLICY.microsoft),
     ...providerRuleSet('finance', POLICY.finance),
     geosite('paypal', POLICY.finance),
     geosite('category-finance', POLICY.finance),
