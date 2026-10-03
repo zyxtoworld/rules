@@ -991,6 +991,11 @@ function buildConfig(proxies) {
     `DOMAIN,apple-relay.fastly-edge.com,${POLICY.apple}`,
     `DOMAIN,cp4.cloudflare.com,${POLICY.apple}`,
     `DOMAIN,apple-relay.apple.com,${POLICY.apple}`,
+    // Put the complete Apple provider before DIRECT so the client-side
+    // Apple group selection (Japan, manual, auto, or DIRECT) is respected.
+    ...providerRuleSet('apple', POLICY.apple),
+    geosite('icloud', POLICY.apple),
+    geosite('apple', POLICY.apple),
     geosite('cn', DIRECT),
     ...providerRuleSet('direct', DIRECT),
 
@@ -1031,9 +1036,6 @@ function buildConfig(proxies) {
     ...providerRuleSet('spotify', POLICY.spotify),
     ...spotifyRules,
     geosite('spotify', POLICY.spotify),
-    ...providerRuleSet('apple', POLICY.apple),
-    geosite('icloud', POLICY.apple),
-    geosite('apple', POLICY.apple),
     // Microsoft-specific rules must precede the broader cloud bucket;
     // otherwise OneDrive and Microsoft endpoints are labeled as generic cloud.
     ...providerRuleSet('microsoft', POLICY.microsoft),
