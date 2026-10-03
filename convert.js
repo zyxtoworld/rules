@@ -500,6 +500,14 @@ function buildConfig(proxies) {
     .map(kind => `RULE-SET,${providerName(name, kind)},${policy}`);
   const providerMatchSet = name => ruleProviderParts[name]
     .map(kind => `RULE-SET,${providerName(name, kind)}`);
+  // Service policy groups are for foreign traffic only. Keep domestic
+  // domains/IPs available to the later CN/DIRECT rules even when a broad or
+  // mixed upstream source contains them.
+  const foreignMatch = (match, policy) =>
+    `AND,((${match}),(NOT,((GEOSITE,cn))),(NOT,((GEOIP,CN)))),${policy}`;
+  const foreignProviderRuleSet = (name, policy) => ruleProviderParts[name]
+    .map(kind => foreignMatch(`RULE-SET,${providerName(name, kind)}`, policy));
+  const foreignGeosite = (name, policy) => foreignMatch(`GEOSITE,${name}`, policy);
 
   // ===== 基础配置 =====
   const config = {
@@ -734,7 +742,8 @@ function buildConfig(proxies) {
   const downloadProcessMatchers = unique(downloadProcessNames).map(name => `(PROCESS-NAME,${name})`).join(',');
   const downloadProcessRule =
     `AND,((OR,(${downloadProcessMatchers})),` +
-    `(OR,((GEOSITE,geolocation-!cn),(NOT,((GEOIP,CN)))))),${POLICY.lowRateDownload}`;
+    `(OR,((GEOSITE,geolocation-!cn),(NOT,((GEOIP,CN))))),` +
+    `(NOT,((GEOSITE,cn)))),${POLICY.lowRateDownload}`;
   const proxyExtraMatchers = providerMatchSet('proxy-extra')
     .map(rule => `(${rule})`)
     .join(',');
@@ -751,19 +760,19 @@ function buildConfig(proxies) {
     geosite('category-ads-all', REJECT),
 
     // 3. 高优先级服务：使用自有聚合文件，GeoSite 保留为兜底。
-    ...providerRuleSet('openai', POLICY.openai),
-    geosite('openai', POLICY.openai),
-    ...providerRuleSet('claude', POLICY.claude),
-    geosite('anthropic', POLICY.claude),
-    ...providerRuleSet('ai', POLICY.ai),
-    geosite('google-gemini', POLICY.ai),
-    geosite('category-ai-chat-!cn', POLICY.ai),
-    ...providerRuleSet('biliintl', POLICY.bilibili),
-    geosite('biliintl', POLICY.bilibili),
+    ...foreignProviderRuleSet('openai', POLICY.openai),
+    foreignGeosite('openai', POLICY.openai),
+    ...foreignProviderRuleSet('claude', POLICY.claude),
+    foreignGeosite('anthropic', POLICY.claude),
+    ...foreignProviderRuleSet('ai', POLICY.ai),
+    foreignGeosite('google-gemini', POLICY.ai),
+    foreignGeosite('category-ai-chat-!cn', POLICY.ai),
+    ...foreignProviderRuleSet('biliintl', POLICY.bilibili),
+    foreignGeosite('biliintl', POLICY.bilibili),
 
     // 4. 加密货币与国内服务：广告已经在前面处理。
-    ...providerRuleSet('crypto', POLICY.crypto),
-    geosite('category-cryptocurrency', POLICY.crypto),
+    ...foreignProviderRuleSet('crypto', POLICY.crypto),
+    foreignGeosite('category-cryptocurrency', POLICY.crypto),
     geosite('google@cn', DIRECT),
     geosite('steam@cn', DIRECT),
     geosite('category-games@cn', DIRECT),
@@ -774,70 +783,67 @@ function buildConfig(proxies) {
     geosite('microsoft@cn', DIRECT),
     // Apple rules are generated into apple.mrs; keep the provider ahead of
     // DIRECT so the client-side Apple group selection is respected.
-    ...providerRuleSet('apple', POLICY.apple),
-    geosite('icloud', POLICY.apple),
-    geosite('apple', POLICY.apple),
+    ...foreignProviderRuleSet('apple', POLICY.apple),
+    foreignGeosite('icloud', POLICY.apple),
+    foreignGeosite('apple', POLICY.apple),
 
     // 5. 下载器和明确下载资源。
-    ...providerRuleSet('download', POLICY.lowRateDownload),
+    ...foreignProviderRuleSet('download', POLICY.lowRateDownload),
     downloadProcessRule,
 
     // 6. 策略组：专用功能优先，开发/社交/云/金融等分类补齐遗漏。
-    ...providerRuleSet('youtube', POLICY.youtube),
-    geosite('youtube', POLICY.youtube),
-    ...providerRuleSet('google', POLICY.google),
-    geosite('google', POLICY.google),
-    geosite('github', POLICY.github),
-    ...providerRuleSet('dev', POLICY.dev),
-    ...providerRuleSet('telegram', POLICY.telegram),
-    geosite('telegram', POLICY.telegram),
-    geosite('twitter', POLICY.twitter),
-    ...providerRuleSet('twitter', POLICY.twitter),
-    ...providerRuleSet('social', POLICY.social),
-    geosite('facebook', POLICY.social),
-    geosite('discord', POLICY.social),
-    geosite('reddit', POLICY.social),
-    geosite('whatsapp', POLICY.social),
-    geosite('instagram', POLICY.social),
-    geosite('linkedin', POLICY.social),
-    geosite('zoom', POLICY.social),
-    geosite('slack', POLICY.social),
-    geosite('category-communication', POLICY.social),
-    ...providerRuleSet('netflix', POLICY.netflix),
-    geosite('netflix', POLICY.netflix),
-    ...providerRuleSet('spotify', POLICY.spotify),
-    geosite('spotify', POLICY.spotify),
-    ...providerRuleSet('disney', POLICY.disney),
-    geosite('disney', POLICY.disney),
+    ...foreignProviderRuleSet('youtube', POLICY.youtube),
+    foreignGeosite('youtube', POLICY.youtube),
+    ...foreignProviderRuleSet('google', POLICY.google),
+    foreignGeosite('google', POLICY.google),
+    foreignGeosite('github', POLICY.github),
+    ...foreignProviderRuleSet('dev', POLICY.dev),
+    ...foreignProviderRuleSet('telegram', POLICY.telegram),
+    foreignGeosite('telegram', POLICY.telegram),
+    foreignGeosite('twitter', POLICY.twitter),
+    ...foreignProviderRuleSet('twitter', POLICY.twitter),
+    ...foreignProviderRuleSet('social', POLICY.social),
+    foreignGeosite('facebook', POLICY.social),
+    foreignGeosite('discord', POLICY.social),
+    foreignGeosite('reddit', POLICY.social),
+    foreignGeosite('whatsapp', POLICY.social),
+    foreignGeosite('instagram', POLICY.social),
+    foreignGeosite('linkedin', POLICY.social),
+    foreignGeosite('zoom', POLICY.social),
+    foreignGeosite('slack', POLICY.social),
+    foreignGeosite('category-communication', POLICY.social),
+    ...foreignProviderRuleSet('netflix', POLICY.netflix),
+    foreignGeosite('netflix', POLICY.netflix),
+    ...foreignProviderRuleSet('spotify', POLICY.spotify),
+    foreignGeosite('spotify', POLICY.spotify),
+    ...foreignProviderRuleSet('disney', POLICY.disney),
+    foreignGeosite('disney', POLICY.disney),
     // Microsoft-specific rules must precede the broader cloud bucket;
     // otherwise OneDrive and Microsoft endpoints are labeled as generic cloud.
-    ...providerRuleSet('onedrive', POLICY.onedrive),
-    geosite('onedrive', POLICY.onedrive),
-    ...providerRuleSet('microsoft', POLICY.microsoft),
-    geosite('microsoft', POLICY.microsoft),
-    // Cloud is a functional group, not a country group. Domestic cloud
-    // sources such as Aliyun Drive, Baidu Netdisk and Weiyun stay here so
-    // the client can choose DIRECT or any proxy node manually.
-    ...providerRuleSet('cloud', POLICY.cloud),
-    geosite('dropbox', POLICY.cloud),
-    ...providerRuleSet('finance', POLICY.finance),
-    geosite('paypal', POLICY.finance),
-    geosite('category-finance', POLICY.finance),
-    ...providerRuleSet('shopping', POLICY.shopping),
-    geosite('amazon', POLICY.shopping),
-    ...providerRuleSet('tiktok', POLICY.tiktok),
-    geosite('tiktok', POLICY.tiktok),
-    ...providerRuleSet('media', POLICY.media),
-    geosite('speedtest', POLICY.speedtest),
+    ...foreignProviderRuleSet('onedrive', POLICY.onedrive),
+    foreignGeosite('onedrive', POLICY.onedrive),
+    ...foreignProviderRuleSet('microsoft', POLICY.microsoft),
+    foreignGeosite('microsoft', POLICY.microsoft),
+    ...foreignProviderRuleSet('cloud', POLICY.cloud),
+    foreignGeosite('dropbox', POLICY.cloud),
+    ...foreignProviderRuleSet('finance', POLICY.finance),
+    foreignGeosite('paypal', POLICY.finance),
+    foreignGeosite('category-finance', POLICY.finance),
+    ...foreignProviderRuleSet('shopping', POLICY.shopping),
+    foreignGeosite('amazon', POLICY.shopping),
+    ...foreignProviderRuleSet('tiktok', POLICY.tiktok),
+    foreignGeosite('tiktok', POLICY.tiktok),
+    ...foreignProviderRuleSet('media', POLICY.media),
+    foreignGeosite('speedtest', POLICY.speedtest),
 
     // Game providers are specific policy-group rules; keep them ahead of the
     // broad proxy supplement so game traffic reaches the Games group.
-    ...providerRuleSet('games', POLICY.games),
+    ...foreignProviderRuleSet('games', POLICY.games),
 
     // Broad service categories also precede the generic direct provider so
     // the client's selected media/game group is respected.
-    geosite('category-games-!cn', POLICY.games),
-    geosite('category-entertainment', POLICY.media),
+    foreignGeosite('category-games-!cn', POLICY.games),
+    foreignGeosite('category-entertainment', POLICY.media),
 
     // Generic CN/direct rules come after specific policy-group providers. Explicit
     // service exceptions above (for example google@cn/apple@cn) stay direct.

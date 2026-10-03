@@ -50,7 +50,10 @@
       {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list","kind":"clash","source":"ConnersHua/RuleGo: Streaming/CN"},
       {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/China/China.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: China"},
       {"url":"https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Bilibili.list","kind":"clash","source":"NobyDa/Script: Bilibili"},
-      {"url":"https://raw.githubusercontent.com/scomper/surge-list/master/cn.list","kind":"clash","source":"scomper/surge-list: China"}
+      {"url":"https://raw.githubusercontent.com/scomper/surge-list/master/cn.list","kind":"clash","source":"scomper/surge-list: China"},
+      {"url":"https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Alipan/Alipan_Domain.yaml","kind":"clash","source":"Accademia/Additional_Rule_For_Clash: Alipan"},
+      {"url":"https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/BaiduNetDisk/BaiduNetDisk_Domain.yaml","kind":"clash","source":"Accademia/Additional_Rule_For_Clash: BaiduNetDisk"},
+      {"url":"https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/WeiYun/WeiYun_Domain.yaml","kind":"clash","source":"Accademia/Additional_Rule_For_Clash: WeiYun"}
     ],
     "ads": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-ads-all"},
@@ -300,9 +303,6 @@
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/LastPass/LastPass.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: LastPass","dropTypes":["PROCESS-NAME"]},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WIX/WIX.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: WIX"},
       {"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/mail.list","kind":"clash","source":"lyq2010/clash-ruleset: Mail"}
-      ,{"url":"https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Alipan/Alipan_Domain.yaml","kind":"clash","source":"Accademia/Additional_Rule_For_Clash: Alipan"}
-      ,{"url":"https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/BaiduNetDisk/BaiduNetDisk_Domain.yaml","kind":"clash","source":"Accademia/Additional_Rule_For_Clash: BaiduNetDisk"}
-      ,{"url":"https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/WeiYun/WeiYun_Domain.yaml","kind":"clash","source":"Accademia/Additional_Rule_For_Clash: WeiYun"}
     ],
     "onedrive": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.list","kind":"list","source":"MetaCubeX/meta-rules-dat: onedrive"},

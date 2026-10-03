@@ -45,7 +45,8 @@ CI 会固定下载官方 Mihomo `v1.19.32` 转换器。构建脚本会校验每�
 - `direct`：MetaCubeX 中国大陆集合、Loyalsoldier direct、RuleGo direct、ACL4SSR、NobyDa 和国内服务补充。
 - `ads`：MetaCubeX、Loyalsoldier、anti-AD、AWAvenue、RuleGo 和 NobyDa 的广告/恶意/跟踪集合，统一去重并按父域名最小化；Sub-Store 规则顺序中广告拦截位于所有服务和直连规则之前，严格以 `REJECT` 优先。
 - `proxy-extra`：Loyalsoldier、RuleGo 和 Rule-for-OCD 的代理补充；`convert.js` 仍负责排除中国域名和中国 IP。
-- `cloud`：按功能而不是国家划分，包含国际云服务以及阿里云盘、百度网盘、腾讯微云等国内网盘；规则位于通用 `cn/direct` 规则之前，客户端仍可手动选择 `DIRECT` 或任意节点。
+- 除 `direct` 和 `ads` 外，服务策略组统一附加 `NOT GEOSITE,cn` 与 `NOT GEOIP,CN`；即使上游混合列表包含国内条目，也会交给后面的国内直连规则处理。
+- `cloud`：只处理非中国大陆云服务域名/IP；阿里云盘、百度网盘、腾讯微云等国内网盘归入 `direct`。
 - `ai`：除上游 AI 规则外，补充 RuleGo、SukkaW 和 Claude/Anthropic 服务域名，并统一走 `🤖 AI服务`。
 - `apple`：除上游 Apple 规则外，合并 RuleGo、NobyDa、SukkaW、LM-Firefly、scomper 等 Apple、Siri、Search、Apple Intelligence 和 Private Cloud Compute 主机；非中国大陆 Apple 流量默认优先走代理，`DIRECT` 仍可手动选择。
 - 服务文件按 AI、OpenAI、Claude、Google、Apple、Microsoft、OneDrive、Disney+、游戏、媒体、社交、开发、云服务、金融和购物等策略组拆分；保留通用 AI/媒体/云服务组作为未单独拆分服务的兜底。

@@ -220,6 +220,21 @@
         "url": "https://raw.githubusercontent.com/scomper/surge-list/master/cn.list",
         "source": "scomper/surge-list: China",
         "rules": 50
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Alipan/Alipan_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: Alipan",
+        "rules": 17
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/BaiduNetDisk/BaiduNetDisk_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: BaiduNetDisk",
+        "rules": 19
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/WeiYun/WeiYun_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: WeiYun",
+        "rules": 7
       }
     ],
     "ads": [
@@ -1353,21 +1368,6 @@
         "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/mail.list",
         "source": "lyq2010/clash-ruleset: Mail",
         "rules": 6
-      },
-      {
-        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Alipan/Alipan_Domain.yaml",
-        "source": "Accademia/Additional_Rule_For_Clash: Alipan",
-        "rules": 17
-      },
-      {
-        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/BaiduNetDisk/BaiduNetDisk_Domain.yaml",
-        "source": "Accademia/Additional_Rule_For_Clash: BaiduNetDisk",
-        "rules": 19
-      },
-      {
-        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/WeiYun/WeiYun_Domain.yaml",
-        "source": "Accademia/Additional_Rule_For_Clash: WeiYun",
-        "rules": 7
       }
     ],
     "onedrive": [
@@ -1575,8 +1575,8 @@
       "group": "direct",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 113378,
-      "bytes": 523382
+      "rules": 113384,
+      "bytes": 523389
     },
     "direct-ipcidr": {
       "path": "rules/mihomo/direct-ipcidr.mrs",
@@ -1903,8 +1903,8 @@
       "group": "cloud",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 517,
-      "bytes": 5097
+      "rules": 475,
+      "bytes": 4708
     },
     "cloud-ipcidr": {
       "path": "rules/mihomo/cloud-ipcidr.mrs",
@@ -2025,9 +2025,9 @@
       ]
     },
     "direct": {
-      "inputRules": 223513,
-      "rules": 113433,
-      "pruned": 110080,
+      "inputRules": 223556,
+      "rules": 113439,
+      "pruned": 110117,
       "outputs": [
         "direct",
         "direct-ipcidr",
@@ -2185,9 +2185,9 @@
       ]
     },
     "cloud": {
-      "inputRules": 536,
-      "rules": 527,
-      "pruned": 9,
+      "inputRules": 493,
+      "rules": 485,
+      "pruned": 8,
       "outputs": [
         "cloud",
         "cloud-ipcidr"
