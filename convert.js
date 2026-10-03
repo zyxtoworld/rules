@@ -373,6 +373,8 @@ function buildConfig(proxies) {
     fallback: '⚠️ 故障转移',
     lowRateDownload: '📥 低倍率下载',
     ai: '🤖 AI服务',
+    openai: '🧠 OpenAI',
+    claude: '🧠 Claude',
     crypto: '💰 加密货币',
     bilibili: '📺 哔哩哔哩国际',
     games: '🎮 游戏平台',
@@ -389,9 +391,11 @@ function buildConfig(proxies) {
     google: '🔍 谷歌服务',
     github: '🐙 GitHub',
     microsoft: 'Ⓜ️ 微软服务',
+    onedrive: '☁️ OneDrive',
     twitter: '🐦 Twitter',
     spotify: '🎵 Spotify',
     netflix: '🎥 Netflix',
+    disney: '🐭 Disney+',
     speedtest: '📡 Speedtest',
     leak: '🐟 漏网之鱼'
   };
@@ -445,6 +449,8 @@ function buildConfig(proxies) {
   const ruleProviderParts = {
     private: ['ipcidr'],
     ai: ['domain', 'classical'],
+    openai: ['domain', 'ipcidr', 'classical'],
+    claude: ['domain'],
     crypto: ['domain', 'classical'],
     biliintl: ['domain'],
     direct: ['domain', 'ipcidr', 'classical'],
@@ -454,12 +460,14 @@ function buildConfig(proxies) {
     google: ['domain', 'ipcidr', 'classical'],
     apple: ['domain', 'ipcidr', 'classical'],
     microsoft: ['domain', 'classical'],
+    onedrive: ['domain', 'classical'],
     games: ['domain', 'classical'],
     youtube: ['domain', 'ipcidr', 'classical'],
     telegram: ['domain', 'ipcidr', 'classical'],
     twitter: ['domain', 'classical'],
     spotify: ['domain', 'ipcidr', 'classical'],
     netflix: ['domain', 'classical'],
+    disney: ['domain'],
     tiktok: ['domain'],
     media: ['domain', 'ipcidr', 'classical'],
     social: ['domain', 'ipcidr', 'classical'],
@@ -540,6 +548,8 @@ function buildConfig(proxies) {
   // 策略组（偏好地区靠前 + 全部地区兜底）
   const featureGroups = [
     [POLICY.ai, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'DE', 'KR'])]],
+    [POLICY.openai, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB'])]],
+    [POLICY.claude, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB'])]],
     [POLICY.crypto, [POLICY.manual, POLICY.auto, ...allRegionGroups]],
     [POLICY.bilibili, [DIRECT, POLICY.manual, ...prefThenAll(['HK', 'TW'])]],
     [POLICY.games, [DIRECT, POLICY.manual, ...prefThenAll(['HK', 'JP', 'SG', 'US'])]],
@@ -558,9 +568,11 @@ function buildConfig(proxies) {
     [POLICY.google, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
     [POLICY.github, [POLICY.manual, ...prefThenAll(['JP', 'SG', 'US', 'HK', 'TW'])]],
     [POLICY.microsoft, [DIRECT, POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
+    [POLICY.onedrive, [DIRECT, POLICY.manual, ...prefThenAll(['HK', 'JP', 'US'])]],
     [POLICY.twitter, [POLICY.manual, ...prefThenAll(['US', 'SG', 'JP', 'HK'])]],
     [POLICY.spotify, [...prefThenAll(['HK', 'TW', 'SG', 'JP', 'US']), POLICY.manual, DIRECT]],
     [POLICY.netflix, [POLICY.manual, ...prefThenAll(['SG', 'JP', 'US', 'HK', 'TW'])]],
+    [POLICY.disney, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
     [POLICY.speedtest, [DIRECT, POLICY.manual, POLICY.auto]],
     [POLICY.leak, [POLICY.manual, DIRECT, POLICY.auto]]
   ];
@@ -734,10 +746,12 @@ function buildConfig(proxies) {
     geosite('category-ads-all', REJECT),
 
     // 3. 高优先级服务：使用自有聚合文件，GeoSite 保留为兜底。
+    ...providerRuleSet('openai', POLICY.openai),
+    geosite('openai', POLICY.openai),
+    ...providerRuleSet('claude', POLICY.claude),
+    geosite('anthropic', POLICY.claude),
     ...providerRuleSet('ai', POLICY.ai),
     geosite('google-gemini', POLICY.ai),
-    geosite('openai', POLICY.ai),
-    geosite('anthropic', POLICY.ai),
     geosite('category-ai-chat-!cn', POLICY.ai),
     ...providerRuleSet('biliintl', POLICY.bilibili),
     geosite('biliintl', POLICY.bilibili),
@@ -788,13 +802,16 @@ function buildConfig(proxies) {
     geosite('netflix', POLICY.netflix),
     ...providerRuleSet('spotify', POLICY.spotify),
     geosite('spotify', POLICY.spotify),
+    ...providerRuleSet('disney', POLICY.disney),
+    geosite('disney', POLICY.disney),
     // Microsoft-specific rules must precede the broader cloud bucket;
     // otherwise OneDrive and Microsoft endpoints are labeled as generic cloud.
+    ...providerRuleSet('onedrive', POLICY.onedrive),
+    geosite('onedrive', POLICY.onedrive),
     ...providerRuleSet('microsoft', POLICY.microsoft),
     geosite('microsoft', POLICY.microsoft),
     ...providerRuleSet('cloud', POLICY.cloud),
     geosite('dropbox', POLICY.cloud),
-    geosite('onedrive', POLICY.cloud),
     ...providerRuleSet('finance', POLICY.finance),
     geosite('paypal', POLICY.finance),
     geosite('category-finance', POLICY.finance),

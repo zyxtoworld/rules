@@ -3,8 +3,6 @@
     "ai": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-gemini.list","kind":"list","source":"MetaCubeX/meta-rules-dat: google-gemini"},
       {"url":"https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-deepmind","kind":"list","source":"v2fly/domain-list-community: google-deepmind"},
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.list","kind":"list","source":"MetaCubeX/meta-rules-dat: openai"},
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.list","kind":"list","source":"MetaCubeX/meta-rules-dat: anthropic"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-chat-!cn.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-ai-chat-!cn"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Gemini"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bytedance-ai-!cn.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bytedance-ai-!cn"},
@@ -12,7 +10,17 @@
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Civitai/Civitai.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Civitai"}
       ,{"url":"https://ruleset.skk.moe/Clash/non_ip/ai.txt","kind":"clash","source":"SukkaW/Surge: ai","dropRules":["DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"]}
       ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list","kind":"clash","source":"ConnersHua/RuleGo: AI"}
-      ,{"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/claude.list","kind":"clash","source":"lyq2010/clash-ruleset: Claude"}
+    ],
+    "openai": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.list","kind":"list","source":"MetaCubeX/meta-rules-dat: openai"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: OpenAI"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/GenAI/OpenAI.list","kind":"clash","source":"ConnersHua/RuleGo: GenAI/OpenAI"}
+    ],
+    "claude": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.list","kind":"list","source":"MetaCubeX/meta-rules-dat: anthropic"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Claude"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/GenAI/Anthropic.list","kind":"clash","source":"ConnersHua/RuleGo: GenAI/Anthropic"},
+      {"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/claude.list","kind":"clash","source":"lyq2010/clash-ruleset: Claude"}
     ],
     "private": [],
     "crypto": [
@@ -103,7 +111,6 @@
     "microsoft": [
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Microsoft"},
       {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list","kind":"clash","source":"LM-Firefly/Rules: Microsoft"},
-      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/OneDrive.list","kind":"clash","source":"ConnersHua/RuleGo: Microsoft/OneDrive"},
       {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/Teams.list","kind":"clash","source":"ConnersHua/RuleGo: Microsoft/Teams"}
     ],
     "games": [
@@ -154,7 +161,6 @@
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.list","kind":"list","source":"MetaCubeX/meta-rules-dat: tiktok"}
     ],
     "media": [
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disney.list","kind":"list","source":"MetaCubeX/meta-rules-dat: disney"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/hulu.list","kind":"list","source":"MetaCubeX/meta-rules-dat: hulu"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/primevideo.list","kind":"list","source":"MetaCubeX/meta-rules-dat: primevideo"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitch.list","kind":"list","source":"MetaCubeX/meta-rules-dat: twitch"},
@@ -196,12 +202,16 @@
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Voxmedia/Voxmedia.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Voxmedia"}
       ,{"url":"https://ruleset.skk.moe/Clash/non_ip/stream.txt","kind":"clash","source":"SukkaW/Surge: stream","dropRules":["DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"]},
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list","kind":"clash","source":"ACL4SSR/ACL4SSR: Netflix"},
-      {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DisneyPlus.list","kind":"clash","source":"ACL4SSR/ACL4SSR: DisneyPlus"},
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list","kind":"clash","source":"ACL4SSR/ACL4SSR: ProxyMedia"},
       {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list","kind":"clash","source":"LM-Firefly/Rules: GlobalMedia"},
       {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list","kind":"clash","source":"ConnersHua/RuleGo: Streaming/!CN"},
       {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/AsianMedia/AsianMedia.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: AsianMedia"},
       {"url":"https://raw.githubusercontent.com/scomper/surge-list/master/video.list","kind":"clash","source":"scomper/surge-list: Video"}
+    ],
+    "disney": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disney.list","kind":"list","source":"MetaCubeX/meta-rules-dat: disney"},
+      {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DisneyPlus.list","kind":"clash","source":"ACL4SSR/ACL4SSR: DisneyPlus"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/Video/Disney+.list","kind":"clash","source":"ConnersHua/RuleGo: Disney+"}
     ],
     "social": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/facebook.list","kind":"list","source":"MetaCubeX/meta-rules-dat: facebook"},
@@ -253,7 +263,6 @@
     ],
     "cloud": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/dropbox.list","kind":"list","source":"MetaCubeX/meta-rules-dat: dropbox"},
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.list","kind":"list","source":"MetaCubeX/meta-rules-dat: onedrive"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/aws.list","kind":"list","source":"MetaCubeX/meta-rules-dat: aws"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/azure.list","kind":"list","source":"MetaCubeX/meta-rules-dat: azure"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare.list","kind":"list","source":"MetaCubeX/meta-rules-dat: cloudflare"},
@@ -274,6 +283,11 @@
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/LastPass/LastPass.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: LastPass","dropTypes":["PROCESS-NAME"]},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WIX/WIX.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: WIX"},
       {"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/mail.list","kind":"clash","source":"lyq2010/clash-ruleset: Mail"}
+    ],
+    "onedrive": [
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.list","kind":"list","source":"MetaCubeX/meta-rules-dat: onedrive"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: OneDrive"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/OneDrive.list","kind":"clash","source":"ConnersHua/RuleGo: Microsoft/OneDrive"}
     ],
     "finance": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/paypal.list","kind":"list","source":"MetaCubeX/meta-rules-dat: paypal"},

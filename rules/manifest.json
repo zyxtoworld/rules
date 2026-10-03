@@ -13,16 +13,6 @@
         "rules": 46
       },
       {
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.list",
-        "source": "MetaCubeX/meta-rules-dat: openai",
-        "rules": 22
-      },
-      {
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.list",
-        "source": "MetaCubeX/meta-rules-dat: anthropic",
-        "rules": 8
-      },
-      {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-chat-!cn.list",
         "source": "MetaCubeX/meta-rules-dat: category-ai-chat-!cn",
         "rules": 187
@@ -58,13 +48,47 @@
         "rules": 74
       },
       {
-        "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/claude.list",
-        "source": "lyq2010/clash-ruleset: Claude",
+        "source": "built-in: Gemini mobile and API dependencies",
+        "rules": 4
+      }
+    ],
+    "openai": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.list",
+        "source": "MetaCubeX/meta-rules-dat: openai",
+        "rules": 22
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml",
+        "source": "blackmatrix7/ios_rule_script: OpenAI",
+        "rules": 35
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/GenAI/OpenAI.list",
+        "source": "ConnersHua/RuleGo: GenAI/OpenAI",
+        "rules": 13
+      }
+    ],
+    "claude": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.list",
+        "source": "MetaCubeX/meta-rules-dat: anthropic",
         "rules": 8
       },
       {
-        "source": "built-in: Gemini mobile and API dependencies",
-        "rules": 4
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml",
+        "source": "blackmatrix7/ios_rule_script: Claude",
+        "rules": 3
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/GenAI/Anthropic.list",
+        "source": "ConnersHua/RuleGo: GenAI/Anthropic",
+        "rules": 11
+      },
+      {
+        "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/claude.list",
+        "source": "lyq2010/clash-ruleset: Claude",
+        "rules": 8
       }
     ],
     "private": [
@@ -466,11 +490,6 @@
         "rules": 669
       },
       {
-        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/OneDrive.list",
-        "source": "ConnersHua/RuleGo: Microsoft/OneDrive",
-        "rules": 5
-      },
-      {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/Teams.list",
         "source": "ConnersHua/RuleGo: Microsoft/Teams",
         "rules": 4
@@ -672,11 +691,6 @@
       }
     ],
     "media": [
-      {
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disney.list",
-        "source": "MetaCubeX/meta-rules-dat: disney",
-        "rules": 224
-      },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/hulu.list",
         "source": "MetaCubeX/meta-rules-dat: hulu",
@@ -883,11 +897,6 @@
         "rules": 40
       },
       {
-        "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DisneyPlus.list",
-        "source": "ACL4SSR/ACL4SSR: DisneyPlus",
-        "rules": 20
-      },
-      {
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list",
         "source": "ACL4SSR/ACL4SSR: ProxyMedia",
         "rules": 371
@@ -911,6 +920,23 @@
         "url": "https://raw.githubusercontent.com/scomper/surge-list/master/video.list",
         "source": "scomper/surge-list: Video",
         "rules": 61
+      }
+    ],
+    "disney": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disney.list",
+        "source": "MetaCubeX/meta-rules-dat: disney",
+        "rules": 224
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DisneyPlus.list",
+        "source": "ACL4SSR/ACL4SSR: DisneyPlus",
+        "rules": 20
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/Video/Disney+.list",
+        "source": "ConnersHua/RuleGo: Disney+",
+        "rules": 6
       }
     ],
     "social": [
@@ -1144,11 +1170,6 @@
         "rules": 16
       },
       {
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.list",
-        "source": "MetaCubeX/meta-rules-dat: onedrive",
-        "rules": 16
-      },
-      {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/aws.list",
         "source": "MetaCubeX/meta-rules-dat: aws",
         "rules": 77
@@ -1247,6 +1268,23 @@
         "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/mail.list",
         "source": "lyq2010/clash-ruleset: Mail",
         "rules": 6
+      }
+    ],
+    "onedrive": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.list",
+        "source": "MetaCubeX/meta-rules-dat: onedrive",
+        "rules": 16
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml",
+        "source": "blackmatrix7/ios_rule_script: OneDrive",
+        "rules": 18
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/OneDrive.list",
+        "source": "ConnersHua/RuleGo: Microsoft/OneDrive",
+        "rules": 5
       }
     ],
     "finance": [
@@ -1367,6 +1405,38 @@
       "format": "yaml",
       "rules": 9,
       "bytes": 400
+    },
+    "openai": {
+      "path": "rules/mihomo/openai.mrs",
+      "group": "openai",
+      "behavior": "domain",
+      "format": "mrs",
+      "rules": 39,
+      "bytes": 584
+    },
+    "openai-ipcidr": {
+      "path": "rules/mihomo/openai-ipcidr.mrs",
+      "group": "openai",
+      "behavior": "ipcidr",
+      "format": "mrs",
+      "rules": 2,
+      "bytes": 53
+    },
+    "openai-classical": {
+      "path": "rules/mihomo/openai-classical.yaml",
+      "group": "openai",
+      "behavior": "classical",
+      "format": "yaml",
+      "rules": 4,
+      "bytes": 180
+    },
+    "claude": {
+      "path": "rules/mihomo/claude.mrs",
+      "group": "claude",
+      "behavior": "domain",
+      "format": "mrs",
+      "rules": 12,
+      "bytes": 246
     },
     "private-ipcidr": {
       "path": "rules/mihomo/private-ipcidr.mrs",
@@ -1525,8 +1595,8 @@
       "group": "microsoft",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 669,
-      "bytes": 6693
+      "rules": 668,
+      "bytes": 6685
     },
     "microsoft-classical": {
       "path": "rules/mihomo/microsoft-classical.yaml",
@@ -1669,8 +1739,8 @@
       "group": "media",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1628,
-      "bytes": 14750
+      "rules": 1612,
+      "bytes": 14632
     },
     "media-ipcidr": {
       "path": "rules/mihomo/media-ipcidr.mrs",
@@ -1687,6 +1757,14 @@
       "format": "yaml",
       "rules": 66,
       "bytes": 2397
+    },
+    "disney": {
+      "path": "rules/mihomo/disney.mrs",
+      "group": "disney",
+      "behavior": "domain",
+      "format": "mrs",
+      "rules": 233,
+      "bytes": 2553
     },
     "social": {
       "path": "rules/mihomo/social.mrs",
@@ -1725,8 +1803,8 @@
       "group": "cloud",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 491,
-      "bytes": 4894
+      "rules": 475,
+      "bytes": 4708
     },
     "cloud-ipcidr": {
       "path": "rules/mihomo/cloud-ipcidr.mrs",
@@ -1735,6 +1813,22 @@
       "format": "mrs",
       "rules": 10,
       "bytes": 123
+    },
+    "onedrive": {
+      "path": "rules/mihomo/onedrive.mrs",
+      "group": "onedrive",
+      "behavior": "domain",
+      "format": "mrs",
+      "rules": 16,
+      "bytes": 280
+    },
+    "onedrive-classical": {
+      "path": "rules/mihomo/onedrive-classical.yaml",
+      "group": "onedrive",
+      "behavior": "classical",
+      "format": "yaml",
+      "rules": 5,
+      "bytes": 220
     },
     "finance": {
       "path": "rules/mihomo/finance.mrs",
@@ -1779,12 +1873,30 @@
   },
   "groups": {
     "ai": {
-      "inputRules": 468,
+      "inputRules": 430,
       "rules": 224,
-      "pruned": 244,
+      "pruned": 206,
       "outputs": [
         "ai",
         "ai-classical"
+      ]
+    },
+    "openai": {
+      "inputRules": 70,
+      "rules": 45,
+      "pruned": 25,
+      "outputs": [
+        "openai",
+        "openai-ipcidr",
+        "openai-classical"
+      ]
+    },
+    "claude": {
+      "inputRules": 30,
+      "rules": 12,
+      "pruned": 18,
+      "outputs": [
+        "claude"
       ]
     },
     "private": {
@@ -1863,9 +1975,9 @@
       ]
     },
     "microsoft": {
-      "inputRules": 1348,
-      "rules": 675,
-      "pruned": 673,
+      "inputRules": 1343,
+      "rules": 674,
+      "pruned": 669,
       "outputs": [
         "microsoft",
         "microsoft-classical"
@@ -1937,13 +2049,21 @@
       ]
     },
     "media": {
-      "inputRules": 3598,
-      "rules": 2217,
-      "pruned": 1381,
+      "inputRules": 3354,
+      "rules": 2201,
+      "pruned": 1153,
       "outputs": [
         "media",
         "media-ipcidr",
         "media-classical"
+      ]
+    },
+    "disney": {
+      "inputRules": 250,
+      "rules": 233,
+      "pruned": 17,
+      "outputs": [
+        "disney"
       ]
     },
     "social": {
@@ -1965,12 +2085,21 @@
       ]
     },
     "cloud": {
-      "inputRules": 509,
-      "rules": 501,
+      "inputRules": 493,
+      "rules": 485,
       "pruned": 8,
       "outputs": [
         "cloud",
         "cloud-ipcidr"
+      ]
+    },
+    "onedrive": {
+      "inputRules": 39,
+      "rules": 21,
+      "pruned": 18,
+      "outputs": [
+        "onedrive",
+        "onedrive-classical"
       ]
     },
     "finance": {
