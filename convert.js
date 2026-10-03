@@ -8,7 +8,7 @@
 //      覆盖 ISO 3166-1 全部 250 个国家/地区，有节点才建组。
 //   2. 旗帜纠正：文字判定优先于旗帜，机场标错的旗帜（如把台湾标成🇨🇳）会被
 //      自动改成正确旗帜后再分组；无旗节点自动补旗。
-//   3. 功能分组智能化：AI/YouTube/Netflix/Telegram 等，偏好地区靠前 +
+//   3. 策略组智能化：AI/YouTube/Netflix/Telegram 等，偏好地区靠前 +
 //      其余全部地区兜底，可选全地区。
 //   4. 规则运行时使用自有 zyxtoworld/rules 聚合 provider；MetaCubeX、blackmatrix7
 //      和 Loyalsoldier 只在规则仓库构建阶段拉取，客户端不再分别访问上游。
@@ -421,7 +421,7 @@ function buildConfig(proxies) {
     ? [...lowRateProxyNames, POLICY.manual, POLICY.auto]
     : [POLICY.manual, POLICY.auto];
 
-  // 功能组地区选择：偏好地区靠前 + 其余全部地区兜底（去重）
+  // 策略组地区选择：偏好地区靠前 + 其余全部地区兜底（去重）
   function prefThenAll(prefIso) {
     const pref = prefIso.map(regionLabel).filter(l => regionMap[l]);
     const rest = allRegionGroups.filter(l => !pref.includes(l));
@@ -535,7 +535,7 @@ function buildConfig(proxies) {
   addHealthCheckGroup(POLICY.fallback, 'fallback', failoverCandidates);
   addHealthCheckGroup(POLICY.lowRateDownload, 'fallback', lowRateDownloadCandidates, { lazy: true });
 
-  // 功能组（偏好地区靠前 + 全部地区兜底）
+  // 策略组（偏好地区靠前 + 全部地区兜底）
   const featureGroups = [
     [POLICY.ai, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'DE', 'KR'])]],
     [POLICY.crypto, [POLICY.manual, POLICY.auto, ...allRegionGroups]],
@@ -727,7 +727,7 @@ function buildConfig(proxies) {
     ...providerRuleSet('private', DIRECT),
 
     // 2. 严格广告拦截：广告规则优先于所有服务、直连和代理规则。
-    // This intentionally takes precedence over service providers as well;
+    // This intentionally takes precedence over policy-group providers as well;
     // shared ad/telemetry hosts are rejected instead of routed to a service.
     ...providerRuleSet('ads', POLICY.ads),
     geosite('category-ads-all', POLICY.ads),
@@ -758,15 +758,11 @@ function buildConfig(proxies) {
     geosite('icloud', POLICY.apple),
     geosite('apple', POLICY.apple),
 
-    // Broad CN/direct rules stay after strict ad blocking.
-    geosite('cn', DIRECT),
-    ...providerRuleSet('direct', DIRECT),
-
     // 5. 下载器和明确下载资源。
     ...providerRuleSet('download', POLICY.lowRateDownload),
     downloadProcessRule,
 
-    // 6. 服务分类：专用服务优先，开发/社交/云/金融等分类补齐遗漏。
+    // 6. 策略组：专用功能优先，开发/社交/云/金融等分类补齐遗漏。
     ...providerRuleSet('youtube', POLICY.youtube),
     geosite('youtube', POLICY.youtube),
     ...providerRuleSet('google', POLICY.google),
@@ -808,18 +804,24 @@ function buildConfig(proxies) {
     ...providerRuleSet('media', POLICY.media),
     geosite('speedtest', POLICY.speedtest),
 
-    // Game providers are specific service rules; keep them ahead of the
+    // Game providers are specific policy-group rules; keep them ahead of the
     // broad proxy supplement so game traffic reaches the Games group.
     ...providerRuleSet('games', POLICY.games),
+
+    // Broad service categories also precede the generic direct provider so
+    // the client's selected media/game group is respected.
+    geosite('category-games-!cn', POLICY.games),
+    geosite('category-entertainment', POLICY.media),
+
+    // Generic CN/direct rules come after specific policy-group providers. Explicit
+    // service exceptions above (for example google@cn/apple@cn) stay direct.
+    geosite('cn', DIRECT),
+    ...providerRuleSet('direct', DIRECT),
 
     // 7. 自有代理补充集：排除 MetaCubeX 中国域名和中国 IP。
     `AND,((RULE-SET,proxy-extra),(NOT,((GEOSITE,cn))),(NOT,((GEOIP,CN)))),${POLICY.manual}`,
 
-    // 8. 游戏/媒体宽分类必须在所有服务特例之后。
-    geosite('category-games-!cn', POLICY.games),
-    geosite('category-entertainment', POLICY.media),
-
-    // 9. IP 与最终兜底。
+    // 8. IP 与最终兜底。
     `GEOIP,CN,${DIRECT}`,
     `GEOIP,telegram,${POLICY.telegram},no-resolve`,
     `GEOIP,google,${POLICY.google},no-resolve`,
