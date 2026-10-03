@@ -19,6 +19,14 @@ const fixedMrsPartitions = {
   ads: { domain: 2 },
 };
 const builtInRules = {
+  // Community and MetaCubeX reports for Gemini mobile/API dependencies that
+  // are not yet present in the upstream google-gemini list.
+  ai: [
+    'DOMAIN-SUFFIX,g.ai',
+    'DOMAIN-SUFFIX,c.gle',
+    'DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com',
+    'DOMAIN,footprints-pa.googleapis.com',
+  ],
   // Apple lists these hosts for Apple Intelligence, Siri, Search and Private
   // Cloud Compute. Keep them in the Apple provider so foreign Apple ID and
   // Siri traffic follows the Apple service policy.
@@ -30,6 +38,10 @@ const builtInRules = {
     'DOMAIN,cp4.cloudflare.com',
     'DOMAIN,apple-relay.apple.com',
   ],
+};
+const builtInRuleSourceNames = {
+  ai: 'built-in: Gemini mobile and API dependencies',
+  apple: 'built-in: Apple Intelligence and Siri hosts',
 };
 const maxMrsBytes = 1_400_000;
 
@@ -258,7 +270,7 @@ try {
     const extraRules = builtInRules[group] || [];
     if (extraRules.length) {
       collected.push(...extraRules);
-      metadata.sources[group].push({ source: 'built-in: Apple Intelligence and Siri hosts', rules: extraRules.length });
+      metadata.sources[group].push({ source: builtInRuleSourceNames[group] || `built-in: ${group}`, rules: extraRules.length });
     }
 
     const rules = minimizeRules(collected);

@@ -41,6 +41,10 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Civitai/Civitai.yaml",
         "source": "blackmatrix7/ios_rule_script: Civitai",
         "rules": 1
+      },
+      {
+        "source": "built-in: Gemini mobile and API dependencies",
+        "rules": 4
       }
     ],
     "crypto": [
@@ -898,8 +902,8 @@
       "group": "ai",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 191,
-      "bytes": 1981
+      "rules": 195,
+      "bytes": 2027
     },
     "ai-classical": {
       "path": "rules/mihomo/ai-classical.yaml",
@@ -1248,7 +1252,7 @@
   },
   "groups": {
     "ai": {
-      "rules": 194,
+      "rules": 198,
       "outputs": [
         "ai",
         "ai-classical"
