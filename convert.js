@@ -399,7 +399,10 @@ function buildConfig(proxies) {
     return [...new Set(list.filter(Boolean))];
   }
 
-  const autoCandidates = allRegionGroups.length ? allRegionGroups : (allProxyNames.length ? allProxyNames : [DIRECT]);
+  // Let url-test measure raw nodes directly. Region groups remain useful for
+  // manual selection, but nesting select groups inside url-test makes health
+  // checks opaque and less predictable.
+  const autoCandidates = allProxyNames.length ? allProxyNames : [DIRECT];
   const failoverCandidates = allProxyNames.length ? allProxyNames : [DIRECT];
 
   function rateOfName(name) {
@@ -529,9 +532,9 @@ function buildConfig(proxies) {
     addGroup({ name, type, url: healthCheckUrl, interval: healthCheckInterval, ...(extra || {}), proxies });
   }
 
-  addHealthCheckGroup(POLICY.manual, 'select', [POLICY.auto, POLICY.fallback, ...allProxyNames]);
-  addHealthCheckGroup(POLICY.auto, 'url-test', autoCandidates, { tolerance: 50, lazy: false });
-  addHealthCheckGroup(POLICY.fallback, 'fallback', failoverCandidates);
+  addSelectGroup(POLICY.manual, [POLICY.auto, POLICY.fallback, ...allProxyNames]);
+  addHealthCheckGroup(POLICY.auto, 'url-test', autoCandidates, { tolerance: 50, lazy: false, hidden: true });
+  addHealthCheckGroup(POLICY.fallback, 'fallback', failoverCandidates, { hidden: true });
   addHealthCheckGroup(POLICY.lowRateDownload, 'fallback', lowRateDownloadCandidates, { lazy: true });
 
   // 策略组（偏好地区靠前 + 全部地区兜底）
