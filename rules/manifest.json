@@ -48,6 +48,16 @@
         "rules": 74
       },
       {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Copilot/Copilot_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: Copilot",
+        "rules": 8
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Grok/Grok_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: Grok",
+        "rules": 4
+      },
+      {
         "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-google-gemini.json",
         "source": "reonokiy/sing-box-ruleset: google-gemini",
         "rules": 11
@@ -286,6 +296,11 @@
         "rules": 16
       },
       {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/MacAppUpgrade/MacAppUpgrade_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: MacAppUpgrade",
+        "rules": 0
+      },
+      {
         "source": "built-in: download CDN domains",
         "rules": 54
       }
@@ -479,6 +494,11 @@
         "rules": 2
       },
       {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/AppleAI/AppleAI_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: AppleAI",
+        "rules": 2
+      },
+      {
         "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Apple.list",
         "source": "NobyDa/Script: Apple",
         "rules": 44
@@ -523,6 +543,11 @@
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/Teams.list",
         "source": "ConnersHua/RuleGo: Microsoft/Teams",
         "rules": 4
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/MicrosoftAPPs/MicrosoftAPPs.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: MicrosoftAPPs",
+        "rules": 63
       }
     ],
     "games": [
@@ -950,6 +975,11 @@
         "url": "https://raw.githubusercontent.com/scomper/surge-list/master/video.list",
         "source": "scomper/surge-list: Video",
         "rules": 61
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Pornhub/Pornhub_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: Pornhub",
+        "rules": 19
       }
     ],
     "disney": [
@@ -1114,6 +1144,16 @@
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/ByteDance/ByteDance.list",
         "source": "peiyingyao/Rule-for-OCD: ByteDance",
         "rules": 4
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Signal/Signal_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: Signal",
+        "rules": 2
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Kwai/Kwai_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: Kwai",
+        "rules": 12
       }
     ],
     "dev": [
@@ -1191,6 +1231,21 @@
         "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/docker.list",
         "source": "lyq2010/clash-ruleset: Docker",
         "rules": 10
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Parsec/Parsec_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: Parsec",
+        "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/RustDesk/RustDesk_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: RustDesk",
+        "rules": 0
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/WaybackMachine/WaybackMachine_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: WaybackMachine",
+        "rules": 1
       }
     ],
     "cloud": [
@@ -1298,6 +1353,21 @@
         "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/mail.list",
         "source": "lyq2010/clash-ruleset: Mail",
         "rules": 6
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Alipan/Alipan_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: Alipan",
+        "rules": 17
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/BaiduNetDisk/BaiduNetDisk_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: BaiduNetDisk",
+        "rules": 19
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/WeiYun/WeiYun_Domain.yaml",
+        "source": "Accademia/Additional_Rule_For_Clash: WeiYun",
+        "rules": 7
       }
     ],
     "onedrive": [
@@ -1425,8 +1495,8 @@
       "group": "ai",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 216,
-      "bytes": 2214
+      "rules": 225,
+      "bytes": 2332
     },
     "ai-classical": {
       "path": "rules/mihomo/ai-classical.yaml",
@@ -1633,8 +1703,8 @@
       "group": "microsoft",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 6,
-      "bytes": 251
+      "rules": 62,
+      "bytes": 2306
     },
     "games": {
       "path": "rules/mihomo/games.mrs",
@@ -1769,8 +1839,8 @@
       "group": "media",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1612,
-      "bytes": 14632
+      "rules": 1623,
+      "bytes": 14714
     },
     "media-ipcidr": {
       "path": "rules/mihomo/media-ipcidr.mrs",
@@ -1801,8 +1871,8 @@
       "group": "social",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 798,
-      "bytes": 6929
+      "rules": 810,
+      "bytes": 7032
     },
     "social-ipcidr": {
       "path": "rules/mihomo/social-ipcidr.mrs",
@@ -1825,16 +1895,16 @@
       "group": "dev",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1243,
-      "bytes": 11807
+      "rules": 1245,
+      "bytes": 11816
     },
     "cloud": {
       "path": "rules/mihomo/cloud.mrs",
       "group": "cloud",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 475,
-      "bytes": 4708
+      "rules": 517,
+      "bytes": 5097
     },
     "cloud-ipcidr": {
       "path": "rules/mihomo/cloud-ipcidr.mrs",
@@ -1903,9 +1973,9 @@
   },
   "groups": {
     "ai": {
-      "inputRules": 441,
-      "rules": 225,
-      "pruned": 216,
+      "inputRules": 453,
+      "rules": 234,
+      "pruned": 219,
       "outputs": [
         "ai",
         "ai-classical"
@@ -1995,9 +2065,9 @@
       ]
     },
     "apple": {
-      "inputRules": 3897,
+      "inputRules": 3899,
       "rules": 2800,
-      "pruned": 1097,
+      "pruned": 1099,
       "outputs": [
         "apple",
         "apple-ipcidr",
@@ -2005,9 +2075,9 @@
       ]
     },
     "microsoft": {
-      "inputRules": 1419,
-      "rules": 678,
-      "pruned": 741,
+      "inputRules": 1482,
+      "rules": 734,
+      "pruned": 748,
       "outputs": [
         "microsoft",
         "microsoft-classical"
@@ -2079,9 +2149,9 @@
       ]
     },
     "media": {
-      "inputRules": 3354,
-      "rules": 2201,
-      "pruned": 1153,
+      "inputRules": 3373,
+      "rules": 2212,
+      "pruned": 1161,
       "outputs": [
         "media",
         "media-ipcidr",
@@ -2097,9 +2167,9 @@
       ]
     },
     "social": {
-      "inputRules": 1002,
-      "rules": 873,
-      "pruned": 129,
+      "inputRules": 1016,
+      "rules": 885,
+      "pruned": 131,
       "outputs": [
         "social",
         "social-ipcidr",
@@ -2107,17 +2177,17 @@
       ]
     },
     "dev": {
-      "inputRules": 1343,
-      "rules": 1243,
+      "inputRules": 1345,
+      "rules": 1245,
       "pruned": 100,
       "outputs": [
         "dev"
       ]
     },
     "cloud": {
-      "inputRules": 493,
-      "rules": 485,
-      "pruned": 8,
+      "inputRules": 536,
+      "rules": 527,
+      "pruned": 9,
       "outputs": [
         "cloud",
         "cloud-ipcidr"

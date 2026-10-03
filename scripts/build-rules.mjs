@@ -271,8 +271,14 @@ function parseRuleLine(rawLine, dropTypes = [], dropRules = []) {
     if (match) return [`DOMAIN-SUFFIX,${match[1]}`];
   }
 
-  if (line.startsWith('+.')) return [`DOMAIN-SUFFIX,${line.slice(2)}`];
-  if (line.startsWith('.')) return [`DOMAIN-SUFFIX,${line.slice(1)}`];
+  if (line.startsWith('+.')) {
+    const suffix = line.slice(2);
+    return suffix.includes('*') ? [] : [`DOMAIN-SUFFIX,${suffix}`];
+  }
+  if (line.startsWith('.')) {
+    const suffix = line.slice(1);
+    return suffix.includes('*') ? [] : [`DOMAIN-SUFFIX,${suffix}`];
+  }
   if (/^[A-Za-z0-9*_-]+(\.[A-Za-z0-9*_-]+)+$/.test(line)) return [`DOMAIN,${line}`];
 
   const pieces = line.split(',').map(part => part.trim());
