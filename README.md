@@ -1,4 +1,4 @@
-# zyxtoworld/rules
+# rules
 
 为 Mihomo 兼容客户端整理的公共规则仓库。规则来源于 MetaCubeX/meta-rules-dat、blackmatrix7/ios_rule_script 和 Loyalsoldier/clash-rules，经过统一解析、去重和后缀最小化后生成。
 
