@@ -67,6 +67,12 @@
         "rules": 4
       }
     ],
+    "private": [
+      {
+        "source": "built-in: private network ranges",
+        "rules": 12
+      }
+    ],
     "crypto": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bybit.list",
@@ -97,6 +103,10 @@
         "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/Binance.list",
         "source": "lyq2010/clash-ruleset: Binance",
         "rules": 22
+      },
+      {
+        "source": "built-in: cryptocurrency service domains",
+        "rules": 20
       }
     ],
     "biliintl": [
@@ -230,6 +240,10 @@
         "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Download.list",
         "source": "NobyDa/Script: Download",
         "rules": 16
+      },
+      {
+        "source": "built-in: download CDN domains",
+        "rules": 54
       }
     ],
     "google": [
@@ -564,6 +578,10 @@
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/Video/YouTube.list",
         "source": "ConnersHua/RuleGo: YouTube",
         "rules": 12
+      },
+      {
+        "source": "built-in: YouTube IP ranges",
+        "rules": 3
       }
     ],
     "telegram": [
@@ -591,6 +609,10 @@
         "url": "https://raw.githubusercontent.com/scomper/surge-list/master/telegram.list",
         "source": "scomper/surge-list: Telegram",
         "rules": 13
+      },
+      {
+        "source": "built-in: Telegram service rules",
+        "rules": 22
       }
     ],
     "twitter": [
@@ -620,6 +642,10 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml",
         "source": "blackmatrix7/ios_rule_script: Spotify",
         "rules": 30
+      },
+      {
+        "source": "built-in: Spotify service rules",
+        "rules": 32
       }
     ],
     "netflix": [
@@ -632,6 +658,10 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml",
         "source": "blackmatrix7/ios_rule_script: Netflix",
         "rules": 38
+      },
+      {
+        "source": "built-in: Netflix service rules",
+        "rules": 8
       }
     ],
     "tiktok": [
@@ -1338,13 +1368,21 @@
       "rules": 9,
       "bytes": 400
     },
+    "private-ipcidr": {
+      "path": "rules/mihomo/private-ipcidr.mrs",
+      "group": "private",
+      "behavior": "ipcidr",
+      "format": "mrs",
+      "rules": 12,
+      "bytes": 127
+    },
     "crypto": {
       "path": "rules/mihomo/crypto.mrs",
       "group": "crypto",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 78,
-      "bytes": 812
+      "rules": 95,
+      "bytes": 950
     },
     "crypto-classical": {
       "path": "rules/mihomo/crypto-classical.yaml",
@@ -1423,8 +1461,8 @@
       "group": "download",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 8,
-      "bytes": 180
+      "rules": 62,
+      "bytes": 887
     },
     "download-classical": {
       "path": "rules/mihomo/download-classical.yaml",
@@ -1749,10 +1787,18 @@
         "ai-classical"
       ]
     },
+    "private": {
+      "inputRules": 12,
+      "rules": 12,
+      "pruned": 0,
+      "outputs": [
+        "private-ipcidr"
+      ]
+    },
     "crypto": {
-      "inputRules": 97,
-      "rules": 79,
-      "pruned": 18,
+      "inputRules": 117,
+      "rules": 96,
+      "pruned": 21,
       "outputs": [
         "crypto",
         "crypto-classical"
@@ -1788,8 +1834,8 @@
       ]
     },
     "download": {
-      "inputRules": 57,
-      "rules": 44,
+      "inputRules": 111,
+      "rules": 98,
       "pruned": 13,
       "outputs": [
         "download",
@@ -1835,9 +1881,9 @@
       ]
     },
     "youtube": {
-      "inputRules": 374,
+      "inputRules": 377,
       "rules": 186,
-      "pruned": 188,
+      "pruned": 191,
       "outputs": [
         "youtube",
         "youtube-ipcidr",
@@ -1845,9 +1891,9 @@
       ]
     },
     "telegram": {
-      "inputRules": 119,
+      "inputRules": 141,
       "rules": 60,
-      "pruned": 59,
+      "pruned": 81,
       "outputs": [
         "telegram",
         "telegram-ipcidr",
@@ -1864,9 +1910,9 @@
       ]
     },
     "spotify": {
-      "inputRules": 58,
+      "inputRules": 90,
       "rules": 36,
-      "pruned": 22,
+      "pruned": 54,
       "outputs": [
         "spotify",
         "spotify-ipcidr",
@@ -1874,9 +1920,9 @@
       ]
     },
     "netflix": {
-      "inputRules": 62,
+      "inputRules": 70,
       "rules": 37,
-      "pruned": 25,
+      "pruned": 33,
       "outputs": [
         "netflix",
         "netflix-classical"

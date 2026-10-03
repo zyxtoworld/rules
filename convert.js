@@ -441,6 +441,7 @@ function buildConfig(proxies) {
 
   // MRS 只支持 domain/ipcidr；无法表达的 DOMAIN-KEYWORD、PROCESS-* 等规则保留为 classical YAML。
   const ruleProviderParts = {
+    private: ['ipcidr'],
     ai: ['domain', 'classical'],
     crypto: ['domain', 'classical'],
     biliintl: ['domain'],
@@ -576,56 +577,6 @@ function buildConfig(proxies) {
   function geosite(name, policy) {
     return `GEOSITE,${name},${policy}`;
   }
-  function domainRules(domains, policy) {
-    return domains.map(domain => `DOMAIN,${domain},${policy}`);
-  }
-  function domainSuffixRules(domains, policy) {
-    return domains.map(domain => `DOMAIN-SUFFIX,${domain},${policy}`);
-  }
-  function domainKeywordRules(keywords, policy) {
-    return keywords.map(keyword => `DOMAIN-KEYWORD,${keyword},${policy}`);
-  }
-  function processNameRules(names, policy) {
-    return names.map(name => `PROCESS-NAME,${name},${policy}`);
-  }
-  function cidrRules(cidrs, policy) {
-    return cidrs.map(cidr => `IP-CIDR,${cidr},${policy},no-resolve`);
-  }
-  function cidr6Rules(cidrs, policy) {
-    return cidrs.map(cidr => `IP-CIDR6,${cidr},${policy},no-resolve`);
-  }
-  function ruleSet(policy, sections) {
-    const builders = {
-      domain: domainRules,
-      suffix: domainSuffixRules,
-      keyword: domainKeywordRules,
-      process: processNameRules,
-      cidr: cidrRules,
-      cidr6: cidr6Rules
-    };
-    const result = [];
-    for (const [type, values] of sections) {
-      result.push(...builders[type](values, policy));
-    }
-    return result;
-  }
-
-  const privateIpv4Cidrs = [
-    '0.0.0.0/8',
-    '10.0.0.0/8',
-    '100.64.0.0/10',
-    '127.0.0.0/8',
-    '169.254.0.0/16',
-    '172.16.0.0/12',
-    '192.168.0.0/16',
-    '224.0.0.0/4',
-    '240.0.0.0/4'
-  ];
-  const privateIpv6Cidrs = ['::1/128', 'fc00::/7', 'fe80::/10'];
-  const privateIpRules = [
-    ...cidrRules(privateIpv4Cidrs, DIRECT),
-    ...cidr6Rules(privateIpv6Cidrs, DIRECT)
-  ];
 
   const downloadProcessNames = [
     'aria2c',
@@ -770,196 +721,10 @@ function buildConfig(proxies) {
     `AND,((OR,(${downloadProcessMatchers})),` +
     `(OR,((GEOSITE,geolocation-!cn),(NOT,((GEOIP,CN)))))),${POLICY.lowRateDownload}`;
 
-  // 固定文件/CDN 主机用 DOMAIN；只有确认需要覆盖子域的 CDN 根域才用 DOMAIN-SUFFIX。
-  const fileDownloadDomains = [
-    'github-releases.githubusercontent.com',
-    'release-assets.githubusercontent.com',
-    'raw.githubusercontent.com',
-    'codeload.github.com',
-    'pkg-containers.githubusercontent.com',
-    'production.cloudflare.docker.com',
-    'files.pythonhosted.org',
-    'static.crates.io',
-    'cdn-lfs.huggingface.co',
-    'cas-bridge.xethub.hf.co',
-    'download.visualstudio.microsoft.com',
-    'vscode.download.prss.microsoft.com',
-    'dl.google.com',
-    'edgedl.me.gvt1.com',
-    'dl-ssl.google.com',
-    'download-installer.cdn.mozilla.net',
-    'assets1.xboxlive.com',
-    'assets2.xboxlive.com',
-    'blizzard.gcdn.cloudn.co.kr',
-    'blzddist1-a.akamaihd.net',
-    'blzddistkr1-a.akamaihd.net',
-    'client.hikarifield.co.jp',
-    'content.cdp.bethesda.net',
-    'download.cdp.bethesda.net',
-    'download.dm.origin.com',
-    'download.epicgames.com',
-    'download.hikarifield.co.jp',
-    'download2.epicgames.com',
-    'download3.epicgames.com',
-    'download4.epicgames.com',
-    'edge.steam-dns.top.comcast.net',
-    'epicgames-download1.akamaized.net',
-    'eu.cdn.blizzard.com',
-    'fastly-download.epicgames.com',
-    'gamedownloads-rockstargames-com.akamaized.net',
-    'gog-cdn-lumen.secure2.footprint.net',
-    'kr.cdn.blizzard.com',
-    'level3.blizzard.com',
-    'origin-a.akamaihd.net',
-    'packagespc.xboxlive.com',
-    'ssl-lvlt.cdn.ea.com',
-    'steam.eca.qtlglb.com',
-    'steam.naeu.qtlglb.com',
-    'steam.ru.qtlglb.com',
-    'steampipe-kr.akamaized.net',
-    'steampipe-partner.akamaized.net',
-    'steampipe.akamaized.net',
-    'steamusercontent-a.akamaihd.net',
-    'us.cdn.blizzard.com',
-    'xvcf1.xboxlive.com',
-    'xvcf2.xboxlive.com'
-  ];
-  const fileDownloadSuffixes = [
-    'cdn.ubi.com',
-    'dyn.riotcdn.net',
-    'steamcontent.com'
-  ];
-  const lowRateDownloadRules = [
-    downloadProcessRule,
-    ...domainRules(fileDownloadDomains, POLICY.lowRateDownload),
-    ...domainSuffixRules(fileDownloadSuffixes, POLICY.lowRateDownload)
-  ];
-  const cryptoRules = ruleSet(POLICY.crypto, [
-    ['suffix', [
-      'aex.com',
-      'aicoin.com',
-      'aimoon.com',
-      'bibox.com',
-      'bitcointalk.org',
-      'bithumb.com',
-      'coincheck.com',
-      'coinall.ltd',
-      'gate.com',
-      'blastapi.io',
-      'keplr.app',
-      'korbit.co.kr',
-      'okex.org',
-      'okx-doh.com',
-      'okx-httpdns.com',
-      'omni-dex.io',
-      'pancakeswap.finance',
-      'phantom.app',
-      'poloniex.com',
-      'sushi.com',
-    ]]
-  ]);
-  const youtubeRules = ruleSet(POLICY.youtube, [
-    ['cidr', [
-      '172.110.32.0/21',
-      '216.73.80.0/20'
-    ]],
-    ['cidr6', ['2620:120:e000::/40']]
-  ]);
-  const telegramRules = ruleSet(POLICY.telegram, [
-    ['domain', [
-      'api.imem.app',
-      'api.swiftgram.app'
-    ]],
-    ['suffix', [
-      'mbrx.app',
-      'stel.com',
-      'telegramdownload.com'
-    ]],
-    ['keyword', ['nicegram']],
-    ['cidr', [
-      '5.28.192.0/18',
-      '91.108.0.0/16',
-      '109.239.140.0/24',
-      '139.59.210.98/32',
-      '149.154.160.0/20',
-      '196.55.216.167/32'
-    ]],
-    ['cidr6', [
-      '2001:67c:4e8::/48',
-      '2001:b28:f23c::/47',
-      '2001:b28:f23f::/48',
-      '2a0a:f280::/32',
-    ]],
-    ['process', [
-      'Telegram.exe',
-      'nekox.messenger',
-      'org.telegram.messenger',
-      'telegram-desktop',
-      'tw.nekomimi.nekogram',
-      'xyz.nextalone.nagram'
-    ]]
-  ]);
-  const netflixRules = ruleSet(POLICY.netflix, [
-    ['domain', [
-      'e13252.dscg.akamaiedge.net',
-      'h-netflix.online-metrix.net',
-      'netflix.com.edgesuite.net'
-    ]],
-    ['keyword', [
-      'apiproxy-device-prod-nlb-',
-      'dualstack.apiproxy-',
-      'dualstack.ichnaea-web-',
-      'netflixdnstest'
-    ]],
-    ['process', ['com.netflix.mediaclient']]
-  ]);
-  const spotifyRules = ruleSet(POLICY.spotify, [
-    ['suffix', [
-      'byspotify.com',
-      'pscdn.co',
-      'scdn.co',
-      'spoti.fi',
-      'spotify-everywhere.com',
-      'spotify.app.link',
-      'spotify.com',
-      'spotify.design',
-      'spotify.link',
-      'spotifycdn.com',
-      'spotifycdn.net',
-      'spotifycharts.com',
-      'spotifycodes.com',
-      'spotifyforbrands.com',
-      'spotifyforvendors.com',
-      'spotifyjobs.com',
-      'spotifynewsroom.jp',
-      'spotilocal.com',
-      'tospotify.com'
-    ]],
-    ['suffix', [
-      'audio-ak-spotify-com.akamaized.net',
-      'heads4-ak-spotify-com.akamaized.net',
-      'spotify-com.akamaized.net',
-    ]],
-    ['domain', [
-      'audio4-ak-spotify-com.akamaized.net',
-      'cdn-spotify-experiments.conductrics.com',
-      'heads-ak-spotify-com.akamaized.net',
-      'spotify.map.fastly.net',
-      'spotify.map.fastlylb.net',
-      'spotify.com.edgesuite.net'
-    ]],
-    ['keyword', ['spotify']],
-    ['process', ['com.spotify.music']],
-    ['cidr', [
-      '104.154.127.126/32',
-      '35.186.224.47/32'
-    ]]
-  ]);
-
   const rules = [
     // 1. 私有地址先直连，避免被后续 GeoSite/IP 规则误判。
     geosite('private', DIRECT),
-    ...privateIpRules,
+    ...providerRuleSet('private', DIRECT),
 
     // 2. 高优先级服务：使用自有聚合文件，GeoSite 保留为兜底。
     ...providerRuleSet('ai', POLICY.ai),
@@ -972,7 +737,6 @@ function buildConfig(proxies) {
 
     // 3. 加密货币与国内服务：国内例外优先于广告和宽分类。
     ...providerRuleSet('crypto', POLICY.crypto),
-    ...cryptoRules,
     geosite('category-cryptocurrency', POLICY.crypto),
     geosite('google@cn', DIRECT),
     geosite('steam@cn', DIRECT),
@@ -982,17 +746,8 @@ function buildConfig(proxies) {
     geosite('apple@cn', DIRECT),
     geosite('icloud@cn', DIRECT),
     geosite('microsoft@cn', DIRECT),
-    // Keep the six Siri/Apple Intelligence hosts ahead of the broad
-    // CN/direct provider. The full Apple provider remains below so Chinese
-    // Apple traffic keeps its existing CN exceptions.
-    `DOMAIN,guzzoni.apple.com,${POLICY.apple}`,
-    `DOMAIN-SUFFIX,smoot.apple.com,${POLICY.apple}`,
-    `DOMAIN,apple-relay.cloudflare.com,${POLICY.apple}`,
-    `DOMAIN,apple-relay.fastly-edge.com,${POLICY.apple}`,
-    `DOMAIN,cp4.cloudflare.com,${POLICY.apple}`,
-    `DOMAIN,apple-relay.apple.com,${POLICY.apple}`,
-    // Put the complete Apple provider before DIRECT so the client-side
-    // Apple group selection (Japan, manual, auto, or DIRECT) is respected.
+    // Apple rules are generated into apple.mrs; keep the provider ahead of
+    // DIRECT so the client-side Apple group selection is respected.
     ...providerRuleSet('apple', POLICY.apple),
     geosite('icloud', POLICY.apple),
     geosite('apple', POLICY.apple),
@@ -1005,17 +760,15 @@ function buildConfig(proxies) {
 
     // 5. 下载器和明确下载资源。
     ...providerRuleSet('download', POLICY.lowRateDownload),
-    ...lowRateDownloadRules,
+    downloadProcessRule,
 
     // 6. 服务分类：专用服务优先，开发/社交/云/金融等分类补齐遗漏。
     ...providerRuleSet('youtube', POLICY.youtube),
-    ...youtubeRules,
     geosite('youtube', POLICY.youtube),
     ...providerRuleSet('google', POLICY.google),
     geosite('google', POLICY.google),
     geosite('github', POLICY.github),
     ...providerRuleSet('dev', POLICY.dev),
-    ...telegramRules,
     ...providerRuleSet('telegram', POLICY.telegram),
     geosite('telegram', POLICY.telegram),
     geosite('twitter', POLICY.twitter),
@@ -1031,10 +784,8 @@ function buildConfig(proxies) {
     geosite('slack', POLICY.social),
     geosite('category-communication', POLICY.social),
     ...providerRuleSet('netflix', POLICY.netflix),
-    ...netflixRules,
     geosite('netflix', POLICY.netflix),
     ...providerRuleSet('spotify', POLICY.spotify),
-    ...spotifyRules,
     geosite('spotify', POLICY.spotify),
     // Microsoft-specific rules must precede the broader cloud bucket;
     // otherwise OneDrive and Microsoft endpoints are labeled as generic cloud.

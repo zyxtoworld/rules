@@ -14,6 +14,7 @@
       ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list","kind":"clash","source":"ConnersHua/RuleGo: AI"}
       ,{"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/claude.list","kind":"clash","source":"lyq2010/clash-ruleset: Claude"}
     ],
+    "private": [],
     "crypto": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bybit.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bybit"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/okx.list","kind":"list","source":"MetaCubeX/meta-rules-dat: okx"},
