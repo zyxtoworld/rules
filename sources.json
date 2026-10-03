@@ -56,9 +56,11 @@
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: AppleNews"}
       ,{"url":"https://ruleset.skk.moe/Clash/non_ip/apple_intelligence.txt","kind":"clash","source":"SukkaW/Surge: apple_intelligence","dropRules":["DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"]}
       ,{"url":"https://ruleset.skk.moe/Clash/non_ip/apple_services.txt","kind":"clash","source":"SukkaW/Surge: apple_services","dropRules":["DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"]}
+      ,{"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/Apple.list","kind":"clash","source":"LM-Firefly/Rules: Apple"}
     ],
     "microsoft": [
-      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Microsoft"}
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Microsoft"},
+      {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list","kind":"clash","source":"LM-Firefly/Rules: Microsoft"}
     ],
     "games": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.list","kind":"list","source":"MetaCubeX/meta-rules-dat: steam"},
@@ -73,7 +75,8 @@
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Blizzard","dropTypes":["IP-CIDR"]},
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list","kind":"clash","source":"ACL4SSR/ACL4SSR: Steam"},
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list","kind":"clash","source":"ACL4SSR/ACL4SSR: Epic"},
-      {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list","kind":"clash","source":"ACL4SSR/ACL4SSR: Sony"}
+      {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list","kind":"clash","source":"ACL4SSR/ACL4SSR: Sony"},
+      {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/Game.list","kind":"clash","source":"LM-Firefly/Rules: Game"}
     ],
     "youtube": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.list","kind":"list","source":"MetaCubeX/meta-rules-dat: youtube"},
@@ -143,7 +146,8 @@
       ,{"url":"https://ruleset.skk.moe/Clash/non_ip/stream.txt","kind":"clash","source":"SukkaW/Surge: stream","dropRules":["DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"]},
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list","kind":"clash","source":"ACL4SSR/ACL4SSR: Netflix"},
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DisneyPlus.list","kind":"clash","source":"ACL4SSR/ACL4SSR: DisneyPlus"},
-      {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list","kind":"clash","source":"ACL4SSR/ACL4SSR: ProxyMedia"}
+      {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list","kind":"clash","source":"ACL4SSR/ACL4SSR: ProxyMedia"},
+      {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list","kind":"clash","source":"LM-Firefly/Rules: GlobalMedia"}
     ],
     "social": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/facebook.list","kind":"list","source":"MetaCubeX/meta-rules-dat: facebook"},

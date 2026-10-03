@@ -61,5 +61,6 @@ CI 会固定下载官方 Mihomo `v1.19.32` 转换器。构建脚本会校验每�
 - [SukkaW/Surge](https://github.com/SukkaW/Surge)：AGPL-3.0，补充人工维护的 AI、Apple、Telegram 和流媒体规则。
 - [TG-Twilight/AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule)：GPL-3.0，补充广告过滤域名。
 - [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR)：CC-BY-SA-4.0，补充部分游戏、媒体和国内直连域名规则。
+- [LM-Firefly/Rules](https://github.com/LM-Firefly/Rules)：GPL-3.0，补充 Apple、游戏、全球媒体和 Microsoft 规则。
 
 本仓库的 `LICENSE` 仅覆盖本仓库脚本、元数据和编排内容；生成规则的具体条目仍遵循各上游项目的许可证和使用说明，完整来源与过滤选项记录在 `sources.json`。

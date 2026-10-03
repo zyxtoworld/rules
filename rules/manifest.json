@@ -226,6 +226,11 @@
         "rules": 25
       },
       {
+        "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Apple.list",
+        "source": "LM-Firefly/Rules: Apple",
+        "rules": 2533
+      },
+      {
         "source": "built-in: Apple Intelligence and Siri hosts",
         "rules": 6
       }
@@ -235,6 +240,11 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml",
         "source": "blackmatrix7/ios_rule_script: Microsoft",
         "rules": 670
+      },
+      {
+        "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list",
+        "source": "LM-Firefly/Rules: Microsoft",
+        "rules": 669
       }
     ],
     "games": [
@@ -302,6 +312,11 @@
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list",
         "source": "ACL4SSR/ACL4SSR: Sony",
         "rules": 5
+      },
+      {
+        "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Game.list",
+        "source": "LM-Firefly/Rules: Game",
+        "rules": 548
       }
     ],
     "youtube": [
@@ -596,6 +611,11 @@
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list",
         "source": "ACL4SSR/ACL4SSR: ProxyMedia",
         "rules": 371
+      },
+      {
+        "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list",
+        "source": "LM-Firefly/Rules: GlobalMedia",
+        "rules": 1926
       }
     ],
     "social": [
@@ -1104,16 +1124,16 @@
       "group": "apple",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1065,
-      "bytes": 8118
+      "rules": 1799,
+      "bytes": 17394
     },
     "apple-ipcidr": {
       "path": "rules/mihomo/apple-ipcidr.mrs",
       "group": "apple",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 14,
-      "bytes": 173
+      "rules": 965,
+      "bytes": 176
     },
     "apple-classical": {
       "path": "rules/mihomo/apple-classical.yaml",
@@ -1128,8 +1148,8 @@
       "group": "microsoft",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 664,
-      "bytes": 6637
+      "rules": 667,
+      "bytes": 6679
     },
     "microsoft-classical": {
       "path": "rules/mihomo/microsoft-classical.yaml",
@@ -1144,8 +1164,8 @@
       "group": "games",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 890,
-      "bytes": 8618
+      "rules": 895,
+      "bytes": 8677
     },
     "games-classical": {
       "path": "rules/mihomo/games-classical.yaml",
@@ -1264,24 +1284,24 @@
       "group": "media",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 845,
-      "bytes": 8051
+      "rules": 1616,
+      "bytes": 14678
     },
     "media-ipcidr": {
       "path": "rules/mihomo/media-ipcidr.mrs",
       "group": "media",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 18,
-      "bytes": 180
+      "rules": 504,
+      "bytes": 662
     },
     "media-classical": {
       "path": "rules/mihomo/media-classical.yaml",
       "group": "media",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 43,
-      "bytes": 1510
+      "rules": 62,
+      "bytes": 2245
     },
     "social": {
       "path": "rules/mihomo/social.mrs",
@@ -1413,9 +1433,9 @@
       ]
     },
     "apple": {
-      "inputRules": 1151,
-      "rules": 1099,
-      "pruned": 52,
+      "inputRules": 3684,
+      "rules": 2784,
+      "pruned": 900,
       "outputs": [
         "apple",
         "apple-ipcidr",
@@ -1423,18 +1443,18 @@
       ]
     },
     "microsoft": {
-      "inputRules": 670,
-      "rules": 670,
-      "pruned": 0,
+      "inputRules": 1339,
+      "rules": 673,
+      "pruned": 666,
       "outputs": [
         "microsoft",
         "microsoft-classical"
       ]
     },
     "games": {
-      "inputRules": 1287,
-      "rules": 893,
-      "pruned": 394,
+      "inputRules": 1835,
+      "rules": 898,
+      "pruned": 937,
       "outputs": [
         "games",
         "games-classical"
@@ -1496,9 +1516,9 @@
       ]
     },
     "media": {
-      "inputRules": 1351,
-      "rules": 906,
-      "pruned": 445,
+      "inputRules": 3277,
+      "rules": 2182,
+      "pruned": 1095,
       "outputs": [
         "media",
         "media-ipcidr",
