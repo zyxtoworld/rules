@@ -50,7 +50,7 @@
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Copilot/Copilot_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: Copilot",
-        "rules": 8
+        "rules": 16
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Grok/Grok_Domain.yaml",
@@ -236,7 +236,7 @@
       {
         "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
         "source": "TG-Twilight/AWAvenue-Ads-Rule: AWAvenue-Ads-Rule.txt",
-        "rules": 965
+        "rules": 961
       },
       {
         "url": "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt",
@@ -298,7 +298,7 @@
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/MacAppUpgrade/MacAppUpgrade_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: MacAppUpgrade",
-        "rules": 0
+        "rules": 482
       },
       {
         "source": "built-in: download CDN domains",
@@ -496,7 +496,7 @@
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/AppleAI/AppleAI_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: AppleAI",
-        "rules": 2
+        "rules": 8
       },
       {
         "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Apple.list",
@@ -1240,7 +1240,7 @@
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/RustDesk/RustDesk_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: RustDesk",
-        "rules": 0
+        "rules": 3
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/WaybackMachine/WaybackMachine_Domain.yaml",
@@ -1495,8 +1495,8 @@
       "group": "ai",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 225,
-      "bytes": 2332
+      "rules": 231,
+      "bytes": 2409
     },
     "ai-classical": {
       "path": "rules/mihomo/ai-classical.yaml",
@@ -1599,16 +1599,16 @@
       "group": "ads",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 109681,
-      "bytes": 959821
+      "rules": 109679,
+      "bytes": 960237
     },
     "ads-2": {
       "path": "rules/mihomo/ads-2.mrs",
       "group": "ads",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 109681,
-      "bytes": 1045954
+      "rules": 109679,
+      "bytes": 1046146
     },
     "ads-ipcidr": {
       "path": "rules/mihomo/ads-ipcidr.mrs",
@@ -1631,8 +1631,8 @@
       "group": "download",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 62,
-      "bytes": 887
+      "rules": 496,
+      "bytes": 5790
     },
     "download-classical": {
       "path": "rules/mihomo/download-classical.yaml",
@@ -1895,8 +1895,8 @@
       "group": "dev",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1245,
-      "bytes": 11816
+      "rules": 1248,
+      "bytes": 11838
     },
     "cloud": {
       "path": "rules/mihomo/cloud.mrs",
@@ -1973,9 +1973,9 @@
   },
   "groups": {
     "ai": {
-      "inputRules": 453,
-      "rules": 234,
-      "pruned": 219,
+      "inputRules": 461,
+      "rules": 240,
+      "pruned": 221,
       "outputs": [
         "ai",
         "ai-classical"
@@ -2035,8 +2035,8 @@
       ]
     },
     "ads": {
-      "inputRules": 309515,
-      "rules": 219577,
+      "inputRules": 309511,
+      "rules": 219573,
       "pruned": 89938,
       "outputs": [
         "ads",
@@ -2046,9 +2046,9 @@
       ]
     },
     "download": {
-      "inputRules": 111,
-      "rules": 98,
-      "pruned": 13,
+      "inputRules": 593,
+      "rules": 532,
+      "pruned": 61,
       "outputs": [
         "download",
         "download-classical"
@@ -2065,9 +2065,9 @@
       ]
     },
     "apple": {
-      "inputRules": 3899,
+      "inputRules": 3905,
       "rules": 2800,
-      "pruned": 1099,
+      "pruned": 1105,
       "outputs": [
         "apple",
         "apple-ipcidr",
@@ -2177,8 +2177,8 @@
       ]
     },
     "dev": {
-      "inputRules": 1345,
-      "rules": 1245,
+      "inputRules": 1348,
+      "rules": 1248,
       "pruned": 100,
       "outputs": [
         "dev"

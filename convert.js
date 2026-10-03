@@ -498,6 +498,8 @@ function buildConfig(proxies) {
   const providerFormat = kind => kind === 'classical' ? 'yaml' : 'mrs';
   const providerRuleSet = (name, policy) => ruleProviderParts[name]
     .map(kind => `RULE-SET,${providerName(name, kind)},${policy}`);
+  const providerMatchSet = name => ruleProviderParts[name]
+    .map(kind => `RULE-SET,${providerName(name, kind)}`);
 
   // ===== 基础配置 =====
   const config = {
@@ -733,6 +735,9 @@ function buildConfig(proxies) {
   const downloadProcessRule =
     `AND,((OR,(${downloadProcessMatchers})),` +
     `(OR,((GEOSITE,geolocation-!cn),(NOT,((GEOIP,CN)))))),${POLICY.lowRateDownload}`;
+  const proxyExtraMatchers = providerMatchSet('proxy-extra')
+    .map(rule => `(${rule})`)
+    .join(',');
 
   const rules = [
     // 1. 私有地址先直连，避免被后续 GeoSite/IP 规则误判。
@@ -810,6 +815,9 @@ function buildConfig(proxies) {
     geosite('onedrive', POLICY.onedrive),
     ...providerRuleSet('microsoft', POLICY.microsoft),
     geosite('microsoft', POLICY.microsoft),
+    // Cloud is a functional group, not a country group. Domestic cloud
+    // sources such as Aliyun Drive, Baidu Netdisk and Weiyun stay here so
+    // the client can choose DIRECT or any proxy node manually.
     ...providerRuleSet('cloud', POLICY.cloud),
     geosite('dropbox', POLICY.cloud),
     ...providerRuleSet('finance', POLICY.finance),
@@ -837,7 +845,7 @@ function buildConfig(proxies) {
     ...providerRuleSet('direct', DIRECT),
 
     // 7. 自有代理补充集：排除 MetaCubeX 中国域名和中国 IP。
-    `AND,((RULE-SET,proxy-extra),(NOT,((GEOSITE,cn))),(NOT,((GEOIP,CN)))),${POLICY.manual}`,
+    `AND,((OR,(${proxyExtraMatchers})),(NOT,((GEOSITE,cn))),(NOT,((GEOIP,CN)))),${POLICY.manual}`,
 
     // 8. IP 与最终兜底。
     `GEOIP,CN,${DIRECT}`,

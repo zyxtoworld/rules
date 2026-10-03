@@ -250,9 +250,11 @@ function parseRuleLine(rawLine, dropTypes = [], dropRules = []) {
   let line = rawLine.replace(/^\uFEFF/, '').trim();
   if (!line || line.startsWith('#') || line === 'payload:') return [];
   line = line.replace(/^[-]\s+/, '').trim();
+  // Remove YAML/inline comments before unquoting. Otherwise a line such as
+  // `- '+.example.com' # note` keeps its trailing quote and is discarded.
+  line = line.replace(/\s+\/\/.*$/, '').replace(/\s+#.*$/, '').trim();
   line = unquote(line);
   if (!line || line === 'payload:') return [];
-  line = line.replace(/\s+\/\/.*$/, '').replace(/\s+#.*$/, '').trim();
 
   // Accept hosts-file exports used by several ad-block lists.
   const hostsMatch = line.match(/^(?:0\.0\.0\.0|127\.0\.0\.1|::1)\s+([A-Za-z0-9.-]+)(?:\s+#.*)?$/i);
@@ -275,11 +277,15 @@ function parseRuleLine(rawLine, dropTypes = [], dropRules = []) {
     const suffix = line.slice(2);
     return suffix.includes('*') ? [] : [`DOMAIN-SUFFIX,${suffix}`];
   }
+  if (line.startsWith('*.')) {
+    const suffix = line.slice(2);
+    return suffix.includes('*') ? [] : [`DOMAIN-SUFFIX,${suffix}`];
+  }
   if (line.startsWith('.')) {
     const suffix = line.slice(1);
     return suffix.includes('*') ? [] : [`DOMAIN-SUFFIX,${suffix}`];
   }
-  if (/^[A-Za-z0-9*_-]+(\.[A-Za-z0-9*_-]+)+$/.test(line)) return [`DOMAIN,${line}`];
+  if (/^[A-Za-z0-9_-]+(\.[A-Za-z0-9_-]+)+$/.test(line)) return [`DOMAIN,${line}`];
 
   const pieces = line.split(',').map(part => part.trim());
   const type = String(pieces[0] || '').toUpperCase();
@@ -289,6 +295,10 @@ function parseRuleLine(rawLine, dropTypes = [], dropRules = []) {
   // Source lists often append Surge routing policies, matching modes, or
   // no-resolve flags. Those belong to the source profile, not this provider.
   const value = pieces[1].replace(/\s+\/\/.*$/, '').replace(/\s+#.*$/, '').trim();
+  // Mihomo DOMAIN/DOMAIN-SUFFIX rules do not support wildcard hostnames.
+  // Do not publish invalid entries into MRS; supported +./* suffix forms are
+  // normalized above instead.
+  if ((type === 'DOMAIN' || type === 'DOMAIN-SUFFIX') && value.includes('*')) return [];
   return value ? [`${type},${value}`] : [];
 }
 
