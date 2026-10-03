@@ -751,12 +751,15 @@ function buildConfig(proxies) {
     ...providerRuleSet('apple', POLICY.apple),
     geosite('icloud', POLICY.apple),
     geosite('apple', POLICY.apple),
-    geosite('cn', DIRECT),
-    ...providerRuleSet('direct', DIRECT),
 
     // 4. 广告：自有聚合集先行，MetaCubeX GeoSite 作兜底。
     ...providerRuleSet('ads', POLICY.ads),
     geosite('category-ads-all', POLICY.ads),
+
+    // Broad CN/direct rules stay after ads so an ad domain cannot bypass
+    // blocking merely because it also appears in the direct provider.
+    geosite('cn', DIRECT),
+    ...providerRuleSet('direct', DIRECT),
 
     // 5. 下载器和明确下载资源。
     ...providerRuleSet('download', POLICY.lowRateDownload),
