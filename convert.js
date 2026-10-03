@@ -442,11 +442,11 @@ function buildConfig(proxies) {
   // MRS 只支持 domain/ipcidr；无法表达的 DOMAIN-KEYWORD、PROCESS-* 等规则保留为 classical YAML。
   const ruleProviderParts = {
     ai: ['domain', 'classical'],
-    crypto: ['domain'],
+    crypto: ['domain', 'classical'],
     biliintl: ['domain'],
     direct: ['domain', 'ipcidr', 'classical'],
     // Keep synchronized with fixedMrsPartitions.ads.domain in build-rules.mjs.
-    ads: ['domain', 'domain-2'],
+    ads: ['domain', 'domain-2', 'ipcidr', 'classical'],
     download: ['domain', 'classical'],
     google: ['domain', 'ipcidr', 'classical'],
     apple: ['domain', 'ipcidr', 'classical'],
@@ -454,17 +454,17 @@ function buildConfig(proxies) {
     games: ['domain', 'classical'],
     youtube: ['domain', 'ipcidr', 'classical'],
     telegram: ['domain', 'ipcidr', 'classical'],
-    twitter: ['domain'],
+    twitter: ['domain', 'classical'],
     spotify: ['domain', 'ipcidr', 'classical'],
     netflix: ['domain', 'classical'],
     tiktok: ['domain'],
     media: ['domain', 'ipcidr', 'classical'],
-    social: ['domain', 'ipcidr'],
+    social: ['domain', 'ipcidr', 'classical'],
     dev: ['domain'],
     cloud: ['domain', 'ipcidr'],
     finance: ['domain'],
     shopping: ['domain'],
-    'proxy-extra': ['domain']
+    'proxy-extra': ['domain', 'ipcidr', 'classical']
   };
   const ruleProviderBaseUrl = 'https://testingcf.jsdelivr.net/gh/zyxtoworld/rules@main/rules/mihomo';
   const isDomainPart = kind => kind === 'domain' || kind.startsWith('domain-');

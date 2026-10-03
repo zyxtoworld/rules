@@ -78,6 +78,11 @@ function parseRuleLine(rawLine, dropTypes = [], dropRules = []) {
   line = line.replace(/^[-]\s+/, '').trim();
   line = unquote(line);
   if (!line || line === 'payload:') return [];
+  line = line.replace(/\s+\/\/.*$/, '').replace(/\s+#.*$/, '').trim();
+
+  // Accept hosts-file exports used by several ad-block lists.
+  const hostsMatch = line.match(/^(?:0\.0\.0\.0|127\.0\.0\.1|::1)\s+([A-Za-z0-9.-]+)(?:\s+#.*)?$/i);
+  if (hostsMatch) return [`DOMAIN,${hostsMatch[1]}`];
 
   // v2fly/domain-list-community uses full:domain and optional @cn/@ads
   // annotations. Preserve the domain itself; category annotations are handled
@@ -93,6 +98,7 @@ function parseRuleLine(rawLine, dropTypes = [], dropRules = []) {
   }
 
   if (line.startsWith('+.')) return [`DOMAIN-SUFFIX,${line.slice(2)}`];
+  if (line.startsWith('.')) return [`DOMAIN-SUFFIX,${line.slice(1)}`];
   if (/^[A-Za-z0-9*_-]+(\.[A-Za-z0-9*_-]+)+$/.test(line)) return [`DOMAIN,${line}`];
 
   const pieces = line.split(',').map(part => part.trim());
@@ -100,7 +106,10 @@ function parseRuleLine(rawLine, dropTypes = [], dropRules = []) {
   if (dropTypes.map(value => value.toUpperCase()).includes(type)) return [];
   const allowed = new Set(['DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD', 'IP-CIDR', 'IP-CIDR6', 'IP-ASN', 'PROCESS-NAME', 'PROCESS-PATH']);
   if (!allowed.has(type) || !pieces[1]) return [];
-  return [`${type},${pieces.slice(1).join(',')}`];
+  // Source lists often append Surge routing policies, matching modes, or
+  // no-resolve flags. Those belong to the source profile, not this provider.
+  const value = pieces[1].replace(/\s+\/\/.*$/, '').replace(/\s+#.*$/, '').trim();
+  return value ? [`${type},${value}`] : [];
 }
 
 function parseSource(text, source) {
@@ -130,7 +139,7 @@ function normalizeRule(rule) {
   const value = String(parts.shift() || '').trim();
   if (!type || !value) return null;
   if (type === 'DOMAIN' || type === 'DOMAIN-SUFFIX') {
-    parts.unshift(value.toLowerCase().replace(/\.$/, ''));
+    parts.unshift(value.toLowerCase().replace(/^\.+/, '').replace(/\.$/, ''));
   } else if (type === 'IP-CIDR' || type === 'IP-CIDR6') {
     parts.unshift(value.toLowerCase());
   } else {

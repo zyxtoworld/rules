@@ -2,7 +2,9 @@
 payload:
   - "DOMAIN-KEYWORD,aria2"
   - "DOMAIN-KEYWORD,thunder"
+  - "DOMAIN-KEYWORD,Thunder"
   - "DOMAIN-KEYWORD,xlliveud"
+  - "DOMAIN-KEYWORD,XLLiveUD"
   - "DOMAIN-KEYWORD,xunlei"
   - "DOMAIN-KEYWORD,yunpan"
   - "PROCESS-NAME,aria2c"
@@ -28,6 +30,7 @@ payload:
   - "PROCESS-NAME,uTorrent"
   - "PROCESS-NAME,uTorrent.exe"
   - "PROCESS-NAME,WebTorrent"
+  - "PROCESS-NAME,WebTorrent Helper"
   - "PROCESS-NAME,WebTorrent.exe"
   - "PROCESS-NAME,WebTorrentHelper"
   - "PROCESS-NAME,WebTorrentHelper.exe"

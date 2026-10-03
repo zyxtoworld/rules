@@ -1,6 +1,6 @@
 # rules
 
-为 Mihomo 兼容客户端整理的公共规则仓库。规则来源于 MetaCubeX/meta-rules-dat、blackmatrix7/ios_rule_script 和 Loyalsoldier/clash-rules，经过统一解析、去重和后缀最小化后生成。
+为 Mihomo 兼容客户端整理的公共规则仓库。规则来源于多个活跃的 GitHub 规则项目，经过统一解析、去重和后缀最小化后生成；重复或只是二次聚合的仓库不直接重复接入。
 
 ## 使用方式
 
@@ -42,11 +42,11 @@ CI 会固定下载官方 Mihomo `v1.19.32` 转换器。构建脚本会校验每�
 
 ## 规则策略
 
-- `direct`：MetaCubeX 中国大陆集合、Loyalsoldier direct、国内 Bilibili 补充。
-- `ads`：MetaCubeX 广告集合 + Loyalsoldier reject 集合。
-- `proxy-extra`：Loyalsoldier proxy 补充；`convert.js` 仍负责排除中国域名和中国 IP。
-- `ai`：除上游 AI 规则外，补充 GitHub 社区报告的 Gemini 移动/API 依赖域名，并统一走 `🤖 AI服务`。
-- `apple`：除上游 Apple 规则外，包含 Apple 官方列出的 Siri、Search、Apple Intelligence 和 Private Cloud Compute 主机；非中国大陆 Apple 流量默认优先走代理，`DIRECT` 仍可手动选择。
+- `direct`：MetaCubeX 中国大陆集合、Loyalsoldier direct、RuleGo direct、ACL4SSR、NobyDa 和国内服务补充。
+- `ads`：MetaCubeX、Loyalsoldier、anti-AD、AWAvenue、RuleGo 和 NobyDa 的广告/恶意/跟踪集合，统一去重并按父域名最小化。
+- `proxy-extra`：Loyalsoldier、RuleGo 和 Rule-for-OCD 的代理补充；`convert.js` 仍负责排除中国域名和中国 IP。
+- `ai`：除上游 AI 规则外，补充 RuleGo、SukkaW 和 Claude/Anthropic 服务域名，并统一走 `🤖 AI服务`。
+- `apple`：除上游 Apple 规则外，合并 RuleGo、NobyDa、SukkaW、LM-Firefly、scomper 等 Apple、Siri、Search、Apple Intelligence 和 Private Cloud Compute 主机；非中国大陆 Apple 流量默认优先走代理，`DIRECT` 仍可手动选择。
 - 服务文件按 AI、加密货币、Google、Apple、Microsoft、游戏、媒体、社交、开发、云服务、金融和购物等策略组拆分；媒体文件只聚合已核验的具体服务，避免所有流量进入一个过宽的代理集合。
 - `IP-ASN` 规则会在生成时过滤，避免普通 iOS 客户端因 ASN 数据下载阻塞启动。
 
@@ -62,5 +62,11 @@ CI 会固定下载官方 Mihomo `v1.19.32` 转换器。构建脚本会校验每�
 - [TG-Twilight/AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule)：GPL-3.0，补充广告过滤域名。
 - [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR)：CC-BY-SA-4.0，补充部分游戏、媒体和国内直连域名规则。
 - [LM-Firefly/Rules](https://github.com/LM-Firefly/Rules)：GPL-3.0，补充 Apple、游戏、全球媒体和 Microsoft 规则。
+- [ConnersHua/RuleGo](https://github.com/ConnersHua/RuleGo)：补充 AI、Apple、Google、Microsoft、媒体、拒绝、代理和社交规则。
+- [privacy-protection-tools/anti-AD](https://github.com/privacy-protection-tools/anti-AD)：补充广告域名集合。
+- [NobyDa/Script](https://github.com/NobyDa/Script)：补充 Apple、广告、下载和 Bilibili 规则。
+- [peiyingyao/Rule-for-OCD](https://github.com/peiyingyao/Rule-for-OCD)：补充开发、Google、Apple、媒体、社交和游戏规则。
+- [scomper/surge-list](https://github.com/scomper/surge-list)：补充 Apple、广告、媒体、Telegram 和国内服务规则。
+- [lyq2010/clash-ruleset](https://github.com/lyq2010/clash-ruleset)：仅接入 Claude、Binance、Mail 和 Docker 等公共服务增量；个人直连/代理列表不接入。
 
 本仓库的 `LICENSE` 仅覆盖本仓库脚本、元数据和编排内容；生成规则的具体条目仍遵循各上游项目的许可证和使用说明，完整来源与过滤选项记录在 `sources.json`。

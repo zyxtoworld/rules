@@ -11,12 +11,16 @@
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/aixcoder.list","kind":"list","source":"MetaCubeX/meta-rules-dat: aixcoder"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Civitai/Civitai.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Civitai"}
       ,{"url":"https://ruleset.skk.moe/Clash/non_ip/ai.txt","kind":"clash","source":"SukkaW/Surge: ai","dropRules":["DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"]}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list","kind":"clash","source":"ConnersHua/RuleGo: AI"}
+      ,{"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/claude.list","kind":"clash","source":"lyq2010/clash-ruleset: Claude"}
     ],
     "crypto": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bybit.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bybit"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/okx.list","kind":"list","source":"MetaCubeX/meta-rules-dat: okx"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/kraken.list","kind":"list","source":"MetaCubeX/meta-rules-dat: kraken"},
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bitflyer.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bitflyer"}
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bitflyer.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bitflyer"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Crypto.list","kind":"clash","source":"ConnersHua/RuleGo: Crypto"},
+      {"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/Binance.list","kind":"clash","source":"lyq2010/clash-ruleset: Binance"}
     ],
     "biliintl": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/biliintl.list","kind":"list","source":"MetaCubeX/meta-rules-dat: biliintl"}
@@ -26,20 +30,38 @@
       {"url":"https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt","kind":"clash","source":"Loyalsoldier/clash-rules: direct"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: BiliBili"},
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list","kind":"clash","source":"ACL4SSR/ACL4SSR: ChinaDomain"},
-      {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list","kind":"clash","source":"ACL4SSR/ACL4SSR: GoogleCN"}
+      {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list","kind":"clash","source":"ACL4SSR/ACL4SSR: GoogleCN"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct.list","kind":"clash","source":"ConnersHua/RuleGo: Direct"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list","kind":"clash","source":"ConnersHua/RuleGo: Direct+"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list","kind":"clash","source":"ConnersHua/RuleGo: Streaming/CN"},
+      {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/China/China.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: China"},
+      {"url":"https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Bilibili.list","kind":"clash","source":"NobyDa/Script: Bilibili"},
+      {"url":"https://raw.githubusercontent.com/scomper/surge-list/master/cn.list","kind":"clash","source":"scomper/surge-list: China"}
     ],
     "ads": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-ads-all"},
       {"url":"https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt","kind":"clash","source":"Loyalsoldier/clash-rules: reject"}
       ,{"url":"https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt","kind":"adblock","source":"TG-Twilight/AWAvenue-Ads-Rule: AWAvenue-Ads-Rule.txt"}
+      ,{"url":"https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt","kind":"list","source":"privacy-protection-tools/anti-AD: anti-ad-domains"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list","kind":"clash","source":"ConnersHua/RuleGo: Reject/Advertising"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Malicious.list","kind":"clash","source":"ConnersHua/RuleGo: Reject/Malicious"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list","kind":"clash","source":"ConnersHua/RuleGo: Reject/Tracking"}
+      ,{"url":"https://raw.githubusercontent.com/NobyDa/Script/master/Surge/AdRule.list","kind":"clash","source":"NobyDa/Script: AdRule"}
+      ,{"url":"https://raw.githubusercontent.com/scomper/surge-list/master/adblock.list","kind":"clash","source":"scomper/surge-list: AdBlock"}
+      ,{"url":"https://raw.githubusercontent.com/scomper/surge-list/master/reject.list","kind":"clash","source":"scomper/surge-list: Reject"}
     ],
     "download": [
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Download"},
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pikpak.list","kind":"list","source":"MetaCubeX/meta-rules-dat: pikpak"}
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pikpak.list","kind":"list","source":"MetaCubeX/meta-rules-dat: pikpak"},
+      {"url":"https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Download.list","kind":"clash","source":"NobyDa/Script: Download"}
     ],
     "google": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.list","kind":"list","source":"MetaCubeX/meta-rules-dat: google"},
-      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Google"}
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Google"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Google/Google.list","kind":"clash","source":"ConnersHua/RuleGo: Google"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Google/GoogleSearch.list","kind":"clash","source":"ConnersHua/RuleGo: GoogleSearch"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Google/GoogleVoice.list","kind":"clash","source":"ConnersHua/RuleGo: GoogleVoice"},
+      {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Google/Google.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: Google"}
     ],
     "apple": [
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Apple"},
@@ -57,10 +79,31 @@
       ,{"url":"https://ruleset.skk.moe/Clash/non_ip/apple_intelligence.txt","kind":"clash","source":"SukkaW/Surge: apple_intelligence","dropRules":["DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"]}
       ,{"url":"https://ruleset.skk.moe/Clash/non_ip/apple_services.txt","kind":"clash","source":"SukkaW/Surge: apple_services","dropRules":["DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"]}
       ,{"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/Apple.list","kind":"clash","source":"LM-Firefly/Rules: Apple"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Apple.list","kind":"clash","source":"ConnersHua/RuleGo: Apple"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/AppStore.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/AppStore"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/AppStoreConnect.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/AppStoreConnect"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Books.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/Books"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/FindMy.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/FindMy"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/FitnessPlus.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/FitnessPlus"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Intelligence.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/Intelligence"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Mail.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/Mail"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Music.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/Music"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/MusicTV.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/MusicTV"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Siri.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/Siri"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/SoftwareUpdate.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/SoftwareUpdate"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/TV.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/TV"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/TestFlight.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/TestFlight"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/iCloud.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/iCloud"}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/iMessage.list","kind":"clash","source":"ConnersHua/RuleGo: Apple/iMessage"}
+      ,{"url":"https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Apple.list","kind":"clash","source":"NobyDa/Script: Apple"}
+      ,{"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/AppStore/AppStore.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: AppStore"}
+      ,{"url":"https://raw.githubusercontent.com/scomper/surge-list/master/apple.list","kind":"clash","source":"scomper/surge-list: Apple"}
     ],
     "microsoft": [
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Microsoft"},
-      {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list","kind":"clash","source":"LM-Firefly/Rules: Microsoft"}
+      {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list","kind":"clash","source":"LM-Firefly/Rules: Microsoft"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/OneDrive.list","kind":"clash","source":"ConnersHua/RuleGo: Microsoft/OneDrive"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/Teams.list","kind":"clash","source":"ConnersHua/RuleGo: Microsoft/Teams"}
     ],
     "games": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.list","kind":"list","source":"MetaCubeX/meta-rules-dat: steam"},
@@ -76,20 +119,27 @@
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list","kind":"clash","source":"ACL4SSR/ACL4SSR: Steam"},
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list","kind":"clash","source":"ACL4SSR/ACL4SSR: Epic"},
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list","kind":"clash","source":"ACL4SSR/ACL4SSR: Sony"},
-      {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/Game.list","kind":"clash","source":"LM-Firefly/Rules: Game"}
+      {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/Game.list","kind":"clash","source":"LM-Firefly/Rules: Game"},
+      {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/PlayStation/PlayStation.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: PlayStation"},
+      {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Rockstar/Rockstar.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: Rockstar"}
     ],
     "youtube": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.list","kind":"list","source":"MetaCubeX/meta-rules-dat: youtube"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: YouTube"},
-      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: YouTubeMusic"}
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: YouTubeMusic"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/Video/YouTube.list","kind":"clash","source":"ConnersHua/RuleGo: YouTube"}
     ],
     "telegram": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.list","kind":"list","source":"MetaCubeX/meta-rules-dat: telegram"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Telegram","dropTypes":["IP-ASN"]}
       ,{"url":"https://ruleset.skk.moe/Clash/non_ip/telegram.txt","kind":"clash","source":"SukkaW/Surge: telegram","dropRules":["DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"]}
+      ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Telegram.list","kind":"clash","source":"ConnersHua/RuleGo: Telegram"}
+      ,{"url":"https://raw.githubusercontent.com/scomper/surge-list/master/telegram.list","kind":"clash","source":"scomper/surge-list: Telegram","dropTypes":["IP-ASN"]}
     ],
     "twitter": [
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.list","kind":"list","source":"MetaCubeX/meta-rules-dat: twitter"}
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.list","kind":"list","source":"MetaCubeX/meta-rules-dat: twitter"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/X.list","kind":"clash","source":"ConnersHua/RuleGo: X"},
+      {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Twitter/Twitter.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: Twitter"}
     ],
     "spotify": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.list","kind":"list","source":"MetaCubeX/meta-rules-dat: spotify"},
@@ -147,7 +197,10 @@
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list","kind":"clash","source":"ACL4SSR/ACL4SSR: Netflix"},
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DisneyPlus.list","kind":"clash","source":"ACL4SSR/ACL4SSR: DisneyPlus"},
       {"url":"https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list","kind":"clash","source":"ACL4SSR/ACL4SSR: ProxyMedia"},
-      {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list","kind":"clash","source":"LM-Firefly/Rules: GlobalMedia"}
+      {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list","kind":"clash","source":"LM-Firefly/Rules: GlobalMedia"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list","kind":"clash","source":"ConnersHua/RuleGo: Streaming/!CN"},
+      {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/AsianMedia/AsianMedia.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: AsianMedia"},
+      {"url":"https://raw.githubusercontent.com/scomper/surge-list/master/video.list","kind":"clash","source":"scomper/surge-list: Video"}
     ],
     "social": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/facebook.list","kind":"list","source":"MetaCubeX/meta-rules-dat: facebook"},
@@ -175,7 +228,10 @@
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/imgur.list","kind":"list","source":"MetaCubeX/meta-rules-dat: imgur"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pixiv.list","kind":"list","source":"MetaCubeX/meta-rules-dat: pixiv"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/patreon.list","kind":"list","source":"MetaCubeX/meta-rules-dat: patreon"},
-      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Line/Line.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Line"}
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Line/Line.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Line"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/WeChat.list","kind":"clash","source":"ConnersHua/RuleGo: WeChat"},
+      {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Facebook/Facebook.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: Facebook"},
+      {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/ByteDance/ByteDance.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: ByteDance"}
     ],
     "dev": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.list","kind":"list","source":"MetaCubeX/meta-rules-dat: github"},
@@ -190,7 +246,9 @@
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Figma/Figma.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Figma"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/FreeCodeCamp/FreeCodeCamp.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: FreeCodeCamp"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Unity/Unity.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Unity","dropTypes":["PROCESS-NAME"]},
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/autodesk.list","kind":"list","source":"MetaCubeX/meta-rules-dat: autodesk"}
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/autodesk.list","kind":"list","source":"MetaCubeX/meta-rules-dat: autodesk"},
+      {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Developer/Developer.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: Developer"},
+      {"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/docker.list","kind":"clash","source":"lyq2010/clash-ruleset: Docker"}
     ],
     "cloud": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/dropbox.list","kind":"list","source":"MetaCubeX/meta-rules-dat: dropbox"},
@@ -213,12 +271,14 @@
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/MEGA/MEGA.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: MEGA","dropTypes":["PROCESS-NAME"]},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bandwagonhost.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bandwagonhost"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/LastPass/LastPass.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: LastPass","dropTypes":["PROCESS-NAME"]},
-      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WIX/WIX.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: WIX"}
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WIX/WIX.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: WIX"},
+      {"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/mail.list","kind":"clash","source":"lyq2010/clash-ruleset: Mail"}
     ],
     "finance": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/paypal.list","kind":"list","source":"MetaCubeX/meta-rules-dat: paypal"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-finance.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-finance"},
-      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bloomberg.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bloomberg"}
+      {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bloomberg.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bloomberg"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/PayPal.list","kind":"clash","source":"ConnersHua/RuleGo: PayPal"}
     ],
     "shopping": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/amazon.list","kind":"list","source":"MetaCubeX/meta-rules-dat: amazon"},
@@ -234,7 +294,10 @@
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/airbnb.list","kind":"list","source":"MetaCubeX/meta-rules-dat: airbnb"}
     ],
     "proxy-extra": [
-      {"url":"https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt","kind":"clash","source":"Loyalsoldier/clash-rules: proxy"}
+      {"url":"https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt","kind":"clash","source":"Loyalsoldier/clash-rules: proxy"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list","kind":"clash","source":"ConnersHua/RuleGo: Proxy"},
+      {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy+.list","kind":"clash","source":"ConnersHua/RuleGo: Proxy+"},
+      {"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Proxy/Proxy.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: Proxy"}
     ]
   }
 }

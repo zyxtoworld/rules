@@ -53,6 +53,16 @@
         "rules": 50
       },
       {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
+        "source": "ConnersHua/RuleGo: AI",
+        "rules": 74
+      },
+      {
+        "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/claude.list",
+        "source": "lyq2010/clash-ruleset: Claude",
+        "rules": 8
+      },
+      {
         "source": "built-in: Gemini mobile and API dependencies",
         "rules": 4
       }
@@ -77,6 +87,16 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bitflyer.list",
         "source": "MetaCubeX/meta-rules-dat: bitflyer",
         "rules": 2
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Crypto.list",
+        "source": "ConnersHua/RuleGo: Crypto",
+        "rules": 45
+      },
+      {
+        "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/Binance.list",
+        "source": "lyq2010/clash-ruleset: Binance",
+        "rules": 22
       }
     ],
     "biliintl": [
@@ -111,6 +131,36 @@
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list",
         "source": "ACL4SSR/ACL4SSR: GoogleCN",
         "rules": 48
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct.list",
+        "source": "ConnersHua/RuleGo: Direct",
+        "rules": 24
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list",
+        "source": "ConnersHua/RuleGo: Direct+",
+        "rules": 21
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list",
+        "source": "ConnersHua/RuleGo: Streaming/CN",
+        "rules": 16
+      },
+      {
+        "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/China/China.list",
+        "source": "peiyingyao/Rule-for-OCD: China",
+        "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Bilibili.list",
+        "source": "NobyDa/Script: Bilibili",
+        "rules": 12
+      },
+      {
+        "url": "https://raw.githubusercontent.com/scomper/surge-list/master/cn.list",
+        "source": "scomper/surge-list: China",
+        "rules": 50
       }
     ],
     "ads": [
@@ -128,6 +178,41 @@
         "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
         "source": "TG-Twilight/AWAvenue-Ads-Rule: AWAvenue-Ads-Rule.txt",
         "rules": 965
+      },
+      {
+        "url": "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt",
+        "source": "privacy-protection-tools/anti-AD: anti-ad-domains",
+        "rules": 107693
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list",
+        "source": "ConnersHua/RuleGo: Reject/Advertising",
+        "rules": 976
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Malicious.list",
+        "source": "ConnersHua/RuleGo: Reject/Malicious",
+        "rules": 91
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list",
+        "source": "ConnersHua/RuleGo: Reject/Tracking",
+        "rules": 90
+      },
+      {
+        "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/AdRule.list",
+        "source": "NobyDa/Script: AdRule",
+        "rules": 8641
+      },
+      {
+        "url": "https://raw.githubusercontent.com/scomper/surge-list/master/adblock.list",
+        "source": "scomper/surge-list: AdBlock",
+        "rules": 24
+      },
+      {
+        "url": "https://raw.githubusercontent.com/scomper/surge-list/master/reject.list",
+        "source": "scomper/surge-list: Reject",
+        "rules": 3225
       }
     ],
     "download": [
@@ -140,6 +225,11 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pikpak.list",
         "source": "MetaCubeX/meta-rules-dat: pikpak",
         "rules": 7
+      },
+      {
+        "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Download.list",
+        "source": "NobyDa/Script: Download",
+        "rules": 16
       }
     ],
     "google": [
@@ -152,6 +242,26 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml",
         "source": "blackmatrix7/ios_rule_script: Google",
         "rules": 701
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Google/Google.list",
+        "source": "ConnersHua/RuleGo: Google",
+        "rules": 15
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Google/GoogleSearch.list",
+        "source": "ConnersHua/RuleGo: GoogleSearch",
+        "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Google/GoogleVoice.list",
+        "source": "ConnersHua/RuleGo: GoogleVoice",
+        "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Google/Google.list",
+        "source": "peiyingyao/Rule-for-OCD: Google",
+        "rules": 1
       }
     ],
     "apple": [
@@ -163,7 +273,7 @@
       {
         "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple",
         "source": "v2fly/domain-list-community: apple",
-        "rules": 841
+        "rules": 850
       },
       {
         "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/icloud",
@@ -231,6 +341,101 @@
         "rules": 2533
       },
       {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Apple.list",
+        "source": "ConnersHua/RuleGo: Apple",
+        "rules": 20
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/AppStore.list",
+        "source": "ConnersHua/RuleGo: Apple/AppStore",
+        "rules": 7
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/AppStoreConnect.list",
+        "source": "ConnersHua/RuleGo: Apple/AppStoreConnect",
+        "rules": 3
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Books.list",
+        "source": "ConnersHua/RuleGo: Apple/Books",
+        "rules": 5
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/FindMy.list",
+        "source": "ConnersHua/RuleGo: Apple/FindMy",
+        "rules": 3
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/FitnessPlus.list",
+        "source": "ConnersHua/RuleGo: Apple/FitnessPlus",
+        "rules": 2
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Intelligence.list",
+        "source": "ConnersHua/RuleGo: Apple/Intelligence",
+        "rules": 9
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Mail.list",
+        "source": "ConnersHua/RuleGo: Apple/Mail",
+        "rules": 2
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Music.list",
+        "source": "ConnersHua/RuleGo: Apple/Music",
+        "rules": 10
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/MusicTV.list",
+        "source": "ConnersHua/RuleGo: Apple/MusicTV",
+        "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Siri.list",
+        "source": "ConnersHua/RuleGo: Apple/Siri",
+        "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/SoftwareUpdate.list",
+        "source": "ConnersHua/RuleGo: Apple/SoftwareUpdate",
+        "rules": 21
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/TV.list",
+        "source": "ConnersHua/RuleGo: Apple/TV",
+        "rules": 7
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/TestFlight.list",
+        "source": "ConnersHua/RuleGo: Apple/TestFlight",
+        "rules": 2
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/iCloud.list",
+        "source": "ConnersHua/RuleGo: Apple/iCloud",
+        "rules": 11
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/iMessage.list",
+        "source": "ConnersHua/RuleGo: Apple/iMessage",
+        "rules": 2
+      },
+      {
+        "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Apple.list",
+        "source": "NobyDa/Script: Apple",
+        "rules": 44
+      },
+      {
+        "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/AppStore/AppStore.list",
+        "source": "peiyingyao/Rule-for-OCD: AppStore",
+        "rules": 2
+      },
+      {
+        "url": "https://raw.githubusercontent.com/scomper/surge-list/master/apple.list",
+        "source": "scomper/surge-list: Apple",
+        "rules": 13
+      },
+      {
         "source": "built-in: Apple Intelligence and Siri hosts",
         "rules": 6
       }
@@ -245,6 +450,16 @@
         "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list",
         "source": "LM-Firefly/Rules: Microsoft",
         "rules": 669
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/OneDrive.list",
+        "source": "ConnersHua/RuleGo: Microsoft/OneDrive",
+        "rules": 5
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/Teams.list",
+        "source": "ConnersHua/RuleGo: Microsoft/Teams",
+        "rules": 4
       }
     ],
     "games": [
@@ -317,6 +532,16 @@
         "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Game.list",
         "source": "LM-Firefly/Rules: Game",
         "rules": 548
+      },
+      {
+        "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/PlayStation/PlayStation.list",
+        "source": "peiyingyao/Rule-for-OCD: PlayStation",
+        "rules": 3
+      },
+      {
+        "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Rockstar/Rockstar.list",
+        "source": "peiyingyao/Rule-for-OCD: Rockstar",
+        "rules": 9
       }
     ],
     "youtube": [
@@ -334,6 +559,11 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml",
         "source": "blackmatrix7/ios_rule_script: YouTubeMusic",
         "rules": 1
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/Video/YouTube.list",
+        "source": "ConnersHua/RuleGo: YouTube",
+        "rules": 12
       }
     ],
     "telegram": [
@@ -351,6 +581,16 @@
         "url": "https://ruleset.skk.moe/Clash/non_ip/telegram.txt",
         "source": "SukkaW/Surge: telegram",
         "rules": 14
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Telegram.list",
+        "source": "ConnersHua/RuleGo: Telegram",
+        "rules": 30
+      },
+      {
+        "url": "https://raw.githubusercontent.com/scomper/surge-list/master/telegram.list",
+        "source": "scomper/surge-list: Telegram",
+        "rules": 13
       }
     ],
     "twitter": [
@@ -358,6 +598,16 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.list",
         "source": "MetaCubeX/meta-rules-dat: twitter",
         "rules": 24
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/X.list",
+        "source": "ConnersHua/RuleGo: X",
+        "rules": 10
+      },
+      {
+        "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Twitter/Twitter.list",
+        "source": "peiyingyao/Rule-for-OCD: Twitter",
+        "rules": 8
       }
     ],
     "spotify": [
@@ -616,6 +866,21 @@
         "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list",
         "source": "LM-Firefly/Rules: GlobalMedia",
         "rules": 1926
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list",
+        "source": "ConnersHua/RuleGo: Streaming/!CN",
+        "rules": 241
+      },
+      {
+        "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/AsianMedia/AsianMedia.list",
+        "source": "peiyingyao/Rule-for-OCD: AsianMedia",
+        "rules": 19
+      },
+      {
+        "url": "https://raw.githubusercontent.com/scomper/surge-list/master/video.list",
+        "source": "scomper/surge-list: Video",
+        "rules": 61
       }
     ],
     "social": [
@@ -748,6 +1013,21 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Line/Line.yaml",
         "source": "blackmatrix7/ios_rule_script: Line",
         "rules": 24
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/WeChat.list",
+        "source": "ConnersHua/RuleGo: WeChat",
+        "rules": 18
+      },
+      {
+        "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Facebook/Facebook.list",
+        "source": "peiyingyao/Rule-for-OCD: Facebook",
+        "rules": 25
+      },
+      {
+        "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/ByteDance/ByteDance.list",
+        "source": "peiyingyao/Rule-for-OCD: ByteDance",
+        "rules": 4
       }
     ],
     "dev": [
@@ -815,6 +1095,16 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/autodesk.list",
         "source": "MetaCubeX/meta-rules-dat: autodesk",
         "rules": 558
+      },
+      {
+        "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Developer/Developer.list",
+        "source": "peiyingyao/Rule-for-OCD: Developer",
+        "rules": 4
+      },
+      {
+        "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/docker.list",
+        "source": "lyq2010/clash-ruleset: Docker",
+        "rules": 10
       }
     ],
     "cloud": [
@@ -922,6 +1212,11 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WIX/WIX.yaml",
         "source": "blackmatrix7/ios_rule_script: WIX",
         "rules": 9
+      },
+      {
+        "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/mail.list",
+        "source": "lyq2010/clash-ruleset: Mail",
+        "rules": 6
       }
     ],
     "finance": [
@@ -939,6 +1234,11 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bloomberg.list",
         "source": "MetaCubeX/meta-rules-dat: bloomberg",
         "rules": 61
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/PayPal.list",
+        "source": "ConnersHua/RuleGo: PayPal",
+        "rules": 4
       }
     ],
     "shopping": [
@@ -1003,6 +1303,21 @@
         "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
         "source": "Loyalsoldier/clash-rules: proxy",
         "rules": 27110
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list",
+        "source": "ConnersHua/RuleGo: Proxy",
+        "rules": 513
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy+.list",
+        "source": "ConnersHua/RuleGo: Proxy+",
+        "rules": 0
+      },
+      {
+        "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Proxy/Proxy.list",
+        "source": "peiyingyao/Rule-for-OCD: Proxy",
+        "rules": 5
       }
     ]
   },
@@ -1012,24 +1327,32 @@
       "group": "ai",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 198,
-      "bytes": 2039
+      "rules": 215,
+      "bytes": 2200
     },
     "ai-classical": {
       "path": "rules/mihomo/ai-classical.yaml",
       "group": "ai",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 5,
-      "bytes": 266
+      "rules": 9,
+      "bytes": 400
     },
     "crypto": {
       "path": "rules/mihomo/crypto.mrs",
       "group": "crypto",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 30,
-      "bytes": 356
+      "rules": 78,
+      "bytes": 812
+    },
+    "crypto-classical": {
+      "path": "rules/mihomo/crypto-classical.yaml",
+      "group": "crypto",
+      "behavior": "classical",
+      "format": "yaml",
+      "rules": 1,
+      "bytes": 100
     },
     "biliintl": {
       "path": "rules/mihomo/biliintl.mrs",
@@ -1044,40 +1367,56 @@
       "group": "direct",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 113376,
-      "bytes": 523371
+      "rules": 113378,
+      "bytes": 523382
     },
     "direct-ipcidr": {
       "path": "rules/mihomo/direct-ipcidr.mrs",
       "group": "direct",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 17,
-      "bytes": 161
+      "rules": 25,
+      "bytes": 204
     },
     "direct-classical": {
       "path": "rules/mihomo/direct-classical.yaml",
       "group": "direct",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 22,
-      "bytes": 760
+      "rules": 30,
+      "bytes": 996
     },
     "ads": {
       "path": "rules/mihomo/ads.mrs",
       "group": "ads",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 93877,
-      "bytes": 925849
+      "rules": 109718,
+      "bytes": 960247
     },
     "ads-2": {
       "path": "rules/mihomo/ads-2.mrs",
       "group": "ads",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 93876,
-      "bytes": 891933
+      "rules": 109717,
+      "bytes": 1046158
+    },
+    "ads-ipcidr": {
+      "path": "rules/mihomo/ads-ipcidr.mrs",
+      "group": "ads",
+      "behavior": "ipcidr",
+      "format": "mrs",
+      "rules": 187,
+      "bytes": 745
+    },
+    "ads-classical": {
+      "path": "rules/mihomo/ads-classical.yaml",
+      "group": "ads",
+      "behavior": "classical",
+      "format": "yaml",
+      "rules": 28,
+      "bytes": 943
     },
     "download": {
       "path": "rules/mihomo/download.mrs",
@@ -1092,16 +1431,16 @@
       "group": "download",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 33,
-      "bytes": 1093
+      "rules": 36,
+      "bytes": 1189
     },
     "google": {
       "path": "rules/mihomo/google.mrs",
       "group": "google",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1074,
-      "bytes": 8826
+      "rules": 1076,
+      "bytes": 8829
     },
     "google-ipcidr": {
       "path": "rules/mihomo/google-ipcidr.mrs",
@@ -1116,40 +1455,40 @@
       "group": "google",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 11,
-      "bytes": 458
+      "rules": 13,
+      "bytes": 523
     },
     "apple": {
       "path": "rules/mihomo/apple.mrs",
       "group": "apple",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1799,
-      "bytes": 17394
+      "rules": 1829,
+      "bytes": 17643
     },
     "apple-ipcidr": {
       "path": "rules/mihomo/apple-ipcidr.mrs",
       "group": "apple",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 965,
-      "bytes": 176
+      "rules": 956,
+      "bytes": 180
     },
     "apple-classical": {
       "path": "rules/mihomo/apple-classical.yaml",
       "group": "apple",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 20,
-      "bytes": 747
+      "rules": 22,
+      "bytes": 809
     },
     "microsoft": {
       "path": "rules/mihomo/microsoft.mrs",
       "group": "microsoft",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 667,
-      "bytes": 6679
+      "rules": 669,
+      "bytes": 6693
     },
     "microsoft-classical": {
       "path": "rules/mihomo/microsoft-classical.yaml",
@@ -1164,8 +1503,8 @@
       "group": "games",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 895,
-      "bytes": 8677
+      "rules": 903,
+      "bytes": 8756
     },
     "games-classical": {
       "path": "rules/mihomo/games-classical.yaml",
@@ -1180,8 +1519,8 @@
       "group": "youtube",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 181,
-      "bytes": 1321
+      "rules": 182,
+      "bytes": 1327
     },
     "youtube-ipcidr": {
       "path": "rules/mihomo/youtube-ipcidr.mrs",
@@ -1212,8 +1551,8 @@
       "group": "telegram",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 10,
-      "bytes": 143
+      "rules": 26,
+      "bytes": 177
     },
     "telegram-classical": {
       "path": "rules/mihomo/telegram-classical.yaml",
@@ -1228,8 +1567,16 @@
       "group": "twitter",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 24,
-      "bytes": 318
+      "rules": 25,
+      "bytes": 320
+    },
+    "twitter-classical": {
+      "path": "rules/mihomo/twitter-classical.yaml",
+      "group": "twitter",
+      "behavior": "classical",
+      "format": "yaml",
+      "rules": 1,
+      "bytes": 100
     },
     "spotify": {
       "path": "rules/mihomo/spotify.mrs",
@@ -1284,56 +1631,64 @@
       "group": "media",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1616,
-      "bytes": 14678
+      "rules": 1628,
+      "bytes": 14750
     },
     "media-ipcidr": {
       "path": "rules/mihomo/media-ipcidr.mrs",
       "group": "media",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 504,
-      "bytes": 662
+      "rules": 523,
+      "bytes": 724
     },
     "media-classical": {
       "path": "rules/mihomo/media-classical.yaml",
       "group": "media",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 62,
-      "bytes": 2245
+      "rules": 66,
+      "bytes": 2397
     },
     "social": {
       "path": "rules/mihomo/social.mrs",
       "group": "social",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 789,
-      "bytes": 6887
+      "rules": 798,
+      "bytes": 6929
     },
     "social-ipcidr": {
       "path": "rules/mihomo/social-ipcidr.mrs",
       "group": "social",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 48,
-      "bytes": 264
+      "rules": 74,
+      "bytes": 370
+    },
+    "social-classical": {
+      "path": "rules/mihomo/social-classical.yaml",
+      "group": "social",
+      "behavior": "classical",
+      "format": "yaml",
+      "rules": 1,
+      "bytes": 101
     },
     "dev": {
       "path": "rules/mihomo/dev.mrs",
       "group": "dev",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1238,
-      "bytes": 11747
+      "rules": 1243,
+      "bytes": 11807
     },
     "cloud": {
       "path": "rules/mihomo/cloud.mrs",
       "group": "cloud",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 485,
-      "bytes": 4837
+      "rules": 491,
+      "bytes": 4894
     },
     "cloud-ipcidr": {
       "path": "rules/mihomo/cloud-ipcidr.mrs",
@@ -1348,8 +1703,8 @@
       "group": "finance",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 919,
-      "bytes": 8134
+      "rules": 920,
+      "bytes": 8156
     },
     "shopping": {
       "path": "rules/mihomo/shopping.mrs",
@@ -1364,26 +1719,43 @@
       "group": "proxy-extra",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 27108,
-      "bytes": 190815
+      "rules": 27183,
+      "bytes": 191232
+    },
+    "proxy-extra-ipcidr": {
+      "path": "rules/mihomo/proxy-extra-ipcidr.mrs",
+      "group": "proxy-extra",
+      "behavior": "ipcidr",
+      "format": "mrs",
+      "rules": 18,
+      "bytes": 172
+    },
+    "proxy-extra-classical": {
+      "path": "rules/mihomo/proxy-extra-classical.yaml",
+      "group": "proxy-extra",
+      "behavior": "classical",
+      "format": "yaml",
+      "rules": 4,
+      "bytes": 196
     }
   },
   "groups": {
     "ai": {
-      "inputRules": 386,
-      "rules": 203,
-      "pruned": 183,
+      "inputRules": 468,
+      "rules": 224,
+      "pruned": 244,
       "outputs": [
         "ai",
         "ai-classical"
       ]
     },
     "crypto": {
-      "inputRules": 30,
-      "rules": 30,
-      "pruned": 0,
+      "inputRules": 97,
+      "rules": 79,
+      "pruned": 18,
       "outputs": [
-        "crypto"
+        "crypto",
+        "crypto-classical"
       ]
     },
     "biliintl": {
@@ -1395,9 +1767,9 @@
       ]
     },
     "direct": {
-      "inputRules": 223389,
-      "rules": 113415,
-      "pruned": 109974,
+      "inputRules": 223513,
+      "rules": 113433,
+      "pruned": 110080,
       "outputs": [
         "direct",
         "direct-ipcidr",
@@ -1405,27 +1777,29 @@
       ]
     },
     "ads": {
-      "inputRules": 188646,
-      "rules": 187753,
-      "pruned": 893,
+      "inputRules": 309386,
+      "rules": 219650,
+      "pruned": 89736,
       "outputs": [
         "ads",
-        "ads-2"
+        "ads-2",
+        "ads-ipcidr",
+        "ads-classical"
       ]
     },
     "download": {
-      "inputRules": 41,
-      "rules": 41,
-      "pruned": 0,
+      "inputRules": 57,
+      "rules": 44,
+      "pruned": 13,
       "outputs": [
         "download",
         "download-classical"
       ]
     },
     "google": {
-      "inputRules": 1776,
-      "rules": 1090,
-      "pruned": 686,
+      "inputRules": 1794,
+      "rules": 1094,
+      "pruned": 700,
       "outputs": [
         "google",
         "google-ipcidr",
@@ -1433,9 +1807,9 @@
       ]
     },
     "apple": {
-      "inputRules": 3684,
-      "rules": 2784,
-      "pruned": 900,
+      "inputRules": 3858,
+      "rules": 2807,
+      "pruned": 1051,
       "outputs": [
         "apple",
         "apple-ipcidr",
@@ -1443,27 +1817,27 @@
       ]
     },
     "microsoft": {
-      "inputRules": 1339,
-      "rules": 673,
-      "pruned": 666,
+      "inputRules": 1348,
+      "rules": 675,
+      "pruned": 673,
       "outputs": [
         "microsoft",
         "microsoft-classical"
       ]
     },
     "games": {
-      "inputRules": 1835,
-      "rules": 898,
-      "pruned": 937,
+      "inputRules": 1847,
+      "rules": 906,
+      "pruned": 941,
       "outputs": [
         "games",
         "games-classical"
       ]
     },
     "youtube": {
-      "inputRules": 362,
-      "rules": 185,
-      "pruned": 177,
+      "inputRules": 374,
+      "rules": 186,
+      "pruned": 188,
       "outputs": [
         "youtube",
         "youtube-ipcidr",
@@ -1471,9 +1845,9 @@
       ]
     },
     "telegram": {
-      "inputRules": 76,
-      "rules": 44,
-      "pruned": 32,
+      "inputRules": 119,
+      "rules": 60,
+      "pruned": 59,
       "outputs": [
         "telegram",
         "telegram-ipcidr",
@@ -1481,11 +1855,12 @@
       ]
     },
     "twitter": {
-      "inputRules": 24,
-      "rules": 24,
-      "pruned": 0,
+      "inputRules": 42,
+      "rules": 26,
+      "pruned": 16,
       "outputs": [
-        "twitter"
+        "twitter",
+        "twitter-classical"
       ]
     },
     "spotify": {
@@ -1516,9 +1891,9 @@
       ]
     },
     "media": {
-      "inputRules": 3277,
-      "rules": 2182,
-      "pruned": 1095,
+      "inputRules": 3598,
+      "rules": 2217,
+      "pruned": 1381,
       "outputs": [
         "media",
         "media-ipcidr",
@@ -1526,25 +1901,26 @@
       ]
     },
     "social": {
-      "inputRules": 955,
-      "rules": 837,
-      "pruned": 118,
+      "inputRules": 1002,
+      "rules": 873,
+      "pruned": 129,
       "outputs": [
         "social",
-        "social-ipcidr"
+        "social-ipcidr",
+        "social-classical"
       ]
     },
     "dev": {
-      "inputRules": 1329,
-      "rules": 1238,
-      "pruned": 91,
+      "inputRules": 1343,
+      "rules": 1243,
+      "pruned": 100,
       "outputs": [
         "dev"
       ]
     },
     "cloud": {
-      "inputRules": 503,
-      "rules": 495,
+      "inputRules": 509,
+      "rules": 501,
       "pruned": 8,
       "outputs": [
         "cloud",
@@ -1552,9 +1928,9 @@
       ]
     },
     "finance": {
-      "inputRules": 921,
-      "rules": 919,
-      "pruned": 2,
+      "inputRules": 925,
+      "rules": 920,
+      "pruned": 5,
       "outputs": [
         "finance"
       ]
@@ -1568,11 +1944,13 @@
       ]
     },
     "proxy-extra": {
-      "inputRules": 27110,
-      "rules": 27108,
-      "pruned": 2,
+      "inputRules": 27628,
+      "rules": 27205,
+      "pruned": 423,
       "outputs": [
-        "proxy-extra"
+        "proxy-extra",
+        "proxy-extra-ipcidr",
+        "proxy-extra-classical"
       ]
     }
   }
