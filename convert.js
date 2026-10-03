@@ -547,7 +547,9 @@ function buildConfig(proxies) {
     [POLICY.cloud, [DIRECT, POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
     [POLICY.finance, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'HK'])]],
     [POLICY.shopping, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'HK'])]],
-    [POLICY.apple, [DIRECT, POLICY.manual, ...prefThenAll(['US', 'JP'])]],
+    // Non-CN Apple traffic should prefer proxy for foreign Apple IDs; DIRECT
+    // remains available as an explicit fallback. CN exceptions are matched earlier.
+    [POLICY.apple, [POLICY.manual, POLICY.auto, DIRECT, ...prefThenAll(['US', 'JP'])]],
     [POLICY.telegram, [POLICY.manual, ...prefThenAll(['SG', 'HK', 'US', 'JP'])]],
     [POLICY.youtube, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'TW', 'HK'])]],
     [POLICY.google, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],

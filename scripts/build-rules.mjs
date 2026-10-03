@@ -18,6 +18,19 @@ const retryCount = 3;
 const fixedMrsPartitions = {
   ads: { domain: 2 },
 };
+const builtInRules = {
+  // Apple lists these hosts for Apple Intelligence, Siri, Search and Private
+  // Cloud Compute. Keep them in the Apple provider so foreign Apple ID and
+  // Siri traffic follows the Apple service policy.
+  apple: [
+    'DOMAIN,guzzoni.apple.com',
+    'DOMAIN-SUFFIX,smoot.apple.com',
+    'DOMAIN,apple-relay.cloudflare.com',
+    'DOMAIN,apple-relay.fastly-edge.com',
+    'DOMAIN,cp4.cloudflare.com',
+    'DOMAIN,apple-relay.apple.com',
+  ],
+};
 const maxMrsBytes = 1_400_000;
 
 async function fetchText(url) {
@@ -240,6 +253,12 @@ try {
       const parsed = parseSource(text, source);
       for (const rule of parsed) collected.push(rule);
       metadata.sources[group].push({ url: source.url, source: source.source, rules: parsed.length });
+    }
+
+    const extraRules = builtInRules[group] || [];
+    if (extraRules.length) {
+      collected.push(...extraRules);
+      metadata.sources[group].push({ source: 'built-in: Apple Intelligence and Siri hosts', rules: extraRules.length });
     }
 
     const rules = minimizeRules(collected);

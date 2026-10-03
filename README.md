@@ -45,6 +45,7 @@ CI 会固定下载官方 Mihomo `v1.19.32` 转换器。构建脚本会校验每�
 - `direct`：MetaCubeX 中国大陆集合、Loyalsoldier direct、国内 Bilibili 补充。
 - `ads`：MetaCubeX 广告集合 + Loyalsoldier reject 集合。
 - `proxy-extra`：Loyalsoldier proxy 补充；`convert.js` 仍负责排除中国域名和中国 IP。
+- `apple`：除上游 Apple 规则外，包含 Apple 官方列出的 Siri、Search、Apple Intelligence 和 Private Cloud Compute 主机；非中国大陆 Apple 流量默认优先走代理，`DIRECT` 仍可手动选择。
 - 服务文件按 AI、加密货币、Google、Apple、Microsoft、游戏、媒体、社交、开发、云服务、金融和购物等策略组拆分；媒体文件只聚合已核验的具体服务，避免所有流量进入一个过宽的代理集合。
 - `IP-ASN` 规则会在生成时过滤，避免普通 iOS 客户端因 ASN 数据下载阻塞启动。
 
