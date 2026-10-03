@@ -804,11 +804,14 @@ function buildConfig(proxies) {
     ...providerRuleSet('media', POLICY.media),
     geosite('speedtest', POLICY.speedtest),
 
+    // Game providers are specific service rules; keep them ahead of the
+    // broad proxy supplement so game traffic reaches the Games group.
+    ...providerRuleSet('games', POLICY.games),
+
     // 7. 自有代理补充集：排除 MetaCubeX 中国域名和中国 IP。
     `AND,((RULE-SET,proxy-extra),(NOT,((GEOSITE,cn))),(NOT,((GEOIP,CN)))),${POLICY.manual}`,
 
     // 8. 游戏/媒体宽分类必须在所有服务特例之后。
-    ...providerRuleSet('games', POLICY.games),
     geosite('category-games-!cn', POLICY.games),
     geosite('category-entertainment', POLICY.media),
 
