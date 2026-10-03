@@ -12,6 +12,8 @@ ClashMi、Clash Verge Rev、Nikki 等 Mihomo 客户端使用 `rules/mihomo/` 中
 https://testingcf.jsdelivr.net/gh/zyxtoworld/rules@main/rules/mihomo/ai.mrs
 ```
 
+`convert.js` 不嵌入域名、IP 或进程名规则；这些条目全部由 MRS 或 classical YAML provider 生成。转换器只保留 provider 组合、动态 `GEOIP` 分类和最终兜底动作。
+
 域名和 IP 规则优先使用 Mihomo 原生 MRS：
 
 ```yaml

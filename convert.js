@@ -493,7 +493,11 @@ function buildConfig(proxies) {
 
   // MRS 只支持 domain/ipcidr；无法表达的 DOMAIN-KEYWORD、PROCESS-* 等规则保留为 classical YAML。
   const ruleProviderParts = {
-    private: ['ipcidr'],
+    private: ['domain', 'ipcidr'],
+    cn: ['domain'],
+    geolocation: ['domain'],
+    github: ['domain'],
+    speedtest: ['domain'],
     ai: ['domain', 'classical'],
     openai: ['domain', 'ipcidr', 'classical'],
     claude: ['domain'],
@@ -550,10 +554,9 @@ function buildConfig(proxies) {
   // domains/IPs available to the later CN/DIRECT rules even when a broad or
   // mixed upstream source contains them.
   const foreignMatch = (match, policy) =>
-    `AND,((${match}),(NOT,((GEOSITE,cn))),(NOT,((GEOIP,CN)))),${policy}`;
+    `AND,((${match}),(NOT,((RULE-SET,cn))),(NOT,((GEOIP,CN)))),${policy}`;
   const foreignProviderRuleSet = (name, policy) => ruleProviderParts[name]
     .map(kind => foreignMatch(`RULE-SET,${providerName(name, kind)}`, policy));
-  const foreignGeosite = (name, policy) => foreignMatch(`GEOSITE,${name}`, policy);
 
   // ===== 基础配置 =====
   const config = {
@@ -643,261 +646,65 @@ function buildConfig(proxies) {
   }
 
   // ===== 规则 =====
-  function geosite(name, policy) {
-    return `GEOSITE,${name},${policy}`;
-  }
-
-  const downloadProcessNames = [
-    'aria2c',
-    'aria2c.exe',
-    'BitComet',
-    'BitComet.exe',
-    'BitComet_x64.exe',
-    'BitTorrent',
-    'BitTorrent.exe',
-    'Deluge',
-    'deluge',
-    'deluge.exe',
-    'deluge-gtk',
-    'deluge-gtk.exe',
-    'deluged',
-    'deluged.exe',
-    'DownloadService',
-    'DownloadService.exe',
-    'dmaster',
-    'dmaster.exe',
-    'EagleGet',
-    'EagleGet.exe',
-    'fdm',
-    'fdm.exe',
-    'fdmd',
-    'fdmd.exe',
-    'FlashGet',
-    'FlashGet.exe',
-    'Folx',
-    'Folx.exe',
-    'FrostWire',
-    'FrostWire.exe',
-    'IDMan',
-    'IDMan.exe',
-    'Internet Download Manager',
-    'Internet Download Manager.exe',
-    'JDownloader',
-    'JDownloader.exe',
-    'JDownloader2',
-    'JDownloader2.exe',
-    'kget',
-    'kget.exe',
-    'MegaDownloader',
-    'MegaDownloader.exe',
-    'MEGAsync',
-    'MEGAsync.exe',
-    'Motrix',
-    'Motrix.exe',
-    'motrix-next',
-    'motrix-next.exe',
-    'motrix-next-engine',
-    'motrix-next-engine.exe',
-    'NeatDM',
-    'NeatDM.exe',
-    'NetTransport',
-    'NetTransport.exe',
-    'Ninja Download Manager',
-    'Ninja Download Manager.exe',
-    'Persepolis',
-    'persepolis',
-    'persepolis.exe',
-    'PicoTorrent',
-    'PicoTorrent.exe',
-    'qbittorrent',
-    'qbittorrent.exe',
-    'qBittorrent',
-    'qBittorrent.exe',
-    'Tixati',
-    'Tixati.exe',
-    'Transmission',
-    'Transmission.exe',
-    'transmission-daemon',
-    'transmission-daemon.exe',
-    'transmission-gtk',
-    'transmission-gtk.exe',
-    'transmission-qt',
-    'transmission-qt.exe',
-    'uGet',
-    'uget',
-    'uGet.exe',
-    'uget.exe',
-    'uTorrent',
-    'uTorrent.exe',
-    'uTorrent Web',
-    'uTorrent Web.exe',
-    'Vuze',
-    'Vuze.exe',
-    'WebTorrent',
-    'WebTorrent.exe',
-    'WebTorrent Helper.exe',
-    'WebTorrentHelper',
-    'WebTorrentHelper.exe',
-    'xdman',
-    'xdman.exe',
-    'XDM',
-    'XDM.exe',
-    'XLServicePlatform',
-    'XLServicePlatform.exe',
-    'XLLiveUD',
-    'XLLiveUD.exe',
-    'XunLei',
-    'XunLei.exe',
-    'Xunlei',
-    'Xunlei.exe',
-    'Thunder',
-    'Thunder.exe',
-    'ThunderMini',
-    'ThunderMini.exe',
-    'ThunderPlatform',
-    'ThunderPlatform.exe',
-    'ThunderVIP',
-    'ThunderVIP.exe',
-    'baidunetdisk',
-    'baidunetdisk.exe',
-    'BaiduNetdisk',
-    'BaiduNetdisk.exe',
-    'baidunetdiskhost',
-    'baidunetdiskhost.exe',
-    'BaiduNetdiskHost',
-    'BaiduNetdiskHost.exe',
-    'Weiyun',
-    'Weiyun.exe',
-    'AliYunDrive',
-    'AliYunDrive.exe',
-    'aliyundrive',
-    'aliyundrive.exe',
-    'aDrive',
-    'aDrive.exe',
-    'QuarkCloudDrive',
-    'QuarkCloudDrive.exe',
-    'QuarkNetdisk',
-    'QuarkNetdisk.exe',
-    '115',
-    '115.exe',
-    '115Desktop',
-    '115Desktop.exe',
-    '123pan',
-    '123pan.exe'
-  ];
-  const downloadProcessMatchers = unique(downloadProcessNames).map(name => `(PROCESS-NAME,${name})`).join(',');
-  const downloadProcessRule =
-    `AND,((OR,(${downloadProcessMatchers})),` +
-    `(OR,((GEOSITE,geolocation-!cn),(NOT,((GEOIP,CN))))),` +
-    `(NOT,((GEOSITE,cn)))),${POLICY.lowRateDownload}`;
   const proxyExtraMatchers = providerMatchSet('proxy-extra')
     .map(rule => `(${rule})`)
     .join(',');
 
   const rules = [
     // 1. 私有地址先直连，避免被后续 GeoSite/IP 规则误判。
-    geosite('private', DIRECT),
     ...providerRuleSet('private', DIRECT),
 
     // 2. 严格广告拦截：广告规则优先于所有服务、直连和代理规则。
     // This intentionally takes precedence over policy-group providers as well;
     // shared ad/telemetry hosts are rejected instead of routed to a service.
     ...providerRuleSet('ads', REJECT),
-    geosite('category-ads-all', REJECT),
 
-    // 3. 高优先级服务：使用自有聚合文件，GeoSite 保留为兜底。
+    // Domestic domain sources are handled by the generated CN provider before
+    // foreign service providers. The foreign guards below also consult it.
+    ...providerRuleSet('cn', DIRECT),
+
+    // 3. 高优先级服务：全部来自自有 MRS/classical providers。
     ...foreignProviderRuleSet('openai', POLICY.openai),
-    foreignGeosite('openai', POLICY.openai),
     ...foreignProviderRuleSet('claude', POLICY.claude),
-    foreignGeosite('anthropic', POLICY.claude),
     ...foreignProviderRuleSet('ai', POLICY.ai),
-    foreignGeosite('google-gemini', POLICY.ai),
-    foreignGeosite('category-ai-chat-!cn', POLICY.ai),
     ...foreignProviderRuleSet('biliintl', POLICY.bilibili),
-    foreignGeosite('biliintl', POLICY.bilibili),
 
-    // 4. 加密货币与国内服务：广告已经在前面处理。
+    // 4. 加密货币、Apple 和下载器：广告与国内域名已经在前面处理。
     ...foreignProviderRuleSet('crypto', POLICY.crypto),
-    foreignGeosite('category-cryptocurrency', POLICY.crypto),
-    geosite('google@cn', DIRECT),
-    geosite('steam@cn', DIRECT),
-    geosite('category-games@cn', DIRECT),
-    geosite('category-entertainment@cn', DIRECT),
-    geosite('apple-cn', DIRECT),
-    geosite('apple@cn', DIRECT),
-    geosite('icloud@cn', DIRECT),
-    geosite('microsoft@cn', DIRECT),
-    // Apple rules are generated into apple.mrs; keep the provider ahead of
-    // DIRECT so the client-side Apple group selection is respected.
     ...foreignProviderRuleSet('apple', POLICY.apple),
-    foreignGeosite('icloud', POLICY.apple),
-    foreignGeosite('apple', POLICY.apple),
-
-    // 5. 下载器和明确下载资源。
     ...foreignProviderRuleSet('download', POLICY.lowRateDownload),
-    downloadProcessRule,
 
-    // 6. 策略组：专用功能优先，开发/社交/云/金融等分类补齐遗漏。
+    // 5. 策略组：专用功能优先，开发/社交/云/金融等分类补齐遗漏。
     ...foreignProviderRuleSet('youtube', POLICY.youtube),
-    foreignGeosite('youtube', POLICY.youtube),
     ...foreignProviderRuleSet('google', POLICY.google),
-    foreignGeosite('google', POLICY.google),
-    foreignGeosite('github', POLICY.github),
+    ...foreignProviderRuleSet('github', POLICY.github),
     ...foreignProviderRuleSet('dev', POLICY.dev),
     ...foreignProviderRuleSet('telegram', POLICY.telegram),
-    foreignGeosite('telegram', POLICY.telegram),
-    foreignGeosite('twitter', POLICY.twitter),
     ...foreignProviderRuleSet('twitter', POLICY.twitter),
     ...foreignProviderRuleSet('social', POLICY.social),
-    foreignGeosite('facebook', POLICY.social),
-    foreignGeosite('discord', POLICY.social),
-    foreignGeosite('reddit', POLICY.social),
-    foreignGeosite('whatsapp', POLICY.social),
-    foreignGeosite('instagram', POLICY.social),
-    foreignGeosite('linkedin', POLICY.social),
-    foreignGeosite('zoom', POLICY.social),
-    foreignGeosite('slack', POLICY.social),
-    foreignGeosite('category-communication', POLICY.social),
     ...foreignProviderRuleSet('netflix', POLICY.netflix),
-    foreignGeosite('netflix', POLICY.netflix),
     ...foreignProviderRuleSet('spotify', POLICY.spotify),
-    foreignGeosite('spotify', POLICY.spotify),
     ...foreignProviderRuleSet('disney', POLICY.disney),
-    foreignGeosite('disney', POLICY.disney),
     // Microsoft-specific rules must precede the broader cloud bucket;
     // otherwise OneDrive and Microsoft endpoints are labeled as generic cloud.
     ...foreignProviderRuleSet('onedrive', POLICY.onedrive),
-    foreignGeosite('onedrive', POLICY.onedrive),
     ...foreignProviderRuleSet('microsoft', POLICY.microsoft),
-    foreignGeosite('microsoft', POLICY.microsoft),
     ...foreignProviderRuleSet('cloud', POLICY.cloud),
-    foreignGeosite('dropbox', POLICY.cloud),
     ...foreignProviderRuleSet('finance', POLICY.finance),
-    foreignGeosite('paypal', POLICY.finance),
-    foreignGeosite('category-finance', POLICY.finance),
     ...foreignProviderRuleSet('shopping', POLICY.shopping),
-    foreignGeosite('amazon', POLICY.shopping),
     ...foreignProviderRuleSet('tiktok', POLICY.tiktok),
-    foreignGeosite('tiktok', POLICY.tiktok),
     ...foreignProviderRuleSet('media', POLICY.media),
-    foreignGeosite('speedtest', POLICY.speedtest),
+    ...foreignProviderRuleSet('speedtest', POLICY.speedtest),
 
     // Game providers are specific policy-group rules; keep them ahead of the
     // broad proxy supplement so game traffic reaches the Games group.
     ...foreignProviderRuleSet('games', POLICY.games),
 
-    // Broad service categories also precede the generic direct provider so
-    // the client's selected media/game group is respected.
-    foreignGeosite('category-games-!cn', POLICY.games),
-    foreignGeosite('category-entertainment', POLICY.media),
-
-    // Generic CN/direct rules come after specific policy-group providers. Explicit
-    // service exceptions above (for example google@cn/apple@cn) stay direct.
-    geosite('cn', DIRECT),
+    // Generic direct rules come after specific policy-group providers.
     ...providerRuleSet('direct', DIRECT),
 
     // 7. 自有代理补充集：排除 MetaCubeX 中国域名和中国 IP。
-    `AND,((OR,(${proxyExtraMatchers})),(NOT,((GEOSITE,cn))),(NOT,((GEOIP,CN)))),${POLICY.manual}`,
+    `AND,((OR,(${proxyExtraMatchers})),(NOT,((RULE-SET,cn))),(NOT,((GEOIP,CN)))),${POLICY.manual}`,
 
     // 8. IP 与最终兜底。
     `GEOIP,CN,${DIRECT}`,
@@ -906,8 +713,7 @@ function buildConfig(proxies) {
     `GEOIP,netflix,${POLICY.netflix},no-resolve`,
     `GEOIP,twitter,${POLICY.twitter},no-resolve`,
     `GEOIP,facebook,${POLICY.social},no-resolve`,
-    `IP-CIDR6,::/0,${POLICY.manual},no-resolve`,
-    geosite('geolocation-!cn', POLICY.manual),
+    ...foreignProviderRuleSet('geolocation', POLICY.manual),
     `MATCH,${POLICY.leak}`
   ];
 

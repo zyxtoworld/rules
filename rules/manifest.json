@@ -40,7 +40,7 @@
       {
         "url": "https://ruleset.skk.moe/Clash/non_ip/ai.txt",
         "source": "SukkaW/Surge: ai",
-        "rules": 50
+        "rules": 51
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
@@ -118,8 +118,61 @@
     ],
     "private": [
       {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.list",
+        "source": "MetaCubeX/meta-rules-dat: private",
+        "rules": 130
+      },
+      {
         "source": "built-in: private network ranges",
         "rules": 12
+      }
+    ],
+    "cn": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.list",
+        "source": "MetaCubeX/meta-rules-dat: cn",
+        "rules": 111224
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-cn.list",
+        "source": "MetaCubeX/meta-rules-dat: google-cn",
+        "rules": 112
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-cn.list",
+        "source": "MetaCubeX/meta-rules-dat: apple-cn",
+        "rules": 165
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-cn.list",
+        "source": "MetaCubeX/meta-rules-dat: category-games-cn",
+        "rules": 264
+      },
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-entertainment-cn.list",
+        "source": "MetaCubeX/meta-rules-dat: category-entertainment-cn",
+        "rules": 796
+      }
+    ],
+    "geolocation": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.list",
+        "source": "MetaCubeX/meta-rules-dat: geolocation-!cn",
+        "rules": 27064
+      }
+    ],
+    "github": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.list",
+        "source": "MetaCubeX/meta-rules-dat: github",
+        "rules": 64
+      }
+    ],
+    "speedtest": [
+      {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/speedtest.list",
+        "source": "MetaCubeX/meta-rules-dat: speedtest",
+        "rules": 13
       }
     ],
     "crypto": [
@@ -144,6 +197,11 @@
         "rules": 2
       },
       {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-cryptocurrency.list",
+        "source": "MetaCubeX/meta-rules-dat: category-cryptocurrency",
+        "rules": 235
+      },
+      {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Crypto.list",
         "source": "ConnersHua/RuleGo: Crypto",
         "rules": 45
@@ -166,11 +224,6 @@
       }
     ],
     "direct": [
-      {
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.list",
-        "source": "MetaCubeX/meta-rules-dat: cn",
-        "rules": 111224
-      },
       {
         "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
         "source": "Loyalsoldier/clash-rules: direct",
@@ -317,7 +370,7 @@
       },
       {
         "source": "built-in: download CDN domains",
-        "rules": 54
+        "rules": 190
       }
     ],
     "google": [
@@ -762,6 +815,11 @@
     ],
     "media": [
       {
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-entertainment.list",
+        "source": "MetaCubeX/meta-rules-dat: category-entertainment",
+        "rules": 2129
+      },
+      {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/hulu.list",
         "source": "MetaCubeX/meta-rules-dat: hulu",
         "rules": 48
@@ -1173,11 +1231,6 @@
     ],
     "dev": [
       {
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.list",
-        "source": "MetaCubeX/meta-rules-dat: github",
-        "rules": 64
-      },
-      {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gitlab.list",
         "source": "MetaCubeX/meta-rules-dat: gitlab",
         "rules": 5
@@ -1538,6 +1591,14 @@
       "rules": 12,
       "bytes": 246
     },
+    "private": {
+      "path": "rules/mihomo/private.mrs",
+      "group": "private",
+      "behavior": "domain",
+      "format": "mrs",
+      "rules": 130,
+      "bytes": 709
+    },
     "private-ipcidr": {
       "path": "rules/mihomo/private-ipcidr.mrs",
       "group": "private",
@@ -1546,13 +1607,45 @@
       "rules": 12,
       "bytes": 127
     },
+    "cn": {
+      "path": "rules/mihomo/cn.mrs",
+      "group": "cn",
+      "behavior": "domain",
+      "format": "mrs",
+      "rules": 111648,
+      "bytes": 516491
+    },
+    "geolocation": {
+      "path": "rules/mihomo/geolocation.mrs",
+      "group": "geolocation",
+      "behavior": "domain",
+      "format": "mrs",
+      "rules": 27063,
+      "bytes": 190431
+    },
+    "github": {
+      "path": "rules/mihomo/github.mrs",
+      "group": "github",
+      "behavior": "domain",
+      "format": "mrs",
+      "rules": 63,
+      "bytes": 804
+    },
+    "speedtest": {
+      "path": "rules/mihomo/speedtest.mrs",
+      "group": "speedtest",
+      "behavior": "domain",
+      "format": "mrs",
+      "rules": 13,
+      "bytes": 244
+    },
     "crypto": {
       "path": "rules/mihomo/crypto.mrs",
       "group": "crypto",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 95,
-      "bytes": 950
+      "rules": 269,
+      "bytes": 2479
     },
     "crypto-classical": {
       "path": "rules/mihomo/crypto-classical.yaml",
@@ -1575,8 +1668,8 @@
       "group": "direct",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 113384,
-      "bytes": 523389
+      "rules": 111514,
+      "bytes": 514545
     },
     "direct-ipcidr": {
       "path": "rules/mihomo/direct-ipcidr.mrs",
@@ -1639,8 +1732,8 @@
       "group": "download",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 36,
-      "bytes": 1189
+      "rules": 144,
+      "bytes": 4650
     },
     "google": {
       "path": "rules/mihomo/google.mrs",
@@ -1839,8 +1932,8 @@
       "group": "media",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1623,
-      "bytes": 14714
+      "rules": 3033,
+      "bytes": 26816
     },
     "media-ipcidr": {
       "path": "rules/mihomo/media-ipcidr.mrs",
@@ -1973,9 +2066,9 @@
   },
   "groups": {
     "ai": {
-      "inputRules": 461,
+      "inputRules": 462,
       "rules": 240,
-      "pruned": 221,
+      "pruned": 222,
       "outputs": [
         "ai",
         "ai-classical"
@@ -2000,17 +2093,50 @@
       ]
     },
     "private": {
-      "inputRules": 12,
-      "rules": 12,
+      "inputRules": 142,
+      "rules": 142,
       "pruned": 0,
       "outputs": [
+        "private",
         "private-ipcidr"
       ]
     },
+    "cn": {
+      "inputRules": 112561,
+      "rules": 111648,
+      "pruned": 913,
+      "outputs": [
+        "cn"
+      ]
+    },
+    "geolocation": {
+      "inputRules": 27064,
+      "rules": 27063,
+      "pruned": 1,
+      "outputs": [
+        "geolocation"
+      ]
+    },
+    "github": {
+      "inputRules": 64,
+      "rules": 63,
+      "pruned": 1,
+      "outputs": [
+        "github"
+      ]
+    },
+    "speedtest": {
+      "inputRules": 13,
+      "rules": 13,
+      "pruned": 0,
+      "outputs": [
+        "speedtest"
+      ]
+    },
     "crypto": {
-      "inputRules": 117,
-      "rules": 96,
-      "pruned": 21,
+      "inputRules": 352,
+      "rules": 270,
+      "pruned": 82,
       "outputs": [
         "crypto",
         "crypto-classical"
@@ -2025,9 +2151,9 @@
       ]
     },
     "direct": {
-      "inputRules": 223556,
-      "rules": 113439,
-      "pruned": 110117,
+      "inputRules": 112332,
+      "rules": 111569,
+      "pruned": 763,
       "outputs": [
         "direct",
         "direct-ipcidr",
@@ -2046,9 +2172,9 @@
       ]
     },
     "download": {
-      "inputRules": 593,
-      "rules": 532,
-      "pruned": 61,
+      "inputRules": 729,
+      "rules": 640,
+      "pruned": 89,
       "outputs": [
         "download",
         "download-classical"
@@ -2149,9 +2275,9 @@
       ]
     },
     "media": {
-      "inputRules": 3373,
-      "rules": 2212,
-      "pruned": 1161,
+      "inputRules": 5502,
+      "rules": 3622,
+      "pruned": 1880,
       "outputs": [
         "media",
         "media-ipcidr",
@@ -2177,9 +2303,9 @@
       ]
     },
     "dev": {
-      "inputRules": 1348,
+      "inputRules": 1284,
       "rules": 1248,
-      "pruned": 100,
+      "pruned": 36,
       "outputs": [
         "dev"
       ]
