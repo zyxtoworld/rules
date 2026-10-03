@@ -16,6 +16,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Install Mihomo converter
+        env:
+          MIHOMO_VERSION: v1.19.32
+        run: |
+          curl --fail --location "https://github.com/MetaCubeX/mihomo/releases/download/${MIHOMO_VERSION}/mihomo-linux-amd64-compatible-${MIHOMO_VERSION}.gz" | gzip -d > "$RUNNER_TEMP/mihomo"
+          chmod +x "$RUNNER_TEMP/mihomo"
+          "$RUNNER_TEMP/mihomo" -v
+          echo "MIHOMO_BIN=$RUNNER_TEMP/mihomo" >> "$GITHUB_ENV"
       - run: node scripts/build-rules.mjs
       - name: Commit generated rules
         run: |
