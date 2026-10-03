@@ -726,7 +726,13 @@ function buildConfig(proxies) {
     geosite('private', DIRECT),
     ...providerRuleSet('private', DIRECT),
 
-    // 2. 高优先级服务：使用自有聚合文件，GeoSite 保留为兜底。
+    // 2. 严格广告拦截：广告规则优先于所有服务、直连和代理规则。
+    // This intentionally takes precedence over service providers as well;
+    // shared ad/telemetry hosts are rejected instead of routed to a service.
+    ...providerRuleSet('ads', POLICY.ads),
+    geosite('category-ads-all', POLICY.ads),
+
+    // 3. 高优先级服务：使用自有聚合文件，GeoSite 保留为兜底。
     ...providerRuleSet('ai', POLICY.ai),
     geosite('google-gemini', POLICY.ai),
     geosite('openai', POLICY.ai),
@@ -735,7 +741,7 @@ function buildConfig(proxies) {
     ...providerRuleSet('biliintl', POLICY.bilibili),
     geosite('biliintl', POLICY.bilibili),
 
-    // 3. 加密货币与国内服务：国内例外优先于广告和宽分类。
+    // 4. 加密货币与国内服务：广告已经在前面处理。
     ...providerRuleSet('crypto', POLICY.crypto),
     geosite('category-cryptocurrency', POLICY.crypto),
     geosite('google@cn', DIRECT),
@@ -752,12 +758,7 @@ function buildConfig(proxies) {
     geosite('icloud', POLICY.apple),
     geosite('apple', POLICY.apple),
 
-    // 4. 广告：自有聚合集先行，MetaCubeX GeoSite 作兜底。
-    ...providerRuleSet('ads', POLICY.ads),
-    geosite('category-ads-all', POLICY.ads),
-
-    // Broad CN/direct rules stay after ads so an ad domain cannot bypass
-    // blocking merely because it also appears in the direct provider.
+    // Broad CN/direct rules stay after strict ad blocking.
     geosite('cn', DIRECT),
     ...providerRuleSet('direct', DIRECT),
 
