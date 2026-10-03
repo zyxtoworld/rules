@@ -39,6 +39,13 @@ function operator(proxies) {
 }
 
 function buildConfig(proxies) {
+  function cloneValue(value) {
+    if (Array.isArray(value)) return value.map(cloneValue);
+    if (value && typeof value === 'object') {
+      return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, cloneValue(item)]));
+    }
+    return value;
+  }
   function stableStringify(value) {
     if (Array.isArray(value)) return `[${value.map(stableStringify).join(',')}]`;
     if (value && typeof value === 'object') {
@@ -358,7 +365,13 @@ function buildConfig(proxies) {
     leak: '🐟 漏网之鱼'
   };
 
-  proxies = dedupeProxies(Array.isArray(proxies) ? proxies : [], proxy => regionRank(proxy.name));
+  // Sub-Store may reuse the input array across processors. Work on cloned
+  // proxy objects so region correction and conflict suffixes never mutate the
+  // caller's subscription data.
+  proxies = dedupeProxies(
+    Array.isArray(proxies) ? proxies.map(cloneValue) : [],
+    proxy => regionRank(proxy.name)
+  );
 
   // ===== 先纠正/补全国旗，再分组 =====
   for (const p of proxies) {
@@ -381,7 +394,8 @@ function buildConfig(proxies) {
   }
   // Mihomo reserves DIRECT/REJECT and treats proxy-group names as references.
   // A subscription node with one of those names would create duplicate names
-  // or self-referencing groups, so rename only the conflicting node.
+  // or self-referencing groups, so append a suffix only to the conflicting
+  // node while leaving ordinary subscription names unchanged.
   const reservedProxyNames = new Set([
     DIRECT,
     REJECT,
@@ -402,10 +416,10 @@ function buildConfig(proxies) {
     const originalName = proxy.name;
     existingProxyNames.delete(originalName);
     let suffix = 1;
-    let safeName = `节点-${originalName}`;
+    let safeName = `${originalName} (节点)`;
     while (reservedProxyNames.has(safeName) || existingProxyNames.has(safeName)) {
       suffix += 1;
-      safeName = `节点-${originalName} #${suffix}`;
+      safeName = `${originalName} (节点 ${suffix})`;
     }
     proxy.name = safeName;
     existingProxyNames.add(safeName);
