@@ -240,9 +240,10 @@ function buildConfig(proxies) {
     'IN','IT','NO','MY','ID','DE','ES','TH','PH','CA','AU','RU','AR','SA','IE','IL','TR','NZ','SE','FI',
   ]);
   function isoFromAbbr(name) {
-    let m = name.match(/(?<![A-Za-z])[A-Z]{2}(?![A-Za-z])/g);     // 大写优先
+    const text = String(name || '');
+    let m = text.match(/(?<![A-Za-z])[A-Z]{2}(?![A-Za-z])/g);     // 大写优先
     if (m) for (const c of m) { if (ABBR_SET.has(c)) return ABBR_ALIAS[c] || c; }
-    m = name.match(/(?<![A-Za-z])[A-Za-z]{2}(?![A-Za-z])/g);      // 含小写，排除歧义码
+    m = text.match(/(?<![A-Za-z])[A-Za-z]{2}(?![A-Za-z])/g);      // 含小写，排除歧义码
     if (m) for (const t of m) {
       const c = t.toUpperCase();
       if (ABBR_SET.has(c) && !LOWER_BLOCK.has(c)) return ABBR_ALIAS[c] || c;
@@ -263,7 +264,7 @@ function buildConfig(proxies) {
     return String.fromCharCode(a - 0x1F1E6 + 65) + String.fromCharCode(b - 0x1F1E6 + 65);
   }
   function isoFromFlag(name) {
-    const ch = Array.from(name);
+    const ch = Array.from(String(name || ''));
     for (let i = 0; i < ch.length - 1; i++) {
       const a = ch[i].codePointAt(0), b = ch[i + 1].codePointAt(0);
       const iso = flagPairIso(a, b);
@@ -279,7 +280,14 @@ function buildConfig(proxies) {
     const target = regionTargetText(name);
     const low = target.toLowerCase();
     for (const [kw, code] of KEYWORD_TO_ISO) {
-      if (low.includes(kw)) return code;
+      // English aliases need letter boundaries so names like "Indiana" do
+      // not become India. Digits remain valid delimiters for names like Japan01.
+      if (/^[a-z0-9 ]+$/i.test(kw)) {
+        const boundary = new RegExp(`(?<![a-z])${escapeRegExp(kw)}(?![a-z])`, 'i');
+        if (boundary.test(low)) return code;
+      } else if (low.includes(kw)) {
+        return code;
+      }
     }
     for (const [re, code] of PROVIDER_ALIAS) {
       if (re.test(target)) return code;
