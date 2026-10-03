@@ -458,7 +458,7 @@ function buildConfig(proxies) {
     spotify: ['domain', 'ipcidr', 'classical'],
     netflix: ['domain', 'classical'],
     tiktok: ['domain'],
-    media: ['domain', 'classical'],
+    media: ['domain', 'ipcidr', 'classical'],
     social: ['domain', 'ipcidr'],
     dev: ['domain'],
     cloud: ['domain', 'ipcidr'],

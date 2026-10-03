@@ -57,5 +57,9 @@ CI 会固定下载官方 Mihomo `v1.19.32` 转换器。构建脚本会校验每�
 - [MetaCubeX/meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat)：GPL-3.0，提供 GeoSite 与服务域名数据。
 - [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)：GPL-2.0，提供 Clash classical 服务规则。
 - [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules)：GPL-3.0，提供 direct、reject 和 proxy 基础集合。
+- [v2fly/domain-list-community](https://github.com/v2fly/domain-list-community)：MIT，补充 Google DeepMind/Gemini、Apple、iCloud 和 iTunes 原始域名分类。
+- [SukkaW/Surge](https://github.com/SukkaW/Surge)：AGPL-3.0，补充人工维护的 AI、Apple、Telegram 和流媒体规则。
+- [TG-Twilight/AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule)：GPL-3.0，补充广告过滤域名。
+- [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR)：CC-BY-SA-4.0，补充部分游戏、媒体和国内直连域名规则。
 
 本仓库的 `LICENSE` 仅覆盖本仓库脚本、元数据和编排内容；生成规则的具体条目仍遵循各上游项目的许可证和使用说明，完整来源与过滤选项记录在 `sources.json`。

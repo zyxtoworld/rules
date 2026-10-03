@@ -8,6 +8,11 @@
         "rules": 46
       },
       {
+        "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-deepmind",
+        "source": "v2fly/domain-list-community: google-deepmind",
+        "rules": 46
+      },
+      {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.list",
         "source": "MetaCubeX/meta-rules-dat: openai",
         "rules": 22
@@ -41,6 +46,11 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Civitai/Civitai.yaml",
         "source": "blackmatrix7/ios_rule_script: Civitai",
         "rules": 1
+      },
+      {
+        "url": "https://ruleset.skk.moe/Clash/non_ip/ai.txt",
+        "source": "SukkaW/Surge: ai",
+        "rules": 50
       },
       {
         "source": "built-in: Gemini mobile and API dependencies",
@@ -91,6 +101,16 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml",
         "source": "blackmatrix7/ios_rule_script: BiliBili",
         "rules": 129
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list",
+        "source": "ACL4SSR/ACL4SSR: ChinaDomain",
+        "rules": 635
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list",
+        "source": "ACL4SSR/ACL4SSR: GoogleCN",
+        "rules": 48
       }
     ],
     "ads": [
@@ -103,6 +123,11 @@
         "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt",
         "source": "Loyalsoldier/clash-rules: reject",
         "rules": 186771
+      },
+      {
+        "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
+        "source": "TG-Twilight/AWAvenue-Ads-Rule: AWAvenue-Ads-Rule.txt",
+        "rules": 965
       }
     ],
     "download": [
@@ -134,6 +159,21 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml",
         "source": "blackmatrix7/ios_rule_script: Apple",
         "rules": 33
+      },
+      {
+        "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple",
+        "source": "v2fly/domain-list-community: apple",
+        "rules": 841
+      },
+      {
+        "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/icloud",
+        "source": "v2fly/domain-list-community: icloud",
+        "rules": 53
+      },
+      {
+        "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/itunes",
+        "source": "v2fly/domain-list-community: itunes",
+        "rules": 98
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-dev.list",
@@ -174,6 +214,16 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml",
         "source": "blackmatrix7/ios_rule_script: AppleNews",
         "rules": 2
+      },
+      {
+        "url": "https://ruleset.skk.moe/Clash/non_ip/apple_intelligence.txt",
+        "source": "SukkaW/Surge: apple_intelligence",
+        "rules": 5
+      },
+      {
+        "url": "https://ruleset.skk.moe/Clash/non_ip/apple_services.txt",
+        "source": "SukkaW/Surge: apple_services",
+        "rules": 25
       },
       {
         "source": "built-in: Apple Intelligence and Siri hosts",
@@ -237,6 +287,21 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.yaml",
         "source": "blackmatrix7/ios_rule_script: Blizzard",
         "rules": 39
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list",
+        "source": "ACL4SSR/ACL4SSR: Steam",
+        "rules": 18
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list",
+        "source": "ACL4SSR/ACL4SSR: Epic",
+        "rules": 6
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list",
+        "source": "ACL4SSR/ACL4SSR: Sony",
+        "rules": 5
       }
     ],
     "youtube": [
@@ -266,6 +331,11 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml",
         "source": "blackmatrix7/ios_rule_script: Telegram",
         "rules": 41
+      },
+      {
+        "url": "https://ruleset.skk.moe/Clash/non_ip/telegram.txt",
+        "source": "SukkaW/Surge: telegram",
+        "rules": 14
       }
     ],
     "twitter": [
@@ -506,6 +576,26 @@
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Voxmedia/Voxmedia.yaml",
         "source": "blackmatrix7/ios_rule_script: Voxmedia",
         "rules": 16
+      },
+      {
+        "url": "https://ruleset.skk.moe/Clash/non_ip/stream.txt",
+        "source": "SukkaW/Surge: stream",
+        "rules": 286
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list",
+        "source": "ACL4SSR/ACL4SSR: Netflix",
+        "rules": 40
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DisneyPlus.list",
+        "source": "ACL4SSR/ACL4SSR: DisneyPlus",
+        "rules": 20
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list",
+        "source": "ACL4SSR/ACL4SSR: ProxyMedia",
+        "rules": 371
       }
     ],
     "social": [
@@ -902,16 +992,16 @@
       "group": "ai",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 195,
-      "bytes": 2027
+      "rules": 198,
+      "bytes": 2039
     },
     "ai-classical": {
       "path": "rules/mihomo/ai-classical.yaml",
       "group": "ai",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 3,
-      "bytes": 177
+      "rules": 5,
+      "bytes": 266
     },
     "crypto": {
       "path": "rules/mihomo/crypto.mrs",
@@ -934,40 +1024,40 @@
       "group": "direct",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 113298,
-      "bytes": 523119
+      "rules": 113376,
+      "bytes": 523371
     },
     "direct-ipcidr": {
       "path": "rules/mihomo/direct-ipcidr.mrs",
       "group": "direct",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 8,
-      "bytes": 96
+      "rules": 17,
+      "bytes": 161
     },
     "direct-classical": {
       "path": "rules/mihomo/direct-classical.yaml",
       "group": "direct",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 6,
-      "bytes": 308
+      "rules": 22,
+      "bytes": 760
     },
     "ads": {
       "path": "rules/mihomo/ads.mrs",
       "group": "ads",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 93626,
-      "bytes": 923795
+      "rules": 93877,
+      "bytes": 925849
     },
     "ads-2": {
       "path": "rules/mihomo/ads-2.mrs",
       "group": "ads",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 93626,
-      "bytes": 889898
+      "rules": 93876,
+      "bytes": 891933
     },
     "download": {
       "path": "rules/mihomo/download.mrs",
@@ -1014,16 +1104,16 @@
       "group": "apple",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 90,
-      "bytes": 1050
+      "rules": 1065,
+      "bytes": 8118
     },
     "apple-ipcidr": {
       "path": "rules/mihomo/apple-ipcidr.mrs",
       "group": "apple",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 13,
-      "bytes": 171
+      "rules": 14,
+      "bytes": 173
     },
     "apple-classical": {
       "path": "rules/mihomo/apple-classical.yaml",
@@ -1054,8 +1144,8 @@
       "group": "games",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 888,
-      "bytes": 8623
+      "rules": 890,
+      "bytes": 8618
     },
     "games-classical": {
       "path": "rules/mihomo/games-classical.yaml",
@@ -1174,16 +1264,24 @@
       "group": "media",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 561,
-      "bytes": 5650
+      "rules": 845,
+      "bytes": 8051
+    },
+    "media-ipcidr": {
+      "path": "rules/mihomo/media-ipcidr.mrs",
+      "group": "media",
+      "behavior": "ipcidr",
+      "format": "mrs",
+      "rules": 18,
+      "bytes": 180
     },
     "media-classical": {
       "path": "rules/mihomo/media-classical.yaml",
       "group": "media",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 1,
-      "bytes": 105
+      "rules": 43,
+      "bytes": 1510
     },
     "social": {
       "path": "rules/mihomo/social.mrs",
@@ -1252,7 +1350,7 @@
   },
   "groups": {
     "ai": {
-      "rules": 198,
+      "rules": 203,
       "outputs": [
         "ai",
         "ai-classical"
@@ -1271,7 +1369,7 @@
       ]
     },
     "direct": {
-      "rules": 113312,
+      "rules": 113415,
       "outputs": [
         "direct",
         "direct-ipcidr",
@@ -1279,7 +1377,7 @@
       ]
     },
     "ads": {
-      "rules": 187252,
+      "rules": 187753,
       "outputs": [
         "ads",
         "ads-2"
@@ -1301,7 +1399,7 @@
       ]
     },
     "apple": {
-      "rules": 123,
+      "rules": 1099,
       "outputs": [
         "apple",
         "apple-ipcidr",
@@ -1316,7 +1414,7 @@
       ]
     },
     "games": {
-      "rules": 891,
+      "rules": 893,
       "outputs": [
         "games",
         "games-classical"
@@ -1366,9 +1464,10 @@
       ]
     },
     "media": {
-      "rules": 562,
+      "rules": 906,
       "outputs": [
         "media",
+        "media-ipcidr",
         "media-classical"
       ]
     },

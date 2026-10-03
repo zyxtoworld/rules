@@ -72,12 +72,25 @@ function unquote(value) {
   return text.trim();
 }
 
-function parseRuleLine(rawLine, dropTypes = []) {
+function parseRuleLine(rawLine, dropTypes = [], dropRules = []) {
   let line = rawLine.replace(/^\uFEFF/, '').trim();
   if (!line || line.startsWith('#') || line === 'payload:') return [];
   line = line.replace(/^[-]\s+/, '').trim();
   line = unquote(line);
   if (!line || line === 'payload:') return [];
+
+  // v2fly/domain-list-community uses full:domain and optional @cn/@ads
+  // annotations. Preserve the domain itself; category annotations are handled
+  // by the destination provider and should not become part of the hostname.
+  line = line.replace(/\s+@[A-Za-z0-9_-]+(?:\s+#.*)?$/, '').trim();
+  if (dropRules.includes(line)) return [];
+  if (line.startsWith('full:')) return [`DOMAIN,${line.slice('full:'.length).trim()}`];
+  if (line.startsWith('include:') || line.startsWith('regexp:')) return [];
+
+  if (line.startsWith('||')) {
+    const match = line.match(/^\|\|([A-Za-z0-9.-]+)\^/);
+    if (match) return [`DOMAIN-SUFFIX,${match[1]}`];
+  }
 
   if (line.startsWith('+.')) return [`DOMAIN-SUFFIX,${line.slice(2)}`];
   if (/^[A-Za-z0-9*_-]+(\.[A-Za-z0-9*_-]+)+$/.test(line)) return [`DOMAIN,${line}`];
@@ -92,7 +105,9 @@ function parseRuleLine(rawLine, dropTypes = []) {
 
 function parseSource(text, source) {
   const rules = [];
-  for (const line of text.split(/\r?\n/)) rules.push(...parseRuleLine(line, source.dropTypes || []));
+  for (const line of text.split(/\r?\n/)) {
+    rules.push(...parseRuleLine(line, source.dropTypes || [], source.dropRules || []));
+  }
   return rules;
 }
 
