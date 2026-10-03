@@ -287,6 +287,27 @@ function parseRuleLine(rawLine, dropTypes = [], dropRules = []) {
 }
 
 function parseSource(text, source) {
+  if (source.kind === 'singbox') {
+    const typeMap = {
+      domain: 'DOMAIN',
+      domain_suffix: 'DOMAIN-SUFFIX',
+      domain_keyword: 'DOMAIN-KEYWORD',
+      ip_cidr: 'IP-CIDR',
+      ip_cidr6: 'IP-CIDR6',
+      process_name: 'PROCESS-NAME',
+    };
+    const rules = [];
+    const document = JSON.parse(text);
+    const entries = Array.isArray(document) ? document : document.rules || [document];
+    for (const entry of entries) {
+      for (const [key, values] of Object.entries(entry || {})) {
+        const type = typeMap[key];
+        if (!type || !Array.isArray(values)) continue;
+        for (const value of values) rules.push(...parseRuleLine(`${type},${value}`, source.dropTypes || [], source.dropRules || []));
+      }
+    }
+    return rules;
+  }
   const rules = [];
   for (const line of text.split(/\r?\n/)) {
     rules.push(...parseRuleLine(line, source.dropTypes || [], source.dropRules || []));

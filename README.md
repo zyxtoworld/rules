@@ -68,5 +68,6 @@ CI 会固定下载官方 Mihomo `v1.19.32` 转换器。构建脚本会校验每�
 - [peiyingyao/Rule-for-OCD](https://github.com/peiyingyao/Rule-for-OCD)：补充开发、Google、Apple、媒体、社交和游戏规则。
 - [scomper/surge-list](https://github.com/scomper/surge-list)：补充 Apple、广告、媒体、Telegram 和国内服务规则。
 - [lyq2010/clash-ruleset](https://github.com/lyq2010/clash-ruleset)：仅接入 Claude、Binance、Mail 和 Docker 等公共服务增量；个人直连/代理列表不接入。
+- [reonokiy/sing-box-ruleset](https://github.com/reonokiy/sing-box-ruleset)：补充 sing-box JSON 格式的 Gemini、OpenAI、Anthropic、Apple、Microsoft 和广告规则。
 
 本仓库的 `LICENSE` 仅覆盖本仓库脚本、元数据和编排内容；生成规则的具体条目仍遵循各上游项目的许可证和使用说明，完整来源与过滤选项记录在 `sources.json`。

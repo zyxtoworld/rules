@@ -48,6 +48,11 @@
         "rules": 74
       },
       {
+        "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-google-gemini.json",
+        "source": "reonokiy/sing-box-ruleset: google-gemini",
+        "rules": 11
+      },
+      {
         "source": "built-in: Gemini mobile and API dependencies",
         "rules": 4
       }
@@ -67,6 +72,11 @@
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/GenAI/OpenAI.list",
         "source": "ConnersHua/RuleGo: GenAI/OpenAI",
         "rules": 13
+      },
+      {
+        "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-openai.json",
+        "source": "reonokiy/sing-box-ruleset: openai",
+        "rules": 7
       }
     ],
     "claude": [
@@ -89,6 +99,11 @@
         "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/claude.list",
         "source": "lyq2010/clash-ruleset: Claude",
         "rules": 8
+      },
+      {
+        "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-anthropic.json",
+        "source": "reonokiy/sing-box-ruleset: anthropic",
+        "rules": 4
       }
     ],
     "private": [
@@ -247,6 +262,11 @@
         "url": "https://raw.githubusercontent.com/scomper/surge-list/master/reject.list",
         "source": "scomper/surge-list: Reject",
         "rules": 3225
+      },
+      {
+        "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-category-ads-all.json",
+        "source": "reonokiy/sing-box-ruleset: category-ads-all",
+        "rules": 129
       }
     ],
     "download": [
@@ -474,6 +494,11 @@
         "rules": 13
       },
       {
+        "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-apple.json",
+        "source": "reonokiy/sing-box-ruleset: apple",
+        "rules": 39
+      },
+      {
         "source": "built-in: Apple Intelligence and Siri hosts",
         "rules": 6
       }
@@ -488,6 +513,11 @@
         "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list",
         "source": "LM-Firefly/Rules: Microsoft",
         "rules": 669
+      },
+      {
+        "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-microsoft.json",
+        "source": "reonokiy/sing-box-ruleset: microsoft",
+        "rules": 76
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/Teams.list",
@@ -1395,8 +1425,8 @@
       "group": "ai",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 215,
-      "bytes": 2200
+      "rules": 216,
+      "bytes": 2214
     },
     "ai-classical": {
       "path": "rules/mihomo/ai-classical.yaml",
@@ -1499,16 +1529,16 @@
       "group": "ads",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 109718,
-      "bytes": 960247
+      "rules": 109681,
+      "bytes": 959821
     },
     "ads-2": {
       "path": "rules/mihomo/ads-2.mrs",
       "group": "ads",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 109717,
-      "bytes": 1046158
+      "rules": 109681,
+      "bytes": 1045954
     },
     "ads-ipcidr": {
       "path": "rules/mihomo/ads-ipcidr.mrs",
@@ -1571,8 +1601,8 @@
       "group": "apple",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1829,
-      "bytes": 17643
+      "rules": 1822,
+      "bytes": 17600
     },
     "apple-ipcidr": {
       "path": "rules/mihomo/apple-ipcidr.mrs",
@@ -1595,8 +1625,8 @@
       "group": "microsoft",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 668,
-      "bytes": 6685
+      "rules": 672,
+      "bytes": 6738
     },
     "microsoft-classical": {
       "path": "rules/mihomo/microsoft-classical.yaml",
@@ -1873,18 +1903,18 @@
   },
   "groups": {
     "ai": {
-      "inputRules": 430,
-      "rules": 224,
-      "pruned": 206,
+      "inputRules": 441,
+      "rules": 225,
+      "pruned": 216,
       "outputs": [
         "ai",
         "ai-classical"
       ]
     },
     "openai": {
-      "inputRules": 70,
+      "inputRules": 77,
       "rules": 45,
-      "pruned": 25,
+      "pruned": 32,
       "outputs": [
         "openai",
         "openai-ipcidr",
@@ -1892,9 +1922,9 @@
       ]
     },
     "claude": {
-      "inputRules": 30,
+      "inputRules": 34,
       "rules": 12,
-      "pruned": 18,
+      "pruned": 22,
       "outputs": [
         "claude"
       ]
@@ -1935,9 +1965,9 @@
       ]
     },
     "ads": {
-      "inputRules": 309386,
-      "rules": 219650,
-      "pruned": 89736,
+      "inputRules": 309515,
+      "rules": 219577,
+      "pruned": 89938,
       "outputs": [
         "ads",
         "ads-2",
@@ -1965,9 +1995,9 @@
       ]
     },
     "apple": {
-      "inputRules": 3858,
-      "rules": 2807,
-      "pruned": 1051,
+      "inputRules": 3897,
+      "rules": 2800,
+      "pruned": 1097,
       "outputs": [
         "apple",
         "apple-ipcidr",
@@ -1975,9 +2005,9 @@
       ]
     },
     "microsoft": {
-      "inputRules": 1343,
-      "rules": 674,
-      "pruned": 669,
+      "inputRules": 1419,
+      "rules": 678,
+      "pruned": 741,
       "outputs": [
         "microsoft",
         "microsoft-classical"

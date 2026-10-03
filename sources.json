@@ -10,17 +10,20 @@
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Civitai/Civitai.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Civitai"}
       ,{"url":"https://ruleset.skk.moe/Clash/non_ip/ai.txt","kind":"clash","source":"SukkaW/Surge: ai","dropRules":["DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"]}
       ,{"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list","kind":"clash","source":"ConnersHua/RuleGo: AI"}
+      ,{"url":"https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-google-gemini.json","kind":"singbox","source":"reonokiy/sing-box-ruleset: google-gemini"}
     ],
     "openai": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.list","kind":"list","source":"MetaCubeX/meta-rules-dat: openai"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: OpenAI"},
       {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/GenAI/OpenAI.list","kind":"clash","source":"ConnersHua/RuleGo: GenAI/OpenAI"}
+      ,{"url":"https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-openai.json","kind":"singbox","source":"reonokiy/sing-box-ruleset: openai"}
     ],
     "claude": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.list","kind":"list","source":"MetaCubeX/meta-rules-dat: anthropic"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Claude"},
       {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/GenAI/Anthropic.list","kind":"clash","source":"ConnersHua/RuleGo: GenAI/Anthropic"},
       {"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/claude.list","kind":"clash","source":"lyq2010/clash-ruleset: Claude"}
+      ,{"url":"https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-anthropic.json","kind":"singbox","source":"reonokiy/sing-box-ruleset: anthropic"}
     ],
     "private": [],
     "crypto": [
@@ -58,6 +61,7 @@
       ,{"url":"https://raw.githubusercontent.com/NobyDa/Script/master/Surge/AdRule.list","kind":"clash","source":"NobyDa/Script: AdRule"}
       ,{"url":"https://raw.githubusercontent.com/scomper/surge-list/master/adblock.list","kind":"clash","source":"scomper/surge-list: AdBlock"}
       ,{"url":"https://raw.githubusercontent.com/scomper/surge-list/master/reject.list","kind":"clash","source":"scomper/surge-list: Reject"}
+      ,{"url":"https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-category-ads-all.json","kind":"singbox","source":"reonokiy/sing-box-ruleset: category-ads-all"}
     ],
     "download": [
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Download"},
@@ -107,10 +111,12 @@
       ,{"url":"https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Apple.list","kind":"clash","source":"NobyDa/Script: Apple"}
       ,{"url":"https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/AppStore/AppStore.list","kind":"clash","source":"peiyingyao/Rule-for-OCD: AppStore"}
       ,{"url":"https://raw.githubusercontent.com/scomper/surge-list/master/apple.list","kind":"clash","source":"scomper/surge-list: Apple"}
+      ,{"url":"https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-apple.json","kind":"singbox","source":"reonokiy/sing-box-ruleset: apple"}
     ],
     "microsoft": [
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Microsoft"},
       {"url":"https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list","kind":"clash","source":"LM-Firefly/Rules: Microsoft"},
+      {"url":"https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-microsoft.json","kind":"singbox","source":"reonokiy/sing-box-ruleset: microsoft"},
       {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/Teams.list","kind":"clash","source":"ConnersHua/RuleGo: Microsoft/Teams"}
     ],
     "games": [
