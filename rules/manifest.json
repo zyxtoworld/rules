@@ -1350,26 +1350,34 @@
   },
   "groups": {
     "ai": {
+      "inputRules": 386,
       "rules": 203,
+      "pruned": 183,
       "outputs": [
         "ai",
         "ai-classical"
       ]
     },
     "crypto": {
+      "inputRules": 30,
       "rules": 30,
+      "pruned": 0,
       "outputs": [
         "crypto"
       ]
     },
     "biliintl": {
+      "inputRules": 11,
       "rules": 11,
+      "pruned": 0,
       "outputs": [
         "biliintl"
       ]
     },
     "direct": {
+      "inputRules": 223389,
       "rules": 113415,
+      "pruned": 109974,
       "outputs": [
         "direct",
         "direct-ipcidr",
@@ -1377,21 +1385,27 @@
       ]
     },
     "ads": {
+      "inputRules": 188646,
       "rules": 187753,
+      "pruned": 893,
       "outputs": [
         "ads",
         "ads-2"
       ]
     },
     "download": {
+      "inputRules": 41,
       "rules": 41,
+      "pruned": 0,
       "outputs": [
         "download",
         "download-classical"
       ]
     },
     "google": {
+      "inputRules": 1776,
       "rules": 1090,
+      "pruned": 686,
       "outputs": [
         "google",
         "google-ipcidr",
@@ -1399,7 +1413,9 @@
       ]
     },
     "apple": {
+      "inputRules": 1151,
       "rules": 1099,
+      "pruned": 52,
       "outputs": [
         "apple",
         "apple-ipcidr",
@@ -1407,21 +1423,27 @@
       ]
     },
     "microsoft": {
+      "inputRules": 670,
       "rules": 670,
+      "pruned": 0,
       "outputs": [
         "microsoft",
         "microsoft-classical"
       ]
     },
     "games": {
+      "inputRules": 1287,
       "rules": 893,
+      "pruned": 394,
       "outputs": [
         "games",
         "games-classical"
       ]
     },
     "youtube": {
+      "inputRules": 362,
       "rules": 185,
+      "pruned": 177,
       "outputs": [
         "youtube",
         "youtube-ipcidr",
@@ -1429,7 +1451,9 @@
       ]
     },
     "telegram": {
+      "inputRules": 76,
       "rules": 44,
+      "pruned": 32,
       "outputs": [
         "telegram",
         "telegram-ipcidr",
@@ -1437,13 +1461,17 @@
       ]
     },
     "twitter": {
+      "inputRules": 24,
       "rules": 24,
+      "pruned": 0,
       "outputs": [
         "twitter"
       ]
     },
     "spotify": {
+      "inputRules": 58,
       "rules": 36,
+      "pruned": 22,
       "outputs": [
         "spotify",
         "spotify-ipcidr",
@@ -1451,20 +1479,26 @@
       ]
     },
     "netflix": {
+      "inputRules": 62,
       "rules": 37,
+      "pruned": 25,
       "outputs": [
         "netflix",
         "netflix-classical"
       ]
     },
     "tiktok": {
+      "inputRules": 37,
       "rules": 36,
+      "pruned": 1,
       "outputs": [
         "tiktok"
       ]
     },
     "media": {
+      "inputRules": 1351,
       "rules": 906,
+      "pruned": 445,
       "outputs": [
         "media",
         "media-ipcidr",
@@ -1472,39 +1506,51 @@
       ]
     },
     "social": {
+      "inputRules": 955,
       "rules": 837,
+      "pruned": 118,
       "outputs": [
         "social",
         "social-ipcidr"
       ]
     },
     "dev": {
+      "inputRules": 1329,
       "rules": 1238,
+      "pruned": 91,
       "outputs": [
         "dev"
       ]
     },
     "cloud": {
+      "inputRules": 503,
       "rules": 495,
+      "pruned": 8,
       "outputs": [
         "cloud",
         "cloud-ipcidr"
       ]
     },
     "finance": {
+      "inputRules": 921,
       "rules": 919,
+      "pruned": 2,
       "outputs": [
         "finance"
       ]
     },
     "shopping": {
+      "inputRules": 662,
       "rules": 662,
+      "pruned": 0,
       "outputs": [
         "shopping"
       ]
     },
     "proxy-extra": {
+      "inputRules": 27110,
       "rules": 27108,
+      "pruned": 2,
       "outputs": [
         "proxy-extra"
       ]

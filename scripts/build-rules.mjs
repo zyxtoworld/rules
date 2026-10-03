@@ -124,8 +124,23 @@ function isCoveredBySuffix(domain, suffixes, includeSelf = false) {
   return false;
 }
 
+function normalizeRule(rule) {
+  const parts = String(rule || '').split(',');
+  const type = String(parts.shift() || '').trim().toUpperCase();
+  const value = String(parts.shift() || '').trim();
+  if (!type || !value) return null;
+  if (type === 'DOMAIN' || type === 'DOMAIN-SUFFIX') {
+    parts.unshift(value.toLowerCase().replace(/\.$/, ''));
+  } else if (type === 'IP-CIDR' || type === 'IP-CIDR6') {
+    parts.unshift(value.toLowerCase());
+  } else {
+    parts.unshift(value);
+  }
+  return [type, ...parts.map(part => part.trim())].join(',');
+}
+
 function minimizeRules(input) {
-  const unique = [...new Set(input)];
+  const unique = [...new Set(input.map(normalizeRule).filter(Boolean))];
   const suffixes = new Set(unique.filter(rule => rule.startsWith('DOMAIN-SUFFIX,')).map(rule => rule.slice('DOMAIN-SUFFIX,'.length).toLowerCase()));
   const result = [];
   for (const rule of unique) {
@@ -288,6 +303,7 @@ try {
       metadata.sources[group].push({ source: builtInRuleSourceNames[group] || `built-in: ${group}`, rules: extraRules.length });
     }
 
+    const inputRules = collected.length;
     const rules = minimizeRules(collected);
     const partitions = splitRules(rules);
     const files = [];
@@ -329,7 +345,9 @@ try {
     }
 
     metadata.groups[group] = {
+      inputRules,
       rules: rules.length,
+      pruned: inputRules - rules.length,
       outputs: files,
     };
   }
