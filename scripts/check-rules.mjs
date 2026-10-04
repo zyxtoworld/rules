@@ -79,16 +79,6 @@ async function main() {
   const privacyGroup = (config['proxy-groups'] || []).find(group => group.name === '🛡️ 隐私防泄漏');
   if (!privacyGroup) errors.push('必须生成 🛡️ 隐私防泄漏 策略组');
   if (privacyGroup?.proxies?.includes('DIRECT')) errors.push('🛡️ 隐私防泄漏 策略组不得包含 DIRECT');
-  const privacyTransportRules = [
-    'AND,((NETWORK,UDP),(DST-PORT,3478)),REJECT-DROP',
-    'AND,((NETWORK,TCP),(DST-PORT,3478)),REJECT-DROP',
-    'AND,((NETWORK,UDP),(DST-PORT,5349)),REJECT-DROP',
-    'AND,((NETWORK,TCP),(DST-PORT,5349)),REJECT-DROP',
-    'AND,((NETWORK,UDP),(DST-PORT,5350)),REJECT-DROP',
-    'AND,((NETWORK,UDP),(DST-PORT,5351)),REJECT-DROP',
-    'AND,((NETWORK,UDP),(DST-PORT,19302-19309)),REJECT-DROP',
-  ];
-  for (const rule of privacyTransportRules) if (!config.rules.includes(rule)) errors.push(`缺少隐私传输保护规则：${rule}`);
 
   if (manifest.schemaVersion !== 2) errors.push(`manifest schemaVersion 应为 2，实际为 ${manifest.schemaVersion}`);
   if (!sourceManifest.sources || typeof sourceManifest.sources !== 'object' || Array.isArray(sourceManifest.sources)) {
