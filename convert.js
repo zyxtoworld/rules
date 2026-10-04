@@ -589,6 +589,7 @@ function buildConfig(proxies) {
       'enhanced-mode': 'fake-ip',
       'fake-ip-range': '198.18.0.1/16',
       'fake-ip-range6': '2001:2::0/64',
+      'prefer-h3': true,
       'default-nameserver': ['tls://223.5.5.5', 'tls://1.1.1.1'],
       'nameserver-policy': {
         'geosite:cn,private,apple': [

@@ -63,6 +63,7 @@ async function main() {
   if (dns?.enable !== true) errors.push('转换器必须启用 DNS');
   if (dns?.ipv6 !== true) errors.push('DNS 必须保留 IPv6 解析');
   if (dns?.['enhanced-mode'] !== 'fake-ip') errors.push('DNS 必须使用 fake-ip 模式');
+  if (dns?.['prefer-h3'] !== true) errors.push('DNS 必须启用 prefer-h3');
   if (!dns?.['fake-ip-range6']) errors.push('DNS 必须配置 fake-ip-range6');
   if (!dnsServers.some(server => String(server).includes('#🔍 谷歌服务'))) errors.push('默认 DNS 必须通过谷歌策略组代理');
   if (!Array.isArray(dns?.['proxy-server-nameserver']) || dns['proxy-server-nameserver'].length === 0) errors.push('必须配置 proxy-server-nameserver，避免代理节点解析回退到系统 DNS');
