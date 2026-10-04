@@ -381,7 +381,8 @@ function buildConfig(proxies) {
     netflix: '🎥 Netflix',
     disney: '🐭 Disney+',
     speedtest: '📡 Speedtest',
-    leak: '🐟 漏网之鱼'
+    leak: '🐟 漏网之鱼',
+    privacy: '🛡️ 隐私防泄漏'
   };
 
   // Sub-Store may reuse the input array across processors. Work on cloned
@@ -513,6 +514,7 @@ function buildConfig(proxies) {
   // MRS 只支持 domain/ipcidr；无法表达的 DOMAIN-KEYWORD、PROCESS-* 等规则保留为 classical YAML。
   const ruleProviderParts = {
     private: ['domain', 'ipcidr'],
+    privacy: ['domain', 'classical'],
     cn: ['domain'],
     geolocation: ['domain'],
     github: ['domain'],
@@ -693,7 +695,10 @@ function buildConfig(proxies) {
     [POLICY.netflix, [POLICY.manual, ...prefThenAll(['SG', 'JP', 'US', 'HK', 'TW'])]],
     [POLICY.disney, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
     [POLICY.speedtest, [DIRECT, POLICY.manual, POLICY.auto]],
-    [POLICY.leak, [POLICY.manual, DIRECT, POLICY.auto]]
+    [POLICY.leak, [POLICY.manual, DIRECT, POLICY.auto]],
+    // Privacy endpoints never include DIRECT; this prevents domestic
+    // third-party IP checks from bypassing the proxy on purpose.
+    [POLICY.privacy, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'DE', 'KR'])]]
   ];
   for (const [name, groupProxies] of featureGroups) addSelectGroup(name, groupProxies);
 
@@ -718,6 +723,10 @@ function buildConfig(proxies) {
     // This intentionally takes precedence over policy-group providers as well;
     // shared ad/telemetry hosts are rejected instead of routed to a service.
     ...providerRuleSet('ads', REJECT),
+
+    // Known IP-check/WebRTC/HTTPDNS endpoints must override broad CN direct
+    // lists; otherwise a domestic third party can observe the real address.
+    ...providerRuleSet('privacy', POLICY.privacy),
 
     // Domestic domain sources are handled by the generated CN provider before
     // foreign service providers. The foreign guards below also consult it.

@@ -2404,6 +2404,12 @@
         "bytes": 89,
         "sha256": "a8e7c9244e25cb9c558b6293abbc4374497423dbaad5c953b4d2ed356246dd23"
       }
+    ],
+    "privacy": [
+      {
+        "source": "built-in: privacy, IP-check, WebRTC/STUN/TURN and HTTPDNS endpoints",
+        "rules": 86
+      }
     ]
   },
   "outputs": {
@@ -2926,6 +2932,22 @@
       "format": "yaml",
       "rules": 4,
       "bytes": 196
+    },
+    "privacy": {
+      "path": "rules/mihomo/privacy.mrs",
+      "group": "privacy",
+      "behavior": "domain",
+      "format": "mrs",
+      "rules": 74,
+      "bytes": 890
+    },
+    "privacy-classical": {
+      "path": "rules/mihomo/privacy-classical.yaml",
+      "group": "privacy",
+      "behavior": "classical",
+      "format": "yaml",
+      "rules": 12,
+      "bytes": 414
     }
   },
   "groups": {
@@ -3313,16 +3335,28 @@
         "proxy-extra-ipcidr",
         "proxy-extra-classical"
       ]
+    },
+    "privacy": {
+      "inputRules": 86,
+      "normalizedRules": 86,
+      "duplicateRules": 0,
+      "coveredRules": 0,
+      "rules": 86,
+      "pruned": 0,
+      "outputs": [
+        "privacy",
+        "privacy-classical"
+      ]
     }
   },
   "summary": {
-    "groups": 32,
-    "inputRules": 610939,
-    "normalizedRules": 598878,
+    "groups": 33,
+    "inputRules": 611025,
+    "normalizedRules": 598964,
     "duplicateRules": 12061,
     "coveredRules": 86390,
-    "rules": 512488,
-    "crossGroupRules": 137692,
-    "crossGroupDuplicateOccurrences": 149542
+    "rules": 512574,
+    "crossGroupRules": 137686,
+    "crossGroupDuplicateOccurrences": 149557
   }
 }

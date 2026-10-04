@@ -30,6 +30,7 @@
     "private": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.list","kind":"list","source":"MetaCubeX/meta-rules-dat: private"}
     ],
+    "privacy": [],
     "cn": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.list","kind":"list","source":"MetaCubeX/meta-rules-dat: cn"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-cn.list","kind":"list","source":"MetaCubeX/meta-rules-dat: google-cn"},
