@@ -30,7 +30,10 @@
     "private": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.list","kind":"list","source":"MetaCubeX/meta-rules-dat: private"}
     ],
-    "privacy": [],
+    "privacy": [
+      {"url":"https://raw.githubusercontent.com/jadchene/clash-config/main/rulesets/ipcheck.yaml","kind":"clash","source":"jadchene/clash-config: ipcheck"},
+      {"url":"https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-stun","kind":"list","source":"v2fly/domain-list-community: category-stun"}
+    ],
     "cn": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.list","kind":"list","source":"MetaCubeX/meta-rules-dat: cn"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-cn.list","kind":"list","source":"MetaCubeX/meta-rules-dat: google-cn"},

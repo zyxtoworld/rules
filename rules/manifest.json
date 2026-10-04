@@ -2407,6 +2407,22 @@
     ],
     "privacy": [
       {
+        "url": "https://raw.githubusercontent.com/jadchene/clash-config/main/rulesets/ipcheck.yaml",
+        "fetchedUrl": "https://raw.githubusercontent.com/jadchene/clash-config/main/rulesets/ipcheck.yaml",
+        "source": "jadchene/clash-config: ipcheck",
+        "rules": 38,
+        "bytes": 1188,
+        "sha256": "c01cebe69947d697e1a2bb4facdd41c318e2cd93429c330d734eb92506f33dd1"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-stun",
+        "fetchedUrl": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-stun",
+        "source": "v2fly/domain-list-community: category-stun",
+        "rules": 359,
+        "bytes": 8101,
+        "sha256": "59fef97855e74f329997095d5532b3655ad935d8847ea85da23413dd5ff9b69f"
+      },
+      {
         "source": "built-in: privacy, IP-check, WebRTC/STUN/TURN and HTTPDNS endpoints",
         "rules": 86
       }
@@ -2938,8 +2954,8 @@
       "group": "privacy",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 74,
-      "bytes": 890
+      "rules": 444,
+      "bytes": 4345
     },
     "privacy-classical": {
       "path": "rules/mihomo/privacy-classical.yaml",
@@ -3337,12 +3353,12 @@
       ]
     },
     "privacy": {
-      "inputRules": 86,
-      "normalizedRules": 86,
-      "duplicateRules": 0,
-      "coveredRules": 0,
-      "rules": 86,
-      "pruned": 0,
+      "inputRules": 483,
+      "normalizedRules": 464,
+      "duplicateRules": 19,
+      "coveredRules": 8,
+      "rules": 456,
+      "pruned": 27,
       "outputs": [
         "privacy",
         "privacy-classical"
@@ -3351,12 +3367,12 @@
   },
   "summary": {
     "groups": 33,
-    "inputRules": 611025,
-    "normalizedRules": 598964,
-    "duplicateRules": 12061,
-    "coveredRules": 86390,
-    "rules": 512574,
-    "crossGroupRules": 137686,
-    "crossGroupDuplicateOccurrences": 149557
+    "inputRules": 611422,
+    "normalizedRules": 599342,
+    "duplicateRules": 12080,
+    "coveredRules": 86398,
+    "rules": 512944,
+    "crossGroupRules": 137687,
+    "crossGroupDuplicateOccurrences": 149564
   }
 }
