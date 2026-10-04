@@ -59,10 +59,11 @@ async function main() {
   const dns = config.dns;
   const dnsServers = Array.isArray(dns?.nameserver) ? dns.nameserver : [];
   const dnsPolicies = dns?.['nameserver-policy'] || {};
-  if (config.ipv6 !== false) errors.push('转换器必须关闭全局 IPv6，避免 DNS/流量旁路');
+  if (config.ipv6 !== true) errors.push('转换器必须保留全局 IPv6，旁路防护由 TUN strict-route 提供');
   if (dns?.enable !== true) errors.push('转换器必须启用 DNS');
-  if (dns?.ipv6 !== false) errors.push('DNS 必须关闭 IPv6 解析');
+  if (dns?.ipv6 !== true) errors.push('DNS 必须保留 IPv6 解析');
   if (dns?.['enhanced-mode'] !== 'fake-ip') errors.push('DNS 必须使用 fake-ip 模式');
+  if (!dns?.['fake-ip-range6']) errors.push('DNS 必须配置 fake-ip-range6');
   if (!dnsServers.some(server => String(server).includes('#🔍 谷歌服务'))) errors.push('默认 DNS 必须通过谷歌策略组代理');
   if (!Array.isArray(dns?.['proxy-server-nameserver']) || dns['proxy-server-nameserver'].length === 0) errors.push('必须配置 proxy-server-nameserver，避免代理节点解析回退到系统 DNS');
   if (!Array.isArray(dns?.['direct-nameserver']) || dns['direct-nameserver'].some(server => server === 'system')) errors.push('DIRECT DNS 不得使用系统明文解析');

@@ -15,8 +15,8 @@
 //   5. 下载资源低倍率：自动识别节点名里的 0.x 倍率/低倍率/省流 标记，
 //      专用下载器访问已知非中国域名或非中国 IP、以及明确文件/CDN/blob 下载资源域名，
 //      优先走最低倍率可用节点。
-//   6. DNS 使用 fake-ip、加密上游和按 geosite/Google 策略组的解析分流；关闭 IPv6
-//      解析，避免系统 DNS、IPv6 和代理节点解析回退造成旁路。
+//   6. DNS 使用 fake-ip、加密上游和按 geosite/Google 策略组的解析分流；保留 IPv6
+//      解析并由 TUN strict-route 统一接管，避免系统 DNS、IPv6 和代理节点解析回退造成旁路。
 //   7. 端口、API、TUN 等客户端通用开关仍由 Clash Verge Rev、ClashMi、Nikki 管理。
 //
 // 重要：Sub-Store 对 mihomoProfile 类型文件调用的是 main(config)，而非
@@ -582,12 +582,13 @@ function buildConfig(proxies) {
     'geodata-mode': true,
     'geodata-loader': 'memconservative',
     'geosite-matcher': 'succinct',
-    'ipv6': false,
+    'ipv6': true,
     dns: {
       enable: true,
-      ipv6: false,
+      ipv6: true,
       'enhanced-mode': 'fake-ip',
       'fake-ip-range': '198.18.0.1/16',
+      'fake-ip-range6': '2001:2::0/64',
       'default-nameserver': ['tls://223.5.5.5', 'tls://1.1.1.1'],
       'nameserver-policy': {
         'geosite:cn,private,apple': [
