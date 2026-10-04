@@ -72,13 +72,13 @@ async function main() {
     const servers = Array.isArray(dnsPolicies[key]) ? dnsPolicies[key] : [];
     if (!servers.some(server => String(server).includes('#🔍 谷歌服务'))) errors.push(`DNS policy ${key} 必须通过谷歌策略组代理`);
   }
+  const privacyRules = config.rules.filter(rule => String(rule).includes('RULE-SET,privacy'));
   const privacyRuleIndex = config.rules.findIndex(rule => String(rule).includes('RULE-SET,privacy'));
   const cnRuleIndex = config.rules.findIndex(rule => String(rule).includes('RULE-SET,cn'));
   if (privacyRuleIndex < 0) errors.push('rules 必须引用 privacy provider');
   if (privacyRuleIndex >= 0 && cnRuleIndex >= 0 && privacyRuleIndex > cnRuleIndex) errors.push('privacy provider 必须排在 cn provider 之前');
-  const privacyGroup = (config['proxy-groups'] || []).find(group => group.name === '🛡️ 隐私防泄漏');
-  if (!privacyGroup) errors.push('必须生成 🛡️ 隐私防泄漏 策略组');
-  if (privacyGroup?.proxies?.includes('DIRECT')) errors.push('🛡️ 隐私防泄漏 策略组不得包含 DIRECT');
+  if (privacyRules.some(rule => !String(rule).endsWith(',🚀 手动切换'))) errors.push('privacy provider 必须统一走 🚀 手动切换，不能走 DIRECT 或独立隐私组');
+  if ((config['proxy-groups'] || []).some(group => group.name === '🛡️ 隐私防泄漏')) errors.push('不应生成独立 🛡️ 隐私防泄漏 策略组');
 
   if (manifest.schemaVersion !== 2) errors.push(`manifest schemaVersion 应为 2，实际为 ${manifest.schemaVersion}`);
   if (!sourceManifest.sources || typeof sourceManifest.sources !== 'object' || Array.isArray(sourceManifest.sources)) {

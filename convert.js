@@ -381,8 +381,7 @@ function buildConfig(proxies) {
     netflix: '🎥 Netflix',
     disney: '🐭 Disney+',
     speedtest: '📡 Speedtest',
-    leak: '🐟 漏网之鱼',
-    privacy: '🛡️ 隐私防泄漏'
+    leak: '🐟 漏网之鱼'
   };
 
   // Sub-Store may reuse the input array across processors. Work on cloned
@@ -696,9 +695,6 @@ function buildConfig(proxies) {
     [POLICY.disney, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
     [POLICY.speedtest, [DIRECT, POLICY.manual, POLICY.auto]],
     [POLICY.leak, [POLICY.manual, DIRECT, POLICY.auto]],
-    // Privacy endpoints never include DIRECT; this prevents domestic
-    // third-party IP checks from bypassing the proxy on purpose.
-    [POLICY.privacy, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'DE', 'KR'])]]
   ];
   for (const [name, groupProxies] of featureGroups) addSelectGroup(name, groupProxies);
 
@@ -725,7 +721,7 @@ function buildConfig(proxies) {
     ...providerRuleSet('ads', REJECT),
     // Known IP-check/WebRTC/HTTPDNS endpoints must override broad CN direct
     // lists; otherwise a domestic third party can observe the real address.
-    ...providerRuleSet('privacy', POLICY.privacy),
+    ...providerRuleSet('privacy', POLICY.manual),
 
     // Domestic domain sources are handled by the generated CN provider before
     // foreign service providers. The foreign guards below also consult it.
