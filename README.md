@@ -30,8 +30,13 @@ MRS 不能表达的 `DOMAIN-KEYWORD`、`PROCESS-NAME`、`PROCESS-PATH` 等规则
 - `rules/mihomo/*-classical.yaml`：无法用 MRS 表达的少量 classical 规则。
 - `rules/manifest.json`：来源、分片、格式、行为、文件大小和规则数量；`groups` 是分片合计，`outputs` 是实际文件清单。
 - `sources.json`：上游来源清单。
-- `scripts/build-rules.mjs`：下载、解析、去重、后缀最小化、MRS 转换和大文件分片脚本。
+- `scripts/build-rules.mjs`：并发下载、解析、去重、后缀最小化、MRS 转换和大文件分片脚本；构建记录来源摘要，并在全部产物完成后原子替换输出目录。
+- `scripts/check-rules.mjs`：只读校验转换器、manifest 和生成产物的一致性，并检查单文件与总大小上限。
+- `scripts/rule-utils.mjs`：规则解析、归一化、全规则组去重和分类型逻辑。
+- `scripts/rule-utils.test.mjs`：规则解析与去重 fixture 测试。
 - `.github/workflows/build-rules.yml`：每周自动更新，也可以手动运行。
+
+构建前会对来源响应做大小和 HTML 错误页检查；`raw.githubusercontent.com` 来源会优先尝试同一 ref 的 jsDelivr 镜像，镜像失败后再回源站。生成的 `manifest.json` 记录实际获取 URL、字节数和 SHA-256 摘要；`sources.json` 中提供 `sha256` 时，构建会强制校验。
 
 构建需要官方 Mihomo 内核提供的 `convert-ruleset` 命令，不把内核提交到仓库。先设置 `MIHOMO_BIN`，再执行：
 
@@ -40,19 +45,25 @@ $env:MIHOMO_BIN = 'C:\path\to\mihomo.exe'
 node scripts/build-rules.mjs
 ```
 
-CI 会固定下载官方 Mihomo `v1.19.32` 转换器。构建脚本会校验每个 MRS 输出非空，并清理旧的生成产物。
+构建会先在临时目录生成并校验全部产物，成功后再整体替换 `rules/mihomo/` 和 manifest；中途失败不会留下半套生成结果。
+
+`npm run test` 运行规则解析和去重测试。`npm run check` 不需要 Mihomo 内核，不会重建文件，只校验 JavaScript 语法以及转换器、manifest 和已提交产物之间的引用、格式、字节数、体积（单文件 1.4 MB、总计 4 MB）和规则 provider 名称一致性。
+
+去重覆盖每个规则组内的全部来源和全部支持类型（域名、CIDR、ASN、进程和关键词）；同一条规则出现在不同策略组时会保留各组副本，因为这些 provider 可能绑定不同的分流策略，manifest 会记录跨组重复审计数量但不会跨组删除。
+
+CI 会固定下载并校验官方 Mihomo `v1.19.32` 转换器。构建脚本会校验每个 MRS 输出非空，并由 `npm run check` 检查生成产物契约。
 
 ## 规则策略
 
 - `direct`：MetaCubeX 中国大陆集合、Loyalsoldier direct、RuleGo direct、ACL4SSR、NobyDa 和国内服务补充。
 - `ads`：MetaCubeX、Loyalsoldier、anti-AD、AWAvenue、RuleGo 和 NobyDa 的广告/恶意/跟踪集合，统一去重并按父域名最小化；Sub-Store 规则顺序中广告拦截位于所有服务和直连规则之前，严格以 `REJECT` 优先。
 - `proxy-extra`：Loyalsoldier、RuleGo 和 Rule-for-OCD 的代理补充；`convert.js` 仍负责排除中国域名和中国 IP。
-- 除 `direct` 和 `ads` 外，服务策略组统一附加 `NOT GEOSITE,cn` 与 `NOT GEOIP,CN`；即使上游混合列表包含国内条目，也会交给后面的国内直连规则处理。
+- 除 `direct` 和 `ads` 外，服务策略组统一附加 `NOT RULE-SET,cn` 与 `NOT GEOIP,CN`；即使上游混合列表包含国内条目，也会交给前面的国内直连规则处理。
 - `cloud`：只处理非中国大陆云服务域名/IP；阿里云盘、百度网盘、腾讯微云等国内网盘归入 `direct`。
 - `ai`：除上游 AI 规则外，补充 RuleGo、SukkaW 和 Claude/Anthropic 服务域名，并统一走 `🤖 AI服务`。
 - `apple`：除上游 Apple 规则外，合并 RuleGo、NobyDa、SukkaW、LM-Firefly、scomper 等 Apple、Siri、Search、Apple Intelligence 和 Private Cloud Compute 主机；非中国大陆 Apple 流量默认优先走代理，`DIRECT` 仍可手动选择。
 - 服务文件按 AI、OpenAI、Claude、Google、Apple、Microsoft、OneDrive、Disney+、游戏、媒体、社交、开发、云服务、金融和购物等策略组拆分；保留通用 AI/媒体/云服务组作为未单独拆分服务的兜底。
-- `IP-ASN` 规则会在生成时过滤，避免普通 iOS 客户端因 ASN 数据下载阻塞启动。
+- `IP-ASN` 是否保留由每个来源的 `dropTypes` 控制，并非全局过滤；当前 OpenAI classical provider 仍包含少量 `IP-ASN` 规则，因此配置仍声明 ASN 数据源。
 
 上游项目的规则内容遵循各自项目的许可证和使用说明；本仓库只维护生成脚本、来源清单和聚合结果。
 

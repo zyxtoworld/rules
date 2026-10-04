@@ -1,4 +1,7 @@
 name: Build routing rules
+concurrency:
+  group: build-rules
+  cancel-in-progress: false
 
 on:
   workflow_dispatch:
@@ -20,11 +23,15 @@ jobs:
         env:
           MIHOMO_VERSION: v1.19.32
         run: |
-          curl --fail --location "https://github.com/MetaCubeX/mihomo/releases/download/${MIHOMO_VERSION}/mihomo-linux-amd64-compatible-${MIHOMO_VERSION}.gz" | gzip -d > "$RUNNER_TEMP/mihomo"
-          chmod +x "$RUNNER_TEMP/mihomo"
-          "$RUNNER_TEMP/mihomo" -v
-          echo "MIHOMO_BIN=$RUNNER_TEMP/mihomo" >> "$GITHUB_ENV"
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/mihomo.gz" "https://github.com/MetaCubeX/mihomo/releases/download/${MIHOMO_VERSION}/mihomo-linux-amd64-compatible-${MIHOMO_VERSION}.gz"
+          echo "ba3ce607747a07f948fc35780e108a4a7c7f552a38b9bd4d115f313ebcb89c20  $RUNNER_TEMP/mihomo.gz" | sha256sum --check --status
+          gzip -d "$RUNNER_TEMP/mihomo.gz"
+          mv "$RUNNER_TEMP/mihomo" "$RUNNER_TEMP/mihomo.bin"
+          chmod +x "$RUNNER_TEMP/mihomo.bin"
+          "$RUNNER_TEMP/mihomo.bin" -v
+          echo "MIHOMO_BIN=$RUNNER_TEMP/mihomo.bin" >> "$GITHUB_ENV"
       - run: node scripts/build-rules.mjs
+      - run: npm run check
       - name: Commit generated rules
         run: |
           git config user.name "github-actions[bot]"

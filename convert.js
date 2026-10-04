@@ -39,6 +39,8 @@ function operator(proxies) {
 }
 
 function buildConfig(proxies) {
+  const regionCache = new Map();
+  const isoCache = new Map();
   function cloneValue(value) {
     if (Array.isArray(value)) return value.map(cloneValue);
     if (value && typeof value === 'object') {
@@ -179,6 +181,11 @@ function buildConfig(proxies) {
   function escapeRegExp(s) {
     return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
+  const KEYWORD_MATCHERS = KEYWORD_TO_ISO.map(([kw, code]) => ({
+    code,
+    keyword: kw,
+    boundary: /^[a-z0-9 ]+$/i.test(kw) ? new RegExp(`(?<![a-z])${escapeRegExp(kw)}(?![a-z])`, 'i') : null,
+  }));
   function providerPattern(names) {
     const alternatives = names.map(escapeRegExp).join('|');
     return new RegExp(`(^|[^A-Za-z0-9])(?:${alternatives})(?=$|[^A-Za-z0-9])`, 'i');
@@ -287,15 +294,10 @@ function buildConfig(proxies) {
   function isoByText(name) {
     const target = regionTargetText(name);
     const low = target.toLowerCase();
-    for (const [kw, code] of KEYWORD_TO_ISO) {
+    for (const { keyword, code, boundary } of KEYWORD_MATCHERS) {
       // English aliases need letter boundaries so names like "Indiana" do
       // not become India. Digits remain valid delimiters for names like Japan01.
-      if (/^[a-z0-9 ]+$/i.test(kw)) {
-        const boundary = new RegExp(`(?<![a-z])${escapeRegExp(kw)}(?![a-z])`, 'i');
-        if (boundary.test(low)) return code;
-      } else if (low.includes(kw)) {
-        return code;
-      }
+      if (boundary ? boundary.test(low) : low.includes(keyword)) return code;
     }
     for (const [re, code] of PROVIDER_ALIAS) {
       if (re.test(target)) return code;
@@ -304,13 +306,29 @@ function buildConfig(proxies) {
   }
   // 识别优先级：文字 > 国旗 > 简写
   function isoOf(name) {
-    const target = regionTargetText(name);
-    return isoByText(name) || isoFromFlag(target) || isoFromFlag(name) || isoFromAbbr(target) || isoFromAbbr(name);
+    const key = String(name || '');
+    if (isoCache.has(key)) return isoCache.get(key);
+    const target = regionTargetText(key);
+    const iso = isoByText(key) || isoFromFlag(target) || isoFromFlag(key) || isoFromAbbr(target) || isoFromAbbr(key);
+    isoCache.set(key, iso);
+    return iso;
   }
   function detectRegion(name) {
-    const iso = isoOf(name);
-    if (iso) return regionLabel(iso);
-    for (const [re, label] of MACRO_REGIONS) if (re.test(name)) return label;
+    const key = String(name || '');
+    if (regionCache.has(key)) return regionCache.get(key);
+    const iso = isoOf(key);
+    if (iso) {
+      const label = regionLabel(iso);
+      regionCache.set(key, label);
+      return label;
+    }
+    for (const [re, label] of MACRO_REGIONS) {
+      if (re.test(key)) {
+        regionCache.set(key, label);
+        return label;
+      }
+    }
+    regionCache.set(key, null);
     return null;
   }
   function regionRank(name) {

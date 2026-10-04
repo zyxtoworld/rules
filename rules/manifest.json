@@ -4,63 +4,99 @@
     "ai": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-gemini.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-gemini.list",
         "source": "MetaCubeX/meta-rules-dat: google-gemini",
-        "rules": 46
+        "rules": 46,
+        "bytes": 1126,
+        "sha256": "5e6d316995b6247f36472ea8e51c92770a4b78c77947ce0e9704e9f255cae74c"
       },
       {
         "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-deepmind",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/v2fly/domain-list-community@master/data/google-deepmind",
         "source": "v2fly/domain-list-community: google-deepmind",
-        "rules": 46
+        "rules": 46,
+        "bytes": 1401,
+        "sha256": "6a9195976e75c2b6adb255ec5cc4af6d8b66d0dd2a877437642deed6da244874"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-chat-!cn.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-chat-!cn.list",
         "source": "MetaCubeX/meta-rules-dat: category-ai-chat-!cn",
-        "rules": 187
+        "rules": 188,
+        "bytes": 3617,
+        "sha256": "d28acc5349fceeb2505b31e5af556e1cc4f34d9ce619a10074cbca979fbb5eff"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gemini/Gemini.yaml",
         "source": "blackmatrix7/ios_rule_script: Gemini",
-        "rules": 13
+        "rules": 13,
+        "bytes": 666,
+        "sha256": "d76e9822f72a69860b7d3086db61bbbef53014c57e3dc12472150c62a4f6434b"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bytedance-ai-!cn.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bytedance-ai-!cn.list",
         "source": "MetaCubeX/meta-rules-dat: bytedance-ai-!cn",
-        "rules": 7
+        "rules": 7,
+        "bytes": 86,
+        "sha256": "fb39d54edd3377e8be54286ee47cd47b5ccae82e88dce352293f49d0c3263e1a"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/aixcoder.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/aixcoder.list",
         "source": "MetaCubeX/meta-rules-dat: aixcoder",
-        "rules": 2
+        "rules": 2,
+        "bytes": 28,
+        "sha256": "766e9a602588da58f6aec40a4176fb93a161c92548a576df8bd97374e88cfe50"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Civitai/Civitai.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Civitai/Civitai.yaml",
         "source": "blackmatrix7/ios_rule_script: Civitai",
-        "rules": 1
+        "rules": 1,
+        "bytes": 195,
+        "sha256": "e1b85de298866274cad9ddf64f2ca8ca048e1c84ed9d206015256aadd6c52b80"
       },
       {
         "url": "https://ruleset.skk.moe/Clash/non_ip/ai.txt",
+        "fetchedUrl": "https://ruleset.skk.moe/Clash/non_ip/ai.txt",
         "source": "SukkaW/Surge: ai",
-        "rules": 51
+        "rules": 51,
+        "bytes": 1956,
+        "sha256": "5ac32db27fbceb38f19d1774027c79e4bb850ad42747f5badf841aeb7d1102da"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/AI.list",
         "source": "ConnersHua/RuleGo: AI",
-        "rules": 74
+        "rules": 74,
+        "bytes": 2560,
+        "sha256": "18bffe9e41f878787d31b537f423078bc396131e5a577c9ec919b0fe27c5a5a0"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Copilot/Copilot_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Copilot/Copilot_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: Copilot",
-        "rules": 16
+        "rules": 16,
+        "bytes": 1509,
+        "sha256": "8cd9158239f30782fe18b98967067a54c3016abbf34bd75a7840dc6f5bbd8e7e"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Grok/Grok_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Grok/Grok_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: Grok",
-        "rules": 4
+        "rules": 4,
+        "bytes": 183,
+        "sha256": "4ddce84477869bccaf01fea348f801075707e154c00fc5b817e26574e1ce84a6"
       },
       {
         "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-google-gemini.json",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/reonokiy/sing-box-ruleset@main/source/geosite-google-gemini.json",
         "source": "reonokiy/sing-box-ruleset: google-gemini",
-        "rules": 11
+        "rules": 11,
+        "bytes": 474,
+        "sha256": "e42e231b97d62955c37f779bfa21368f04118a062c36cdf8c570de32255563e1"
       },
       {
         "source": "built-in: Gemini mobile and API dependencies",
@@ -70,57 +106,87 @@
     "openai": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.list",
         "source": "MetaCubeX/meta-rules-dat: openai",
-        "rules": 22
+        "rules": 22,
+        "bytes": 522,
+        "sha256": "9c3c755ad42fa75196e5d37705d0d5bfff5f60bc0d9a1f017272e70eafde7645"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml",
         "source": "blackmatrix7/ios_rule_script: OpenAI",
-        "rules": 35
+        "rules": 35,
+        "bytes": 1469,
+        "sha256": "cf66c50e7cfbe0aa0e9e249bfa8897d152ae35b38ab6db2936ef62860b7b61b4"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/GenAI/OpenAI.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/GenAI/OpenAI.list",
         "source": "ConnersHua/RuleGo: GenAI/OpenAI",
-        "rules": 13
+        "rules": 13,
+        "bytes": 373,
+        "sha256": "89ff3e5401b48566c1eeb164b124b4627aaf1d7375248360d0f0d7411a15a098"
       },
       {
         "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-openai.json",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/reonokiy/sing-box-ruleset@main/source/geosite-openai.json",
         "source": "reonokiy/sing-box-ruleset: openai",
-        "rules": 7
+        "rules": 7,
+        "bytes": 272,
+        "sha256": "acedfe5fef8f3d20d0690fcb460612233260035fa0f92d25e77eff84db68540b"
       }
     ],
     "claude": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.list",
         "source": "MetaCubeX/meta-rules-dat: anthropic",
-        "rules": 8
+        "rules": 9,
+        "bytes": 166,
+        "sha256": "40158d6d6f218c6055cd4ec8bde727859435cc52d6c47e0473c3d0a841c5bc5c"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Claude/Claude.yaml",
         "source": "blackmatrix7/ios_rule_script: Claude",
-        "rules": 3
+        "rules": 3,
+        "bytes": 265,
+        "sha256": "ef21df39005b17dbd84aa65a47162b36fb5e72754cd32384146474ed488df482"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/GenAI/Anthropic.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/GenAI/Anthropic.list",
         "source": "ConnersHua/RuleGo: GenAI/Anthropic",
-        "rules": 11
+        "rules": 11,
+        "bytes": 364,
+        "sha256": "12bbe1dffc71e7be8b3999ac5c0fc18b90c0c2730595fa15638db41e2c4c68e2"
       },
       {
         "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/claude.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/lyq2010/clash-ruleset@main/claude.list",
         "source": "lyq2010/clash-ruleset: Claude",
-        "rules": 8
+        "rules": 8,
+        "bytes": 474,
+        "sha256": "f02412920c023e2a0444e39e84e2cc6379dc3cba0dcd1f7149205c42b8aa5254"
       },
       {
         "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-anthropic.json",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/reonokiy/sing-box-ruleset@main/source/geosite-anthropic.json",
         "source": "reonokiy/sing-box-ruleset: anthropic",
-        "rules": 4
+        "rules": 4,
+        "bytes": 182,
+        "sha256": "b214ca5be79dcb1dee1b3a3b576f890ff7e5b51b92fd5ae6ece368544377dc0e"
       }
     ],
     "private": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.list",
         "source": "MetaCubeX/meta-rules-dat: private",
-        "rules": 130
+        "rules": 130,
+        "bytes": 2688,
+        "sha256": "9caf8f67450f6ff72fde0d2aec4d425238b88e371628011e51aab9185b0da73e"
       },
       {
         "source": "built-in: private network ranges",
@@ -130,86 +196,131 @@
     "cn": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.list",
         "source": "MetaCubeX/meta-rules-dat: cn",
-        "rules": 111224
+        "rules": 111224,
+        "bytes": 1630610,
+        "sha256": "3ea974699627c91d18d107c7f1b25d10e3d57033a8c941bce19be8e3cae4008b"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-cn.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-cn.list",
         "source": "MetaCubeX/meta-rules-dat: google-cn",
-        "rules": 112
+        "rules": 112,
+        "bytes": 2462,
+        "sha256": "86ebaff6167999e7759fcd0288717a41901fe6e6c530fa941a989a217eaa12e2"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-cn.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-cn.list",
         "source": "MetaCubeX/meta-rules-dat: apple-cn",
-        "rules": 165
+        "rules": 165,
+        "bytes": 4094,
+        "sha256": "2a6e5b0f49bd6852ae302959b96133f51833cde4bf61cc2ad12053a09087c859"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-cn.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-cn.list",
         "source": "MetaCubeX/meta-rules-dat: category-games-cn",
-        "rules": 264
+        "rules": 264,
+        "bytes": 3935,
+        "sha256": "6fb795bc17679f2bcfca8f1431e37b4c8bffaa235b741800f11d99768bf83b71"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-entertainment-cn.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-entertainment-cn.list",
         "source": "MetaCubeX/meta-rules-dat: category-entertainment-cn",
-        "rules": 796
+        "rules": 796,
+        "bytes": 11976,
+        "sha256": "89211add0ab9e66a019fdb525eb5ad16696defefd2493d63963ec43d3cf78342"
       }
     ],
     "geolocation": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.list",
         "source": "MetaCubeX/meta-rules-dat: geolocation-!cn",
-        "rules": 27064
+        "rules": 27065,
+        "bytes": 454769,
+        "sha256": "cd39d840d868bac1d82dd3493f5abc687079ed2731c441349c8be9e7f8e2f713"
       }
     ],
     "github": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.list",
         "source": "MetaCubeX/meta-rules-dat: github",
-        "rules": 64
+        "rules": 64,
+        "bytes": 1924,
+        "sha256": "f5d67e6e0c8799bd292c8a012d579c8af37ee6a0af771299dd6500db4d1202fd"
       }
     ],
     "speedtest": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/speedtest.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/speedtest.list",
         "source": "MetaCubeX/meta-rules-dat: speedtest",
-        "rules": 13
+        "rules": 13,
+        "bytes": 249,
+        "sha256": "603d8f0460963711dcffa90a54068b802fe7ac4eb5cc76e8b3e400dae47daad0"
       }
     ],
     "crypto": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bybit.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bybit.list",
         "source": "MetaCubeX/meta-rules-dat: bybit",
-        "rules": 16
+        "rules": 16,
+        "bytes": 230,
+        "sha256": "8a5a2c4254d32c41c6abb4086f4b387d6eab75ee5403955a76de0091142e8a84"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/okx.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/okx.list",
         "source": "MetaCubeX/meta-rules-dat: okx",
-        "rules": 10
+        "rules": 10,
+        "bytes": 139,
+        "sha256": "d5550a21b63afe5abed1c623d65eab90dcfec013e5f402851e9ee09695c64306"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/kraken.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/kraken.list",
         "source": "MetaCubeX/meta-rules-dat: kraken",
-        "rules": 2
+        "rules": 2,
+        "bytes": 25,
+        "sha256": "c12dd6f15794e5be001aee094952e0da969e20914ed60fabe1e79c1cec1268c0"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bitflyer.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bitflyer.list",
         "source": "MetaCubeX/meta-rules-dat: bitflyer",
-        "rules": 2
+        "rules": 2,
+        "bytes": 28,
+        "sha256": "e4f8fe10b728171fa67100f23c4f9c58c82a48118e6dfcd943fde87cb41deb02"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-cryptocurrency.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-cryptocurrency.list",
         "source": "MetaCubeX/meta-rules-dat: category-cryptocurrency",
-        "rules": 235
+        "rules": 235,
+        "bytes": 3638,
+        "sha256": "3602670c7ab8c2aff761cdd47da591761eaac44e211b34e227ad7944c41468eb"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Crypto.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Crypto.list",
         "source": "ConnersHua/RuleGo: Crypto",
-        "rules": 45
+        "rules": 45,
+        "bytes": 1267,
+        "sha256": "b3e6fe45c248c999b5287370ea6e0a904d3022f53a39b52a2e56222cb547bd29"
       },
       {
         "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/Binance.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/lyq2010/clash-ruleset@main/Binance.list",
         "source": "lyq2010/clash-ruleset: Binance",
-        "rules": 22
+        "rules": 22,
+        "bytes": 612,
+        "sha256": "8decb6806a0a6ed142d6bcc88645575f07d7dcd3f959c0daecb10d4661b36209"
       },
       {
         "source": "built-in: cryptocurrency service domains",
@@ -219,154 +330,241 @@
     "biliintl": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/biliintl.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/biliintl.list",
         "source": "MetaCubeX/meta-rules-dat: biliintl",
-        "rules": 11
+        "rules": 11,
+        "bytes": 310,
+        "sha256": "f61589b3d022abafa6d1174f3bb311426f36d5a64b69cadbcf804d11e75fbff5"
       }
     ],
     "direct": [
       {
         "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt",
         "source": "Loyalsoldier/clash-rules: direct",
-        "rules": 111353
+        "rules": 111353,
+        "bytes": 2303610,
+        "sha256": "e1664a48aa5ffc62bd4941787db59446335cc933d3c39ff083e4000ae9c5993b"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BiliBili/BiliBili.yaml",
         "source": "blackmatrix7/ios_rule_script: BiliBili",
-        "rules": 129
+        "rules": 129,
+        "bytes": 5084,
+        "sha256": "fba635689995726aebbb522699f157f5dd910783950daa4bb475f167fe7b40de"
       },
       {
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaDomain.list",
         "source": "ACL4SSR/ACL4SSR: ChinaDomain",
-        "rules": 635
+        "rules": 635,
+        "bytes": 17251,
+        "sha256": "362edd1f605742b360eaf138f151d7eea96cc17f20ef12da73acbfb80c350e08"
       },
       {
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/GoogleCN.list",
         "source": "ACL4SSR/ACL4SSR: GoogleCN",
-        "rules": 48
+        "rules": 48,
+        "bytes": 1655,
+        "sha256": "f6321957b557ea4988eb2584a861fedd0e117866c4ff3892283014415898bb08"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Direct.list",
         "source": "ConnersHua/RuleGo: Direct",
-        "rules": 24
+        "rules": 24,
+        "bytes": 897,
+        "sha256": "35aae672ccde5534afd5d30344bd1ee4c75ddd383c099eda3babee3202ca5630"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Direct+.list",
         "source": "ConnersHua/RuleGo: Direct+",
-        "rules": 21
+        "rules": 21,
+        "bytes": 645,
+        "sha256": "467d7173ed8d0541ed2436c0f686aee63b8850c0f1452469a7c8439f542cfd32"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Streaming/CN.list",
         "source": "ConnersHua/RuleGo: Streaming/CN",
-        "rules": 16
+        "rules": 16,
+        "bytes": 505,
+        "sha256": "8a79fd534b92d7ac33e9290bd141b423822dc50525a525938486a340b6b5bcda"
       },
       {
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/China/China.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/source/rule/China/China.list",
         "source": "peiyingyao/Rule-for-OCD: China",
-        "rules": 1
+        "rules": 1,
+        "bytes": 29,
+        "sha256": "b151c2db45ca10ca433b3788bc0bc69250a377cd7544b967891ac7b147d67eb6"
       },
       {
         "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Bilibili.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/NobyDa/Script@master/Surge/Bilibili.list",
         "source": "NobyDa/Script: Bilibili",
-        "rules": 12
+        "rules": 12,
+        "bytes": 378,
+        "sha256": "99327e6e173c5e1fd8667c66d43a109788773dfab8b5b0a6d85476656bd95c70"
       },
       {
         "url": "https://raw.githubusercontent.com/scomper/surge-list/master/cn.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/scomper/surge-list@master/cn.list",
         "source": "scomper/surge-list: China",
-        "rules": 50
+        "rules": 50,
+        "bytes": 1355,
+        "sha256": "ecf20d7ffdee5df71050e1723a7440c13e36f50e0f7b446135ac0e8b23a65b0e"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Alipan/Alipan_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Alipan/Alipan_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: Alipan",
-        "rules": 17
+        "rules": 17,
+        "bytes": 847,
+        "sha256": "384e87db75c295327a22b3440c295dfbca78014fcde7c9e120a50cec26b33c16"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/BaiduNetDisk/BaiduNetDisk_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/BaiduNetDisk/BaiduNetDisk_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: BaiduNetDisk",
-        "rules": 19
+        "rules": 19,
+        "bytes": 822,
+        "sha256": "b7696a9ef6afafd234dea7f73044bc993b3dc0e7fe7fcd3f2bb4e2755481de0a"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/WeiYun/WeiYun_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/WeiYun/WeiYun_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: WeiYun",
-        "rules": 7
+        "rules": 7,
+        "bytes": 213,
+        "sha256": "e096d8593cf5521bf102aa0e27cc219a408df21077a46259284671da71653b79"
       }
     ],
     "ads": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.list",
         "source": "MetaCubeX/meta-rules-dat: category-ads-all",
-        "rules": 910
+        "rules": 910,
+        "bytes": 17598,
+        "sha256": "762124ec1f85fa6db55d1f46559a85b83aa716937e6f42230d2505297312143b"
       },
       {
         "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt",
         "source": "Loyalsoldier/clash-rules: reject",
-        "rules": 186771
+        "rules": 186771,
+        "bytes": 5378138,
+        "sha256": "cf129dd93f53452e7d7d57e345f6f0324fa3436ee02c727cc3ee2503efb3a59d"
       },
       {
         "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/AWAvenue-Ads-Rule.txt",
         "source": "TG-Twilight/AWAvenue-Ads-Rule: AWAvenue-Ads-Rule.txt",
-        "rules": 961
+        "rules": 961,
+        "bytes": 23211,
+        "sha256": "e63c0ba4d838883a683034f3cbcebe7e00c4d99fb6d10bb130b2283e819976e2"
       },
       {
         "url": "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-domains.txt",
         "source": "privacy-protection-tools/anti-AD: anti-ad-domains",
-        "rules": 107693
+        "rules": 107693,
+        "bytes": 2076001,
+        "sha256": "2eac79147230d9a6fc654bebcb90965afedc5db67a735f4c996cbaad9633ce40"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Reject/Advertising.list",
         "source": "ConnersHua/RuleGo: Reject/Advertising",
-        "rules": 976
+        "rules": 976,
+        "bytes": 27224,
+        "sha256": "2536aacb61b0d40b205d459df7f9beac4e3c0e23744a963e111a6147fabc8cc9"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Malicious.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Reject/Malicious.list",
         "source": "ConnersHua/RuleGo: Reject/Malicious",
-        "rules": 91
+        "rules": 91,
+        "bytes": 2865,
+        "sha256": "05e8bce75c4babcdb649973b65e9f2d13be3c56d7f000b1f291fa969f79503af"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Reject/Tracking.list",
         "source": "ConnersHua/RuleGo: Reject/Tracking",
-        "rules": 90
+        "rules": 90,
+        "bytes": 2816,
+        "sha256": "b27f44faaf04388f5cf6effb82c9d4cdcf931a153f1d33c056f84855d20678f2"
       },
       {
         "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/AdRule.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/NobyDa/Script@master/Surge/AdRule.list",
         "source": "NobyDa/Script: AdRule",
-        "rules": 8641
+        "rules": 8641,
+        "bytes": 257025,
+        "sha256": "db0b0aeb1395f85bb524681825660928a5ca808bce2410cf4c8fe8ab6f332f57"
       },
       {
         "url": "https://raw.githubusercontent.com/scomper/surge-list/master/adblock.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/scomper/surge-list@master/adblock.list",
         "source": "scomper/surge-list: AdBlock",
-        "rules": 24
+        "rules": 24,
+        "bytes": 585,
+        "sha256": "3a0397dfa8d777247f5079e6057a829f72499671aafcd0a336417c9b382361d7"
       },
       {
         "url": "https://raw.githubusercontent.com/scomper/surge-list/master/reject.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/scomper/surge-list@master/reject.list",
         "source": "scomper/surge-list: Reject",
-        "rules": 3225
+        "rules": 3225,
+        "bytes": 100831,
+        "sha256": "0c2c0523fa9bab0a4766fffec96190209fa311fbab9474c6410b782383490bd0"
       },
       {
         "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-category-ads-all.json",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/reonokiy/sing-box-ruleset@main/source/geosite-category-ads-all.json",
         "source": "reonokiy/sing-box-ruleset: category-ads-all",
-        "rules": 129
+        "rules": 129,
+        "bytes": 3288,
+        "sha256": "7565acae7304d67988489e2c0d1ca87910fc3dfda031a0e0258ed5ac5f4f762f"
       }
     ],
     "download": [
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Download/Download.yaml",
         "source": "blackmatrix7/ios_rule_script: Download",
-        "rules": 34
+        "rules": 34,
+        "bytes": 1196,
+        "sha256": "69d90c133c2f502b998658f3f91650dadbf64d3222598b8af45c523dff6607f9"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pikpak.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pikpak.list",
         "source": "MetaCubeX/meta-rules-dat: pikpak",
-        "rules": 7
+        "rules": 7,
+        "bytes": 124,
+        "sha256": "a0ad3b0278f3b720e37133d0641c634549b785e1264a5d5f740defdf5c487b21"
       },
       {
         "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Download.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/NobyDa/Script@master/Surge/Download.list",
         "source": "NobyDa/Script: Download",
-        "rules": 16
+        "rules": 16,
+        "bytes": 508,
+        "sha256": "ec6beb90093d1c01787a0f7e09517b31f5d3757d090de9fb4f37022771165b69"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/MacAppUpgrade/MacAppUpgrade_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/MacAppUpgrade/MacAppUpgrade_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: MacAppUpgrade",
-        "rules": 482
+        "rules": 482,
+        "bytes": 59287,
+        "sha256": "7c1a6abcccd20ee2cd4ab37f51ef6ec2bb8ab91d6693801dc7323006bbe9994a"
       },
       {
         "source": "built-in: download CDN domains",
@@ -376,215 +574,341 @@
     "google": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.list",
         "source": "MetaCubeX/meta-rules-dat: google",
-        "rules": 1075
+        "rules": 1075,
+        "bytes": 18364,
+        "sha256": "76222aad9960310986b4559aac6cba9c542f66e79f94e32b0fa793ceda28b749"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml",
         "source": "blackmatrix7/ios_rule_script: Google",
-        "rules": 701
+        "rules": 701,
+        "bytes": 22654,
+        "sha256": "dfb4bf0a0095e48f024fbb7c31564a928e6c7d450b662aca9803119489a9237c"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Google/Google.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Google/Google.list",
         "source": "ConnersHua/RuleGo: Google",
-        "rules": 15
+        "rules": 15,
+        "bytes": 400,
+        "sha256": "20e8d7c0849b463927f3a8e1757e42476f2c85b2fe63fd0e046e3081b1a8244c"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Google/GoogleSearch.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Google/GoogleSearch.list",
         "source": "ConnersHua/RuleGo: GoogleSearch",
-        "rules": 1
+        "rules": 1,
+        "bytes": 44,
+        "sha256": "f59d36528d9cf9a47fb843035b768e160b5378a90f14d929a3935383dafabf61"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Google/GoogleVoice.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Google/GoogleVoice.list",
         "source": "ConnersHua/RuleGo: GoogleVoice",
-        "rules": 1
+        "rules": 1,
+        "bytes": 41,
+        "sha256": "ac185af27e084d945c5b771ca93835a80100851585cb94ba6e1b6cde45f7490e"
       },
       {
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Google/Google.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/source/rule/Google/Google.list",
         "source": "peiyingyao/Rule-for-OCD: Google",
-        "rules": 1
+        "rules": 1,
+        "bytes": 27,
+        "sha256": "ad0ed55fd82b3a821d6177a3f92b1d65abc5345946f079350c38552285f19bf6"
       }
     ],
     "apple": [
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple.yaml",
         "source": "blackmatrix7/ios_rule_script: Apple",
-        "rules": 33
+        "rules": 33,
+        "bytes": 1239,
+        "sha256": "9f81f8e6ee8485d4553544d7dcefd6e4b2e9534f6306c7e4ee38427a20898de1"
       },
       {
         "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/v2fly/domain-list-community@master/data/apple",
         "source": "v2fly/domain-list-community: apple",
-        "rules": 850
+        "rules": 850,
+        "bytes": 17100,
+        "sha256": "d46d18afe2f2d51bd48ddd239c43f460a32a9d605b384baa2cd6c70ec29cf29f"
       },
       {
         "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/icloud",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/v2fly/domain-list-community@master/data/icloud",
         "source": "v2fly/domain-list-community: icloud",
-        "rules": 53
+        "rules": 53,
+        "bytes": 774,
+        "sha256": "c46ade14884382a65b8bb9f1b6b8e484be639ffe17abcf2ec6f50464cb56f04f"
       },
       {
         "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/itunes",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/v2fly/domain-list-community@master/data/itunes",
         "source": "v2fly/domain-list-community: itunes",
-        "rules": 98
+        "rules": 98,
+        "bytes": 2981,
+        "sha256": "ba7a43ba644b65455325d812d98229cf0f4987bd6baf6717b12209ffa55a287a"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-dev.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-dev.list",
         "source": "MetaCubeX/meta-rules-dat: apple-dev",
-        "rules": 47
+        "rules": 47,
+        "bytes": 1037,
+        "sha256": "028f0ab6829bcee63ac28e5046a10d36094c604b99f2e0b713f31ce85e03bb6c"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-music.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-music.list",
         "source": "MetaCubeX/meta-rules-dat: apple-music",
-        "rules": 18
+        "rules": 18,
+        "bytes": 380,
+        "sha256": "c76eb3e66b36dce06ca7f75ba3906f9d3d9a66507da1ce0cbe2179a7ee161f2d"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-podcasts.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-podcasts.list",
         "source": "MetaCubeX/meta-rules-dat: apple-podcasts",
-        "rules": 4
+        "rules": 4,
+        "bytes": 86,
+        "sha256": "a146e566cc403ef7b3d5b92137963267708a01353febd58305d4e7af0c170ae4"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-tvplus.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-tvplus.list",
         "source": "MetaCubeX/meta-rules-dat: apple-tvplus",
-        "rules": 8
+        "rules": 8,
+        "bytes": 185,
+        "sha256": "c249b5785d86791c7dee979e357b570f0c57d8d5905a64f71cb4b103ad460a6c"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-intelligence.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-intelligence.list",
         "source": "MetaCubeX/meta-rules-dat: apple-intelligence",
-        "rules": 5
+        "rules": 5,
+        "bytes": 130,
+        "sha256": "3f01d5c8bff62b69e0ea0cae5b96c98bf004bf0a27afe0772a612f5644a61592"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleID/AppleID.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AppleID/AppleID.yaml",
         "source": "blackmatrix7/ios_rule_script: AppleID",
-        "rules": 4
+        "rules": 4,
+        "bytes": 272,
+        "sha256": "ceba276e0ab26b99a332307f7b7a81fd908d403fc558a256d5e7e35cb9d06b7f"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleMail/AppleMail.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AppleMail/AppleMail.yaml",
         "source": "blackmatrix7/ios_rule_script: AppleMail",
-        "rules": 2
+        "rules": 2,
+        "bytes": 234,
+        "sha256": "661db3013e359e4e815fff7cd81b4c4552d47db64a7325c86396c05608d9cbf3"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AppleNews/AppleNews.yaml",
         "source": "blackmatrix7/ios_rule_script: AppleNews",
-        "rules": 2
+        "rules": 2,
+        "bytes": 234,
+        "sha256": "f45b1892d69cac07cbf55d3d498fbaebb22eb686e55f5485e4f697c2ed0eeb54"
       },
       {
         "url": "https://ruleset.skk.moe/Clash/non_ip/apple_intelligence.txt",
+        "fetchedUrl": "https://ruleset.skk.moe/Clash/non_ip/apple_intelligence.txt",
         "source": "SukkaW/Surge: apple_intelligence",
-        "rules": 5
+        "rules": 5,
+        "bytes": 631,
+        "sha256": "728d4a842e4507e042b929ed599b9a9a3de4e89ba4a29438594470dd40c1a5f8"
       },
       {
         "url": "https://ruleset.skk.moe/Clash/non_ip/apple_services.txt",
+        "fetchedUrl": "https://ruleset.skk.moe/Clash/non_ip/apple_services.txt",
         "source": "SukkaW/Surge: apple_services",
-        "rules": 25
+        "rules": 25,
+        "bytes": 1157,
+        "sha256": "9c32e8eb6e1d334a85b972791a0afc4b0fc81f57d3a80902a50c9168269f7602"
       },
       {
         "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Apple.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/LM-Firefly/Rules@master/Apple.list",
         "source": "LM-Firefly/Rules: Apple",
-        "rules": 2533
+        "rules": 2533,
+        "bytes": 83360,
+        "sha256": "c896f24544bcbbfcec47a7766b12e7a7327337f3d0d79856e6a126615f1e53cc"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Apple.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/Apple.list",
         "source": "ConnersHua/RuleGo: Apple",
-        "rules": 20
+        "rules": 20,
+        "bytes": 603,
+        "sha256": "8ecf4183ed7153f4d7f84f1f397005b4f16cfd9058ccdcce8762d3eb562a5e82"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/AppStore.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/AppStore.list",
         "source": "ConnersHua/RuleGo: Apple/AppStore",
-        "rules": 7
+        "rules": 7,
+        "bytes": 301,
+        "sha256": "ee614278de5fc8d2f22b2cebba0d227c944299ded97933c201371946c1f98f55"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/AppStoreConnect.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/AppStoreConnect.list",
         "source": "ConnersHua/RuleGo: Apple/AppStoreConnect",
-        "rules": 3
+        "rules": 3,
+        "bytes": 124,
+        "sha256": "cf73cd59a9f9fb1eb81fb0e021b908ca6cbc6787c995e6be3ade8adcdea54d34"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Books.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/Books.list",
         "source": "ConnersHua/RuleGo: Apple/Books",
-        "rules": 5
+        "rules": 5,
+        "bytes": 176,
+        "sha256": "ea3e8d132efd97d3925131f4d2622e022ef6287e50ebcc7789b576412636c089"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/FindMy.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/FindMy.list",
         "source": "ConnersHua/RuleGo: Apple/FindMy",
-        "rules": 3
+        "rules": 3,
+        "bytes": 92,
+        "sha256": "fb84a28abb5d40036cc68eb29ad1a3be1b25689e40a4f1244079f43548a41db1"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/FitnessPlus.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/FitnessPlus.list",
         "source": "ConnersHua/RuleGo: Apple/FitnessPlus",
-        "rules": 2
+        "rules": 2,
+        "bytes": 76,
+        "sha256": "14fb429911f07bdbfb6c69cf6da907332bf202559c039f28c64ce8391ede3097"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Intelligence.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/Intelligence.list",
         "source": "ConnersHua/RuleGo: Apple/Intelligence",
-        "rules": 9
+        "rules": 9,
+        "bytes": 273,
+        "sha256": "e6cc1c0ae7637dfdf43123de60ab81b67720a93e8b85b12870520a8b16253441"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Mail.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/Mail.list",
         "source": "ConnersHua/RuleGo: Apple/Mail",
-        "rules": 2
+        "rules": 2,
+        "bytes": 75,
+        "sha256": "2738da53c3a1c815faf723fd4b9ef0768c9ab81d8301ad0667151f0aabffa7ec"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Music.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/Music.list",
         "source": "ConnersHua/RuleGo: Apple/Music",
-        "rules": 10
+        "rules": 10,
+        "bytes": 361,
+        "sha256": "55fb70525f78cf8a2664865c6d5ed3f8e5559b0a764cdb7192c77f9248b06ec4"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/MusicTV.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/MusicTV.list",
         "source": "ConnersHua/RuleGo: Apple/MusicTV",
-        "rules": 1
+        "rules": 1,
+        "bytes": 35,
+        "sha256": "92723165ece6ee5613bb05e85823f93fce7bdf72bb0219d26839f3c919d13715"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Siri.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/Siri.list",
         "source": "ConnersHua/RuleGo: Apple/Siri",
-        "rules": 1
+        "rules": 1,
+        "bytes": 31,
+        "sha256": "b050446958dd775a53b23ed3f5f23fddfb95c02c443184eb904cfb84600376f1"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/SoftwareUpdate.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/SoftwareUpdate.list",
         "source": "ConnersHua/RuleGo: Apple/SoftwareUpdate",
-        "rules": 21
+        "rules": 21,
+        "bytes": 796,
+        "sha256": "dfaddc55b9eac80cc118f9a2798d96f2ca8aa86f9f85da9a13c602bfac33affb"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/TV.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/TV.list",
         "source": "ConnersHua/RuleGo: Apple/TV",
-        "rules": 7
+        "rules": 7,
+        "bytes": 285,
+        "sha256": "8e17b7bdab208324310cb800bfea1cd6d796a4dd131c71ecf5df31eaa519d6cf"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/TestFlight.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/TestFlight.list",
         "source": "ConnersHua/RuleGo: Apple/TestFlight",
-        "rules": 2
+        "rules": 2,
+        "bytes": 62,
+        "sha256": "83cbe94db1e0e526ad71159b12930f8d15266c1aa3e1a29dbb4020f41274f0c5"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/iCloud.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/iCloud.list",
         "source": "ConnersHua/RuleGo: Apple/iCloud",
-        "rules": 11
+        "rules": 11,
+        "bytes": 344,
+        "sha256": "4d7bef92e59dd829c09555445735535f7b161766a4cab14239198f9104f79880"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/iMessage.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Apple/iMessage.list",
         "source": "ConnersHua/RuleGo: Apple/iMessage",
-        "rules": 2
+        "rules": 2,
+        "bytes": 56,
+        "sha256": "8dd30605396c525592af3ae0b680e3947aeef1e1fb2aabcd87e1f46eb5ae52da"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/AppleAI/AppleAI_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/AppleAI/AppleAI_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: AppleAI",
-        "rules": 8
+        "rules": 8,
+        "bytes": 1034,
+        "sha256": "f2ce00d8570e4dfe02b55cf69a72693a42529cc4f88d548d97668d88f500dbf5"
       },
       {
         "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Apple.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/NobyDa/Script@master/Surge/Apple.list",
         "source": "NobyDa/Script: Apple",
-        "rules": 44
+        "rules": 44,
+        "bytes": 2069,
+        "sha256": "1da338cfb0a9cdae5ee0c5042b30efc8add475a6196e0e16d3e6ee15e230a6bc"
       },
       {
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/AppStore/AppStore.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/source/rule/AppStore/AppStore.list",
         "source": "peiyingyao/Rule-for-OCD: AppStore",
-        "rules": 2
+        "rules": 2,
+        "bytes": 45,
+        "sha256": "ccbe9732a704f68c019fdfb3265a8d8a35b94d4a3c89116bd234411cf9041980"
       },
       {
         "url": "https://raw.githubusercontent.com/scomper/surge-list/master/apple.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/scomper/surge-list@master/apple.list",
         "source": "scomper/surge-list: Apple",
-        "rules": 13
+        "rules": 13,
+        "bytes": 459,
+        "sha256": "661793c1c3c5a60201272aeda0ac38ef80bf07109cc61be7a2dcd521d3c7d1ff"
       },
       {
         "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-apple.json",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/reonokiy/sing-box-ruleset@main/source/geosite-apple.json",
         "source": "reonokiy/sing-box-ruleset: apple",
-        "rules": 39
+        "rules": 39,
+        "bytes": 1111,
+        "sha256": "e39ade586b2e8a4b392f2ac3a6b82799a73d7cca2cd8bfc493a3468871d63365"
       },
       {
         "source": "built-in: Apple Intelligence and Siri hosts",
@@ -594,132 +918,207 @@
     "microsoft": [
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml",
         "source": "blackmatrix7/ios_rule_script: Microsoft",
-        "rules": 670
+        "rules": 670,
+        "bytes": 23208,
+        "sha256": "a289a1d52394e92ceee26a5c83953cd292609717d39fb2970d189dc7877b2a4d"
       },
       {
         "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/LM-Firefly/Rules@master/Microsoft.list",
         "source": "LM-Firefly/Rules: Microsoft",
-        "rules": 669
+        "rules": 669,
+        "bytes": 20733,
+        "sha256": "01f928f17f4540f7fe7e8edf9b5647e2ca2f84b65e279bd1b036f5658eaea4ec"
       },
       {
         "url": "https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-microsoft.json",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/reonokiy/sing-box-ruleset@main/source/geosite-microsoft.json",
         "source": "reonokiy/sing-box-ruleset: microsoft",
-        "rules": 76
+        "rules": 76,
+        "bytes": 2007,
+        "sha256": "ee9e1b5a08c4b242395cea4e70dcdaf08390ba1e9a14a246c9ff695eb69d5e4e"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/Teams.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Microsoft/Teams.list",
         "source": "ConnersHua/RuleGo: Microsoft/Teams",
-        "rules": 4
+        "rules": 4,
+        "bytes": 190,
+        "sha256": "fdd85d121b82642d94c364e3c2eaf6d7d52f02cc4ed213931d1746c6655e4435"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/MicrosoftAPPs/MicrosoftAPPs.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/MicrosoftAPPs/MicrosoftAPPs.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: MicrosoftAPPs",
-        "rules": 63
+        "rules": 63,
+        "bytes": 6069,
+        "sha256": "1b0a617b0ee7e202060bb247c72ddb2a6fde750ed2eec61b549e28752c62accd"
       }
     ],
     "games": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.list",
         "source": "MetaCubeX/meta-rules-dat: steam",
-        "rules": 60
+        "rules": 60,
+        "bytes": 1370,
+        "sha256": "63e7cfe27eedb6660abd763618129cf46e3a39ebf436886bfb8a8eedde5b49bb"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-!cn.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-!cn.list",
         "source": "MetaCubeX/meta-rules-dat: category-games-!cn",
-        "rules": 859
+        "rules": 859,
+        "bytes": 16201,
+        "sha256": "8c39af53c2f06299280f30ff8a271ecce7bd203e3ef3a541890008726e629a04"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml",
         "source": "blackmatrix7/ios_rule_script: Steam",
-        "rules": 54
+        "rules": 54,
+        "bytes": 2280,
+        "sha256": "585e423c866bb020421a79dd2842f279b56ef94bf487fbee13354796958dcad6"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Nintendo/Nintendo.yaml",
         "source": "blackmatrix7/ios_rule_script: Nintendo",
-        "rules": 125
+        "rules": 125,
+        "bytes": 4622,
+        "sha256": "aa9bce448f8c8740b0d59bec6e2869d4bf1ffcade4a59895bef64c141775e930"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Xbox/Xbox.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Xbox/Xbox.yaml",
         "source": "blackmatrix7/ios_rule_script: Xbox",
-        "rules": 42
+        "rules": 42,
+        "bytes": 1554,
+        "sha256": "3c4b5ba98f4a397d7b8647619730602fd290f9673d5654714a7059fb2a12f537"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PlayStation/PlayStation.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/PlayStation/PlayStation.yaml",
         "source": "blackmatrix7/ios_rule_script: PlayStation",
-        "rules": 4
+        "rules": 4,
+        "bytes": 325,
+        "sha256": "200e42e1f81820087991f92a6075c38822a484642f1a0f44f08e049762204609"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Garena/Garena.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Garena/Garena.yaml",
         "source": "blackmatrix7/ios_rule_script: Garena",
-        "rules": 15
+        "rules": 15,
+        "bytes": 661,
+        "sha256": "5e4c4a2757ebb6e09f0b166a1c73f3f5c0802bec3706af6f3f2264db025cecaf"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Riot/Riot.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Riot/Riot.yaml",
         "source": "blackmatrix7/ios_rule_script: Riot",
-        "rules": 55
+        "rules": 55,
+        "bytes": 2033,
+        "sha256": "56c64dda3605943c9c91b0f3bd34f33156fa4ff2ebbfb0a2ec5ee24a932592a5"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Rockstar/Rockstar.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Rockstar/Rockstar.yaml",
         "source": "blackmatrix7/ios_rule_script: Rockstar",
-        "rules": 5
+        "rules": 5,
+        "bytes": 404,
+        "sha256": "fcdf188396e3875f06c282ccd4a3d33ea9987859c05d3d8784be2070d7db3fc9"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Blizzard/Blizzard.yaml",
         "source": "blackmatrix7/ios_rule_script: Blizzard",
-        "rules": 39
+        "rules": 39,
+        "bytes": 2308,
+        "sha256": "82622bc2dff5882dfb852fe29c99ae98ba0822b9c242d135dfdc9f043a401f23"
       },
       {
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Steam.list",
         "source": "ACL4SSR/ACL4SSR: Steam",
-        "rules": 18
+        "rules": 18,
+        "bytes": 607,
+        "sha256": "0abad0ae490ec9b7bf0cf880f83c5229949b14cc5df448c00a0516225a16b011"
       },
       {
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Epic.list",
         "source": "ACL4SSR/ACL4SSR: Epic",
-        "rules": 6
+        "rules": 6,
+        "bytes": 204,
+        "sha256": "b0288addbceed03366cc793b4254168fe9e6e7c9fa54875026fb772adb5ba31d"
       },
       {
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Sony.list",
         "source": "ACL4SSR/ACL4SSR: Sony",
-        "rules": 5
+        "rules": 5,
+        "bytes": 194,
+        "sha256": "26cf715208bc562ba8d8e8d55c880336b5d6662b44b71418978e159148c776cb"
       },
       {
         "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Game.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/LM-Firefly/Rules@master/Game.list",
         "source": "LM-Firefly/Rules: Game",
-        "rules": 548
+        "rules": 548,
+        "bytes": 18949,
+        "sha256": "25a462283ce24582c2cfa7f8a5229d0abba6e129227a75c994eafa93cc2a53d2"
       },
       {
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/PlayStation/PlayStation.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/source/rule/PlayStation/PlayStation.list",
         "source": "peiyingyao/Rule-for-OCD: PlayStation",
-        "rules": 3
+        "rules": 3,
+        "bytes": 54,
+        "sha256": "1d48a33bc35a4e7088dc326caa52d0c8c255888203fe6e31005fe7cede8a57e6"
       },
       {
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Rockstar/Rockstar.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/source/rule/Rockstar/Rockstar.list",
         "source": "peiyingyao/Rule-for-OCD: Rockstar",
-        "rules": 9
+        "rules": 9,
+        "bytes": 272,
+        "sha256": "05acb5e0a4c74ea07d4d7eee4c48990420afc18c0c1de260baf1e0ef6ac338c9"
       }
     ],
     "youtube": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.list",
         "source": "MetaCubeX/meta-rules-dat: youtube",
-        "rules": 178
+        "rules": 178,
+        "bytes": 2743,
+        "sha256": "e95f241fa4357918fc1066390c352aad750b571ddea15e3421d30c84e947ac10"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml",
         "source": "blackmatrix7/ios_rule_script: YouTube",
-        "rules": 183
+        "rules": 183,
+        "bytes": 5935,
+        "sha256": "2f84cc9d35c8559ebea4c43aa9b30bb43b36313d70684f23a359f1acabb879bb"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml",
         "source": "blackmatrix7/ios_rule_script: YouTubeMusic",
-        "rules": 1
+        "rules": 1,
+        "bytes": 192,
+        "sha256": "226e55117e8363b1ee23e1777b5254d5767503dc0ec9ae94c283c04ead784786"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/Video/YouTube.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Streaming/Video/YouTube.list",
         "source": "ConnersHua/RuleGo: YouTube",
-        "rules": 12
+        "rules": 12,
+        "bytes": 348,
+        "sha256": "3546524e3407697454c63152b0b186c8d49f9b1da4a257d1860d93d67a2b4dde"
       },
       {
         "source": "built-in: YouTube IP ranges",
@@ -729,28 +1128,43 @@
     "telegram": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.list",
         "source": "MetaCubeX/meta-rules-dat: telegram",
-        "rules": 21
+        "rules": 21,
+        "bytes": 293,
+        "sha256": "2448b2699519cd258b10232fcacd01e89b7db04c8ce7fc860a4962518370a329"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml",
         "source": "blackmatrix7/ios_rule_script: Telegram",
-        "rules": 41
+        "rules": 41,
+        "bytes": 1590,
+        "sha256": "e78efc3f18069f1f1e3f88c15cd55f85424367b58ce8474af08c2fdf054704e0"
       },
       {
         "url": "https://ruleset.skk.moe/Clash/non_ip/telegram.txt",
+        "fetchedUrl": "https://ruleset.skk.moe/Clash/non_ip/telegram.txt",
         "source": "SukkaW/Surge: telegram",
-        "rules": 14
+        "rules": 14,
+        "bytes": 834,
+        "sha256": "bccbd162554d2cb56b16cdd59fbc2d1abec645bd53c9db18460137ffccbbc2a2"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Telegram.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Telegram.list",
         "source": "ConnersHua/RuleGo: Telegram",
-        "rules": 30
+        "rules": 30,
+        "bytes": 920,
+        "sha256": "e8f75858be3a7da883a796d97c8490acb100404aabb500fde7f23703de5e000c"
       },
       {
         "url": "https://raw.githubusercontent.com/scomper/surge-list/master/telegram.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/scomper/surge-list@master/telegram.list",
         "source": "scomper/surge-list: Telegram",
-        "rules": 13
+        "rules": 13,
+        "bytes": 582,
+        "sha256": "3e51218af1e814cf91cccd6727da9daccff97ec03eb85060e4fb2fedcdc96f66"
       },
       {
         "source": "built-in: Telegram service rules",
@@ -760,30 +1174,45 @@
     "twitter": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.list",
         "source": "MetaCubeX/meta-rules-dat: twitter",
-        "rules": 24
+        "rules": 24,
+        "bytes": 369,
+        "sha256": "7bc17d19d2fa089b36993e56275eb0eb7355963f3e90a711364086442fd369c0"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/X.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/X.list",
         "source": "ConnersHua/RuleGo: X",
-        "rules": 10
+        "rules": 10,
+        "bytes": 245,
+        "sha256": "9df20a3794cb5c73de7da06a06bee469cea1b0b4c5946a97c7395ad02fa18e70"
       },
       {
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Twitter/Twitter.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/source/rule/Twitter/Twitter.list",
         "source": "peiyingyao/Rule-for-OCD: Twitter",
-        "rules": 8
+        "rules": 8,
+        "bytes": 185,
+        "sha256": "86df0d90dd35865a750e5d877bc632e00fc6a2d8070950cdcd23cc95e7258053"
       }
     ],
     "spotify": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.list",
         "source": "MetaCubeX/meta-rules-dat: spotify",
-        "rules": 28
+        "rules": 28,
+        "bytes": 622,
+        "sha256": "848d93a2d8da4caa0d0338e303e3b3da8cb56a7e5d58431e43d8a94b5f2d3080"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Spotify/Spotify.yaml",
         "source": "blackmatrix7/ios_rule_script: Spotify",
-        "rules": 30
+        "rules": 30,
+        "bytes": 1317,
+        "sha256": "e74599390a87e5ed6da929f80be9c173cf3017e41b8f69362c2028d248875a79"
       },
       {
         "source": "built-in: Spotify service rules",
@@ -793,13 +1222,19 @@
     "netflix": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.list",
         "source": "MetaCubeX/meta-rules-dat: netflix",
-        "rules": 24
+        "rules": 24,
+        "bytes": 452,
+        "sha256": "980ec18a1c566850622523310feb9ed38cd562c82e697c3da7f756b816f337d8"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix.yaml",
         "source": "blackmatrix7/ios_rule_script: Netflix",
-        "rules": 38
+        "rules": 38,
+        "bytes": 1607,
+        "sha256": "cfb49b76fabc96887c7da7336ecea9066727c1489d25d677baa4f4e7a79a05f3"
       },
       {
         "source": "built-in: Netflix service rules",
@@ -809,736 +1244,1165 @@
     "tiktok": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.list",
         "source": "MetaCubeX/meta-rules-dat: tiktok",
-        "rules": 37
+        "rules": 37,
+        "bytes": 773,
+        "sha256": "09edefc16d3913b24fa7d0d2bae1679e9be03b6f4e1d879e96d937a1d020e7db"
       }
     ],
     "media": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-entertainment.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-entertainment.list",
         "source": "MetaCubeX/meta-rules-dat: category-entertainment",
-        "rules": 2129
+        "rules": 2129,
+        "bytes": 39152,
+        "sha256": "14d532fce1df14e6cc55bf968c9cb31e9f7de4bf95180d11f6f4492c5c504ef1"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/hulu.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/hulu.list",
         "source": "MetaCubeX/meta-rules-dat: hulu",
-        "rules": 48
+        "rules": 48,
+        "bytes": 739,
+        "sha256": "8afc36039f33c7f1cd1c62ac282ddfdcee429c0c49153de2c7f47536284c2ffa"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/primevideo.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/primevideo.list",
         "source": "MetaCubeX/meta-rules-dat: primevideo",
-        "rules": 23
+        "rules": 23,
+        "bytes": 547,
+        "sha256": "57d5808c3f5beadc672cbd5ed58c0f3b416984d7d09ef631a5c6a7527e2d936f"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitch.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitch.list",
         "source": "MetaCubeX/meta-rules-dat: twitch",
-        "rules": 34
+        "rules": 34,
+        "bytes": 888,
+        "sha256": "230e8e3b582de5c769be1b95e06d7aadf7cd83aa54df240bfca2f8bc14e5fd7c"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HBO/HBO.yaml",
         "source": "blackmatrix7/ios_rule_script: HBO",
-        "rules": 48
+        "rules": 48,
+        "bytes": 1928,
+        "sha256": "0fbca42b02a6ae923258118dddf5bd9894e788f1d18679340d6a05b051abf703"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ParamountPlus/ParamountPlus.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ParamountPlus/ParamountPlus.yaml",
         "source": "blackmatrix7/ios_rule_script: ParamountPlus",
-        "rules": 9
+        "rules": 9,
+        "bytes": 496,
+        "sha256": "5985fa97cf0ccee3ac9b428c0d3ddc63bcfa9713a77165cde328156c33cec199"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Abema/Abema.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Abema/Abema.yaml",
         "source": "blackmatrix7/ios_rule_script: Abema",
-        "rules": 20
+        "rules": 20,
+        "bytes": 826,
+        "sha256": "2364a8f076a88a0bf6f435c89f944918bba73f1ba268f71c8a2ca2c9245c4c0a"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BBC/BBC.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BBC/BBC.yaml",
         "source": "blackmatrix7/ios_rule_script: BBC",
-        "rules": 26
+        "rules": 26,
+        "bytes": 1160,
+        "sha256": "c1b8d93c30bae6083a1a1167785b80b8896cbd3bbf32115958fc11b8e6828cd4"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BritboxUK/BritboxUK.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BritboxUK/BritboxUK.yaml",
         "source": "blackmatrix7/ios_rule_script: BritboxUK",
-        "rules": 8
+        "rules": 8,
+        "bytes": 438,
+        "sha256": "a3cee93903cecb5c4e1348e9a498d540a12870b0e415389e8b6b75617d0e0ee8"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Dailymotion/Dailymotion.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Dailymotion/Dailymotion.yaml",
         "source": "blackmatrix7/ios_rule_script: Dailymotion",
-        "rules": 5
+        "rules": 5,
+        "bytes": 316,
+        "sha256": "88f6cab1233364c09b7f10e38ba9e945986fd312bc55077ce9c64afed1ec6793"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Deezer/Deezer.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Deezer/Deezer.yaml",
         "source": "blackmatrix7/ios_rule_script: Deezer",
-        "rules": 2
+        "rules": 2,
+        "bytes": 221,
+        "sha256": "975ba76d8787401c693810ecab8997dc3adbff89129d31e60cb704725c42d427"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DiscoveryPlus/DiscoveryPlus.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/DiscoveryPlus/DiscoveryPlus.yaml",
         "source": "blackmatrix7/ios_rule_script: DiscoveryPlus",
-        "rules": 14
+        "rules": 14,
+        "bytes": 769,
+        "sha256": "81d653f28e9c988119c0a169f0046fdd72937e5733972c20bb9236514971b6b6"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/FuboTV/FuboTV.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/FuboTV/FuboTV.yaml",
         "source": "blackmatrix7/ios_rule_script: FuboTV",
-        "rules": 2
+        "rules": 2,
+        "bytes": 219,
+        "sha256": "749ef214c594dd74cdbf7f9ddcdcccf5cee126c02b90a6d38e0bc733ba3feea3"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Peacock/Peacock.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Peacock/Peacock.yaml",
         "source": "blackmatrix7/ios_rule_script: Peacock",
-        "rules": 1
+        "rules": 1,
+        "bytes": 197,
+        "sha256": "9ec680f8e8782b755f0c5ed8b36da216feb4d6c5438656440484272f27d28372"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SoundCloud/SoundCloud.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/SoundCloud/SoundCloud.yaml",
         "source": "blackmatrix7/ios_rule_script: SoundCloud",
-        "rules": 3
+        "rules": 3,
+        "bytes": 257,
+        "sha256": "59ef011a471a45895a2eb0879a8c12f8fe301d56cf60919e0700f1b2b6d884ee"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TIDAL/TIDAL.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/TIDAL/TIDAL.yaml",
         "source": "blackmatrix7/ios_rule_script: TIDAL",
-        "rules": 4
+        "rules": 4,
+        "bytes": 300,
+        "sha256": "f9c3c8c2b3f778500ff062bd8b43dda6b89a166dc9515bf16419f4339e4e115f"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Vimeo/Vimeo.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Vimeo/Vimeo.yaml",
         "source": "blackmatrix7/ios_rule_script: Vimeo",
-        "rules": 16
+        "rules": 16,
+        "bytes": 666,
+        "sha256": "1cf73f88cce78eb49d769d919978954fac9d9643143ce2718c4dd2e2542fc360"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/7tv.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/7tv.list",
         "source": "MetaCubeX/meta-rules-dat: 7tv",
-        "rules": 2
+        "rules": 2,
+        "bytes": 18,
+        "sha256": "1ec847ce4a50e5f606c5a897aac99e32c4b37882e311a60777221f1c45ce2325"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/9news.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/9news.list",
         "source": "MetaCubeX/meta-rules-dat: 9news",
-        "rules": 14
+        "rules": 14,
+        "bytes": 247,
+        "sha256": "3acfda12ae385758a3651f509f487122f28ee12166fb0f3c7e5b21e079ff26e8"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bandcamp.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bandcamp.list",
         "source": "MetaCubeX/meta-rules-dat: bandcamp",
-        "rules": 2
+        "rules": 2,
+        "bytes": 27,
+        "sha256": "5190c1ad3ad82ff5779ca77409cc43c9754df48be14f8495b502b0fec980edc8"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cabletv.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cabletv.list",
         "source": "MetaCubeX/meta-rules-dat: cabletv",
-        "rules": 5
+        "rules": 5,
+        "bytes": 65,
+        "sha256": "b2f00f575bfd158544a05b3026901dbd0107780b644c8dbe4c3d44e66fc1d330"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/lastfm.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/lastfm.list",
         "source": "MetaCubeX/meta-rules-dat: lastfm",
-        "rules": 4
+        "rules": 4,
+        "bytes": 87,
+        "sha256": "f705863001e50162cf3429fad10c196f8210d5fb3c0325545879874b217abed4"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/imdb.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/imdb.list",
         "source": "MetaCubeX/meta-rules-dat: imdb",
-        "rules": 5
+        "rules": 5,
+        "bytes": 64,
+        "sha256": "990e7e23788cad033efd7a15ebaf8be87aee3709d492d9021a74ee482d67c89d"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/niconico.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/niconico.list",
         "source": "MetaCubeX/meta-rules-dat: niconico",
-        "rules": 10
+        "rules": 10,
+        "bytes": 126,
+        "sha256": "d8925aa047fee74708c7eca07b77dfbd674adbd4330103341c4aa715b8646312"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Viki/Viki.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Viki/Viki.yaml",
         "source": "blackmatrix7/ios_rule_script: Viki",
-        "rules": 8
+        "rules": 8,
+        "bytes": 442,
+        "sha256": "6894fdd76cf1cfedc7b20f5e970677900455eaf3793ee9f9d8ba60b7a6c0d532"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/archiveofourown.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/archiveofourown.list",
         "source": "MetaCubeX/meta-rules-dat: archiveofourown",
-        "rules": 4
+        "rules": 4,
+        "bytes": 75,
+        "sha256": "cdc03cc5021e97ab23ef97a868e7913b2da545b2ddad87a2c0e6dc865b0c75eb"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/artstation.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/artstation.list",
         "source": "MetaCubeX/meta-rules-dat: artstation",
-        "rules": 2
+        "rules": 2,
+        "bytes": 38,
+        "sha256": "4dfcab4c1921c94ad4af030daec891a80c4c48ab3d77eba8fedfad26836522ba"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bahamut.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bahamut.list",
         "source": "MetaCubeX/meta-rules-dat: bahamut",
-        "rules": 5
+        "rules": 5,
+        "bytes": 104,
+        "sha256": "04adcb8fb6a0959770219241cd7f471ed9037bb9c8a1156828375d2bb1b46321"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/wikimedia.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/wikimedia.list",
         "source": "MetaCubeX/meta-rules-dat: wikimedia",
-        "rules": 18
+        "rules": 18,
+        "bytes": 299,
+        "sha256": "e540372aa69912c2cc4cb874eb4c4a846bad32fe0549141aaac7ab824185528f"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/c-span.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/c-span.list",
         "source": "MetaCubeX/meta-rules-dat: c-span",
-        "rules": 2
+        "rules": 2,
+        "bytes": 30,
+        "sha256": "f3b6b9c5740c14ecb4311dd773c17359cd74ea551fa09eaaa88343e4c8a737dc"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/catchplay.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/catchplay.list",
         "source": "MetaCubeX/meta-rules-dat: catchplay",
-        "rules": 2
+        "rules": 2,
+        "bytes": 44,
+        "sha256": "3c4d6c826bb01dad4e28134803f9a737964cc78418f01dd28a6f3d68940c36d8"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/amc.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/amc.list",
         "source": "MetaCubeX/meta-rules-dat: amc",
-        "rules": 5
+        "rules": 5,
+        "bytes": 165,
+        "sha256": "c602859e72be7cfe0f7f4a3f14fcabcf1731c4b88dc60a7ebb3651545b9ee890"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Overcast/Overcast.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Overcast/Overcast.yaml",
         "source": "blackmatrix7/ios_rule_script: Overcast",
-        "rules": 1
+        "rules": 1,
+        "bytes": 196,
+        "sha256": "0eb9a3e78590b6470ac2745da6b742e1295aa63551e00c3d61a0476101f55d20"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Pandora/Pandora.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Pandora/Pandora.yaml",
         "source": "blackmatrix7/ios_rule_script: Pandora",
-        "rules": 2
+        "rules": 2,
+        "bytes": 222,
+        "sha256": "455ee4d6d388f92a6f0e60d153df6b4b12e012c46f94ecca51bcf11bdaeedbe7"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SlideShare/SlideShare.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/SlideShare/SlideShare.yaml",
         "source": "blackmatrix7/ios_rule_script: SlideShare",
-        "rules": 3
+        "rules": 3,
+        "bytes": 270,
+        "sha256": "85316a933548e1d7c5809dc059fcb2588dcff28c13920488d4b89177c3e036dd"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AbemaTV/AbemaTV.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AbemaTV/AbemaTV.yaml",
         "source": "blackmatrix7/ios_rule_script: AbemaTV",
-        "rules": 22
+        "rules": 22,
+        "bytes": 1008,
+        "sha256": "36947b96f2b247258e3c89d414a08a60f3f8860bc80fc7b34f763c0c6bfbfc94"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HamiVideo/HamiVideo.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HamiVideo/HamiVideo.yaml",
         "source": "blackmatrix7/ios_rule_script: HamiVideo",
-        "rules": 3
+        "rules": 3,
+        "bytes": 351,
+        "sha256": "ceb5a002e1982ec61dd6977a15e0ea34fdf7a3063e6499c23d1f26d9f6ed8fb5"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/myTVSUPER/myTVSUPER.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/myTVSUPER/myTVSUPER.yaml",
         "source": "blackmatrix7/ios_rule_script: myTVSUPER",
-        "rules": 4
+        "rules": 4,
+        "bytes": 397,
+        "sha256": "e4887b878169ee029eaa69c82f8bfdd4f401db411fb97b57fae6da1adbf1c32e"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ViuTV/ViuTV.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ViuTV/ViuTV.yaml",
         "source": "blackmatrix7/ios_rule_script: ViuTV",
-        "rules": 8
+        "rules": 8,
+        "bytes": 615,
+        "sha256": "7e6e5adaa558f46584d2232a55dcaefb75328e07a05119fee877ba3a2893cfcc"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Voxmedia/Voxmedia.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Voxmedia/Voxmedia.yaml",
         "source": "blackmatrix7/ios_rule_script: Voxmedia",
-        "rules": 16
+        "rules": 16,
+        "bytes": 655,
+        "sha256": "974783e4869aaa904161e1051973935a12029d5e1638bb650beb8339a4d3b572"
       },
       {
         "url": "https://ruleset.skk.moe/Clash/non_ip/stream.txt",
+        "fetchedUrl": "https://ruleset.skk.moe/Clash/non_ip/stream.txt",
         "source": "SukkaW/Surge: stream",
-        "rules": 286
+        "rules": 286,
+        "bytes": 9451,
+        "sha256": "87152d51177a81caaa49baaa8b776810abed514443d27f3312b48a514e14ce5e"
       },
       {
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Netflix.list",
         "source": "ACL4SSR/ACL4SSR: Netflix",
-        "rules": 40
+        "rules": 40,
+        "bytes": 1331,
+        "sha256": "eb09e16b5aa228230e5770bfc04f2eb25261454a0b2e16f05fd3e9d2ab5202b5"
       },
       {
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyMedia.list",
         "source": "ACL4SSR/ACL4SSR: ProxyMedia",
-        "rules": 371
+        "rules": 371,
+        "bytes": 11502,
+        "sha256": "fe886c6f537c0214446018f3f64291db8d500c58877d180d2a21a78c19c499e1"
       },
       {
         "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/LM-Firefly/Rules@master/GlobalMedia.list",
         "source": "LM-Firefly/Rules: GlobalMedia",
-        "rules": 1926
+        "rules": 1926,
+        "bytes": 62666,
+        "sha256": "94db9ed45e41782992b2880b410bdb9b16b4dfc7139089850dc824347c2ac689"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Streaming/!CN.list",
         "source": "ConnersHua/RuleGo: Streaming/!CN",
-        "rules": 241
+        "rules": 241,
+        "bytes": 7796,
+        "sha256": "8e3a7945de96310575837ad55fd724aecaf3b3894a7eac2a979311d6d5fa88ce"
       },
       {
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/AsianMedia/AsianMedia.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/source/rule/AsianMedia/AsianMedia.list",
         "source": "peiyingyao/Rule-for-OCD: AsianMedia",
-        "rules": 19
+        "rules": 19,
+        "bytes": 883,
+        "sha256": "8e90c26dde4204bd41e8b8d6eaf21724b5b3453a98926860c3dc4a7bae98b002"
       },
       {
         "url": "https://raw.githubusercontent.com/scomper/surge-list/master/video.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/scomper/surge-list@master/video.list",
         "source": "scomper/surge-list: Video",
-        "rules": 61
+        "rules": 61,
+        "bytes": 2155,
+        "sha256": "0f857bc0f310676f7981b87db63a8f7ba46794488b0a5c02f527aa589d8a4cb4"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Pornhub/Pornhub_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Pornhub/Pornhub_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: Pornhub",
-        "rules": 19
+        "rules": 19,
+        "bytes": 994,
+        "sha256": "60d1ec950b229278ba12393e94d785901679e46f2dfa65f3706750aa845c95da"
       }
     ],
     "disney": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disney.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disney.list",
         "source": "MetaCubeX/meta-rules-dat: disney",
-        "rules": 224
+        "rules": 224,
+        "bytes": 4122,
+        "sha256": "38a70a7f8cd7dcf2f49667718f9e5439b2f5a1a2f3fda8f6cc9efad302cc3847"
       },
       {
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DisneyPlus.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/DisneyPlus.list",
         "source": "ACL4SSR/ACL4SSR: DisneyPlus",
-        "rules": 20
+        "rules": 20,
+        "bytes": 710,
+        "sha256": "97200f549abb5bbb72909abc58afbffdb1f42f35cbcc35366eaf873905e007c6"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/Video/Disney+.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Streaming/Video/Disney+.list",
         "source": "ConnersHua/RuleGo: Disney+",
-        "rules": 6
+        "rules": 6,
+        "bytes": 188,
+        "sha256": "578627177bc6b270c31d93348026fe0c4f60a50c31126b4c734c27ce08e1cd9c"
       }
     ],
     "social": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/facebook.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/facebook.list",
         "source": "MetaCubeX/meta-rules-dat: facebook",
-        "rules": 397
+        "rules": 397,
+        "bytes": 7132,
+        "sha256": "1b5263aab7ad33d10634bf31ba38073030d5093fa29e53c701e607e66467e329"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/discord.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/discord.list",
         "source": "MetaCubeX/meta-rules-dat: discord",
-        "rules": 28
+        "rules": 28,
+        "bytes": 542,
+        "sha256": "9f2530e2dc4117a27851256d731908931064bc6c9fefe43f69cc164804a33456"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/reddit.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/reddit.list",
         "source": "MetaCubeX/meta-rules-dat: reddit",
-        "rules": 12
+        "rules": 12,
+        "bytes": 205,
+        "sha256": "bbfb9746c59c64d225d9126f23dc1f4d376edbafab2ac297415be9e9a059af16"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/whatsapp.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/whatsapp.list",
         "source": "MetaCubeX/meta-rules-dat: whatsapp",
-        "rules": 13
+        "rules": 13,
+        "bytes": 218,
+        "sha256": "5554ce8069e2b3ca3222f112b2192652e96e5574be9096f71579191c8d498bfc"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/instagram.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/instagram.list",
         "source": "MetaCubeX/meta-rules-dat: instagram",
-        "rules": 74
+        "rules": 74,
+        "bytes": 1447,
+        "sha256": "e5cba6ce4fa5a0dddbd4710d9dd5b6693c249e6f5be4179401843109ecbca228"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/linkedin.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/linkedin.list",
         "source": "MetaCubeX/meta-rules-dat: linkedin",
-        "rules": 12
+        "rules": 12,
+        "bytes": 209,
+        "sha256": "80d1da0a1f8a63753fbe7b384e89c12f8133ed101603587406d70804a65bee5b"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/zoom.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/zoom.list",
         "source": "MetaCubeX/meta-rules-dat: zoom",
-        "rules": 3
+        "rules": 3,
+        "bytes": 34,
+        "sha256": "c69383665bf35295bd13deebe3f8e0d5eb63059e456c431dca334f04d6e3729d"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/slack.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/slack.list",
         "source": "MetaCubeX/meta-rules-dat: slack",
-        "rules": 11
+        "rules": 11,
+        "bytes": 179,
+        "sha256": "1806a909a0d2682f526accf235a97de53037c2937912802cbe1c618d963e31ba"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-communication.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-communication.list",
         "source": "MetaCubeX/meta-rules-dat: category-communication",
-        "rules": 151
+        "rules": 151,
+        "bytes": 2413,
+        "sha256": "463cd8f7b7aa6bcd8b2c4f55d4c77b933e1dbe7e806e0d16bdfa052cb0e4144e"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bluesky.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bluesky.list",
         "source": "MetaCubeX/meta-rules-dat: bluesky",
-        "rules": 3
+        "rules": 3,
+        "bytes": 39,
+        "sha256": "6359e270e0a868b603bdeccd104352bcc345460f02bb3da0952bd033596134d6"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pinterest.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pinterest.list",
         "source": "MetaCubeX/meta-rules-dat: pinterest",
-        "rules": 52
+        "rules": 52,
+        "bytes": 865,
+        "sha256": "746287c3d7a99ed19edef7dfec4244b50cae8a5db22c2ceffe6f377245296226"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/snap.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/snap.list",
         "source": "MetaCubeX/meta-rules-dat: snap",
-        "rules": 9
+        "rules": 9,
+        "bytes": 149,
+        "sha256": "3987498d3882be2bcf425787b9de87387f6006adc5e076bed0fa6d2c537d40db"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/threads.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/threads.list",
         "source": "MetaCubeX/meta-rules-dat: threads",
-        "rules": 2
+        "rules": 2,
+        "bytes": 27,
+        "sha256": "77e44a4fe816e840abf6279a11cc88e418d5792d2ddf7bf8e93e42eb426a84f9"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Clubhouse/Clubhouse.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Clubhouse/Clubhouse.yaml",
         "source": "blackmatrix7/ios_rule_script: Clubhouse",
-        "rules": 5
+        "rules": 5,
+        "bytes": 356,
+        "sha256": "9aecb717f9ffce354901dacbe1a96c358179afaeead847f8b873dc80a33f8f5c"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TruthSocial/TruthSocial.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/TruthSocial/TruthSocial.yaml",
         "source": "blackmatrix7/ios_rule_script: TruthSocial",
-        "rules": 2
+        "rules": 2,
+        "bytes": 235,
+        "sha256": "5cd64b7953eb84aaf6ea6b616d253cb2b282dc404babd3466e7f33a068eb2e74"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Tumblr/Tumblr.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Tumblr/Tumblr.yaml",
         "source": "blackmatrix7/ios_rule_script: Tumblr",
-        "rules": 3
+        "rules": 3,
+        "bytes": 248,
+        "sha256": "9bd0d9c8ff8f755b918fa4420b65e191a340888b61962e585c5029c639b36222"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/VK/VK.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/VK/VK.yaml",
         "source": "blackmatrix7/ios_rule_script: VK",
-        "rules": 7
+        "rules": 7,
+        "bytes": 354,
+        "sha256": "3e528689537580a23da1d7e50adc8955c560371733df65fb41989cd16ddc0e83"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Zalo/Zalo.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Zalo/Zalo.yaml",
         "source": "blackmatrix7/ios_rule_script: Zalo",
-        "rules": 2
+        "rules": 2,
+        "bytes": 218,
+        "sha256": "44690d41987d71cc8ca981a032c66b285738e806e08732cbe0698f4f589fe87c"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/naver.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/naver.list",
         "source": "MetaCubeX/meta-rules-dat: naver",
-        "rules": 49
+        "rules": 49,
+        "bytes": 746,
+        "sha256": "9ba39c08a648571d4ff7e3c25dd86eba4b0dff2772dadd03e01b6385e05475e8"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/KakaoTalk/KakaoTalk.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/KakaoTalk/KakaoTalk.yaml",
         "source": "blackmatrix7/ios_rule_script: KakaoTalk",
-        "rules": 15
+        "rules": 15,
+        "bytes": 620,
+        "sha256": "4623ea42c2d45b1b8067d09cc856470741bafd9e9840eca36035e9e3615bb2f0"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Naver/Naver.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Naver/Naver.yaml",
         "source": "blackmatrix7/ios_rule_script: Naver",
-        "rules": 59
+        "rules": 59,
+        "bytes": 2015,
+        "sha256": "f3f58a73dd023c0f9bab0a5568a3cb428679baee33bd1a86cc9dcea588593a94"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disqus.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disqus.list",
         "source": "MetaCubeX/meta-rules-dat: disqus",
-        "rules": 4
+        "rules": 4,
+        "bytes": 58,
+        "sha256": "20e861cbd7c274bd7a01252dcf817dd12ec8ee102cd8645ef98a6d2bf00f3307"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/imgur.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/imgur.list",
         "source": "MetaCubeX/meta-rules-dat: imgur",
-        "rules": 3
+        "rules": 3,
+        "bytes": 37,
+        "sha256": "1a9e598e07d59e944703789488f7bfca945582bdfa5470e6ab96ac451c7d6285"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pixiv.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pixiv.list",
         "source": "MetaCubeX/meta-rules-dat: pixiv",
-        "rules": 11
+        "rules": 11,
+        "bytes": 151,
+        "sha256": "a42fdf9e28b93273cac6086369899808c2f40701eefd319ec74ff8cccce21cb5"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/patreon.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/patreon.list",
         "source": "MetaCubeX/meta-rules-dat: patreon",
-        "rules": 4
+        "rules": 4,
+        "bytes": 100,
+        "sha256": "167a9b2d07c30d79e55c4dddeb69edb339a78ba8d7375c75435f0931e8fa09fd"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Line/Line.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Line/Line.yaml",
         "source": "blackmatrix7/ios_rule_script: Line",
-        "rules": 24
+        "rules": 24,
+        "bytes": 867,
+        "sha256": "23af95c3f877d0754cd663ba3d4179aae821dc693be3b37cf7e98a02d0cb46b4"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/WeChat.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/WeChat.list",
         "source": "ConnersHua/RuleGo: WeChat",
-        "rules": 18
+        "rules": 18,
+        "bytes": 816,
+        "sha256": "3404f16f0226b9e13e2bee7b22ed2c9d36efbaae3c4251a19457c3dabe43c746"
       },
       {
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Facebook/Facebook.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/source/rule/Facebook/Facebook.list",
         "source": "peiyingyao/Rule-for-OCD: Facebook",
-        "rules": 25
+        "rules": 25,
+        "bytes": 1153,
+        "sha256": "93007efd4bd3f6106881c6d8acea0f0c6bafd443fe019ec8e457d5038aeff71b"
       },
       {
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/ByteDance/ByteDance.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/source/rule/ByteDance/ByteDance.list",
         "source": "peiyingyao/Rule-for-OCD: ByteDance",
-        "rules": 4
+        "rules": 4,
+        "bytes": 112,
+        "sha256": "f3cd71c7807a1cd1a7c5b6bdb685b20bf56abb2cf93867b67080a8909684b2fc"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Signal/Signal_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Signal/Signal_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: Signal",
-        "rules": 2
+        "rules": 2,
+        "bytes": 167,
+        "sha256": "119a5c31f040c8e5f679077ee7f045e21bac5dacd65cf2abb9a0f65bc7229c17"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Kwai/Kwai_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Kwai/Kwai_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: Kwai",
-        "rules": 12
+        "rules": 12,
+        "bytes": 487,
+        "sha256": "9a75051308dbf5987352339803bf46916731fb93603d748554fed8d76da8064a"
       }
     ],
     "dev": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gitlab.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gitlab.list",
         "source": "MetaCubeX/meta-rules-dat: gitlab",
-        "rules": 5
+        "rules": 5,
+        "bytes": 100,
+        "sha256": "1b6c88c147c03925bc73878e30985985d58b39be22338e8688aaca8079ba4f69"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gitbook.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gitbook.list",
         "source": "MetaCubeX/meta-rules-dat: gitbook",
-        "rules": 2
+        "rules": 2,
+        "bytes": 26,
+        "sha256": "255f7f84e13eafb4259391b29be18cc830ce8d4dc99d386efee11a81d4af2849"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/docker.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/docker.list",
         "source": "MetaCubeX/meta-rules-dat: docker",
-        "rules": 6
+        "rules": 6,
+        "bytes": 177,
+        "sha256": "6432dc0a4e52aca177e053c54274d2107bff56c21af21eeb6ccbf6169df3d251"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/kubernetes.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/kubernetes.list",
         "source": "MetaCubeX/meta-rules-dat: kubernetes",
-        "rules": 2
+        "rules": 2,
+        "bytes": 24,
+        "sha256": "05ea10edc32adee2dbb2d39a1a7ccdfbb7e25f209a8c8c8af73cbe909c2825f8"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-dev.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-dev.list",
         "source": "MetaCubeX/meta-rules-dat: category-dev",
-        "rules": 665
+        "rules": 665,
+        "bytes": 12482,
+        "sha256": "fd7d198e020d7ae1e62d136f0d61dddfdb478b7f2e25da65f41abe7f22fe065c"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/atlassian.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/atlassian.list",
         "source": "MetaCubeX/meta-rules-dat: atlassian",
-        "rules": 11
+        "rules": 11,
+        "bytes": 166,
+        "sha256": "d4315d45c2a15bc0358c1b9b6390675e2539b14f8c42b74a054c457fe3e94282"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SourceForge/SourceForge.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/SourceForge/SourceForge.yaml",
         "source": "blackmatrix7/ios_rule_script: SourceForge",
-        "rules": 4
+        "rules": 4,
+        "bytes": 289,
+        "sha256": "44f498ae168cd8bc69d759bb162d9c37f52dd317a23b60d2a7f7a94be6b375e9"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/W3schools/W3schools.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/W3schools/W3schools.yaml",
         "source": "blackmatrix7/ios_rule_script: W3schools",
-        "rules": 1
+        "rules": 1,
+        "bytes": 199,
+        "sha256": "30723215a0e0ea4441386703251db1ae1e150b15057f7ba2b40ed3e9f32cc83b"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Figma/Figma.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Figma/Figma.yaml",
         "source": "blackmatrix7/ios_rule_script: Figma",
-        "rules": 1
+        "rules": 1,
+        "bytes": 191,
+        "sha256": "2d9cdc42a6ed097e24c1c955bdf409bf0616d3cfc67192ecfee37b4ef28cb5f9"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/FreeCodeCamp/FreeCodeCamp.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/FreeCodeCamp/FreeCodeCamp.yaml",
         "source": "blackmatrix7/ios_rule_script: FreeCodeCamp",
-        "rules": 1
+        "rules": 1,
+        "bytes": 205,
+        "sha256": "0f6c279e8cb51ef02a70ca45ca5130b7c38a3453b3e5d4c3bd72f7f6ead19d2f"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Unity/Unity.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Unity/Unity.yaml",
         "source": "blackmatrix7/ios_rule_script: Unity",
-        "rules": 9
+        "rules": 9,
+        "bytes": 496,
+        "sha256": "6911fb71084a48971147552e61d4145eeb2497e58a766ce0d14abd626e27764f"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/autodesk.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/autodesk.list",
         "source": "MetaCubeX/meta-rules-dat: autodesk",
-        "rules": 558
+        "rules": 558,
+        "bytes": 11131,
+        "sha256": "8203e0efe78e1733116803b486f11bc65d2ed9253d8dbb1df71bcd16ed1dd981"
       },
       {
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Developer/Developer.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/source/rule/Developer/Developer.list",
         "source": "peiyingyao/Rule-for-OCD: Developer",
-        "rules": 4
+        "rules": 4,
+        "bytes": 62,
+        "sha256": "ac36830c718b5d235d19160a2512bf5fc26a33426d10d8b152b4a684050c503e"
       },
       {
         "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/docker.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/lyq2010/clash-ruleset@main/docker.list",
         "source": "lyq2010/clash-ruleset: Docker",
-        "rules": 10
+        "rules": 10,
+        "bytes": 284,
+        "sha256": "293ae3b2d070c091156bbc0b08395fdef24520e9d843ceb17e9fe5d74f92e6f8"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/Parsec/Parsec_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/Parsec/Parsec_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: Parsec",
-        "rules": 1
+        "rules": 1,
+        "bytes": 92,
+        "sha256": "6012f88d2b56f898df1de8dea7c696eef5c61bee699fe5c9b5a22129ffab4cc8"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/RustDesk/RustDesk_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/RustDesk/RustDesk_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: RustDesk",
-        "rules": 3
+        "rules": 3,
+        "bytes": 214,
+        "sha256": "c739d307bf1337e2a8f3a73cd01cc43a9e6b5581aacd41a93ad8a9e0f545219f"
       },
       {
         "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/main/WaybackMachine/WaybackMachine_Domain.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@main/WaybackMachine/WaybackMachine_Domain.yaml",
         "source": "Accademia/Additional_Rule_For_Clash: WaybackMachine",
-        "rules": 1
+        "rules": 1,
+        "bytes": 65,
+        "sha256": "4f4948937f685e81ad0d916f2e583c061ccd5fc968b3ddfeddd49e76a860551a"
       }
     ],
     "cloud": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/dropbox.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/dropbox.list",
         "source": "MetaCubeX/meta-rules-dat: dropbox",
-        "rules": 16
+        "rules": 16,
+        "bytes": 312,
+        "sha256": "08b94c5a0979054b356d45c4befc78a61345b3ba2d272a91ba57da5c3ab29ba9"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/aws.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/aws.list",
         "source": "MetaCubeX/meta-rules-dat: aws",
-        "rules": 77
+        "rules": 77,
+        "bytes": 1402,
+        "sha256": "a1fc684ef754d2558f592cdbbe1894f5c4709da4c8ed6b751628d23e10750fa1"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/azure.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/azure.list",
         "source": "MetaCubeX/meta-rules-dat: azure",
-        "rules": 151
+        "rules": 151,
+        "bytes": 2844,
+        "sha256": "8294f7e677491cd0a5db5e425141f88c3a998646386afcccf51b4c823b41054a"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare.list",
         "source": "MetaCubeX/meta-rules-dat: cloudflare",
-        "rules": 76
+        "rules": 76,
+        "bytes": 1488,
+        "sha256": "ce050890a31f78d22732569a351ec857ab575089a86877a52aecb2f12eff024f"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/digitalocean.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/digitalocean.list",
         "source": "MetaCubeX/meta-rules-dat: digitalocean",
-        "rules": 6
+        "rules": 6,
+        "bytes": 111,
+        "sha256": "8d158116ba46a1aa783bfc1ecf7716b106f52f1b0a8208e9a7a3bfb60debfe4a"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/heroku.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/heroku.list",
         "source": "MetaCubeX/meta-rules-dat: heroku",
-        "rules": 12
+        "rules": 12,
+        "bytes": 177,
+        "sha256": "d7d7220c784ad6b746cdc132307c8006a2f8afc08e8d0c1333cb2e273ce4f4b6"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/oracle.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/oracle.list",
         "source": "MetaCubeX/meta-rules-dat: oracle",
-        "rules": 19
+        "rules": 19,
+        "bytes": 283,
+        "sha256": "5cc5624f94a1a1f94a992a1128c2dce999dd275d02c1771f0b8ea30fdd183d30"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/vercel.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/vercel.list",
         "source": "MetaCubeX/meta-rules-dat: vercel",
-        "rules": 27
+        "rules": 27,
+        "bytes": 372,
+        "sha256": "2954b56ba97304418ac54d0e8775ebdf604c248e39e65f5674562e57b6012f51"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bitwarden.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bitwarden.list",
         "source": "MetaCubeX/meta-rules-dat: bitwarden",
-        "rules": 5
+        "rules": 5,
+        "bytes": 71,
+        "sha256": "4eef1d6a91db752d1ec383e6bfae0ad22fb621f0a69bfff541d79e0ba818bb57"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/canva.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/canva.list",
         "source": "MetaCubeX/meta-rules-dat: canva",
-        "rules": 6
+        "rules": 6,
+        "bytes": 149,
+        "sha256": "6fe98f224cb0ee56d809ed85227a0043a0b0858bc5a76467062e883c0e959f24"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Notion/Notion.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Notion/Notion.yaml",
         "source": "blackmatrix7/ios_rule_script: Notion",
-        "rules": 6
+        "rules": 6,
+        "bytes": 374,
+        "sha256": "b92f5bdc0ac6a51ac3f5a7e53fd308aaecac4bfd4ad78605feb3db62aeb0e250"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Salesforce/Salesforce.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Salesforce/Salesforce.yaml",
         "source": "blackmatrix7/ios_rule_script: Salesforce",
-        "rules": 13
+        "rules": 13,
+        "bytes": 592,
+        "sha256": "fd963d5033be23948d68ce469dd8f5e5c8fe63657bce11c0ea123e2417335982"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Zoho/Zoho.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Zoho/Zoho.yaml",
         "source": "blackmatrix7/ios_rule_script: Zoho",
-        "rules": 13
+        "rules": 13,
+        "bytes": 580,
+        "sha256": "b35854402b9cbffc8434537283c3ab41e456dad84e933e653f35b319e8b7dfaa"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/mega.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/mega.list",
         "source": "MetaCubeX/meta-rules-dat: mega",
-        "rules": 3
+        "rules": 3,
+        "bytes": 32,
+        "sha256": "2f9af716e5eacb4c6c9fe1bafab1e8f05e8a3d4626b849ebd3448bc67b225e35"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/terabox.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/terabox.list",
         "source": "MetaCubeX/meta-rules-dat: terabox",
-        "rules": 7
+        "rules": 7,
+        "bytes": 120,
+        "sha256": "f1c3aedcbe21942916936adf2291eae857e7f99d0298be8f400e8d81f5e4f65e"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/synology.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/synology.list",
         "source": "MetaCubeX/meta-rules-dat: synology",
-        "rules": 20
+        "rules": 20,
+        "bytes": 300,
+        "sha256": "194a67f5c6286ce04ec6f3765e496cf38027767bab868d74ecfcd1f070368272"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/MEGA/MEGA.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/MEGA/MEGA.yaml",
         "source": "blackmatrix7/ios_rule_script: MEGA",
-        "rules": 13
+        "rules": 13,
+        "bytes": 616,
+        "sha256": "dd3ccf10d0ec9ce2c74387c02bacd50a726c2bc79c543a51727d850f07e313ed"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bandwagonhost.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bandwagonhost.list",
         "source": "MetaCubeX/meta-rules-dat: bandwagonhost",
-        "rules": 7
+        "rules": 7,
+        "bytes": 93,
+        "sha256": "ba00d57551df483992cc8976aebd6003e4e97d92be84bfa5567e29356473045b"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/LastPass/LastPass.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/LastPass/LastPass.yaml",
         "source": "blackmatrix7/ios_rule_script: LastPass",
-        "rules": 1
+        "rules": 1,
+        "bytes": 241,
+        "sha256": "770a436220f2be3e98dfcd92c37f74914ccf667bbd392f6e2f6d0416a3db4a7d"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WIX/WIX.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/WIX/WIX.yaml",
         "source": "blackmatrix7/ios_rule_script: WIX",
-        "rules": 9
+        "rules": 9,
+        "bytes": 435,
+        "sha256": "11934d4fb860fe419e9d640cdcae97f197ba61cfe54f4a61adeefe668966ec39"
       },
       {
         "url": "https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/mail.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/lyq2010/clash-ruleset@main/mail.list",
         "source": "lyq2010/clash-ruleset: Mail",
-        "rules": 6
+        "rules": 6,
+        "bytes": 161,
+        "sha256": "5678575c2b9e60e2955359102ad1a2993fdb8564fedd49bcf254a72fd908b8a4"
       }
     ],
     "onedrive": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.list",
         "source": "MetaCubeX/meta-rules-dat: onedrive",
-        "rules": 16
+        "rules": 16,
+        "bytes": 307,
+        "sha256": "9c11417141d57b2f1f8d4474602858c65f28185304103afedea6eb5a1182b72a"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OneDrive/OneDrive.yaml",
         "source": "blackmatrix7/ios_rule_script: OneDrive",
-        "rules": 18
+        "rules": 18,
+        "bytes": 816,
+        "sha256": "6f5902a52d1a0f48b69f7ebe021c4f14361e2c3f5426388923f2034740e60991"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Microsoft/OneDrive.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/Microsoft/OneDrive.list",
         "source": "ConnersHua/RuleGo: Microsoft/OneDrive",
-        "rules": 5
+        "rules": 5,
+        "bytes": 137,
+        "sha256": "1b8f7c12c657436b9347b71038d9a114e9010c31d3372c27836aad9a6c2bdeb3"
       }
     ],
     "finance": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/paypal.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/paypal.list",
         "source": "MetaCubeX/meta-rules-dat: paypal",
-        "rules": 245
+        "rules": 245,
+        "bytes": 4650,
+        "sha256": "6fd7d4431e95cf94550a87685acb984334d469ec7b2cdb2945c6087cb9096147"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-finance.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-finance.list",
         "source": "MetaCubeX/meta-rules-dat: category-finance",
-        "rules": 615
+        "rules": 615,
+        "bytes": 9736,
+        "sha256": "3901a1f8865837d4be3a5fdf583827386a04bc35303163d263d18f8622cfb64e"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bloomberg.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bloomberg.list",
         "source": "MetaCubeX/meta-rules-dat: bloomberg",
-        "rules": 61
+        "rules": 61,
+        "bytes": 1175,
+        "sha256": "0aa1be03a514a8ac1f9deb6a3b484d589392f16fad036b429e7115f271c6cb51"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/PayPal.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Extra/PayPal.list",
         "source": "ConnersHua/RuleGo: PayPal",
-        "rules": 4
+        "rules": 4,
+        "bytes": 140,
+        "sha256": "16fb5541af5e00c6a34ca3a8417c3e8b547a411fee14af4e84c3f588e21314b2"
       }
     ],
     "shopping": [
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/amazon.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/amazon.list",
         "source": "MetaCubeX/meta-rules-dat: amazon",
-        "rules": 246
+        "rules": 246,
+        "bytes": 4424,
+        "sha256": "fdad90dc373db211aca3e4164db6046e53f977b7812d6af18ba259f49293cd40"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/shopee.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/shopee.list",
         "source": "MetaCubeX/meta-rules-dat: shopee",
-        "rules": 21
+        "rules": 21,
+        "bytes": 281,
+        "sha256": "61115795db2fc7506cfd819500170400c97aaee36ea40ae154a6395342cf6aa9"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/shopify.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/shopify.list",
         "source": "MetaCubeX/meta-rules-dat: shopify",
-        "rules": 8
+        "rules": 8,
+        "bytes": 127,
+        "sha256": "63cd417234609560f1709a2f87481b2c6ee63feb5cb1fdb1e6e422d85d2335d2"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bestbuy/Bestbuy.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Bestbuy/Bestbuy.yaml",
         "source": "blackmatrix7/ios_rule_script: Bestbuy",
-        "rules": 82
+        "rules": 82,
+        "bytes": 3085,
+        "sha256": "e72b11a255d454203753709073670e7e4fbf665d78c7fcadaff75e7a9bc9d234"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Rakuten/Rakuten.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Rakuten/Rakuten.yaml",
         "source": "blackmatrix7/ios_rule_script: Rakuten",
-        "rules": 18
+        "rules": 18,
+        "bytes": 702,
+        "sha256": "03ed93f0e20f858fbb26bfd8e93c0d3b88e9f0d7c09c1c012ac5e1f0e9e0c504"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PChome/PChome.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/PChome/PChome.yaml",
         "source": "blackmatrix7/ios_rule_script: PChome",
-        "rules": 5
+        "rules": 5,
+        "bytes": 331,
+        "sha256": "fc12575e1791c7a507b9582c8e54617f2a312807be9d76efd87515d46e29bc9a"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/ikea.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/ikea.list",
         "source": "MetaCubeX/meta-rules-dat: ikea",
-        "rules": 95
+        "rules": 95,
+        "bytes": 1114,
+        "sha256": "8c8320b2abd14e215e380d0e6d10ad71ca4df030f9e9a2863be78c2b29ffba0c"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/adidas.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/adidas.list",
         "source": "MetaCubeX/meta-rules-dat: adidas",
-        "rules": 90
+        "rules": 90,
+        "bytes": 1551,
+        "sha256": "2563de88038c841e257674af081e910cb6b0bd2593d8a1e8698c366ba3103910"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nike/Nike.yaml",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Nike/Nike.yaml",
         "source": "blackmatrix7/ios_rule_script: Nike",
-        "rules": 11
+        "rules": 11,
+        "bytes": 505,
+        "sha256": "2ab5d87ec319201e07c03060c5e1ef113f54be2084cdceec74cc5693a87a1eaf"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/booking.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/booking.list",
         "source": "MetaCubeX/meta-rules-dat: booking",
-        "rules": 3
+        "rules": 3,
+        "bytes": 40,
+        "sha256": "124055f45b99f933de3534f4b64ff5b3dadf421601b87866d1dd5b70ae3793af"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/airbnb.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/airbnb.list",
         "source": "MetaCubeX/meta-rules-dat: airbnb",
-        "rules": 83
+        "rules": 83,
+        "bytes": 1147,
+        "sha256": "4439023927149b93e750905460cc50179eff23ccbeb07c4a093d55eea54532ff"
       }
     ],
     "proxy-extra": [
       {
         "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt",
         "source": "Loyalsoldier/clash-rules: proxy",
-        "rules": 27110
+        "rules": 27110,
+        "bytes": 618174,
+        "sha256": "249df96c002b0367a0fb7aedb2c811ba8c2183d022a0a3d348541dd5e987ff7e"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Proxy.list",
         "source": "ConnersHua/RuleGo: Proxy",
-        "rules": 513
+        "rules": 513,
+        "bytes": 14686,
+        "sha256": "2292abb55f20caf031ffbb7011c84b85c2246f54ae050fe416323da1fd2b8ead"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy+.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ConnersHua/RuleGo@master/Surge/Ruleset/Proxy+.list",
         "source": "ConnersHua/RuleGo: Proxy+",
-        "rules": 0
+        "rules": 0,
+        "bytes": 32,
+        "sha256": "2d4f4e156663de6b5d1e4d49be23799f8a0a08ef7c061cb0d133e194be07bf7c"
       },
       {
         "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/source/rule/Proxy/Proxy.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/source/rule/Proxy/Proxy.list",
         "source": "peiyingyao/Rule-for-OCD: Proxy",
-        "rules": 5
+        "rules": 5,
+        "bytes": 89,
+        "sha256": "a8e7c9244e25cb9c558b6293abbc4374497423dbaad5c953b4d2ed356246dd23"
       }
     ]
   },
@@ -1548,8 +2412,8 @@
       "group": "ai",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 231,
-      "bytes": 2409
+      "rules": 232,
+      "bytes": 2414
     },
     "ai-classical": {
       "path": "rules/mihomo/ai-classical.yaml",
@@ -1588,8 +2452,8 @@
       "group": "claude",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 12,
-      "bytes": 246
+      "rules": 13,
+      "bytes": 252
     },
     "private": {
       "path": "rules/mihomo/private.mrs",
@@ -1620,8 +2484,8 @@
       "group": "geolocation",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 27063,
-      "bytes": 190431
+      "rules": 27064,
+      "bytes": 190398
     },
     "github": {
       "path": "rules/mihomo/github.mrs",
@@ -2066,8 +2930,11 @@
   },
   "groups": {
     "ai": {
-      "inputRules": 462,
-      "rules": 240,
+      "inputRules": 463,
+      "normalizedRules": 281,
+      "duplicateRules": 182,
+      "coveredRules": 40,
+      "rules": 241,
       "pruned": 222,
       "outputs": [
         "ai",
@@ -2076,6 +2943,9 @@
     },
     "openai": {
       "inputRules": 77,
+      "normalizedRules": 51,
+      "duplicateRules": 26,
+      "coveredRules": 6,
       "rules": 45,
       "pruned": 32,
       "outputs": [
@@ -2085,8 +2955,11 @@
       ]
     },
     "claude": {
-      "inputRules": 34,
-      "rules": 12,
+      "inputRules": 35,
+      "normalizedRules": 13,
+      "duplicateRules": 22,
+      "coveredRules": 0,
+      "rules": 13,
       "pruned": 22,
       "outputs": [
         "claude"
@@ -2094,6 +2967,9 @@
     },
     "private": {
       "inputRules": 142,
+      "normalizedRules": 142,
+      "duplicateRules": 0,
+      "coveredRules": 0,
       "rules": 142,
       "pruned": 0,
       "outputs": [
@@ -2103,6 +2979,9 @@
     },
     "cn": {
       "inputRules": 112561,
+      "normalizedRules": 111689,
+      "duplicateRules": 872,
+      "coveredRules": 41,
       "rules": 111648,
       "pruned": 913,
       "outputs": [
@@ -2110,8 +2989,11 @@
       ]
     },
     "geolocation": {
-      "inputRules": 27064,
-      "rules": 27063,
+      "inputRules": 27065,
+      "normalizedRules": 27065,
+      "duplicateRules": 0,
+      "coveredRules": 1,
+      "rules": 27064,
       "pruned": 1,
       "outputs": [
         "geolocation"
@@ -2119,6 +3001,9 @@
     },
     "github": {
       "inputRules": 64,
+      "normalizedRules": 64,
+      "duplicateRules": 0,
+      "coveredRules": 1,
       "rules": 63,
       "pruned": 1,
       "outputs": [
@@ -2127,6 +3012,9 @@
     },
     "speedtest": {
       "inputRules": 13,
+      "normalizedRules": 13,
+      "duplicateRules": 0,
+      "coveredRules": 0,
       "rules": 13,
       "pruned": 0,
       "outputs": [
@@ -2135,6 +3023,9 @@
     },
     "crypto": {
       "inputRules": 352,
+      "normalizedRules": 271,
+      "duplicateRules": 81,
+      "coveredRules": 1,
       "rules": 270,
       "pruned": 82,
       "outputs": [
@@ -2144,6 +3035,9 @@
     },
     "biliintl": {
       "inputRules": 11,
+      "normalizedRules": 11,
+      "duplicateRules": 0,
+      "coveredRules": 0,
       "rules": 11,
       "pruned": 0,
       "outputs": [
@@ -2152,6 +3046,9 @@
     },
     "direct": {
       "inputRules": 112332,
+      "normalizedRules": 111747,
+      "duplicateRules": 585,
+      "coveredRules": 178,
       "rules": 111569,
       "pruned": 763,
       "outputs": [
@@ -2162,6 +3059,9 @@
     },
     "ads": {
       "inputRules": 309511,
+      "normalizedRules": 304463,
+      "duplicateRules": 5048,
+      "coveredRules": 84890,
       "rules": 219573,
       "pruned": 89938,
       "outputs": [
@@ -2173,6 +3073,9 @@
     },
     "download": {
       "inputRules": 729,
+      "normalizedRules": 682,
+      "duplicateRules": 47,
+      "coveredRules": 42,
       "rules": 640,
       "pruned": 89,
       "outputs": [
@@ -2182,6 +3085,9 @@
     },
     "google": {
       "inputRules": 1794,
+      "normalizedRules": 1168,
+      "duplicateRules": 626,
+      "coveredRules": 74,
       "rules": 1094,
       "pruned": 700,
       "outputs": [
@@ -2192,6 +3098,9 @@
     },
     "apple": {
       "inputRules": 3905,
+      "normalizedRules": 3662,
+      "duplicateRules": 243,
+      "coveredRules": 862,
       "rules": 2800,
       "pruned": 1105,
       "outputs": [
@@ -2202,6 +3111,9 @@
     },
     "microsoft": {
       "inputRules": 1482,
+      "normalizedRules": 762,
+      "duplicateRules": 720,
+      "coveredRules": 28,
       "rules": 734,
       "pruned": 748,
       "outputs": [
@@ -2211,6 +3123,9 @@
     },
     "games": {
       "inputRules": 1847,
+      "normalizedRules": 965,
+      "duplicateRules": 882,
+      "coveredRules": 59,
       "rules": 906,
       "pruned": 941,
       "outputs": [
@@ -2220,6 +3135,9 @@
     },
     "youtube": {
       "inputRules": 377,
+      "normalizedRules": 188,
+      "duplicateRules": 189,
+      "coveredRules": 2,
       "rules": 186,
       "pruned": 191,
       "outputs": [
@@ -2230,6 +3148,9 @@
     },
     "telegram": {
       "inputRules": 141,
+      "normalizedRules": 60,
+      "duplicateRules": 81,
+      "coveredRules": 0,
       "rules": 60,
       "pruned": 81,
       "outputs": [
@@ -2240,6 +3161,9 @@
     },
     "twitter": {
       "inputRules": 42,
+      "normalizedRules": 26,
+      "duplicateRules": 16,
+      "coveredRules": 0,
       "rules": 26,
       "pruned": 16,
       "outputs": [
@@ -2249,6 +3173,9 @@
     },
     "spotify": {
       "inputRules": 90,
+      "normalizedRules": 38,
+      "duplicateRules": 52,
+      "coveredRules": 2,
       "rules": 36,
       "pruned": 54,
       "outputs": [
@@ -2259,6 +3186,9 @@
     },
     "netflix": {
       "inputRules": 70,
+      "normalizedRules": 38,
+      "duplicateRules": 32,
+      "coveredRules": 1,
       "rules": 37,
       "pruned": 33,
       "outputs": [
@@ -2268,6 +3198,9 @@
     },
     "tiktok": {
       "inputRules": 37,
+      "normalizedRules": 37,
+      "duplicateRules": 0,
+      "coveredRules": 1,
       "rules": 36,
       "pruned": 1,
       "outputs": [
@@ -2276,6 +3209,9 @@
     },
     "media": {
       "inputRules": 5502,
+      "normalizedRules": 3739,
+      "duplicateRules": 1763,
+      "coveredRules": 117,
       "rules": 3622,
       "pruned": 1880,
       "outputs": [
@@ -2286,6 +3222,9 @@
     },
     "disney": {
       "inputRules": 250,
+      "normalizedRules": 237,
+      "duplicateRules": 13,
+      "coveredRules": 4,
       "rules": 233,
       "pruned": 17,
       "outputs": [
@@ -2294,6 +3233,9 @@
     },
     "social": {
       "inputRules": 1016,
+      "normalizedRules": 892,
+      "duplicateRules": 124,
+      "coveredRules": 7,
       "rules": 885,
       "pruned": 131,
       "outputs": [
@@ -2304,6 +3246,9 @@
     },
     "dev": {
       "inputRules": 1284,
+      "normalizedRules": 1258,
+      "duplicateRules": 26,
+      "coveredRules": 10,
       "rules": 1248,
       "pruned": 36,
       "outputs": [
@@ -2312,6 +3257,9 @@
     },
     "cloud": {
       "inputRules": 493,
+      "normalizedRules": 487,
+      "duplicateRules": 6,
+      "coveredRules": 2,
       "rules": 485,
       "pruned": 8,
       "outputs": [
@@ -2321,6 +3269,9 @@
     },
     "onedrive": {
       "inputRules": 39,
+      "normalizedRules": 22,
+      "duplicateRules": 17,
+      "coveredRules": 1,
       "rules": 21,
       "pruned": 18,
       "outputs": [
@@ -2330,6 +3281,9 @@
     },
     "finance": {
       "inputRules": 925,
+      "normalizedRules": 922,
+      "duplicateRules": 3,
+      "coveredRules": 2,
       "rules": 920,
       "pruned": 5,
       "outputs": [
@@ -2338,6 +3292,9 @@
     },
     "shopping": {
       "inputRules": 662,
+      "normalizedRules": 662,
+      "duplicateRules": 0,
+      "coveredRules": 0,
       "rules": 662,
       "pruned": 0,
       "outputs": [
@@ -2346,6 +3303,9 @@
     },
     "proxy-extra": {
       "inputRules": 27628,
+      "normalizedRules": 27223,
+      "duplicateRules": 405,
+      "coveredRules": 18,
       "rules": 27205,
       "pruned": 423,
       "outputs": [
@@ -2354,5 +3314,15 @@
         "proxy-extra-classical"
       ]
     }
+  },
+  "summary": {
+    "groups": 32,
+    "inputRules": 610939,
+    "normalizedRules": 598878,
+    "duplicateRules": 12061,
+    "coveredRules": 86390,
+    "rules": 512488,
+    "crossGroupRules": 137692,
+    "crossGroupDuplicateOccurrences": 149542
   }
 }

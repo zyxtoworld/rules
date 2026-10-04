@@ -1,8 +1,12 @@
 {
   "name": "zyxtoworld-rules",
   "private": true,
-  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "build": "node scripts/build-rules.mjs"
+    "build": "node scripts/build-rules.mjs",
+    "test": "node --test scripts/rule-utils.test.mjs",
+    "check": "node --check convert.js && node --check scripts/build-rules.mjs && node --check scripts/rule-utils.mjs && node --test scripts/rule-utils.test.mjs && node scripts/check-rules.mjs"
   }
 }

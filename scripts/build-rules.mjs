@@ -1,9 +1,11 @@
 import { execFile } from 'node:child_process';
-import { access, copyFile, mkdir, mkdtemp, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises';
+import { access, copyFile, mkdtemp, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';
 import { promisify } from 'node:util';
-import { dirname, extname, join, resolve, sep } from 'node:path';
+import { dirname, join, resolve, sep } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
+import { minimizeRuleSet, parseSource, splitRules } from './rule-utils.mjs';
 
 const execFileAsync = promisify(execFile);
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -12,6 +14,8 @@ const outputManifestPath = join(repoRoot, 'rules', 'manifest.json');
 const outputRoot = join(repoRoot, 'rules', 'mihomo');
 const userAgent = 'zyxtoworld-rules-builder/2.0';
 const retryCount = 3;
+const sourceConcurrency = 8;
+const maxSourceBytes = 20 * 1024 * 1024;
 // Keep this layout synchronized with convert.js ruleProviderParts.
 // A stable provider layout prevents scheduled upstream refreshes from creating
 // missing or unreferenced RULE-SET names in the Sub-Store converter.
@@ -355,182 +359,80 @@ const builtInRuleSourceNames = {
 };
 const maxMrsBytes = 1_400_000;
 
+function jsdelivrMirrorUrl(url) {
+  const match = url.match(/^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/([^/]+)\/(.+)$/);
+  return match ? `https://testingcf.jsdelivr.net/gh/${match[1]}/${match[2]}@${match[3]}/${match[4]}` : null;
+}
+
 async function fetchText(url) {
+  const candidates = [...new Set([jsdelivrMirrorUrl(url), url].filter(Boolean))];
   let lastError;
-  for (let attempt = 1; attempt <= retryCount; attempt += 1) {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 90000);
-    try {
-      const response = await fetch(url, { headers: { 'user-agent': userAgent }, signal: controller.signal });
-      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-      return await response.text();
-    } catch (error) {
-      lastError = error;
-      if (attempt < retryCount) await new Promise(resolveWait => setTimeout(resolveWait, attempt * 1500));
-    } finally {
-      clearTimeout(timer);
+  for (const candidate of candidates) {
+    for (let attempt = 1; attempt <= retryCount; attempt += 1) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 90000);
+      try {
+        const response = await fetch(candidate, { headers: { 'user-agent': userAgent }, signal: controller.signal });
+        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+        const body = Buffer.from(await response.arrayBuffer());
+        if (body.byteLength > maxSourceBytes) throw new Error(`source exceeds ${maxSourceBytes} bytes`);
+        const sha256 = createHash('sha256').update(body).digest('hex');
+        const text = body.toString('utf8');
+        if (/^<!doctype html|^<html[\s>]/i.test(text.trimStart())) throw new Error('source returned HTML instead of a rule list');
+        return {
+          text,
+          bytes: body.byteLength,
+          sha256,
+          fetchedUrl: candidate,
+        };
+      } catch (error) {
+        lastError = error;
+        if (attempt < retryCount) await new Promise(resolveWait => setTimeout(resolveWait, attempt * 1500));
+      } finally {
+        clearTimeout(timer);
+      }
     }
   }
   throw new Error(`${url}: ${lastError?.message || 'fetch failed'}`);
 }
 
-function unquote(value) {
-  let text = value.trim();
-  if ((text.startsWith("'") && text.endsWith("'")) || (text.startsWith('"') && text.endsWith('"'))) {
-    text = text.slice(1, -1);
+async function mapWithConcurrency(items, limit, worker) {
+  const results = new Array(items.length);
+  let nextIndex = 0;
+  async function run() {
+    while (true) {
+      const index = nextIndex++;
+      if (index >= items.length) return;
+      results[index] = await worker(items[index], index);
+    }
   }
-  return text.trim();
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => run()));
+  return results;
 }
 
-function parseRuleLine(rawLine, dropTypes = [], dropRules = []) {
-  let line = rawLine.replace(/^\uFEFF/, '').trim();
-  if (!line || line.startsWith('#') || line === 'payload:') return [];
-  line = line.replace(/^[-]\s+/, '').trim();
-  // Remove YAML/inline comments before unquoting. Otherwise a line such as
-  // `- '+.example.com' # note` keeps its trailing quote and is discarded.
-  line = line.replace(/\s+\/\/.*$/, '').replace(/\s+#.*$/, '').trim();
-  line = unquote(line);
-  if (!line || line === 'payload:') return [];
-
-  // Accept hosts-file exports used by several ad-block lists.
-  const hostsMatch = line.match(/^(?:0\.0\.0\.0|127\.0\.0\.1|::1)\s+([A-Za-z0-9.-]+)(?:\s+#.*)?$/i);
-  if (hostsMatch) return [`DOMAIN,${hostsMatch[1]}`];
-
-  // v2fly/domain-list-community uses full:domain and optional @cn/@ads
-  // annotations. Preserve the domain itself; category annotations are handled
-  // by the destination provider and should not become part of the hostname.
-  line = line.replace(/\s+@[A-Za-z0-9_-]+(?:\s+#.*)?$/, '').trim();
-  if (dropRules.includes(line)) return [];
-  if (line.startsWith('full:')) return [`DOMAIN,${line.slice('full:'.length).trim()}`];
-  if (line.startsWith('include:') || line.startsWith('regexp:')) return [];
-
-  if (line.startsWith('||')) {
-    const match = line.match(/^\|\|([A-Za-z0-9.-]+)\^/);
-    if (match) return [`DOMAIN-SUFFIX,${match[1]}`];
-  }
-
-  if (line.startsWith('+.')) {
-    const suffix = line.slice(2);
-    return suffix.includes('*') ? [] : [`DOMAIN-SUFFIX,${suffix}`];
-  }
-  if (line.startsWith('*.')) {
-    const suffix = line.slice(2);
-    return suffix.includes('*') ? [] : [`DOMAIN-SUFFIX,${suffix}`];
-  }
-  if (line.startsWith('.')) {
-    const suffix = line.slice(1);
-    return suffix.includes('*') ? [] : [`DOMAIN-SUFFIX,${suffix}`];
-  }
-  if (/^[A-Za-z0-9_-]+(\.[A-Za-z0-9_-]+)+$/.test(line)) return [`DOMAIN,${line}`];
-
-  const pieces = line.split(',').map(part => part.trim());
-  const type = String(pieces[0] || '').toUpperCase();
-  if (dropTypes.map(value => value.toUpperCase()).includes(type)) return [];
-  const allowed = new Set(['DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD', 'IP-CIDR', 'IP-CIDR6', 'IP-ASN', 'PROCESS-NAME', 'PROCESS-PATH']);
-  if (!allowed.has(type) || !pieces[1]) return [];
-  // Source lists often append Surge routing policies, matching modes, or
-  // no-resolve flags. Those belong to the source profile, not this provider.
-  const value = pieces[1].replace(/\s+\/\/.*$/, '').replace(/\s+#.*$/, '').trim();
-  // Mihomo DOMAIN/DOMAIN-SUFFIX rules do not support wildcard hostnames.
-  // Do not publish invalid entries into MRS; supported +./* suffix forms are
-  // normalized above instead.
-  if ((type === 'DOMAIN' || type === 'DOMAIN-SUFFIX') && value.includes('*')) return [];
-  return value ? [`${type},${value}`] : [];
-}
-
-function parseSource(text, source) {
-  if (source.kind === 'singbox') {
-    const typeMap = {
-      domain: 'DOMAIN',
-      domain_suffix: 'DOMAIN-SUFFIX',
-      domain_keyword: 'DOMAIN-KEYWORD',
-      ip_cidr: 'IP-CIDR',
-      ip_cidr6: 'IP-CIDR6',
-      process_name: 'PROCESS-NAME',
+async function fetchSources(group, sources) {
+  return mapWithConcurrency(sources, sourceConcurrency, async source => {
+    process.stdout.write(`fetch ${group}: ${source.url}\n`);
+    const fetched = await fetchText(source.url);
+    if (source.sha256 && source.sha256.toLowerCase() !== fetched.sha256) {
+      throw new Error(`${source.url}: sha256 mismatch; expected ${source.sha256}, got ${fetched.sha256}`);
+    }
+    const parsed = parseSource(fetched.text, source);
+    return {
+      source,
+      parsed,
+      metadata: {
+        url: source.url,
+        fetchedUrl: fetched.fetchedUrl,
+        source: source.source,
+        rules: parsed.length,
+        bytes: fetched.bytes,
+        sha256: fetched.sha256,
+      },
     };
-    const rules = [];
-    const document = JSON.parse(text);
-    const entries = Array.isArray(document) ? document : document.rules || [document];
-    for (const entry of entries) {
-      for (const [key, values] of Object.entries(entry || {})) {
-        const type = typeMap[key];
-        if (!type || !Array.isArray(values)) continue;
-        for (const value of values) rules.push(...parseRuleLine(`${type},${value}`, source.dropTypes || [], source.dropRules || []));
-      }
-    }
-    return rules;
-  }
-  const rules = [];
-  for (const line of text.split(/\r?\n/)) {
-    rules.push(...parseRuleLine(line, source.dropTypes || [], source.dropRules || []));
-  }
-  return rules;
-}
-
-function domainParts(value) {
-  return value.toLowerCase().split('.').filter(Boolean);
-}
-
-function isCoveredBySuffix(domain, suffixes, includeSelf = false) {
-  const parts = domainParts(domain);
-  const start = includeSelf ? 0 : 1;
-  for (let index = start; index < parts.length - 1; index += 1) {
-    if (suffixes.has(parts.slice(index).join('.'))) return true;
-  }
-  return false;
-}
-
-function normalizeRule(rule) {
-  const parts = String(rule || '').split(',');
-  const type = String(parts.shift() || '').trim().toUpperCase();
-  const value = String(parts.shift() || '').trim();
-  if (!type || !value) return null;
-  if (type === 'DOMAIN' || type === 'DOMAIN-SUFFIX') {
-    parts.unshift(value.toLowerCase().replace(/^\.+/, '').replace(/\.$/, ''));
-  } else if (type === 'IP-CIDR' || type === 'IP-CIDR6') {
-    parts.unshift(value.toLowerCase());
-  } else {
-    parts.unshift(value);
-  }
-  return [type, ...parts.map(part => part.trim())].join(',');
-}
-
-function minimizeRules(input) {
-  const unique = [...new Set(input.map(normalizeRule).filter(Boolean))];
-  const suffixes = new Set(unique.filter(rule => rule.startsWith('DOMAIN-SUFFIX,')).map(rule => rule.slice('DOMAIN-SUFFIX,'.length).toLowerCase()));
-  const result = [];
-  for (const rule of unique) {
-    const [type, value] = rule.split(',', 2);
-    if ((type === 'DOMAIN-SUFFIX' && isCoveredBySuffix(value, suffixes)) || (type === 'DOMAIN' && isCoveredBySuffix(value, suffixes, true))) {
-      if (type === 'DOMAIN-SUFFIX' || suffixes.has(value.toLowerCase())) continue;
-    }
-    result.push(rule);
-  }
-  const order = new Map(['DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD', 'IP-CIDR', 'IP-CIDR6', 'IP-ASN', 'PROCESS-NAME', 'PROCESS-PATH'].map((type, index) => [type, index]));
-  // Avoid locale-dependent ordering: the builder runs on Windows locally and
-  // Linux in GitHub Actions, and localeCompare can produce different MRS bytes.
-  const compareText = (left, right) => left < right ? -1 : left > right ? 1 : 0;
-  return result.sort((left, right) => {
-    const leftType = left.split(',', 1)[0];
-    const rightType = right.split(',', 1)[0];
-    return (order.get(leftType) ?? 99) - (order.get(rightType) ?? 99) || compareText(left, right);
   });
 }
 
-function splitRules(rules) {
-  const output = { domain: [], ipcidr: [], classical: [] };
-  for (const rule of rules) {
-    const type = rule.split(',', 1)[0];
-    if (type === 'DOMAIN' || type === 'DOMAIN-SUFFIX') {
-      output.domain.push(rule);
-    } else if (type === 'IP-CIDR' || type === 'IP-CIDR6') {
-      output.ipcidr.push(rule);
-    } else {
-      output.classical.push(rule);
-    }
-  }
-  return output;
-}
 
 function renderYaml(rules) {
   return `# Generated by scripts/build-rules.mjs. Do not edit manually.\npayload:\n${rules.map(rule => `  - ${JSON.stringify(rule)}`).join('\n')}\n`;
@@ -613,47 +515,66 @@ async function splitMrsPartitions(binary, behavior, rules, tempRoot, group, part
   return artifacts;
 }
 
-function collectPreviousOutputPaths(previousManifest) {
-  const paths = new Set();
-  for (const output of Object.values(previousManifest?.outputs || {})) {
-    if (output?.path) paths.add(resolve(repoRoot, output.path));
-    for (const file of output?.files || []) {
-      if (file?.path) paths.add(resolve(repoRoot, file.path));
-    }
+async function moveIfExists(from, to) {
+  try {
+    await rename(from, to);
+    return true;
+  } catch (error) {
+    if (error?.code === 'ENOENT') return false;
+    throw error;
   }
-  return paths;
 }
 
-let previousManifest = null;
-try {
-  previousManifest = JSON.parse(await readFile(outputManifestPath, 'utf8'));
-} catch {
-  // The first build has no previous generated manifest.
+async function replaceGeneratedOutputs(stagedOutputRoot, stagedManifestPath) {
+  const token = `${process.pid}-${Date.now()}`;
+  const backupRoot = `${outputRoot}.backup-${token}`;
+  const backupManifest = `${outputManifestPath}.backup-${token}`;
+  let oldRootMoved = false;
+  let oldManifestMoved = false;
+  let newRootMoved = false;
+  let newManifestMoved = false;
+  try {
+    oldManifestMoved = await moveIfExists(outputManifestPath, backupManifest);
+    oldRootMoved = await moveIfExists(outputRoot, backupRoot);
+    await rename(stagedOutputRoot, outputRoot);
+    newRootMoved = true;
+    await rename(stagedManifestPath, outputManifestPath);
+    newManifestMoved = true;
+    await rm(backupManifest, { force: true });
+    await rm(backupRoot, { recursive: true, force: true });
+  } catch (error) {
+    if (newManifestMoved) await rm(outputManifestPath, { force: true });
+    if (oldManifestMoved) await moveIfExists(backupManifest, outputManifestPath);
+    if (newRootMoved) await rm(outputRoot, { recursive: true, force: true });
+    if (oldRootMoved) await moveIfExists(backupRoot, outputRoot);
+    throw error;
+  } finally {
+    await rm(backupManifest, { force: true });
+    await rm(backupRoot, { recursive: true, force: true });
+  }
 }
 
 const binary = await resolveMihomoBinary();
 const sourceManifest = JSON.parse(await readFile(sourceManifestPath, 'utf8'));
-await mkdir(outputRoot, { recursive: true });
-const previousOutputPaths = collectPreviousOutputPaths(previousManifest);
-
 const tempRoot = await mkdtemp(join(tmpdir(), 'zyxtoworld-rules-'));
+const stagedOutputRoot = await mkdtemp(join(dirname(outputRoot), '.mihomo-stage-'));
+const stagedManifestPath = join(dirname(outputManifestPath), `.manifest-${process.pid}-${Date.now()}.tmp`);
 const metadata = {
   schemaVersion: 2,
   sources: {},
   outputs: {},
   groups: {},
 };
+const ruleGroupIndex = new Map();
+let committed = false;
 
 try {
   for (const [group, sources] of Object.entries(sourceManifest.sources)) {
     const collected = [];
-    metadata.sources[group] = [];
-    for (const source of sources) {
-      process.stdout.write(`fetch ${group}: ${source.url}\n`);
-      const text = await fetchText(source.url);
-      const parsed = parseSource(text, source);
-      for (const rule of parsed) collected.push(rule);
-      metadata.sources[group].push({ url: source.url, source: source.source, rules: parsed.length });
+    const fetchedSources = await fetchSources(group, sources);
+    metadata.sources[group] = fetchedSources.map(result => result.metadata);
+    for (const result of fetchedSources) {
+      for (const rule of result.parsed) collected.push(rule);
     }
 
     const extraRules = builtInRules[group] || [];
@@ -662,8 +583,16 @@ try {
       metadata.sources[group].push({ source: builtInRuleSourceNames[group] || `built-in: ${group}`, rules: extraRules.length });
     }
 
-    const inputRules = collected.length;
-    const rules = minimizeRules(collected);
+    const minimized = minimizeRuleSet(collected);
+    const rules = minimized.rules;
+    for (const rule of rules) {
+      let groups = ruleGroupIndex.get(rule);
+      if (!groups) {
+        groups = new Set();
+        ruleGroupIndex.set(rule, groups);
+      }
+      groups.add(group);
+    }
     const partitions = splitRules(rules);
     const files = [];
 
@@ -680,7 +609,7 @@ try {
         const part = index + 1;
         const fileName = outputFileName(group, kind, part);
         const relativePath = `rules/mihomo/${fileName}`;
-        const outputPath = join(outputRoot, fileName);
+        const outputPath = join(stagedOutputRoot, fileName);
         if (format === 'mrs') {
           await copyFile(artifact.candidatePath, outputPath);
         } else {
@@ -704,25 +633,33 @@ try {
     }
 
     metadata.groups[group] = {
-      inputRules,
+      inputRules: minimized.inputRules,
+      normalizedRules: minimized.normalizedRules,
+      duplicateRules: minimized.duplicateRules,
+      coveredRules: minimized.coveredRules,
       rules: rules.length,
-      pruned: inputRules - rules.length,
+      pruned: minimized.inputRules - rules.length,
       outputs: files,
     };
   }
 
-  await writeFile(outputManifestPath, `${JSON.stringify(metadata, null, 2)}\n`, 'utf8');
+  const crossGroupRules = [...ruleGroupIndex.values()].filter(groups => groups.size > 1);
+  metadata.summary = {
+    groups: Object.keys(metadata.groups).length,
+    inputRules: Object.values(metadata.groups).reduce((sum, group) => sum + group.inputRules, 0),
+    normalizedRules: Object.values(metadata.groups).reduce((sum, group) => sum + group.normalizedRules, 0),
+    duplicateRules: Object.values(metadata.groups).reduce((sum, group) => sum + group.duplicateRules, 0),
+    coveredRules: Object.values(metadata.groups).reduce((sum, group) => sum + group.coveredRules, 0),
+    rules: Object.values(metadata.groups).reduce((sum, group) => sum + group.rules, 0),
+    crossGroupRules: crossGroupRules.length,
+    crossGroupDuplicateOccurrences: crossGroupRules.reduce((sum, groups) => sum + groups.size - 1, 0),
+  };
+
+  await writeFile(stagedManifestPath, `${JSON.stringify(metadata, null, 2)}\n`, 'utf8');
+  await replaceGeneratedOutputs(stagedOutputRoot, stagedManifestPath);
+  committed = true;
 } finally {
   await rm(tempRoot, { recursive: true, force: true });
-}
-
-const generatedFiles = new Set(Object.values(metadata.outputs).map(output => resolve(repoRoot, output.path)));
-for (const outputPath of previousOutputPaths) {
-  if (!generatedFiles.has(outputPath)) await rm(outputPath, { force: true });
-}
-for (const entry of await readdir(outputRoot)) {
-  const path = join(outputRoot, entry);
-  if (!generatedFiles.has(path) && (extname(entry) === '.yaml' || extname(entry) === '.mrs')) {
-    await rm(path, { force: true });
-  }
+  if (!committed) await rm(stagedOutputRoot, { recursive: true, force: true });
+  await rm(stagedManifestPath, { force: true });
 }
