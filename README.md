@@ -59,7 +59,7 @@ CI 会固定下载并校验官方 Mihomo `v1.19.32` 转换器。构建脚本会�
 
 - `direct`：MetaCubeX 中国大陆集合、Loyalsoldier direct、RuleGo direct、ACL4SSR、NobyDa 和国内服务补充。
 - `ads`：MetaCubeX、Loyalsoldier、anti-AD、AWAvenue、RuleGo 和 NobyDa 的广告/恶意/跟踪集合，统一去重并按父域名最小化；Sub-Store 规则顺序中广告拦截位于所有服务和直连规则之前，严格以 `REJECT` 优先。
-- `privacy`：内置公网 IP 查询、WebRTC/STUN/TURN 和应用 HTTPDNS 端点；规则位于 `ads` 之后、`cn` 之前，使用不含 `DIRECT` 的 `🛡️ 隐私防泄漏` 策略组，避免国内第三方探测服务被宽泛 CN 集合提前直连。动态 IP、服务端到服务端请求和浏览器 WebRTC 本地候选仍需要应用侧控制，规则不能保证覆盖未知端点。
+- `privacy`：内置公网 IP 查询、WebRTC/STUN/TURN 和应用 HTTPDNS 端点；规则位于 `ads` 之后、`cn` 之前，使用不含 `DIRECT` 的 `🛡️ 隐私防泄漏` 策略组，避免国内第三方探测服务被宽泛 CN 集合提前直连。另对 STUN/TURN 常用 UDP/TCP 端口 `3478`、`5349`、`5350`、`5351`、`19302-19309` 使用 `REJECT-DROP`，因为字面 IP 或未知域名的 STUN 无法由域名 provider 识别。该端口保护可能影响依赖这些端口的实时音视频/联机功能；动态 IP、服务端到服务端请求和浏览器 WebRTC 本地候选仍需要应用侧控制。
 - `proxy-extra`：Loyalsoldier、RuleGo 和 Rule-for-OCD 的代理补充；`convert.js` 仍负责排除中国域名和中国 IP。
 - 除 `direct` 和 `ads` 外，服务策略组统一附加 `NOT RULE-SET,cn` 与 `NOT GEOIP,CN`；即使上游混合列表包含国内条目，也会交给前面的国内直连规则处理。
 - `cloud`：只处理非中国大陆云服务域名/IP；阿里云盘、百度网盘、腾讯微云等国内网盘归入 `direct`。

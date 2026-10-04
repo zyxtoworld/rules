@@ -723,6 +723,16 @@ function buildConfig(proxies) {
     // This intentionally takes precedence over policy-group providers as well;
     // shared ad/telemetry hosts are rejected instead of routed to a service.
     ...providerRuleSet('ads', REJECT),
+    // Domain lists cannot catch literal-IP STUN/TURN endpoints. Reject the
+    // standard transport ports before privacy providers to prevent direct leaks.
+    'AND,((NETWORK,UDP),(DST-PORT,3478)),REJECT-DROP',
+    'AND,((NETWORK,TCP),(DST-PORT,3478)),REJECT-DROP',
+    'AND,((NETWORK,UDP),(DST-PORT,5349)),REJECT-DROP',
+    'AND,((NETWORK,TCP),(DST-PORT,5349)),REJECT-DROP',
+    'AND,((NETWORK,UDP),(DST-PORT,5350)),REJECT-DROP',
+    'AND,((NETWORK,UDP),(DST-PORT,5351)),REJECT-DROP',
+    'AND,((NETWORK,UDP),(DST-PORT,19302-19309)),REJECT-DROP',
+
 
     // Known IP-check/WebRTC/HTTPDNS endpoints must override broad CN direct
     // lists; otherwise a domestic third party can observe the real address.
