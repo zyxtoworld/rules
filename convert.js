@@ -15,8 +15,9 @@
 //   5. 下载资源低倍率：自动识别节点名里的 0.x 倍率/低倍率/省流 标记，
 //      专用下载器访问已知非中国域名或非中国 IP、以及明确文件/CDN/blob 下载资源域名，
 //      优先走最低倍率可用节点。
-//   6. 不输出客户端通用开关：端口/API/TUN/DNS/Sniffer/IPv6/Allow-LAN/Mode 等
-//      由 Clash Verge Rev、ClashMi、Nikki 自己管理，订阅只负责节点、策略组和规则。
+//   6. DNS 使用 fake-ip、加密上游和按 geosite/Google 策略组的解析分流；关闭 IPv6
+//      解析，避免系统 DNS、IPv6 和代理节点解析回退造成旁路。
+//   7. 端口、API、TUN 等客户端通用开关仍由 Clash Verge Rev、ClashMi、Nikki 管理。
 //
 // 重要：Sub-Store 对 mihomoProfile 类型文件调用的是 main(config)，而非
 //   operator(proxies)。引擎会先走 func 路径并以 operator 返回值为准，抢在
@@ -581,6 +582,45 @@ function buildConfig(proxies) {
     'geodata-mode': true,
     'geodata-loader': 'memconservative',
     'geosite-matcher': 'succinct',
+    'ipv6': false,
+    dns: {
+      enable: true,
+      ipv6: false,
+      'enhanced-mode': 'fake-ip',
+      'fake-ip-range': '198.18.0.1/16',
+      'default-nameserver': ['tls://223.5.5.5', 'tls://1.1.1.1'],
+      'nameserver-policy': {
+        'geosite:cn,private,apple': [
+          'https://doh.pub/dns-query',
+          'https://dns.alidns.com/dns-query'
+        ],
+        'geosite:geolocation-!cn': [
+          `https://dns.google/dns-query#${POLICY.google}`,
+          `https://cloudflare-dns.com/dns-query#${POLICY.google}`
+        ],
+        '+.google.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.googleapis.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.gstatic.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.googleusercontent.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.google.com.hk': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.youtube.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.recaptcha.net': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`]
+      },
+      nameserver: [
+        `https://dns.google/dns-query#${POLICY.google}`,
+        `https://cloudflare-dns.com/dns-query#${POLICY.google}`
+      ],
+      'proxy-server-nameserver': [
+        'https://doh.pub/dns-query',
+        'https://dns.alidns.com/dns-query'
+      ],
+      'direct-nameserver': [
+        'https://doh.pub/dns-query',
+        'https://dns.alidns.com/dns-query'
+      ],
+      'direct-nameserver-follow-policy': true,
+      'respect-rules': false
+    },
     'geox-url': {
       geoip: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat',
       geosite: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat',

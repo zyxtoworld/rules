@@ -56,6 +56,20 @@ async function main() {
   const providers = config['rule-providers'];
   const manifestOutputs = manifest.outputs;
   const manifestGroups = manifest.groups;
+  const dns = config.dns;
+  const dnsServers = Array.isArray(dns?.nameserver) ? dns.nameserver : [];
+  const dnsPolicies = dns?.['nameserver-policy'] || {};
+  if (config.ipv6 !== false) errors.push('转换器必须关闭全局 IPv6，避免 DNS/流量旁路');
+  if (dns?.enable !== true) errors.push('转换器必须启用 DNS');
+  if (dns?.ipv6 !== false) errors.push('DNS 必须关闭 IPv6 解析');
+  if (dns?.['enhanced-mode'] !== 'fake-ip') errors.push('DNS 必须使用 fake-ip 模式');
+  if (!dnsServers.some(server => String(server).includes('#🔍 谷歌服务'))) errors.push('默认 DNS 必须通过谷歌策略组代理');
+  if (!Array.isArray(dns?.['proxy-server-nameserver']) || dns['proxy-server-nameserver'].length === 0) errors.push('必须配置 proxy-server-nameserver，避免代理节点解析回退到系统 DNS');
+  if (!Array.isArray(dns?.['direct-nameserver']) || dns['direct-nameserver'].some(server => server === 'system')) errors.push('DIRECT DNS 不得使用系统明文解析');
+  for (const key of ['geosite:geolocation-!cn', '+.google.com', '+.googleapis.com', '+.gstatic.com']) {
+    const servers = Array.isArray(dnsPolicies[key]) ? dnsPolicies[key] : [];
+    if (!servers.some(server => String(server).includes('#🔍 谷歌服务'))) errors.push(`DNS policy ${key} 必须通过谷歌策略组代理`);
+  }
 
   if (manifest.schemaVersion !== 2) errors.push(`manifest schemaVersion 应为 2，实际为 ${manifest.schemaVersion}`);
   if (!sourceManifest.sources || typeof sourceManifest.sources !== 'object' || Array.isArray(sourceManifest.sources)) {
