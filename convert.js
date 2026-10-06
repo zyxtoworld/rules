@@ -698,12 +698,13 @@ function buildConfig(proxies) {
   ];
   for (const [name, groupProxies] of featureGroups) addSelectGroup(name, groupProxies);
 
-  // 地区分组（按订阅实际出现自动生成）
+  // 国家/地区组自身负责健康检查：当前节点故障时，只在本国节点中
+  // fallback 到下一个可用节点；业务组仍可把这些组作为候选项嵌套使用。
   for (const label of regionOrder) {
-    addSelectGroup(label, regionMap[label]);
+    addHealthCheckGroup(label, 'fallback', regionMap[label], { lazy: false });
   }
   if (unknownRegionProxies.length) {
-    addSelectGroup(unknownRegionLabel, unknownRegionProxies);
+    addHealthCheckGroup(unknownRegionLabel, 'fallback', unknownRegionProxies, { lazy: false });
   }
 
   // ===== 规则 =====

@@ -33,11 +33,11 @@ async function readJson(path) {
   return JSON.parse(await readFile(path, 'utf8'));
 }
 
-async function loadConverterConfig() {
+async function loadConverterConfig(proxies = []) {
   const source = await readFile(convertPath, 'utf8');
   const context = {};
   vm.runInNewContext(`${source}\nthis.__buildConfig = buildConfig;`, context, { filename: convertPath });
-  return context.__buildConfig([]);
+  return context.__buildConfig(proxies);
 }
 
 function referencedRuleProviders(rules) {
@@ -79,6 +79,17 @@ async function main() {
   if (privacyRuleIndex >= 0 && cnRuleIndex >= 0 && privacyRuleIndex > cnRuleIndex) errors.push('privacy provider 必须排在 cn provider 之前');
   if (privacyRules.some(rule => !String(rule).endsWith(',🚀 手动切换'))) errors.push('privacy provider 必须统一走 🚀 手动切换，不能走 DIRECT 或独立隐私组');
   if ((config['proxy-groups'] || []).some(group => group.name === '🛡️ 隐私防泄漏')) errors.push('不应生成独立 🛡️ 隐私防泄漏 策略组');
+  const sampleConfig = await loadConverterConfig([
+    { name: '🇺🇸 sample-us-1', type: 'http', server: 'sample-us-1' },
+    { name: '🇺🇸 sample-us-2', type: 'http', server: 'sample-us-2' },
+    { name: '🇯🇵 sample-jp-1', type: 'http', server: 'sample-jp-1' },
+  ]);
+  for (const [name, nodes] of [['🇺🇸 美国', ['🇺🇸 sample-us-1', '🇺🇸 sample-us-2']], ['🇯🇵 日本', ['🇯🇵 sample-jp-1']]]) {
+    const group = sampleConfig['proxy-groups'].find(candidate => candidate.name === name);
+    if (!group || group.type !== 'fallback' || group.lazy !== false || group.url !== 'https://www.gstatic.com/generate_204' || JSON.stringify(group.proxies) !== JSON.stringify(nodes)) {
+      errors.push(`国家组 ${name} 必须只在本国节点中使用 fallback 健康检查`);
+    }
+  }
 
   if (manifest.schemaVersion !== 2) errors.push(`manifest schemaVersion 应为 2，实际为 ${manifest.schemaVersion}`);
   if (!sourceManifest.sources || typeof sourceManifest.sources !== 'object' || Array.isArray(sourceManifest.sources)) {

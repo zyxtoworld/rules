@@ -65,6 +65,7 @@ CI 会固定下载并校验官方 Mihomo `v1.19.32` 转换器。构建脚本会�
 - `cloud`：只处理非中国大陆云服务域名/IP；阿里云盘、百度网盘、腾讯微云等国内网盘归入 `direct`。
 - `ai`：除上游 AI 规则外，补充 RuleGo、SukkaW 和 Claude/Anthropic 服务域名，并统一走 `🤖 AI服务`。
 - `apple`：除上游 Apple 规则外，合并 RuleGo、NobyDa、SukkaW、LM-Firefly、scomper 等 Apple、Siri、Search、Apple Intelligence 和 Private Cloud Compute 主机；非中国大陆 Apple 流量默认优先走代理，`DIRECT` 仍可手动选择。
+- 国家/地区分组使用 Mihomo `fallback` 健康检查组；按当前国家节点顺序优先使用第一个可用节点，当前节点失败时只在该国家/地区节点中自动切换，不会跳到其他国家。为保持客户端界面简洁，国家组不再提供逐节点手动选择；需要固定节点时应在全局手动组选择具体节点。
 - 服务文件按 AI、OpenAI、Claude、Google、Apple、Microsoft、OneDrive、Disney+、游戏、媒体、社交、开发、云服务、金融和购物等策略组拆分；保留通用 AI/媒体/云服务组作为未单独拆分服务的兜底。
 - `IP-ASN` 是否保留由每个来源的 `dropTypes` 控制，并非全局过滤；当前 OpenAI classical provider 仍包含少量 `IP-ASN` 规则，因此配置仍声明 ASN 数据源。
 
