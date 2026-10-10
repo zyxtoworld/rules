@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { minimizeRuleSet, parseRuleLine, parseSource } from './rule-utils.mjs';
+import { dedupeCrossGroupExact, minimizeRuleSet, parseRuleLine, parseSource } from './rule-utils.mjs';
 
 test('parses supported list syntaxes and source filters', () => {
   assert.deepEqual(parseRuleLine('127.0.0.1 tracker.example'), ['DOMAIN,tracker.example']);
@@ -66,4 +66,17 @@ test('deduplicates every supported rule class and minimizes covered domains', ()
     'PROCESS-NAME,Demo',
     'PROCESS-PATH,/opt/demo',
   ]);
+});
+
+test('deduplicates exact cross-group rules by priority without CIDR containment', () => {
+  const result = dedupeCrossGroupExact(new Map([
+    ['later', ['DOMAIN,shared.example', 'IP-CIDR,192.0.2.0/24']],
+    ['first', ['DOMAIN,shared.example', 'IP-CIDR,192.0.2.0/25']],
+  ]), ['first', 'later']);
+  assert.deepEqual(result.deduped.get('first'), [
+    'DOMAIN,shared.example',
+    'IP-CIDR,192.0.2.0/25',
+  ]);
+  assert.deepEqual(result.deduped.get('later'), ['IP-CIDR,192.0.2.0/24']);
+  assert.equal(result.removed.get('later'), 1);
 });

@@ -51,7 +51,7 @@ node scripts/build-rules.mjs
 
 `npm run test` 运行规则解析和去重测试。`npm run check` 不需要 Mihomo 内核，不会重建文件，只校验 JavaScript 语法以及转换器、manifest 和已提交产物之间的引用、格式、字节数、体积（单文件 1.4 MB、总计 4 MB）和规则 provider 名称一致性。
 
-去重覆盖每个规则组内的全部来源和全部支持类型（域名、CIDR、ASN、进程和关键词）；同一条规则出现在不同策略组时会保留各组副本，因为这些 provider 可能绑定不同的分流策略，manifest 会记录跨组重复审计数量但不会跨组删除。
+去重覆盖每个规则组内的全部来源和全部支持类型（域名、CIDR、ASN、进程和关键词）；构建随后按 `convert.js` 的运行优先级，从低优先级 provider 删除完全相同的跨组规则。只做 exact dedup，不做父域或 CIDR 包含裁剪；`manifest` 同时记录跨组删除数量。生成的 provider 主要面向本仓库转换器，独立使用单个 provider 时应以来源清单为准。
 
 CI 会固定下载并校验官方 Mihomo `v1.19.32` 转换器。构建脚本会校验每个 MRS 输出非空，并由 `npm run check` 检查生成产物契约。
 

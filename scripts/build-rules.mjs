@@ -5,7 +5,7 @@ import { dirname, join, resolve, sep } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
-import { minimizeRuleSet, parseSource, splitRules } from './rule-utils.mjs';
+import { dedupeCrossGroupExact, minimizeRuleSet, parseSource, splitRules } from './rule-utils.mjs';
 
 const execFileAsync = promisify(execFile);
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -22,6 +22,17 @@ const maxSourceBytes = 20 * 1024 * 1024;
 const fixedMrsPartitions = {
   ads: { domain: 2 },
 };
+// Keep synchronized with convert.js rules order. Only exact duplicate rules
+// are removed from lower-priority groups; parent-domain and CIDR containment
+// are intentionally left untouched.
+const runtimeGroupPriority = [
+  'private', 'ads', 'privacy', 'cn',
+  'openai', 'claude', 'ai', 'biliintl', 'crypto', 'apple', 'download',
+  'youtube', 'google', 'github', 'dev', 'telegram', 'twitter', 'social',
+  'netflix', 'spotify', 'disney', 'onedrive', 'microsoft', 'cloud',
+  'finance', 'shopping', 'tiktok', 'media', 'speedtest', 'games',
+  'direct', 'proxy-extra', 'geolocation',
+];
 const builtInRules = {
   // Local routing infrastructure rules are generated into a dedicated
   // provider instead of being embedded in the Sub-Store converter.
@@ -661,6 +672,7 @@ const ruleGroupIndex = new Map();
 let committed = false;
 
 try {
+  const preparedGroups = new Map();
   for (const [group, sources] of Object.entries(sourceManifest.sources)) {
     const collected = [];
     const fetchedSources = await fetchSources(group, sources);
@@ -676,8 +688,8 @@ try {
     }
 
     const minimized = minimizeRuleSet(collected);
-    const rules = minimized.rules;
-    for (const rule of rules) {
+    preparedGroups.set(group, { minimized });
+    for (const rule of minimized.rules) {
       let groups = ruleGroupIndex.get(rule);
       if (!groups) {
         groups = new Set();
@@ -685,7 +697,23 @@ try {
       }
       groups.add(group);
     }
+  }
+
+  const groupRules = new Map([...preparedGroups].map(([group, { minimized }]) => [group, minimized.rules]));
+  const { deduped, removed } = dedupeCrossGroupExact(groupRules, runtimeGroupPriority);
+  for (const [group, { minimized }] of preparedGroups) {
+    const rules = deduped.get(group) || [];
+    let crossGroupPruned = removed.get(group) || 0;
+    const originalPartitions = splitRules(minimized.rules);
     const partitions = splitRules(rules);
+    for (const kind of Object.keys(partitions)) {
+      if (partitions[kind].length === 0 && originalPartitions[kind].length > 0) {
+        // Keep one redundant anchor so convert.js keeps its fixed provider layout.
+        partitions[kind] = [originalPartitions[kind][0]];
+        crossGroupPruned -= 1;
+      }
+    }
+    const outputRuleCount = Object.values(partitions).reduce((sum, partition) => sum + partition.length, 0);
     const files = [];
 
     for (const [kind, partition] of Object.entries(partitions)) {
@@ -729,8 +757,9 @@ try {
       normalizedRules: minimized.normalizedRules,
       duplicateRules: minimized.duplicateRules,
       coveredRules: minimized.coveredRules,
-      rules: rules.length,
-      pruned: minimized.inputRules - rules.length,
+      crossGroupPruned,
+      rules: outputRuleCount,
+      pruned: minimized.inputRules - outputRuleCount,
       outputs: files,
     };
   }
@@ -743,6 +772,7 @@ try {
     duplicateRules: Object.values(metadata.groups).reduce((sum, group) => sum + group.duplicateRules, 0),
     coveredRules: Object.values(metadata.groups).reduce((sum, group) => sum + group.coveredRules, 0),
     rules: Object.values(metadata.groups).reduce((sum, group) => sum + group.rules, 0),
+    crossGroupPruned: Object.values(metadata.groups).reduce((sum, group) => sum + group.crossGroupPruned, 0),
     crossGroupRules: crossGroupRules.length,
     crossGroupDuplicateOccurrences: crossGroupRules.reduce((sum, groups) => sum + groups.size - 1, 0),
   };

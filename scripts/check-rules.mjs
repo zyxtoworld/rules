@@ -190,25 +190,25 @@ async function main() {
   for (const [group, metadata] of Object.entries(manifestGroups || {})) {
     const outputRules = metadata.outputs.reduce((sum, name) => sum + (manifestOutputs?.[name]?.rules || 0), 0);
     if (outputRules !== metadata.rules) errors.push(`group ${group} 规则数不一致：group=${metadata.rules}，outputs=${outputRules}`);
-    const dedupeFields = ['normalizedRules', 'duplicateRules', 'coveredRules'];
+    const dedupeFields = ['normalizedRules', 'duplicateRules', 'coveredRules', 'crossGroupPruned'];
     if (dedupeFields.some(field => metadata[field] !== undefined)) {
       for (const field of dedupeFields) {
         if (!Number.isInteger(metadata[field]) || metadata[field] < 0) errors.push(`group ${group}.${field} 必须是非负整数：${metadata[field]}`);
       }
       if (metadata.normalizedRules + metadata.duplicateRules !== metadata.inputRules) errors.push(`group ${group} 去重前后统计不一致：normalized + duplicate != input`);
-      if (metadata.duplicateRules + metadata.coveredRules !== metadata.pruned) errors.push(`group ${group} 剪枝统计不一致：duplicate + covered != pruned`);
+      if (metadata.duplicateRules + metadata.coveredRules + (metadata.crossGroupPruned || 0) !== metadata.pruned) errors.push(`group ${group} 剪枝统计不一致：duplicate + covered + crossGroupPruned != pruned`);
     }
     for (const name of metadata.outputs) {
       if (!manifestOutputs?.[name]) errors.push(`group ${group} 引用了不存在的 output：${name}`);
     }
   }
   if (manifest.summary) {
-    const summaryFields = ['groups', 'inputRules', 'normalizedRules', 'duplicateRules', 'coveredRules', 'rules', 'crossGroupRules', 'crossGroupDuplicateOccurrences'];
+    const summaryFields = ['groups', 'inputRules', 'normalizedRules', 'duplicateRules', 'coveredRules', 'rules', 'crossGroupPruned', 'crossGroupRules', 'crossGroupDuplicateOccurrences'];
     for (const field of summaryFields) {
       if (!Number.isInteger(manifest.summary[field]) || manifest.summary[field] < 0) errors.push(`manifest.summary.${field} 必须是非负整数：${manifest.summary[field]}`);
     }
     const groups = Object.values(manifestGroups || {});
-    for (const field of ['inputRules', 'normalizedRules', 'duplicateRules', 'coveredRules', 'rules']) {
+    for (const field of ['inputRules', 'normalizedRules', 'duplicateRules', 'coveredRules', 'rules', 'crossGroupPruned']) {
       const total = groups.reduce((sum, group) => sum + (group[field] || 0), 0);
       if (manifest.summary[field] !== total) errors.push(`manifest.summary.${field} 汇总不一致：summary=${manifest.summary[field]}，groups=${total}`);
     }

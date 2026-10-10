@@ -2450,24 +2450,24 @@
       "group": "ai",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 232,
-      "bytes": 2414
+      "rules": 191,
+      "bytes": 1987
     },
     "ai-classical": {
       "path": "rules/mihomo/ai-classical.yaml",
       "group": "ai",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 9,
-      "bytes": 400
+      "rules": 6,
+      "bytes": 310
     },
     "openai": {
       "path": "rules/mihomo/openai.mrs",
       "group": "openai",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 39,
-      "bytes": 584
+      "rules": 33,
+      "bytes": 517
     },
     "openai-ipcidr": {
       "path": "rules/mihomo/openai-ipcidr.mrs",
@@ -2514,8 +2514,8 @@
       "group": "privacy",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 444,
-      "bytes": 4345
+      "rules": 442,
+      "bytes": 4322
     },
     "privacy-classical": {
       "path": "rules/mihomo/privacy-classical.yaml",
@@ -2530,24 +2530,24 @@
       "group": "cn",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 111648,
-      "bytes": 516491
+      "rules": 111576,
+      "bytes": 516047
     },
     "geolocation": {
       "path": "rules/mihomo/geolocation.mrs",
       "group": "geolocation",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 27102,
-      "bytes": 190741
+      "rules": 6,
+      "bytes": 146
     },
     "github": {
       "path": "rules/mihomo/github.mrs",
       "group": "github",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 63,
-      "bytes": 804
+      "rules": 55,
+      "bytes": 688
     },
     "speedtest": {
       "path": "rules/mihomo/speedtest.mrs",
@@ -2562,8 +2562,8 @@
       "group": "crypto",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 269,
-      "bytes": 2479
+      "rules": 259,
+      "bytes": 2399
     },
     "crypto-classical": {
       "path": "rules/mihomo/crypto-classical.yaml",
@@ -2578,16 +2578,16 @@
       "group": "biliintl",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 11,
-      "bytes": 243
+      "rules": 6,
+      "bytes": 171
     },
     "direct": {
       "path": "rules/mihomo/direct.mrs",
       "group": "direct",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 111884,
-      "bytes": 515846
+      "rules": 1486,
+      "bytes": 11116
     },
     "direct-ipcidr": {
       "path": "rules/mihomo/direct-ipcidr.mrs",
@@ -2602,8 +2602,8 @@
       "group": "direct",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 30,
-      "bytes": 996
+      "rules": 28,
+      "bytes": 922
     },
     "ads": {
       "path": "rules/mihomo/ads.mrs",
@@ -2642,8 +2642,8 @@
       "group": "download",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 496,
-      "bytes": 5790
+      "rules": 488,
+      "bytes": 5703
     },
     "download-classical": {
       "path": "rules/mihomo/download-classical.yaml",
@@ -2658,16 +2658,16 @@
       "group": "google",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1076,
-      "bytes": 8829
+      "rules": 777,
+      "bytes": 6450
     },
     "google-ipcidr": {
       "path": "rules/mihomo/google-ipcidr.mrs",
       "group": "google",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 5,
-      "bytes": 97
+      "rules": 2,
+      "bytes": 61
     },
     "google-classical": {
       "path": "rules/mihomo/google-classical.yaml",
@@ -2682,8 +2682,8 @@
       "group": "apple",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1822,
-      "bytes": 17600
+      "rules": 1666,
+      "bytes": 16513
     },
     "apple-ipcidr": {
       "path": "rules/mihomo/apple-ipcidr.mrs",
@@ -2706,24 +2706,24 @@
       "group": "microsoft",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 672,
-      "bytes": 6738
+      "rules": 598,
+      "bytes": 5998
     },
     "microsoft-classical": {
       "path": "rules/mihomo/microsoft-classical.yaml",
       "group": "microsoft",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 62,
-      "bytes": 2306
+      "rules": 57,
+      "bytes": 2157
     },
     "games": {
       "path": "rules/mihomo/games.mrs",
       "group": "games",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 903,
-      "bytes": 8756
+      "rules": 75,
+      "bytes": 1013
     },
     "games-classical": {
       "path": "rules/mihomo/games-classical.yaml",
@@ -2738,8 +2738,8 @@
       "group": "youtube",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 182,
-      "bytes": 1327
+      "rules": 181,
+      "bytes": 1329
     },
     "youtube-ipcidr": {
       "path": "rules/mihomo/youtube-ipcidr.mrs",
@@ -2786,8 +2786,8 @@
       "group": "twitter",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 25,
-      "bytes": 320
+      "rules": 23,
+      "bytes": 306
     },
     "twitter-classical": {
       "path": "rules/mihomo/twitter-classical.yaml",
@@ -2802,8 +2802,8 @@
       "group": "spotify",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 32,
-      "bytes": 460
+      "rules": 31,
+      "bytes": 447
     },
     "spotify-ipcidr": {
       "path": "rules/mihomo/spotify-ipcidr.mrs",
@@ -2842,48 +2842,48 @@
       "group": "tiktok",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 36,
-      "bytes": 492
+      "rules": 35,
+      "bytes": 477
     },
     "media": {
       "path": "rules/mihomo/media.mrs",
       "group": "media",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 3034,
-      "bytes": 26864
+      "rules": 2189,
+      "bytes": 19569
     },
     "media-ipcidr": {
       "path": "rules/mihomo/media-ipcidr.mrs",
       "group": "media",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 523,
-      "bytes": 724
+      "rules": 513,
+      "bytes": 666
     },
     "media-classical": {
       "path": "rules/mihomo/media-classical.yaml",
       "group": "media",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 66,
-      "bytes": 2397
+      "rules": 58,
+      "bytes": 2092
     },
     "disney": {
       "path": "rules/mihomo/disney.mrs",
       "group": "disney",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 233,
-      "bytes": 2553
+      "rules": 232,
+      "bytes": 2531
     },
     "social": {
       "path": "rules/mihomo/social.mrs",
       "group": "social",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 810,
-      "bytes": 7032
+      "rules": 766,
+      "bytes": 6729
     },
     "social-ipcidr": {
       "path": "rules/mihomo/social-ipcidr.mrs",
@@ -2906,16 +2906,16 @@
       "group": "dev",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1248,
-      "bytes": 11838
+      "rules": 1078,
+      "bytes": 10146
     },
     "cloud": {
       "path": "rules/mihomo/cloud.mrs",
       "group": "cloud",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 479,
-      "bytes": 4775
+      "rules": 312,
+      "bytes": 3130
     },
     "cloud-ipcidr": {
       "path": "rules/mihomo/cloud-ipcidr.mrs",
@@ -2930,8 +2930,8 @@
       "group": "onedrive",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 16,
-      "bytes": 280
+      "rules": 15,
+      "bytes": 265
     },
     "onedrive-classical": {
       "path": "rules/mihomo/onedrive-classical.yaml",
@@ -2946,40 +2946,40 @@
       "group": "finance",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 920,
-      "bytes": 8156
+      "rules": 909,
+      "bytes": 8016
     },
     "shopping": {
       "path": "rules/mihomo/shopping.mrs",
       "group": "shopping",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 662,
-      "bytes": 5811
+      "rules": 581,
+      "bytes": 5038
     },
     "proxy-extra": {
       "path": "rules/mihomo/proxy-extra.mrs",
       "group": "proxy-extra",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 27221,
-      "bytes": 191488
+      "rules": 17978,
+      "bytes": 130131
     },
     "proxy-extra-ipcidr": {
       "path": "rules/mihomo/proxy-extra-ipcidr.mrs",
       "group": "proxy-extra",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 18,
-      "bytes": 172
+      "rules": 1,
+      "bytes": 51
     },
     "proxy-extra-classical": {
       "path": "rules/mihomo/proxy-extra-classical.yaml",
       "group": "proxy-extra",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 4,
-      "bytes": 196
+      "rules": 2,
+      "bytes": 136
     }
   },
   "groups": {
@@ -2988,8 +2988,9 @@
       "normalizedRules": 281,
       "duplicateRules": 182,
       "coveredRules": 40,
-      "rules": 241,
-      "pruned": 222,
+      "crossGroupPruned": 44,
+      "rules": 197,
+      "pruned": 266,
       "outputs": [
         "ai",
         "ai-classical"
@@ -3000,8 +3001,9 @@
       "normalizedRules": 50,
       "duplicateRules": 26,
       "coveredRules": 6,
-      "rules": 44,
-      "pruned": 32,
+      "crossGroupPruned": 6,
+      "rules": 38,
+      "pruned": 38,
       "outputs": [
         "openai",
         "openai-ipcidr",
@@ -3013,6 +3015,7 @@
       "normalizedRules": 13,
       "duplicateRules": 22,
       "coveredRules": 0,
+      "crossGroupPruned": 0,
       "rules": 13,
       "pruned": 22,
       "outputs": [
@@ -3024,6 +3027,7 @@
       "normalizedRules": 142,
       "duplicateRules": 0,
       "coveredRules": 0,
+      "crossGroupPruned": 0,
       "rules": 142,
       "pruned": 0,
       "outputs": [
@@ -3036,8 +3040,9 @@
       "normalizedRules": 464,
       "duplicateRules": 19,
       "coveredRules": 8,
-      "rules": 456,
-      "pruned": 27,
+      "crossGroupPruned": 2,
+      "rules": 454,
+      "pruned": 29,
       "outputs": [
         "privacy",
         "privacy-classical"
@@ -3048,8 +3053,9 @@
       "normalizedRules": 111689,
       "duplicateRules": 872,
       "coveredRules": 41,
-      "rules": 111648,
-      "pruned": 913,
+      "crossGroupPruned": 72,
+      "rules": 111576,
+      "pruned": 985,
       "outputs": [
         "cn"
       ]
@@ -3059,8 +3065,9 @@
       "normalizedRules": 27103,
       "duplicateRules": 0,
       "coveredRules": 1,
-      "rules": 27102,
-      "pruned": 1,
+      "crossGroupPruned": 27096,
+      "rules": 6,
+      "pruned": 27097,
       "outputs": [
         "geolocation"
       ]
@@ -3070,8 +3077,9 @@
       "normalizedRules": 65,
       "duplicateRules": 0,
       "coveredRules": 2,
-      "rules": 63,
-      "pruned": 2,
+      "crossGroupPruned": 8,
+      "rules": 55,
+      "pruned": 10,
       "outputs": [
         "github"
       ]
@@ -3081,6 +3089,7 @@
       "normalizedRules": 13,
       "duplicateRules": 0,
       "coveredRules": 0,
+      "crossGroupPruned": 0,
       "rules": 13,
       "pruned": 0,
       "outputs": [
@@ -3092,8 +3101,9 @@
       "normalizedRules": 271,
       "duplicateRules": 81,
       "coveredRules": 1,
-      "rules": 270,
-      "pruned": 82,
+      "crossGroupPruned": 10,
+      "rules": 260,
+      "pruned": 92,
       "outputs": [
         "crypto",
         "crypto-classical"
@@ -3104,8 +3114,9 @@
       "normalizedRules": 11,
       "duplicateRules": 0,
       "coveredRules": 0,
-      "rules": 11,
-      "pruned": 0,
+      "crossGroupPruned": 5,
+      "rules": 6,
+      "pruned": 5,
       "outputs": [
         "biliintl"
       ]
@@ -3115,8 +3126,9 @@
       "normalizedRules": 112117,
       "duplicateRules": 586,
       "coveredRules": 178,
-      "rules": 111939,
-      "pruned": 764,
+      "crossGroupPruned": 110400,
+      "rules": 1539,
+      "pruned": 111164,
       "outputs": [
         "direct",
         "direct-ipcidr",
@@ -3128,6 +3140,7 @@
       "normalizedRules": 307548,
       "duplicateRules": 5042,
       "coveredRules": 86096,
+      "crossGroupPruned": 0,
       "rules": 221452,
       "pruned": 91138,
       "outputs": [
@@ -3142,8 +3155,9 @@
       "normalizedRules": 682,
       "duplicateRules": 47,
       "coveredRules": 42,
-      "rules": 640,
-      "pruned": 89,
+      "crossGroupPruned": 8,
+      "rules": 632,
+      "pruned": 97,
       "outputs": [
         "download",
         "download-classical"
@@ -3154,8 +3168,9 @@
       "normalizedRules": 1168,
       "duplicateRules": 626,
       "coveredRules": 74,
-      "rules": 1094,
-      "pruned": 700,
+      "crossGroupPruned": 302,
+      "rules": 792,
+      "pruned": 1002,
       "outputs": [
         "google",
         "google-ipcidr",
@@ -3167,8 +3182,9 @@
       "normalizedRules": 3662,
       "duplicateRules": 243,
       "coveredRules": 862,
-      "rules": 2800,
-      "pruned": 1105,
+      "crossGroupPruned": 156,
+      "rules": 2644,
+      "pruned": 1261,
       "outputs": [
         "apple",
         "apple-ipcidr",
@@ -3180,8 +3196,9 @@
       "normalizedRules": 762,
       "duplicateRules": 720,
       "coveredRules": 28,
-      "rules": 734,
-      "pruned": 748,
+      "crossGroupPruned": 79,
+      "rules": 655,
+      "pruned": 827,
       "outputs": [
         "microsoft",
         "microsoft-classical"
@@ -3192,8 +3209,9 @@
       "normalizedRules": 965,
       "duplicateRules": 882,
       "coveredRules": 59,
-      "rules": 906,
-      "pruned": 941,
+      "crossGroupPruned": 828,
+      "rules": 78,
+      "pruned": 1769,
       "outputs": [
         "games",
         "games-classical"
@@ -3204,8 +3222,9 @@
       "normalizedRules": 188,
       "duplicateRules": 189,
       "coveredRules": 2,
-      "rules": 186,
-      "pruned": 191,
+      "crossGroupPruned": 1,
+      "rules": 185,
+      "pruned": 192,
       "outputs": [
         "youtube",
         "youtube-ipcidr",
@@ -3217,6 +3236,7 @@
       "normalizedRules": 60,
       "duplicateRules": 81,
       "coveredRules": 0,
+      "crossGroupPruned": 0,
       "rules": 60,
       "pruned": 81,
       "outputs": [
@@ -3230,8 +3250,9 @@
       "normalizedRules": 26,
       "duplicateRules": 16,
       "coveredRules": 0,
-      "rules": 26,
-      "pruned": 16,
+      "crossGroupPruned": 2,
+      "rules": 24,
+      "pruned": 18,
       "outputs": [
         "twitter",
         "twitter-classical"
@@ -3242,8 +3263,9 @@
       "normalizedRules": 38,
       "duplicateRules": 52,
       "coveredRules": 2,
-      "rules": 36,
-      "pruned": 54,
+      "crossGroupPruned": 1,
+      "rules": 35,
+      "pruned": 55,
       "outputs": [
         "spotify",
         "spotify-ipcidr",
@@ -3255,6 +3277,7 @@
       "normalizedRules": 38,
       "duplicateRules": 32,
       "coveredRules": 1,
+      "crossGroupPruned": 0,
       "rules": 37,
       "pruned": 33,
       "outputs": [
@@ -3267,8 +3290,9 @@
       "normalizedRules": 37,
       "duplicateRules": 0,
       "coveredRules": 1,
-      "rules": 36,
-      "pruned": 1,
+      "crossGroupPruned": 1,
+      "rules": 35,
+      "pruned": 2,
       "outputs": [
         "tiktok"
       ]
@@ -3278,8 +3302,9 @@
       "normalizedRules": 3740,
       "duplicateRules": 1763,
       "coveredRules": 117,
-      "rules": 3623,
-      "pruned": 1880,
+      "crossGroupPruned": 863,
+      "rules": 2760,
+      "pruned": 2743,
       "outputs": [
         "media",
         "media-ipcidr",
@@ -3291,8 +3316,9 @@
       "normalizedRules": 237,
       "duplicateRules": 13,
       "coveredRules": 4,
-      "rules": 233,
-      "pruned": 17,
+      "crossGroupPruned": 1,
+      "rules": 232,
+      "pruned": 18,
       "outputs": [
         "disney"
       ]
@@ -3302,8 +3328,9 @@
       "normalizedRules": 890,
       "duplicateRules": 122,
       "coveredRules": 5,
-      "rules": 885,
-      "pruned": 127,
+      "crossGroupPruned": 44,
+      "rules": 841,
+      "pruned": 171,
       "outputs": [
         "social",
         "social-ipcidr",
@@ -3315,8 +3342,9 @@
       "normalizedRules": 1259,
       "duplicateRules": 26,
       "coveredRules": 11,
-      "rules": 1248,
-      "pruned": 37,
+      "crossGroupPruned": 170,
+      "rules": 1078,
+      "pruned": 207,
       "outputs": [
         "dev"
       ]
@@ -3326,8 +3354,9 @@
       "normalizedRules": 1618,
       "duplicateRules": 6,
       "coveredRules": 2,
-      "rules": 1616,
-      "pruned": 8,
+      "crossGroupPruned": 167,
+      "rules": 1449,
+      "pruned": 175,
       "outputs": [
         "cloud",
         "cloud-ipcidr"
@@ -3338,8 +3367,9 @@
       "normalizedRules": 22,
       "duplicateRules": 17,
       "coveredRules": 1,
-      "rules": 21,
-      "pruned": 18,
+      "crossGroupPruned": 1,
+      "rules": 20,
+      "pruned": 19,
       "outputs": [
         "onedrive",
         "onedrive-classical"
@@ -3350,8 +3380,9 @@
       "normalizedRules": 922,
       "duplicateRules": 3,
       "coveredRules": 2,
-      "rules": 920,
-      "pruned": 5,
+      "crossGroupPruned": 11,
+      "rules": 909,
+      "pruned": 16,
       "outputs": [
         "finance"
       ]
@@ -3361,8 +3392,9 @@
       "normalizedRules": 662,
       "duplicateRules": 0,
       "coveredRules": 0,
-      "rules": 662,
-      "pruned": 0,
+      "crossGroupPruned": 81,
+      "rules": 581,
+      "pruned": 81,
       "outputs": [
         "shopping"
       ]
@@ -3372,8 +3404,9 @@
       "normalizedRules": 27261,
       "duplicateRules": 405,
       "coveredRules": 18,
-      "rules": 27243,
-      "pruned": 423,
+      "crossGroupPruned": 9262,
+      "rules": 17981,
+      "pruned": 9685,
       "outputs": [
         "proxy-extra",
         "proxy-extra-ipcidr",
@@ -3387,7 +3420,8 @@
     "normalizedRules": 604004,
     "duplicateRules": 12073,
     "coveredRules": 87604,
-    "rules": 516400,
+    "rules": 366779,
+    "crossGroupPruned": 149621,
     "crossGroupRules": 137734,
     "crossGroupDuplicateOccurrences": 149622
   }

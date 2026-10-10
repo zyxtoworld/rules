@@ -222,3 +222,30 @@ export function splitRules(rules) {
   }
   return output;
 }
+
+export function dedupeCrossGroupExact(groupRules, priority) {
+  const priorityIndex = new Map(priority.map((group, index) => [group, index]));
+  const groups = [...groupRules.keys()].sort((left, right) => {
+    const leftIndex = priorityIndex.get(left) ?? priority.length;
+    const rightIndex = priorityIndex.get(right) ?? priority.length;
+    return leftIndex - rightIndex || left.localeCompare(right);
+  });
+  const seen = new Set();
+  const deduped = new Map();
+  const removed = new Map();
+  for (const group of groups) {
+    const kept = [];
+    let removedCount = 0;
+    for (const rule of groupRules.get(group) || []) {
+      if (seen.has(rule)) {
+        removedCount += 1;
+        continue;
+      }
+      seen.add(rule);
+      kept.push(rule);
+    }
+    deduped.set(group, kept);
+    removed.set(group, removedCount);
+  }
+  return { deduped, removed };
+}
