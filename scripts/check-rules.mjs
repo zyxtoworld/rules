@@ -72,6 +72,14 @@ async function main() {
     const servers = Array.isArray(dnsPolicies[key]) ? dnsPolicies[key] : [];
     if (!servers.some(server => String(server).includes('#🔍 谷歌服务'))) errors.push(`DNS policy ${key} 必须通过谷歌策略组代理`);
   }
+
+  const ruleDownloadGroup = (config['proxy-groups'] || []).find(group => group.name === '📦 规则下载');
+  if (!ruleDownloadGroup || ruleDownloadGroup.type !== 'fallback') errors.push('必须配置隐藏的 📦 规则下载 fallback 组');
+  else {
+    if (ruleDownloadGroup.proxies?.[0] !== 'DIRECT') errors.push('📦 规则下载 必须优先使用 DIRECT');
+    if (!ruleDownloadGroup.proxies?.includes('⚠️ 故障转移')) errors.push('📦 规则下载 必须保留 ⚠️ 故障转移 兜底');
+  }
+  if (Object.values(providers || {}).some(provider => provider.proxy !== '📦 规则下载')) errors.push('所有规则 provider 必须使用 📦 规则下载 组');
   const privacyRules = config.rules.filter(rule => String(rule).includes('RULE-SET,privacy'));
   const privacyRuleIndex = config.rules.findIndex(rule => String(rule).includes('RULE-SET,privacy'));
   const cnRuleIndex = config.rules.findIndex(rule => String(rule).includes('RULE-SET,cn'));

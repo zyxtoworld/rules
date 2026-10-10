@@ -14,7 +14,7 @@ https://testingcf.jsdelivr.net/gh/zyxtoworld/rules@main/rules/mihomo/ai.mrs
 
 `convert.js` 不嵌入域名、IP 或进程名规则；这些条目全部由 MRS 或 classical YAML provider 生成。转换器只保留 provider 组合、动态 `GEOIP` 分类和最终兜底动作。
 
-生成配置现在显式启用 DNS 防泄漏策略：fake-ip、IPv6 解析保留并由 TUN `strict-route: true` 接管、DoH/DoT 上游优先使用 HTTP/3（`prefer-h3: true`）；中国大陆和私有域名使用加密国内 DNS，非中国域名及 Google 相关域名的 DNS 请求通过 `🔍 谷歌服务` 策略组代理。代理节点域名使用独立的 `proxy-server-nameserver`，不回退到系统 DNS。这样既保留 IPv6，又避免 IPv6/自定义 DNS 绕过内核。
+生成配置现在显式启用 DNS 防泄漏策略：fake-ip、IPv6 解析保留并由 TUN `strict-route: true` 接管、DoH/DoT 上游优先使用 HTTP/3（`prefer-h3: true`）；中国大陆和私有域名使用加密国内 DNS，非中国域名及 Google 相关域名的 DNS 请求通过 `🔍 谷歌服务` 策略组代理。规则 provider 下载使用隐藏的 `📦 规则下载` 组，优先 `DIRECT`，失败后才回退到 `⚠️ 故障转移`，避免首次启动时依赖尚未运行的代理组。代理节点域名使用独立的 `proxy-server-nameserver`，不回退到系统 DNS。这样既保留 IPv6，又避免 IPv6/自定义 DNS 绕过内核。
 
 域名和 IP 规则优先使用 Mihomo 原生 MRS：
 

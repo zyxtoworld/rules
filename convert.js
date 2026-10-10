@@ -355,6 +355,7 @@ function buildConfig(proxies) {
     manual: '🚀 手动切换',
     auto: '♻️ 自动选择',
     fallback: '⚠️ 故障转移',
+    ruleDownload: '📦 规则下载',
     lowRateDownload: '📥 低倍率下载',
     ai: '🤖 AI服务',
     openai: '🧠 OpenAI',
@@ -507,7 +508,7 @@ function buildConfig(proxies) {
     url,
     path,
     interval: 172800,
-    proxy: POLICY.fallback
+    proxy: POLICY.ruleDownload
   });
 
   // MRS 只支持 domain/ipcidr；无法表达的 DOMAIN-KEYWORD、PROCESS-* 等规则保留为 classical YAML。
@@ -663,6 +664,7 @@ function buildConfig(proxies) {
   addSelectGroup(POLICY.manual, [POLICY.auto, POLICY.fallback, ...allProxyNames]);
   addHealthCheckGroup(POLICY.auto, 'url-test', autoCandidates, { tolerance: 50, lazy: false, hidden: true });
   addHealthCheckGroup(POLICY.fallback, 'fallback', failoverCandidates, { hidden: true });
+  addHealthCheckGroup(POLICY.ruleDownload, 'fallback', [DIRECT, POLICY.fallback], { lazy: true, hidden: true });
   addHealthCheckGroup(POLICY.lowRateDownload, 'fallback', lowRateDownloadCandidates, { lazy: true });
 
   // 策略组（偏好地区靠前 + 全部地区兜底）
