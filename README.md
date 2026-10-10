@@ -32,7 +32,7 @@ MRS 不能表达的 `DOMAIN-KEYWORD`、`PROCESS-NAME`、`PROCESS-PATH` 等规则
 - `rules/mihomo/*-classical.yaml`：无法用 MRS 表达的少量 classical 规则。
 - `rules/manifest.json`：来源、分片、格式、行为、文件大小和规则数量；`groups` 是分片合计，`outputs` 是实际文件清单。
 - `sources.json`：上游来源清单。
-- `scripts/build-rules.mjs`：并发下载、解析、去重、后缀最小化、MRS 转换和大文件分片脚本；构建记录来源摘要，并在全部产物完成后原子替换输出目录。
+- `scripts/build-rules.mjs`：并发下载、解析（含 plain `cidr-list`）、去重、后缀最小化、MRS 转换和大文件分片脚本；构建记录来源摘要，并在全部产物完成后原子替换输出目录。
 - `scripts/check-rules.mjs`：只读校验转换器、manifest 和生成产物的一致性，并检查单文件与总大小上限及隐私 provider 顺序。
 - `scripts/rule-utils.mjs`：规则解析、归一化、全规则组去重和分类型逻辑。
 - `scripts/rule-utils.test.mjs`：规则解析与去重 fixture 测试。
@@ -62,11 +62,11 @@ CI 会固定下载并校验官方 Mihomo `v1.19.32` 转换器。构建脚本会�
 - `privacy`：内置公网 IP 查询、WebRTC/STUN/TURN 和应用 HTTPDNS 端点；规则位于 `ads` 之后、`cn` 之前，统一走现有 `🚀 手动切换` 代理组而不另建隐私组，因此所有业务流量共享同一全局防泄漏出口；默认不阻断通用 STUN/TURN 端口，以保留实时音视频、联机游戏和 VoIP 可用性。动态 IP、未知端点、服务端到服务端请求和浏览器 WebRTC 本地候选仍需要应用侧控制。
 - `proxy-extra`：Loyalsoldier、RuleGo 和 Rule-for-OCD 的代理补充；`convert.js` 仍负责排除中国域名和中国 IP。
 - 除 `direct` 和 `ads` 外，服务策略组统一附加 `NOT RULE-SET,cn` 与 `NOT GEOIP,CN`；即使上游混合列表包含国内条目，也会交给前面的国内直连规则处理。
-- `cloud`：只处理非中国大陆云服务域名/IP；阿里云盘、百度网盘、腾讯微云等国内网盘归入 `direct`。
+- `cloud`：只处理非中国大陆云服务域名/IP；AS20473 的聚合 CIDR 也归入这里，只表示 Vultr/云平台网络，不代表某个具体业务；阿里云盘、百度网盘、腾讯微云等国内网盘归入 `direct`。
 - `ai`：除上游 AI 规则外，补充 RuleGo、SukkaW 和 Claude/Anthropic 服务域名，并统一走 `🤖 AI服务`。
 - `apple`：除上游 Apple 规则外，合并 RuleGo、NobyDa、SukkaW、LM-Firefly、scomper 等 Apple、Siri、Search、Apple Intelligence 和 Private Cloud Compute 主机；非中国大陆 Apple 流量默认优先走代理，`DIRECT` 仍可手动选择。
 - 服务文件按 AI、OpenAI、Claude、Google、Apple、Microsoft、OneDrive、Disney+、游戏、媒体、社交、开发、云服务、金融和购物等策略组拆分；保留通用 AI/媒体/云服务组作为未单独拆分服务的兜底。
-- `IP-ASN` 是否保留由每个来源的 `dropTypes` 控制，并非全局过滤；当前 OpenAI classical provider 仍包含少量 `IP-ASN` 规则，因此配置仍声明 ASN 数据源。
+- `IP-ASN` 不直接发布给客户端：OpenAI 来源过滤 `IP-ASN` 并保留明确的 IP-CIDR；AS20473 通过 `cidr-list` 转成 `cloud-ipcidr.mrs`，避免 ClashMi iOS 初始化 ASN 数据库。
 
 上游项目的规则内容遵循各自项目的许可证和使用说明；本仓库只维护生成脚本、来源清单和聚合结果。
 
@@ -88,5 +88,6 @@ CI 会固定下载并校验官方 Mihomo `v1.19.32` 转换器。构建脚本会�
 - [lyq2010/clash-ruleset](https://github.com/lyq2010/clash-ruleset)：仅接入 Claude、Binance、Mail 和 Docker 等公共服务增量；个人直连/代理列表不接入。
 - [reonokiy/sing-box-ruleset](https://github.com/reonokiy/sing-box-ruleset)：补充 sing-box JSON 格式的 Gemini、OpenAI、Anthropic、Apple、Microsoft 和广告规则。
 - [Accademia/Additional_Rule_For_Clash](https://github.com/Accademia/Additional_Rule_For_Clash)：补充 Copilot、Grok、AppleAI、MicrosoftAPPs、网盘、Signal、Kwai、Parsec、RustDesk、WaybackMachine、Pornhub 和 MacAppUpgrade 规则。
+- [ipverse/asn-ip](https://github.com/ipverse/asn-ip)：提供 AS20473 聚合 IPv4/IPv6 CIDR；仅作为云平台网络分类，不作为 OpenAI 专属地址证明。
 
 本仓库的 `LICENSE` 仅覆盖本仓库脚本、元数据和编排内容；生成规则的具体条目仍遵循各上游项目的许可证和使用说明，完整来源与过滤选项记录在 `sources.json`。

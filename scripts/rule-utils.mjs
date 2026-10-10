@@ -1,3 +1,5 @@
+import { isIP } from 'node:net';
+
 const ALLOWED_RULE_TYPES = new Set([
   'DOMAIN',
   'DOMAIN-SUFFIX',
@@ -100,6 +102,23 @@ export function parseRuleLine(rawLine, dropTypes = [], dropRules = []) {
 export function parseSource(text, source) {
   const dropTypeSet = asUpperSet(source.dropTypes || []);
   const dropRuleSet = asSet(source.dropRules || []);
+  if (source.kind === 'cidr-list') {
+    const rules = [];
+    for (const rawLine of String(text).split(/\r?\n/)) {
+      const line = rawLine.trim();
+      if (!line || line.startsWith('#')) continue;
+      const value = line.split(/\s+/, 1)[0];
+      if (!value.includes('/')) continue;
+      const [address, prefix] = value.split('/');
+      const version = isIP(address);
+      const prefixLength = Number(prefix);
+      const maxPrefix = version === 6 ? 128 : 32;
+      if (version === 0 || !Number.isInteger(prefixLength) || prefixLength < 0 || prefixLength > maxPrefix) continue;
+      const type = version === 6 ? 'IP-CIDR6' : 'IP-CIDR';
+      rules.push(...parseRuleLineWithSets(`${type},${value}`, dropTypeSet, dropRuleSet));
+    }
+    return rules;
+  }
   if (source.kind === 'singbox') {
     const typeMap = {
       domain: 'DOMAIN',

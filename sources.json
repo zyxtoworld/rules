@@ -16,7 +16,7 @@
     ],
     "openai": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.list","kind":"list","source":"MetaCubeX/meta-rules-dat: openai"},
-      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: OpenAI"},
+      {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: OpenAI","dropTypes":["IP-ASN"]},
       {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/GenAI/OpenAI.list","kind":"clash","source":"ConnersHua/RuleGo: GenAI/OpenAI"}
       ,{"url":"https://raw.githubusercontent.com/reonokiy/sing-box-ruleset/main/source/geosite-openai.json","kind":"singbox","source":"reonokiy/sing-box-ruleset: openai"}
     ],
@@ -314,6 +314,8 @@
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/vercel.list","kind":"list","source":"MetaCubeX/meta-rules-dat: vercel"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bitwarden.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bitwarden"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/canva.list","kind":"list","source":"MetaCubeX/meta-rules-dat: canva"},
+      {"url":"https://raw.githubusercontent.com/ipverse/asn-ip/master/as/20473/ipv4-aggregated.txt","kind":"cidr-list","source":"ipverse/asn-ip: AS20473 IPv4 aggregated"},
+      {"url":"https://raw.githubusercontent.com/ipverse/asn-ip/master/as/20473/ipv6-aggregated.txt","kind":"cidr-list","source":"ipverse/asn-ip: AS20473 IPv6 aggregated"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Notion/Notion.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Notion"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Salesforce/Salesforce.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Salesforce"},
       {"url":"https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Zoho/Zoho.yaml","kind":"clash","source":"blackmatrix7/ios_rule_script: Zoho"},

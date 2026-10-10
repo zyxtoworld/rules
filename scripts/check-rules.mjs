@@ -121,6 +121,17 @@ async function main() {
   for (const name of setDifference(providerNames, outputNames)) errors.push(`转换器引用了 manifest 中不存在的 provider：${name}`);
   for (const name of setDifference(outputNames, providerNames)) errors.push(`manifest 包含转换器未声明的 provider：${name}`);
 
+  const openaiClassicalOutput = manifestOutputs?.['openai-classical'];
+  if (openaiClassicalOutput) {
+    try {
+      const content = await readFile(outputFilePath(openaiClassicalOutput), 'utf8');
+      if (/\bIP-ASN,/.test(content)) errors.push('openai-classical 不得包含 IP-ASN；iOS 兼容覆盖应使用 IP-CIDR');
+    } catch {
+      // The output existence check below reports the missing file.
+    }
+  }
+  if (!outputNames.has('cloud-ipcidr')) errors.push('manifest 必须包含 cloud-ipcidr provider 以承载云平台 CIDR');
+
   const referencedPaths = new Set();
   let totalOutputBytes = 0;
   const pathOwners = new Map();

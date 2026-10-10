@@ -12,6 +12,15 @@ test('parses supported list syntaxes and source filters', () => {
   assert.deepEqual(parseRuleLine('include:other.list'), []);
 });
 
+test('parses plain CIDR list sources', () => {
+  const source = { kind: 'cidr-list' };
+  const rules = parseSource('# AS20473\n5.83.210.0/24\n2001:19f0::/38\n203.0.113.0/33\ninvalid', source);
+  assert.deepEqual(rules, [
+    'IP-CIDR,5.83.210.0/24',
+    'IP-CIDR6,2001:19f0::/38',
+  ]);
+});
+
 test('parses sing-box rule objects', () => {
   const source = { kind: 'singbox' };
   const rules = parseSource(JSON.stringify({ rules: [{ domain: ['api.example.com'], domain_suffix: ['example.org'], ip_cidr: ['192.0.2.0/24'], process_name: ['demo'] }] }), source);
