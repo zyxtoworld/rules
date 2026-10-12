@@ -160,7 +160,7 @@ function buildConfig(proxies) {
     ['台灣|Taiwan', 'TW'], ['澳門|Macao|Macau', 'MO'],
     ['HongKong|Hong Kong', 'HK'], ['狮城|Singapore', 'SG'],
     ['东京|大阪|Japan|Tokyo|Osaka', 'JP'], ['首尔|韓國|Korea|Seoul', 'KR'],
-    ['新泽西|New Jersey|美國|United States|America|圣何塞|硅谷|洛杉矶|San Jose|Los Angeles', 'US'],
+    ['新泽西|New Jersey|美國|United States|America|圣何塞|硅谷|洛杉矶|San Jose|Los Angeles|凤凰城|鳳凰城|Phoenix|Arizona', 'US'],
     ['英國|伦敦|United Kingdom|Britain|London', 'GB'],
     ['德國|法兰克福|Germany|Frankfurt', 'DE'], ['法國|巴黎|France|Paris', 'FR'],
     ['Canada', 'CA'], ['澳洲|悉尼|Australia|Sydney', 'AU'],
