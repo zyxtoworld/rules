@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const convertPath = join(repoRoot, 'convert.js');
-const sourceManifestPath = join(repoRoot, 'sources.json');
+const sourceManifestPath = join(repoRoot, 'config', 'sources.json');
 const outputManifestPath = join(repoRoot, 'rules', 'manifest.json');
 const outputRoot = join(repoRoot, 'rules', 'mihomo');
 const maxOutputBytes = 1_400_000;

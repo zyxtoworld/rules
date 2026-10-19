@@ -9,7 +9,7 @@ import { dedupeCrossGroupExact, minimizeRuleSet, parseSource, splitRules } from 
 
 const execFileAsync = promisify(execFile);
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const sourceManifestPath = join(repoRoot, 'sources.json');
+const sourceManifestPath = join(repoRoot, 'config', 'sources.json');
 const outputManifestPath = join(repoRoot, 'rules', 'manifest.json');
 const outputRoot = join(repoRoot, 'rules', 'mihomo');
 const userAgent = 'zyxtoworld-rules-builder/2.0';
@@ -462,13 +462,33 @@ const builtInRuleSourceNames = {
 };
 const maxMrsBytes = 1_400_000;
 
-function jsdelivrMirrorUrl(url) {
-  const match = url.match(/^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/([^/]+)\/(.+)$/);
-  return match ? `https://testingcf.jsdelivr.net/gh/${match[1]}/${match[2]}@${match[3]}/${match[4]}` : null;
+function jsdelivrMirrorUrls(url) {
+  const rawMatch = url.match(/^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/([^/]+)\/(.+)$/);
+  if (rawMatch) {
+    const [, owner, repository, ref, path] = rawMatch;
+    return [
+      `https://testingcf.jsdelivr.net/gh/${owner}/${repository}@${ref}/${path}`,
+      `https://cdn.jsdelivr.net/gh/${owner}/${repository}@${ref}/${path}`,
+    ];
+  }
+  const jsdelivrMatch = url.match(/^https:\/\/(?:testingcf|cdn)\.jsdelivr\.net\/gh\/([^/]+)\/([^@/]+)@([^/]+)\/(.+)$/);
+  if (jsdelivrMatch) {
+    const [, owner, repository, ref, path] = jsdelivrMatch;
+    return [
+      `https://testingcf.jsdelivr.net/gh/${owner}/${repository}@${ref}/${path}`,
+      `https://cdn.jsdelivr.net/gh/${owner}/${repository}@${ref}/${path}`,
+      `https://raw.githubusercontent.com/${owner}/${repository}/${ref}/${path}`,
+    ];
+  }
+  return [];
+}
+
+function sourceCandidates(url) {
+  return [...new Set([...jsdelivrMirrorUrls(url), url].filter(Boolean))];
 }
 
 async function fetchText(url) {
-  const candidates = [...new Set([jsdelivrMirrorUrl(url), url].filter(Boolean))];
+  const candidates = sourceCandidates(url);
   let lastError;
   for (const candidate of candidates) {
     for (let attempt = 1; attempt <= retryCount; attempt += 1) {

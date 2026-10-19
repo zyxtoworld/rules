@@ -31,14 +31,14 @@ MRS 不能表达的 `DOMAIN-KEYWORD`、`PROCESS-NAME`、`PROCESS-PATH` 等规则
 - `rules/mihomo/*.mrs`：Mihomo 原生 `domain` / `ipcidr` 二进制规则集。
 - `rules/mihomo/*-classical.yaml`：无法用 MRS 表达的少量 classical 规则。
 - `rules/manifest.json`：来源、分片、格式、行为、文件大小和规则数量；`groups` 是分片合计，`outputs` 是实际文件清单。
-- `sources.json`：上游来源清单。
+- `config/sources.json`：上游来源清单。
 - `scripts/build-rules.mjs`：并发下载、解析（含 plain `cidr-list`）、去重、后缀最小化、MRS 转换和大文件分片脚本；构建记录来源摘要，并在全部产物完成后原子替换输出目录。
 - `scripts/check-rules.mjs`：只读校验转换器、manifest 和生成产物的一致性，并检查单文件与总大小上限及隐私 provider 顺序。
 - `scripts/rule-utils.mjs`：规则解析、归一化、全规则组去重和分类型逻辑。
 - `scripts/rule-utils.test.mjs`：规则解析与去重 fixture 测试。
 - `.github/workflows/build-rules.yml`：每周自动更新，也可以手动运行。
 
-构建前会对来源响应做大小和 HTML 错误页检查；`raw.githubusercontent.com` 来源会优先尝试同一 ref 的 jsDelivr 镜像，镜像失败后再回源站。生成的 `manifest.json` 记录实际获取 URL、字节数和 SHA-256 摘要；`sources.json` 中提供 `sha256` 时，构建会强制校验。
+构建前会对来源响应做大小和 HTML 错误页检查；GitHub 原始地址和 jsDelivr 地址会依次尝试 `testingcf.jsdelivr.net`、`cdn.jsdelivr.net`，最后回源站。生成的 `manifest.json` 记录实际获取 URL、字节数和 SHA-256 摘要；`config/sources.json` 中提供 `sha256` 时，构建会强制校验。
 
 构建需要官方 Mihomo 内核提供的 `convert-ruleset` 命令，不把内核提交到仓库。先设置 `MIHOMO_BIN`，再执行：
 
@@ -90,4 +90,4 @@ CI 会固定下载并校验官方 Mihomo `v1.19.32` 转换器。构建脚本会�
 - [Accademia/Additional_Rule_For_Clash](https://github.com/Accademia/Additional_Rule_For_Clash)：补充 Copilot、Grok、AppleAI、MicrosoftAPPs、网盘、Signal、Kwai、Parsec、RustDesk、WaybackMachine、Pornhub 和 MacAppUpgrade 规则。
 - [ipverse/asn-ip](https://github.com/ipverse/asn-ip)：提供 AS20473 聚合 IPv4/IPv6 CIDR；仅作为云平台网络分类，不作为 OpenAI 专属地址证明。
 
-本仓库的 `LICENSE` 仅覆盖本仓库脚本、元数据和编排内容；生成规则的具体条目仍遵循各上游项目的许可证和使用说明，完整来源与过滤选项记录在 `sources.json`。
+本仓库的 `LICENSE` 仅覆盖本仓库脚本、元数据和编排内容；生成规则的具体条目仍遵循各上游项目的许可证和使用说明，完整来源与过滤选项记录在 `config/sources.json`。
