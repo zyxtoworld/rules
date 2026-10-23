@@ -23,6 +23,7 @@ type: http
 behavior: domain # 或 ipcidr
 format: mrs
 ```
+构建时会把 `DOMAIN-SUFFIX,example.com` 转为 Mihomo domain provider 的 `+.example.com`，保留根域和全部子域；把 `DOMAIN,example.com` 转为 `full:example.com`，保持精确匹配，避免 MRS 只匹配子域或意外扩大范围。
 
 MRS 不能表达的 `DOMAIN-KEYWORD`、`PROCESS-NAME`、`PROCESS-PATH` 等规则保留在体积很小的 `*-classical.yaml` provider 中。`ads` 固定拆成 `ads.mrs` 和 `ads-2.mrs`，构建脚本会在固定分片超出大小上限时失败，要求同步更新构建布局和 `convert.js`，避免生成未被订阅引用的分片。
 

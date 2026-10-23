@@ -564,7 +564,8 @@ function renderYaml(rules) {
 function toMrsPayloadRule(rule, behavior) {
   const [type, value] = rule.split(',', 2);
   if (behavior === 'domain') {
-    return type === 'DOMAIN-SUFFIX' ? `.${value}` : value;
+    if (type === 'DOMAIN-SUFFIX') return `+.${value}`;
+    if (type === 'DOMAIN') return `full:${value}`;
   }
   return value;
 }
