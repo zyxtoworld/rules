@@ -88,7 +88,14 @@ function buildConfig(proxies) {
   function ensureUniqueProxyNames(list) {
     const used = new Map();
     for (const proxy of list) {
-      const baseName = String(proxy.name || '未命名节点').trim() || '未命名节点';
+      let baseName = String(proxy.name || '')
+        // Remove invisible/control characters that can change YAML tokenization.
+        .replace(/[\u0000-\u001F\u007F\u0080-\u009F\u200B-\u200D\u2060\uFEFF]/g, '')
+        .trim() || '未命名节点';
+      // A name beginning with a YAML indicator must not be emitted as a plain scalar.
+      if (/^(?:[-?:](?:\s|$)|[!&*#{}\[\],>|%@`])/.test(baseName)) {
+        baseName = `节点 ${baseName}`;
+      }
       const count = used.get(baseName) || 0;
       used.set(baseName, count + 1);
       if (count === 0) {
