@@ -42,7 +42,12 @@ function operator(proxies) {
 function buildConfig(proxies) {
   const regionCache = new Map();
   const isoCache = new Map();
+  const invisibleStringChars = /[\u0000-\u001F\u007F\u0080-\u009F\u200B-\u200D\u2060\uFEFF]/g;
+  function sanitizeString(value) {
+    return value.replace(invisibleStringChars, '');
+  }
   function cloneValue(value) {
+    if (typeof value === 'string') return sanitizeString(value);
     if (Array.isArray(value)) return value.map(cloneValue);
     if (value && typeof value === 'object') {
       return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, cloneValue(item)]));
