@@ -46,6 +46,12 @@ function buildConfig(proxies) {
   function sanitizeString(value) {
     return value.replace(invisibleStringChars, '');
   }
+  function yamlSafeString(value) {
+    return value
+      .replace(/["\\]/g, '\\$&')
+      .replace(/\r/g, '\\r')
+      .replace(/\n/g, '\\n');
+  }
   function cloneValue(value) {
     if (typeof value === 'string') return sanitizeString(value);
     if (Array.isArray(value)) return value.map(cloneValue);
