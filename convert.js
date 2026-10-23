@@ -43,20 +43,25 @@ function buildConfig(proxies) {
   const regionCache = new Map();
   const isoCache = new Map();
   const invisibleStringChars = /[\u0000-\u001F\u007F\u0080-\u009F\u200B-\u200D\u2060\uFEFF]/g;
-  function sanitizeString(value) {
-    return value.replace(invisibleStringChars, '');
+  function sanitizeString(value, key = '') {
+    let sanitized = value.replace(invisibleStringChars, '');
+    if (key === 'short-id') {
+      const candidates = sanitized.match(/[0-9a-fA-F]{1,16}/g) || [];
+      return candidates.sort((a, b) => b.length - a.length)[0] || '';
+    }
+    if (/-service-name$/.test(key)) {
+      sanitized = sanitized
+        .replace(/^["']+|["']+$/g, '')
+        .replace(/^[!@&*#{}\[\],>|%@`]+/, '')
+        .trim();
+    }
+    return sanitized;
   }
-  function yamlSafeString(value) {
-    return value
-      .replace(/["\\]/g, '\\$&')
-      .replace(/\r/g, '\\r')
-      .replace(/\n/g, '\\n');
-  }
-  function cloneValue(value) {
-    if (typeof value === 'string') return sanitizeString(value);
-    if (Array.isArray(value)) return value.map(cloneValue);
+  function cloneValue(value, key = '') {
+    if (typeof value === 'string') return sanitizeString(value, key);
+    if (Array.isArray(value)) return value.map(item => cloneValue(item, key));
     if (value && typeof value === 'object') {
-      return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, cloneValue(item)]));
+      return Object.fromEntries(Object.entries(value).map(([childKey, item]) => [childKey, cloneValue(item, childKey)]));
     }
     return value;
   }
