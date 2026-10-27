@@ -685,7 +685,7 @@ function buildConfig(proxies) {
   }
 
   addSelectGroup(POLICY.manual, [POLICY.auto, POLICY.fallback, ...allProxyNames]);
-  addHealthCheckGroup(POLICY.auto, 'url-test', autoCandidates, { tolerance: 50, lazy: false, hidden: true });
+  addHealthCheckGroup(POLICY.auto, 'url-test', autoCandidates, { tolerance: 50, lazy: false, hidden: false });
   addHealthCheckGroup(POLICY.fallback, 'fallback', failoverCandidates, { hidden: true });
   addHealthCheckGroup(POLICY.ruleDownload, 'fallback', [DIRECT, POLICY.fallback], { lazy: true, hidden: true });
   addHealthCheckGroup(POLICY.lowRateDownload, 'fallback', lowRateDownloadCandidates, { lazy: true });
