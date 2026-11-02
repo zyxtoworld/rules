@@ -31,11 +31,31 @@ async function main(config) {
   return buildConfig(proxies);
 }
 
-// 订阅/集合入口；mihomoProfile 场景下主动抛错以回退到 main
+// 订阅/集合入口；同时直接处理 Sub-Store 的 mihomoProfile 文件对象，
+// 避免故意抛错后让旧版快捷脚本包装器解析整份文件。
 function operator(proxies) {
-  // Sub-Store passes node lists as arrays. Any object input belongs to the
-  // mihomoProfile/file path and must fall back instead of becoming 0 nodes.
-  if (proxies && !Array.isArray(proxies)) throw new Error('fallback to nodeFunc/main for non-array input');
+  if (proxies && proxies.$content != null && proxies.$file) {
+    const yamlApi = typeof yaml === 'undefined' ? null : yaml;
+    let input;
+    if (typeof proxies.$content === 'string') {
+      input = yamlApi && typeof yamlApi.safeLoad === 'function'
+        ? yamlApi.safeLoad(proxies.$content) || {}
+        : JSON.parse(proxies.$content);
+    } else {
+      input = proxies.$content;
+    }
+    const output = buildConfig(input && typeof input === 'object' ? input.proxies : []);
+    return {
+      ...proxies,
+      $content: yamlApi && typeof yamlApi.safeDump === 'function'
+        ? yamlApi.safeDump(output)
+        : JSON.stringify(output),
+    };
+  }
+  if (proxies && !Array.isArray(proxies)) {
+    if (Array.isArray(proxies.proxies)) return buildConfig(proxies.proxies);
+    throw new Error('fallback to nodeFunc/main for non-array input');
+  }
   return buildConfig(Array.isArray(proxies) ? proxies : []);
 }
 
