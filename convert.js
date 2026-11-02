@@ -1,67 +1,24 @@
 // ============================================================================
-// OneSmartPro MCX - Sub-Store 订阅转换脚本（最终版）
+// Sub-Store Mihomo profile converter
 // ----------------------------------------------------------------------------
 // 功能：
 //   0. 节点去重：按除 name 外的完整节点配置做稳定比较；重复时优先保留能识别
-//      出地区的节点名；同名但配置不同的节点自动追加序号，避免 mihomo 重名冲突。
-//   1. 地区分组全自动：识别 国旗 emoji / 中文·英文全称 / 国家简写(大小写)，
-//      覆盖 ISO 3166-1 全部 250 个国家/地区，有节点才建组。
-//   2. 旗帜纠正：文字判定优先于旗帜，机场标错的旗帜（如把台湾标成🇨🇳）会被
-//      自动改成正确旗帜后再分组；无旗节点自动补旗。
-//   3. 策略组智能化：AI/YouTube/Netflix/Telegram 等，偏好地区靠前 +
-//      其余全部地区兜底，可选全地区。
-//   4. 规则运行时使用自有 zyxtoworld/rules 聚合 provider；MetaCubeX、blackmatrix7
-//      和 Loyalsoldier 只在规则仓库构建阶段拉取，客户端不再分别访问上游。
-//   5. 下载资源低倍率：自动识别节点名里的 0.x 倍率/低倍率/省流 标记，
-//      专用下载器访问已知非中国域名或非中国 IP、以及明确文件/CDN/blob 下载资源域名，
-//      优先走最低倍率可用节点。
-//   6. DNS 使用 fake-ip、加密上游和按 geosite/Google 策略组的解析分流；保留 IPv6
-//      解析并由 TUN strict-route 统一接管，避免系统 DNS、IPv6 和代理节点解析回退造成旁路。
-//   7. 端口、API、TUN 等客户端通用开关仍由 Clash Verge Rev、ClashMi、Nikki 管理。
+//      出地区的节点名；同名但配置不同的节点自动追加序号，避免 Mihomo 重名冲突。
+//   1. 地区分组：识别国旗 emoji、中文/英文名称、城市/运营商别名和国家简写，
+//      覆盖 ISO 3166-1 国家/地区；有节点才建立地区组。
+//   2. 旗帜纠正：明确的文字或国家简写优先于现有旗帜；无旗节点自动补旗。
+//   3. 策略组：AI、YouTube、Netflix、Telegram 等按偏好地区排序，其余地区兜底。
+//   4. 规则：运行时只引用 zyxtoworld/rules 聚合 provider；上游规则由构建脚本拉取。
+//   5. 下载：识别 0.x 倍率、低倍率、低流量标记，低倍率节点优先用于外网下载。
+//   6. DNS：输出 fake-ip、加密上游、IPv6 和 geosite/Google 分流；TUN/strict-route
+//      等客户端通用开关不由此脚本接管。
 //
-// 重要：Sub-Store 对 mihomoProfile 类型文件调用的是 main(config)，而非
-//   operator(proxies)。引擎会先走 func 路径并以 operator 返回值为准，抢在
-//   main 之前“成功”。因此 operator 在收到 mihomoProfile 输入对象时主动抛错，
-//   迫使引擎回退到 nodeFunc 路径执行 main(config)。
+// Sub-Store 入口：
+//   main(config) 处理 mihomoProfile 配置对象；operator(proxies) 处理节点数组，
+//   也兼容带 $content/$file 的 mihomoProfile 文件包装对象。
 // ============================================================================
 
-// mihomoProfile 入口
-async function main(config) {
-  const proxies = (config && Array.isArray(config.proxies)) ? config.proxies : [];
-  return buildConfig(proxies);
-}
-
-// 订阅/集合入口；同时直接处理 Sub-Store 的 mihomoProfile 文件对象，
-// 避免故意抛错后让旧版快捷脚本包装器解析整份文件。
-function operator(proxies) {
-  if (proxies && proxies.$content != null && proxies.$file) {
-    const yamlApi = typeof yaml === 'undefined' ? null : yaml;
-    let input;
-    if (typeof proxies.$content === 'string') {
-      input = yamlApi && typeof yamlApi.safeLoad === 'function'
-        ? yamlApi.safeLoad(proxies.$content) || {}
-        : JSON.parse(proxies.$content);
-    } else {
-      input = proxies.$content;
-    }
-    const output = buildConfig(input && typeof input === 'object' ? input.proxies : []);
-    return {
-      ...proxies,
-      $content: yamlApi && typeof yamlApi.safeDump === 'function'
-        ? yamlApi.safeDump(output)
-        : JSON.stringify(output),
-    };
-  }
-  if (proxies && !Array.isArray(proxies)) {
-    if (Array.isArray(proxies.proxies)) return buildConfig(proxies.proxies);
-    throw new Error('fallback to nodeFunc/main for non-array input');
-  }
-  return buildConfig(Array.isArray(proxies) ? proxies : []);
-}
-
-function buildConfig(proxies) {
-  const regionCache = new Map();
-  const isoCache = new Map();
+// ===== 节点规范化工具 =====
   const invisibleStringChars = /[\u0000-\u001F\u007F\u0080-\u009F\u200B-\u200D\u2060\uFEFF]/g;
   function sanitizeString(value, key = '') {
     let sanitized = value.replace(invisibleStringChars, '');
@@ -148,7 +105,7 @@ function buildConfig(proxies) {
       proxy.name = nextName;
     }
   }
-
+// ===== 地区识别目录 =====
   // ===== ISO 3166-1 国家/地区码 -> 中文名（全球 250 个）=====
   // 不在表内的代码：带国旗仍能建组，组名退化为 ISO 码，节点零遗漏。
   const ISO_CN = {
@@ -195,7 +152,6 @@ function buildConfig(proxies) {
   function regionLabel(iso) {
     return `${flagFromIso(iso)} ${ISO_CN[iso] || iso}`;
   }
-
   // 文字关键词 -> ISO。中文名从 ISO_CN 自动生成（覆盖 250 国），再并入城市/英文/繁体别名。
   // 按关键词长度降序匹配，避免子串截胡（如"印度尼西亚"先于"印度"命中）。
   const EXTRA_ALIAS = [
@@ -316,83 +272,9 @@ function buildConfig(proxies) {
     [/欧洲|歐洲|Europe/i, '🌍 欧洲'],
     [/美洲|Americas/i, '🌎 美洲'],
   ];
-
-  // 国旗 emoji -> ISO
-  function flagPairIso(a, b) {
-    if (a < 0x1F1E6 || a > 0x1F1FF || b < 0x1F1E6 || b > 0x1F1FF) return null;
-    return String.fromCharCode(a - 0x1F1E6 + 65) + String.fromCharCode(b - 0x1F1E6 + 65);
-  }
-  function isoFromFlag(name) {
-    const ch = Array.from(String(name || ''));
-    for (let i = 0; i < ch.length - 1; i++) {
-      const a = ch[i].codePointAt(0), b = ch[i + 1].codePointAt(0);
-      const iso = flagPairIso(a, b);
-      if (iso) return iso;
-    }
-    return null;
-  }
-  function regionTargetText(name) {
-    const parts = String(name || '').split(/\s*(?:->|=>|→|⇒|➡|➜|»|›)\s*/);
-    return parts.length > 1 ? parts[parts.length - 1] : String(name || '');
-  }
-  function isoByText(name) {
-    const target = regionTargetText(name);
-    const low = target.toLowerCase();
-    for (const { keyword, code, boundary } of KEYWORD_MATCHERS) {
-      // English aliases need letter boundaries so names like "Indiana" do
-      // not become India. Digits remain valid delimiters for names like Japan01.
-      if (boundary ? boundary.test(low) : low.includes(keyword)) return code;
-    }
-    for (const [re, code] of PROVIDER_ALIAS) {
-      if (re.test(target)) return code;
-    }
-    return null;
-  }
-  // 识别优先级：文字 > 国旗 > 简写
-  function isoOf(name) {
-    const key = String(name || '');
-    if (isoCache.has(key)) return isoCache.get(key);
-    const target = regionTargetText(key);
-    const iso = isoByText(key) || isoFromFlag(target) || isoFromFlag(key) || isoFromAbbr(target) || isoFromAbbr(key);
-    isoCache.set(key, iso);
-    return iso;
-  }
-  function detectRegion(name) {
-    const key = String(name || '');
-    if (regionCache.has(key)) return regionCache.get(key);
-    const iso = isoOf(key);
-    if (iso) {
-      const label = regionLabel(iso);
-      regionCache.set(key, label);
-      return label;
-    }
-    for (const [re, label] of MACRO_REGIONS) {
-      if (re.test(key)) {
-        regionCache.set(key, label);
-        return label;
-      }
-    }
-    regionCache.set(key, null);
-    return null;
-  }
-  function regionRank(name) {
-    if (isoOf(name)) return 2;
-    for (const [re] of MACRO_REGIONS) if (re.test(name)) return 1;
-    return 0;
-  }
-  // 去掉名字开头的国旗 emoji
-  function stripLeadingFlag(s) {
-    const ch = Array.from(s);
-    return leadingFlagIso(s) ? ch.slice(2).join('') : s;
-  }
-  function leadingFlagIso(name) {
-    const ch = Array.from(name);
-    if (ch.length < 2) return null;
-    const a = ch[0].codePointAt(0), b = ch[1].codePointAt(0);
-    return flagPairIso(a, b);
-  }
-
+// ===== 运行时策略与 provider 目录 =====
   const DIRECT = 'DIRECT';
+  const UNKNOWN_REGION_LABEL = '❓ 未识别地区';
   const REJECT = 'REJECT';
   const POLICY = {
     manual: '🚀 手动切换',
@@ -427,123 +309,6 @@ function buildConfig(proxies) {
     speedtest: '📡 Speedtest',
     leak: '🐟 漏网之鱼'
   };
-
-  // Sub-Store may reuse the input array across processors. Work on cloned
-  // proxy objects so region correction and conflict suffixes never mutate the
-  // caller's subscription data.
-  proxies = dedupeProxies(
-    Array.isArray(proxies) ? proxies.map(cloneValue) : [],
-    proxy => regionRank(proxy.name)
-  );
-
-  // ===== 先纠正/补全国旗，再分组 =====
-  for (const p of proxies) {
-    p.name = String(p.name || '未命名节点').trim() || '未命名节点';
-    const target = regionTargetText(p.name);
-    const textIso = isoByText(p.name);   // 文字判定（最可信）
-    const targetIso = textIso || isoFromFlag(target) || isoFromAbbr(target);
-    const leadingIso = leadingFlagIso(p.name);
-    const flagIso = isoFromFlag(p.name); // 现有旗帜
-    if (targetIso) {
-      if (leadingIso !== targetIso) p.name = `${flagFromIso(targetIso)}${stripLeadingFlag(p.name)}`;
-      continue;
-    }
-    if (flagIso) continue;               // 文字判不出但有旗帜，保持
-    const abbrIso = isoFromAbbr(regionTargetText(p.name)) || isoFromAbbr(p.name);
-    if (abbrIso) { p.name = `${flagFromIso(abbrIso)}${p.name}`; continue; }
-    for (const [re, label] of MACRO_REGIONS) {
-      if (re.test(p.name)) { p.name = `${label.split(' ')[0]}${p.name}`; break; }
-    }
-  }
-  // Mihomo reserves DIRECT/REJECT and treats proxy-group names as references.
-  // A subscription node with one of those names would create duplicate names
-  // or self-referencing groups, so append a suffix only to the conflicting
-  // node while leaving ordinary subscription names unchanged.
-  const reservedProxyNames = new Set([
-    DIRECT,
-    REJECT,
-    'PASS',
-    'REJECT-DROP',
-    'COMPATIBLE',
-    'INCOMPATIBLE',
-    ...Object.values(POLICY),
-    '❓ 未识别地区',
-  ]);
-  for (const proxy of proxies) {
-    const region = detectRegion(proxy.name);
-    if (region && proxy.name === region) reservedProxyNames.add(region);
-  }
-  const existingProxyNames = new Set(proxies.map(proxy => proxy.name));
-  for (const proxy of proxies) {
-    if (!reservedProxyNames.has(proxy.name)) continue;
-    const originalName = proxy.name;
-    existingProxyNames.delete(originalName);
-    let suffix = 1;
-    let safeName = `${originalName} (节点)`;
-    while (reservedProxyNames.has(safeName) || existingProxyNames.has(safeName)) {
-      suffix += 1;
-      safeName = `${originalName} (节点 ${suffix})`;
-    }
-    proxy.name = safeName;
-    existingProxyNames.add(safeName);
-  }
-  ensureUniqueProxyNames(proxies);
-
-  // 按地区聚合（有节点才建组），按节点数从多到少排序；无法识别的节点放入独立兜底组。
-  const regionMap = {};
-  const regionOrder = [];
-  const unknownRegionLabel = '❓ 未识别地区';
-  const unknownRegionProxies = [];
-  for (const p of proxies) {
-    const r = detectRegion(p.name);
-    if (!r) {
-      unknownRegionProxies.push(p.name);
-      continue;
-    }
-    if (!regionMap[r]) { regionMap[r] = []; regionOrder.push(r); }
-    regionMap[r].push(p.name);
-  }
-  regionOrder.sort((a, b) => regionMap[b].length - regionMap[a].length);
-  const allRegionGroups = unknownRegionProxies.length
-    ? [...regionOrder, unknownRegionLabel]
-    : regionOrder.slice();
-  const allProxyNames = proxies.map(p => p.name);
-  function unique(list) {
-    return [...new Set(list.filter(Boolean))];
-  }
-
-  // Let url-test measure raw nodes directly. Region groups remain useful for
-  // manual selection, but nesting select groups inside url-test makes health
-  // checks opaque and less predictable.
-  const autoCandidates = allProxyNames.length ? allProxyNames : [DIRECT];
-  const failoverCandidates = allProxyNames.length ? allProxyNames : [DIRECT];
-
-  function rateOfName(name) {
-    const text = String(name || '').toLowerCase().replace(/[×＊✕]/g, 'x');
-    const lowRateKeyword = /低倍|低倍率|省流|low[-_\s]*rate|low[-_\s]*traffic/.test(text);
-    const suffixRate = text.match(/(?:^|[^0-9])([0-9]+(?:\.[0-9]+)?)\s*(?:x|倍|倍率)(?![0-9])/);
-    const prefixRate = text.match(/(?:^|[^a-z0-9])(?:x|倍|倍率)\s*([0-9]+(?:\.[0-9]+)?)(?![0-9])/);
-    const rate = Number((suffixRate && suffixRate[1]) || (prefixRate && prefixRate[1]));
-    if (Number.isFinite(rate) && rate > 0) return rate;
-    return lowRateKeyword ? 0.99 : Infinity;
-  }
-  const lowRateProxyNames = proxies
-    .map((p, index) => ({ name: p.name, rate: rateOfName(p.name), index }))
-    .filter(p => p.rate < 1)
-    .sort((a, b) => a.rate - b.rate || a.index - b.index)
-    .map(p => p.name);
-  const lowRateDownloadCandidates = lowRateProxyNames.length
-    ? [...lowRateProxyNames, POLICY.manual, POLICY.auto]
-    : [POLICY.manual, POLICY.auto];
-
-  // 策略组地区选择：偏好地区靠前 + 其余全部地区兜底（去重）
-  function prefThenAll(prefIso) {
-    const pref = prefIso.map(regionLabel).filter(l => regionMap[l]);
-    const rest = allRegionGroups.filter(l => !pref.includes(l));
-    return [...pref, ...rest];
-  }
-
-  // 远程规则统一由自有 zyxtoworld/rules provider 管理，客户端只访问一个镜像入口。
   const remoteRuleProvider = (url, path, behavior = 'classical', format = 'yaml') => ({
     type: 'http',
     behavior,
@@ -594,20 +359,14 @@ function buildConfig(proxies) {
   const ruleProviderBaseUrl = 'https://testingcf.jsdelivr.net/gh/zyxtoworld/rules@main/rules/mihomo';
   const isDomainPart = kind => kind === 'domain' || kind.startsWith('domain-');
   const isIpcidrPart = kind => kind === 'ipcidr' || kind.startsWith('ipcidr-');
-  const providerFileName = (name, kind) => {
-    const suffix = kind === 'domain'
-      ? ''
-      : isDomainPart(kind)
-        ? `-${kind.slice('domain-'.length)}`
-        : `-${kind}`;
-    const extension = kind === 'classical' ? 'yaml' : 'mrs';
-    return `${name}${suffix}.${extension}`;
+  const providerPartSuffix = kind => {
+    if (kind === 'domain') return '';
+    if (isDomainPart(kind)) return `-${kind.slice('domain-'.length)}`;
+    return `-${kind}`;
   };
-  const providerName = (name, kind) => kind === 'domain'
-    ? name
-    : isDomainPart(kind)
-      ? `${name}-${kind.slice('domain-'.length)}`
-      : `${name}-${kind}`;
+  const providerName = (name, kind) => `${name}${providerPartSuffix(kind)}`;
+  const providerFileName = (name, kind) =>
+    `${providerName(name, kind)}.${kind === 'classical' ? 'yaml' : 'mrs'}`;
   const providerBehavior = kind => isDomainPart(kind) ? 'domain' : isIpcidrPart(kind) ? 'ipcidr' : 'classical';
   const providerFormat = kind => kind === 'classical' ? 'yaml' : 'mrs';
   const providerRuleSet = (name, policy) => ruleProviderParts[name]
@@ -621,137 +380,8 @@ function buildConfig(proxies) {
     `AND,((${match}),(NOT,((RULE-SET,cn))),(NOT,((GEOIP,CN)))),${policy}`;
   const foreignProviderRuleSet = (name, policy) => ruleProviderParts[name]
     .map(kind => foreignMatch(`RULE-SET,${providerName(name, kind)}`, policy));
-
-  // ===== 基础配置 =====
-  const config = {
-    'geodata-mode': true,
-    'geodata-loader': 'memconservative',
-    'geosite-matcher': 'succinct',
-    'ipv6': true,
-    dns: {
-      enable: true,
-      ipv6: true,
-      'enhanced-mode': 'fake-ip',
-      'fake-ip-range': '198.18.0.1/16',
-      'fake-ip-range6': '2001:2::0/64',
-      'prefer-h3': true,
-      'default-nameserver': ['tls://223.5.5.5', 'tls://1.1.1.1'],
-      'nameserver-policy': {
-        'geosite:cn,private,apple': [
-          'https://doh.pub/dns-query',
-          'https://dns.alidns.com/dns-query'
-        ],
-        'geosite:geolocation-!cn': [
-          `https://dns.google/dns-query#${POLICY.google}`,
-          `https://cloudflare-dns.com/dns-query#${POLICY.google}`
-        ],
-        '+.google.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
-        '+.googleapis.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
-        '+.gstatic.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
-        '+.googleusercontent.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
-        '+.google.com.hk': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
-        '+.youtube.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
-        '+.recaptcha.net': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`]
-      },
-      nameserver: [
-        `https://dns.google/dns-query#${POLICY.google}`,
-        `https://cloudflare-dns.com/dns-query#${POLICY.google}`
-      ],
-      'proxy-server-nameserver': [
-        'https://doh.pub/dns-query',
-        'https://dns.alidns.com/dns-query'
-      ],
-      'direct-nameserver': [
-        'https://doh.pub/dns-query',
-        'https://dns.alidns.com/dns-query'
-      ],
-      'direct-nameserver-follow-policy': true,
-      'respect-rules': false
-    },
-    'geox-url': {
-      geoip: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat',
-      geosite: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat',
-      mmdb: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb',
-      asn: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb'
-    },
-    'rule-providers': Object.fromEntries(
-      Object.entries(ruleProviderParts).flatMap(([name, parts]) => parts.map(kind => {
-        const fileName = providerFileName(name, kind);
-        return [
-          providerName(name, kind),
-          remoteRuleProvider(
-            `${ruleProviderBaseUrl}/${fileName}`,
-            `./rule-providers/${fileName}`,
-            providerBehavior(kind),
-            providerFormat(kind)
-          )
-        ];
-      }))
-    )
-  };
-  // ===== 策略组 =====
-  const healthCheckUrl = 'https://www.gstatic.com/generate_204';
-  const healthCheckInterval = 300;
-  const proxyGroups = [];
-
-  function addGroup(group) {
-    proxyGroups.push({ ...group, proxies: unique(group.proxies) });
-  }
-  function addSelectGroup(name, proxies) {
-    addGroup({ name, type: 'select', proxies });
-  }
-  function addHealthCheckGroup(name, type, proxies, extra) {
-    addGroup({ name, type, url: healthCheckUrl, interval: healthCheckInterval, ...(extra || {}), proxies });
-  }
-
-  addSelectGroup(POLICY.manual, [POLICY.auto, POLICY.fallback, ...allProxyNames]);
-  addHealthCheckGroup(POLICY.auto, 'url-test', autoCandidates, { tolerance: 50, lazy: false, hidden: false });
-  addHealthCheckGroup(POLICY.fallback, 'fallback', failoverCandidates, { hidden: true });
-  addHealthCheckGroup(POLICY.ruleDownload, 'fallback', [DIRECT, POLICY.fallback], { lazy: true, hidden: true });
-  addHealthCheckGroup(POLICY.lowRateDownload, 'fallback', lowRateDownloadCandidates, { lazy: true });
-
-  // 策略组（偏好地区靠前 + 全部地区兜底）
-  const featureGroups = [
-    [POLICY.ai, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'DE', 'KR'])]],
-    [POLICY.openai, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB'])]],
-    [POLICY.claude, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB'])]],
-    [POLICY.crypto, [POLICY.manual, POLICY.auto, ...allRegionGroups]],
-    [POLICY.bilibili, [DIRECT, POLICY.manual, ...prefThenAll(['HK', 'TW'])]],
-    [POLICY.games, [DIRECT, POLICY.manual, ...prefThenAll(['HK', 'JP', 'SG', 'US'])]],
-    [POLICY.tiktok, [POLICY.manual, ...prefThenAll(['JP', 'US', 'SG', 'TW'])]],
-    [POLICY.media, [POLICY.manual, ...prefThenAll(['HK', 'JP', 'SG', 'US', 'TW'])]],
-    [POLICY.social, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK', 'TW'])]],
-    [POLICY.dev, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'DE', 'NL'])]],
-    [POLICY.cloud, [DIRECT, POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
-    [POLICY.finance, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'HK'])]],
-    [POLICY.shopping, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'HK'])]],
-    // Non-CN Apple traffic should prefer proxy for foreign Apple IDs; DIRECT
-    // remains available as an explicit fallback. CN exceptions are matched earlier.
-    [POLICY.apple, [POLICY.manual, POLICY.auto, DIRECT, ...prefThenAll(['US', 'JP'])]],
-    [POLICY.telegram, [POLICY.manual, ...prefThenAll(['SG', 'HK', 'US', 'JP'])]],
-    [POLICY.youtube, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'TW', 'HK'])]],
-    [POLICY.google, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
-    [POLICY.github, [POLICY.manual, ...prefThenAll(['JP', 'SG', 'US', 'HK', 'TW'])]],
-    [POLICY.microsoft, [DIRECT, POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
-    [POLICY.onedrive, [DIRECT, POLICY.manual, ...prefThenAll(['HK', 'JP', 'US'])]],
-    [POLICY.twitter, [POLICY.manual, ...prefThenAll(['US', 'SG', 'JP', 'HK'])]],
-    [POLICY.spotify, [...prefThenAll(['HK', 'TW', 'SG', 'JP', 'US']), POLICY.manual, DIRECT]],
-    [POLICY.netflix, [POLICY.manual, ...prefThenAll(['SG', 'JP', 'US', 'HK', 'TW'])]],
-    [POLICY.disney, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
-    [POLICY.speedtest, [DIRECT, POLICY.manual, POLICY.auto]],
-    [POLICY.leak, [POLICY.manual, DIRECT, POLICY.auto]],
-  ];
-  for (const [name, groupProxies] of featureGroups) addSelectGroup(name, groupProxies);
-
-  // 地区分组（按订阅实际出现自动生成）
-  for (const label of regionOrder) {
-    addSelectGroup(label, regionMap[label]);
-  }
-  if (unknownRegionProxies.length) {
-    addSelectGroup(unknownRegionLabel, unknownRegionProxies);
-  }
-
-  // ===== 规则 =====
+// ===== 规则构造 =====
+function buildRules() {
   const proxyExtraMatchers = providerMatchSet('proxy-extra')
     .map(rule => `(${rule})`)
     .join(',');
@@ -825,9 +455,448 @@ function buildConfig(proxies) {
     ...foreignProviderRuleSet('geolocation', POLICY.manual),
     `MATCH,${POLICY.leak}`
   ];
+  return rules;
+}
+// ===== 策略组构造 =====
+function createProxyGroups({
+  allProxyNames,
+  autoCandidates,
+  failoverCandidates,
+  lowRateDownloadCandidates,
+  allRegionGroups,
+  regionMap,
+  regionOrder,
+  unknownRegionLabel,
+  unknownRegionProxies,
+}) {
+  const unique = list => [...new Set(list.filter(Boolean))];
+  function prefThenAll(prefIso) {
+    const pref = prefIso.map(regionLabel).filter(l => regionMap[l]);
+    const rest = allRegionGroups.filter(l => !pref.includes(l));
+    return [...pref, ...rest];
+  }
 
-  config.proxies = proxies;
-  config['proxy-groups'] = proxyGroups;
-  config.rules = rules;
+  const healthCheckUrl = 'https://www.gstatic.com/generate_204';
+  const healthCheckInterval = 300;
+  const proxyGroups = [];
+
+  function addGroup(group) {
+    proxyGroups.push({ ...group, proxies: unique(group.proxies) });
+  }
+  function addSelectGroup(name, proxies) {
+    addGroup({ name, type: 'select', proxies });
+  }
+  function addHealthCheckGroup(name, type, proxies, extra) {
+    addGroup({ name, type, url: healthCheckUrl, interval: healthCheckInterval, ...(extra || {}), proxies });
+  }
+
+  addSelectGroup(POLICY.manual, [POLICY.auto, POLICY.fallback, ...allProxyNames]);
+  addHealthCheckGroup(POLICY.auto, 'url-test', autoCandidates, { tolerance: 50, lazy: false, hidden: false });
+  addHealthCheckGroup(POLICY.fallback, 'fallback', failoverCandidates, { hidden: true });
+  addHealthCheckGroup(POLICY.ruleDownload, 'fallback', [DIRECT, POLICY.fallback], { lazy: true, hidden: true });
+  addHealthCheckGroup(POLICY.lowRateDownload, 'fallback', lowRateDownloadCandidates, { lazy: true });
+
+  // 策略组（偏好地区靠前 + 全部地区兜底）
+  const featureGroups = [
+    [POLICY.ai, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'DE', 'KR'])]],
+    [POLICY.openai, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB'])]],
+    [POLICY.claude, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB'])]],
+    [POLICY.crypto, [POLICY.manual, POLICY.auto, ...allRegionGroups]],
+    [POLICY.bilibili, [DIRECT, POLICY.manual, ...prefThenAll(['HK', 'TW'])]],
+    [POLICY.games, [DIRECT, POLICY.manual, ...prefThenAll(['HK', 'JP', 'SG', 'US'])]],
+    [POLICY.tiktok, [POLICY.manual, ...prefThenAll(['JP', 'US', 'SG', 'TW'])]],
+    [POLICY.media, [POLICY.manual, ...prefThenAll(['HK', 'JP', 'SG', 'US', 'TW'])]],
+    [POLICY.social, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK', 'TW'])]],
+    [POLICY.dev, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'DE', 'NL'])]],
+    [POLICY.cloud, [DIRECT, POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
+    [POLICY.finance, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'HK'])]],
+    [POLICY.shopping, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'HK'])]],
+    // Non-CN Apple traffic should prefer proxy for foreign Apple IDs; DIRECT
+    // remains available as an explicit fallback. CN exceptions are matched earlier.
+    [POLICY.apple, [POLICY.manual, POLICY.auto, DIRECT, ...prefThenAll(['US', 'JP'])]],
+    [POLICY.telegram, [POLICY.manual, ...prefThenAll(['SG', 'HK', 'US', 'JP'])]],
+    [POLICY.youtube, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'TW', 'HK'])]],
+    [POLICY.google, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
+    [POLICY.github, [POLICY.manual, ...prefThenAll(['JP', 'SG', 'US', 'HK', 'TW'])]],
+    [POLICY.microsoft, [DIRECT, POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
+    [POLICY.onedrive, [DIRECT, POLICY.manual, ...prefThenAll(['HK', 'JP', 'US'])]],
+    [POLICY.twitter, [POLICY.manual, ...prefThenAll(['US', 'SG', 'JP', 'HK'])]],
+    [POLICY.spotify, [...prefThenAll(['HK', 'TW', 'SG', 'JP', 'US']), POLICY.manual, DIRECT]],
+    [POLICY.netflix, [POLICY.manual, ...prefThenAll(['SG', 'JP', 'US', 'HK', 'TW'])]],
+    [POLICY.disney, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
+    [POLICY.speedtest, [DIRECT, POLICY.manual, POLICY.auto]],
+    [POLICY.leak, [POLICY.manual, DIRECT, POLICY.auto]],
+  ];
+  for (const [name, groupProxies] of featureGroups) addSelectGroup(name, groupProxies);
+
+  // 地区分组（按订阅实际出现自动生成）
+  for (const label of regionOrder) {
+    addSelectGroup(label, regionMap[label]);
+  }
+  if (unknownRegionProxies.length) {
+    addSelectGroup(unknownRegionLabel, unknownRegionProxies);
+  }
+  return proxyGroups;
+}
+// ===== 基础配置构造 =====
+function createBaseConfig() {
+  // ===== 基础配置 =====
+  const config = {
+    'geodata-mode': true,
+    'geodata-loader': 'memconservative',
+    'geosite-matcher': 'succinct',
+    'ipv6': true,
+    dns: {
+      enable: true,
+      ipv6: true,
+      'enhanced-mode': 'fake-ip',
+      'fake-ip-range': '198.18.0.1/16',
+      'fake-ip-range6': '2001:2::0/64',
+      'prefer-h3': true,
+      'default-nameserver': ['tls://223.5.5.5', 'tls://1.1.1.1'],
+      'nameserver-policy': {
+        'geosite:cn,private,apple': [
+          'https://doh.pub/dns-query',
+          'https://dns.alidns.com/dns-query'
+        ],
+        'geosite:geolocation-!cn': [
+          `https://dns.google/dns-query#${POLICY.google}`,
+          `https://cloudflare-dns.com/dns-query#${POLICY.google}`
+        ],
+        '+.google.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.googleapis.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.gstatic.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.googleusercontent.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.google.com.hk': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.youtube.com': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`],
+        '+.recaptcha.net': [`https://dns.google/dns-query#${POLICY.google}`, `https://cloudflare-dns.com/dns-query#${POLICY.google}`]
+      },
+      nameserver: [
+        `https://dns.google/dns-query#${POLICY.google}`,
+        `https://cloudflare-dns.com/dns-query#${POLICY.google}`
+      ],
+      'proxy-server-nameserver': [
+        'https://doh.pub/dns-query',
+        'https://dns.alidns.com/dns-query'
+      ],
+      'direct-nameserver': [
+        'https://doh.pub/dns-query',
+        'https://dns.alidns.com/dns-query'
+      ],
+      'direct-nameserver-follow-policy': true,
+      'respect-rules': false
+    },
+    'geox-url': {
+      geoip: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat',
+      geosite: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat',
+      mmdb: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb',
+      asn: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb'
+    },
+    'rule-providers': Object.fromEntries(
+      Object.entries(ruleProviderParts).flatMap(([name, parts]) => parts.map(kind => {
+        const fileName = providerFileName(name, kind);
+        return [
+          providerName(name, kind),
+          remoteRuleProvider(
+            `${ruleProviderBaseUrl}/${fileName}`,
+            `./rule-providers/${fileName}`,
+            providerBehavior(kind),
+            providerFormat(kind)
+          )
+        ];
+      }))
+    )
+  };
+  return config;
+}
+// ===== 地区识别器 =====
+function createRegionDetector() {
+  const regionCache = new Map();
+  const isoCache = new Map();
+
+  function flagPairIso(a, b) {
+    if (a < 0x1F1E6 || a > 0x1F1FF || b < 0x1F1E6 || b > 0x1F1FF) return null;
+    return String.fromCharCode(a - 0x1F1E6 + 65) + String.fromCharCode(b - 0x1F1E6 + 65);
+  }
+
+  function isoFromFlag(name) {
+    const chars = Array.from(String(name || ''));
+    for (let index = 0; index < chars.length - 1; index++) {
+      const iso = flagPairIso(chars[index].codePointAt(0), chars[index + 1].codePointAt(0));
+      if (iso) return iso;
+    }
+    return null;
+  }
+
+  function regionTargetText(name) {
+    const parts = String(name || '').split(/\s*(?:->|=>|→|⇒|➡|➜|»|›)\s*/);
+    return parts.length > 1 ? parts[parts.length - 1] : String(name || '');
+  }
+
+  function isoByText(name) {
+    const target = regionTargetText(name);
+    const lowerTarget = target.toLowerCase();
+    for (const { keyword, code, boundary } of KEYWORD_MATCHERS) {
+      // English aliases need letter boundaries so names like "Indiana" do
+      // not become India. Digits remain valid delimiters for names like Japan01.
+      if (boundary ? boundary.test(lowerTarget) : lowerTarget.includes(keyword)) return code;
+    }
+    for (const [matcher, code] of PROVIDER_ALIAS) {
+      if (matcher.test(target)) return code;
+    }
+    return null;
+  }
+
+  function isoOf(name) {
+    const key = String(name || '');
+    if (isoCache.has(key)) return isoCache.get(key);
+    const target = regionTargetText(key);
+    // Text wins; retain flag-first fallback for ranking and names without clear text.
+    const iso = isoByText(key)
+      || isoFromFlag(target)
+      || isoFromFlag(key)
+      || isoFromAbbr(target)
+      || isoFromAbbr(key);
+    isoCache.set(key, iso);
+    return iso;
+  }
+
+  function detectRegion(name) {
+    const key = String(name || '');
+    if (regionCache.has(key)) return regionCache.get(key);
+    const iso = isoOf(key);
+    if (iso) {
+      const label = regionLabel(iso);
+      regionCache.set(key, label);
+      return label;
+    }
+    for (const [matcher, label] of MACRO_REGIONS) {
+      if (matcher.test(key)) {
+        regionCache.set(key, label);
+        return label;
+      }
+    }
+    regionCache.set(key, null);
+    return null;
+  }
+
+  function regionRank(name) {
+    if (isoOf(name)) return 2;
+    for (const [matcher] of MACRO_REGIONS) if (matcher.test(name)) return 1;
+    return 0;
+  }
+
+  function leadingFlagIso(name) {
+    const chars = Array.from(String(name || ''));
+    if (chars.length < 2) return null;
+    return flagPairIso(chars[0].codePointAt(0), chars[1].codePointAt(0));
+  }
+
+  function stripLeadingFlag(name) {
+    const chars = Array.from(String(name || ''));
+    return leadingFlagIso(name) ? chars.slice(2).join('') : String(name || '');
+  }
+
+  return {
+    detectRegion,
+    isoByText,
+    isoFromAbbr,
+    isoFromFlag,
+    isoOf,
+    leadingFlagIso,
+    regionRank,
+    regionTargetText,
+    stripLeadingFlag,
+  };
+}
+// ===== Sub-Store 入口 =====
+function getYamlApi() {
+  return typeof yaml === 'undefined' ? null : yaml;
+}
+
+function parseProfileContent(content) {
+  if (typeof content !== 'string') return content;
+  const yamlApi = getYamlApi();
+  if (yamlApi && typeof yamlApi.safeLoad === 'function') return yamlApi.safeLoad(content) || {};
+  if (yamlApi && typeof yamlApi.load === 'function') return yamlApi.load(content) || {};
+  return JSON.parse(content);
+}
+
+function serializeProfileContent(content) {
+  const yamlApi = getYamlApi();
+  if (yamlApi && typeof yamlApi.safeDump === 'function') return yamlApi.safeDump(content);
+  if (yamlApi && typeof yamlApi.dump === 'function') return yamlApi.dump(content);
+  return JSON.stringify(content);
+}
+
+async function main(config) {
+  const proxies = (config && Array.isArray(config.proxies)) ? config.proxies : [];
+  return buildConfig(proxies);
+}
+
+// 节点数组入口；也直接处理带 $content/$file 的 mihomoProfile 文件包装对象。
+function operator(proxies) {
+  if (proxies && proxies.$content != null && proxies.$file) {
+    const input = parseProfileContent(proxies.$content);
+    const output = buildConfig(input && typeof input === 'object' ? input.proxies : []);
+    return {
+      ...proxies,
+      $content: serializeProfileContent(output),
+    };
+  }
+  if (proxies && !Array.isArray(proxies)) {
+    if (Array.isArray(proxies.proxies)) return buildConfig(proxies.proxies);
+    throw new Error('fallback to nodeFunc/main for non-array input');
+  }
+  return buildConfig(Array.isArray(proxies) ? proxies : []);
+}
+
+// ===== 节点规范化与策略组输入 =====
+function normalizeProxies(input, detector) {
+  const {
+    detectRegion,
+    isoByText,
+    isoFromAbbr,
+    isoFromFlag,
+    leadingFlagIso,
+    regionRank,
+    regionTargetText,
+    stripLeadingFlag,
+  } = detector;
+  // Sub-Store may reuse the input array across processors. Work on cloned
+  // proxy objects so correction and conflict suffixes never mutate the input.
+  const proxies = dedupeProxies(
+    Array.isArray(input) ? input.map(cloneValue) : [],
+    proxy => regionRank(proxy.name)
+  );
+
+  // Text and explicit abbreviations outrank a possibly incorrect leading flag.
+  for (const proxy of proxies) {
+    proxy.name = String(proxy.name || '未命名节点').trim() || '未命名节点';
+    const target = regionTargetText(proxy.name);
+    const textIso = isoByText(proxy.name);
+    const targetIso = textIso || isoFromAbbr(target) || isoFromFlag(target);
+    const leadingIso = leadingFlagIso(proxy.name);
+    const flagIso = isoFromFlag(proxy.name);
+    if (targetIso) {
+      if (leadingIso !== targetIso) {
+        proxy.name = `${flagFromIso(targetIso)}${stripLeadingFlag(proxy.name)}`;
+      }
+      continue;
+    }
+    if (flagIso) continue;
+    const abbreviationIso = isoFromAbbr(target) || isoFromAbbr(proxy.name);
+    if (abbreviationIso) {
+      proxy.name = `${flagFromIso(abbreviationIso)}${proxy.name}`;
+      continue;
+    }
+    for (const [matcher, label] of MACRO_REGIONS) {
+      if (matcher.test(proxy.name)) {
+        proxy.name = `${label.split(' ')[0]}${proxy.name}`;
+        break;
+      }
+    }
+  }
+
+  // Mihomo reserves these names and treats policy-group names as references.
+  const reservedProxyNames = new Set([
+    DIRECT,
+    REJECT,
+    'PASS',
+    'REJECT-DROP',
+    'COMPATIBLE',
+    'INCOMPATIBLE',
+    ...Object.values(POLICY),
+    UNKNOWN_REGION_LABEL,
+  ]);
+  for (const proxy of proxies) {
+    const region = detectRegion(proxy.name);
+    if (region && proxy.name === region) reservedProxyNames.add(region);
+  }
+  const existingProxyNames = new Set(proxies.map(proxy => proxy.name));
+  for (const proxy of proxies) {
+    if (!reservedProxyNames.has(proxy.name)) continue;
+    const originalName = proxy.name;
+    existingProxyNames.delete(originalName);
+    let suffix = 1;
+    let safeName = `${originalName} (节点)`;
+    while (reservedProxyNames.has(safeName) || existingProxyNames.has(safeName)) {
+      suffix += 1;
+      safeName = `${originalName} (节点 ${suffix})`;
+    }
+    proxy.name = safeName;
+    existingProxyNames.add(safeName);
+  }
+  ensureUniqueProxyNames(proxies);
+  return proxies;
+}
+
+function collectRegionContext(proxies, detectRegion) {
+  const regionMap = {};
+  const regionOrder = [];
+  const unknownRegionProxies = [];
+  for (const proxy of proxies) {
+    const region = detectRegion(proxy.name);
+    if (!region) {
+      unknownRegionProxies.push(proxy.name);
+      continue;
+    }
+    if (!regionMap[region]) {
+      regionMap[region] = [];
+      regionOrder.push(region);
+    }
+    regionMap[region].push(proxy.name);
+  }
+  regionOrder.sort((a, b) => regionMap[b].length - regionMap[a].length);
+  const allRegionGroups = unknownRegionProxies.length
+    ? [...regionOrder, UNKNOWN_REGION_LABEL]
+    : regionOrder.slice();
+  return { allRegionGroups, regionMap, regionOrder, unknownRegionProxies };
+}
+
+function rateOfName(name) {
+  const text = String(name || '').toLowerCase().replace(/[×＊✕]/g, 'x');
+  const lowRateKeyword = /低倍|低倍率|省流|low[-_\s]*rate|low[-_\s]*traffic/.test(text);
+  const suffixRate = text.match(/(?:^|[^0-9])([0-9]+(?:\.[0-9]+)?)\s*(?:x|倍|倍率)(?![0-9])/);
+  const prefixRate = text.match(/(?:^|[^a-z0-9])(?:x|倍|倍率)\s*([0-9]+(?:\.[0-9]+)?)(?![0-9])/);
+  const rate = Number((suffixRate && suffixRate[1]) || (prefixRate && prefixRate[1]));
+  if (Number.isFinite(rate) && rate > 0) return rate;
+  return lowRateKeyword ? 0.99 : Infinity;
+}
+
+function lowRateDownloadCandidates(proxies) {
+  const lowRateProxyNames = proxies
+    .map((proxy, index) => ({ name: proxy.name, rate: rateOfName(proxy.name), index }))
+    .filter(proxy => proxy.rate < 1)
+    .sort((a, b) => a.rate - b.rate || a.index - b.index)
+    .map(proxy => proxy.name);
+  return lowRateProxyNames.length
+    ? [...lowRateProxyNames, POLICY.manual, POLICY.auto]
+    : [POLICY.manual, POLICY.auto];
+}
+
+function prepareProxyContext(input) {
+  const detector = createRegionDetector();
+  const proxies = normalizeProxies(input, detector);
+  const regions = collectRegionContext(proxies, detector.detectRegion);
+  const allProxyNames = proxies.map(proxy => proxy.name);
+  const autoCandidates = allProxyNames.length ? allProxyNames : [DIRECT];
+  const failoverCandidates = allProxyNames.length ? allProxyNames : [DIRECT];
+  const proxyGroups = createProxyGroups({
+    allProxyNames,
+    autoCandidates,
+    failoverCandidates,
+    lowRateDownloadCandidates: lowRateDownloadCandidates(proxies),
+    ...regions,
+    unknownRegionLabel: UNKNOWN_REGION_LABEL,
+  });
+  return { proxies, proxyGroups };
+}
+function buildConfig(proxies) {
+  const config = createBaseConfig();
+  const prepared = prepareProxyContext(proxies);
+  config.proxies = prepared.proxies;
+  config['proxy-groups'] = prepared.proxyGroups;
+  config.rules = buildRules();
   return config;
 }
