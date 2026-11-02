@@ -240,6 +240,7 @@ const builtInRules = {
     // Nintendo Switch/2 global content-delivery CDN; the foreign guard below
     // excludes CN-resolved traffic before it reaches the low-rate group.
     'DOMAIN-SUFFIX,d4c.nintendo.net',
+    'DOMAIN-SUFFIX,d4c.srv.nintendo.net',
     'PROCESS-NAME,aria2c',
     'PROCESS-NAME,aria2c.exe',
     'PROCESS-NAME,BitComet',
