@@ -345,6 +345,14 @@
         "sha256": "8decb6806a0a6ed142d6bcc88645575f07d7dcd3f959c0daecb10d4661b36209"
       },
       {
+        "url": "https://raw.githubusercontent.com/szkane/ClashRuleSet/main/Clash/Web3.list",
+        "fetchedUrl": "https://testingcf.jsdelivr.net/gh/szkane/ClashRuleSet@main/Clash/Web3.list",
+        "source": "szkane/ClashRuleSet: Web3",
+        "rules": 298,
+        "bytes": 8451,
+        "sha256": "05b3fb4039a32e97a41c4ca7e954ba33bf49b6b61039875735e6e5bed90703ea"
+      },
+      {
         "source": "built-in: cryptocurrency service domains",
         "rules": 24
       }
@@ -2562,16 +2570,16 @@
       "group": "crypto",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 268,
-      "bytes": 2604
+      "rules": 428,
+      "bytes": 3929
     },
     "crypto-classical": {
       "path": "rules/mihomo/crypto-classical.yaml",
       "group": "crypto",
       "behavior": "classical",
       "format": "yaml",
-      "rules": 1,
-      "bytes": 100
+      "rules": 10,
+      "bytes": 355
     },
     "biliintl": {
       "path": "rules/mihomo/biliintl.mrs",
@@ -2954,8 +2962,8 @@
       "group": "finance",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 960,
-      "bytes": 8556
+      "rules": 959,
+      "bytes": 8533
     },
     "shopping": {
       "path": "rules/mihomo/shopping.mrs",
@@ -2970,8 +2978,8 @@
       "group": "proxy-extra",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 18025,
-      "bytes": 136690
+      "rules": 18015,
+      "bytes": 136802
     },
     "proxy-extra-ipcidr": {
       "path": "rules/mihomo/proxy-extra-ipcidr.mrs",
@@ -3105,13 +3113,13 @@
       ]
     },
     "crypto": {
-      "inputRules": 361,
-      "normalizedRules": 279,
-      "duplicateRules": 82,
-      "coveredRules": 1,
-      "crossGroupPruned": 9,
-      "rules": 269,
-      "pruned": 92,
+      "inputRules": 659,
+      "normalizedRules": 457,
+      "duplicateRules": 202,
+      "coveredRules": 6,
+      "crossGroupPruned": 13,
+      "rules": 438,
+      "pruned": 221,
       "outputs": [
         "crypto",
         "crypto-classical"
@@ -3389,9 +3397,9 @@
       "normalizedRules": 968,
       "duplicateRules": 3,
       "coveredRules": 2,
-      "crossGroupPruned": 6,
-      "rules": 960,
-      "pruned": 11,
+      "crossGroupPruned": 7,
+      "rules": 959,
+      "pruned": 12,
       "outputs": [
         "finance"
       ]
@@ -3413,9 +3421,9 @@
       "normalizedRules": 27448,
       "duplicateRules": 405,
       "coveredRules": 18,
-      "crossGroupPruned": 9402,
-      "rules": 18028,
-      "pruned": 9825,
+      "crossGroupPruned": 9412,
+      "rules": 18018,
+      "pruned": 9835,
       "outputs": [
         "proxy-extra",
         "proxy-extra-ipcidr",
@@ -3425,13 +3433,13 @@
   },
   "summary": {
     "groups": 33,
-    "inputRules": 621186,
-    "normalizedRules": 609140,
-    "duplicateRules": 12046,
-    "coveredRules": 87455,
-    "rules": 373171,
-    "crossGroupPruned": 148514,
-    "crossGroupRules": 136449,
-    "crossGroupDuplicateOccurrences": 148515
+    "inputRules": 621484,
+    "normalizedRules": 609318,
+    "duplicateRules": 12166,
+    "coveredRules": 87460,
+    "rules": 373329,
+    "crossGroupPruned": 148529,
+    "crossGroupRules": 136451,
+    "crossGroupDuplicateOccurrences": 148530
   }
 }

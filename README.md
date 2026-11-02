@@ -60,6 +60,7 @@ CI 会固定下载并校验官方 Mihomo `v1.19.32` 转换器。构建脚本会�
 ## 规则策略
 
 - `direct`：MetaCubeX 中国大陆集合、Loyalsoldier direct、RuleGo direct、ACL4SSR、NobyDa 和国内服务补充。
+- `crypto`：合并 MetaCubeX、RuleGo 与 Web3 专项清单，覆盖已收录的中心化交易所、钱包、DEX、链浏览器、NFT、IPFS 和部分链基础设施；链上服务域名不断变化，不能视为所有 RPC、合约前端或新 DApp 的穷举清单。
 - `download`：通用下载/CDN 规则以及 Nintendo Switch/2 的海外内容分发 CDN（包括 `*.hac.*.d4c.nintendo.net` 和 `*.*.*.d4c.srv.nintendo.net`）；规则组的 `NOT GEOIP,CN` 守卫会让中国大陆解析结果绕过 `📥 低倍率下载`，Nintendo 登录、商店和联机服务仍留在 `🎮 游戏平台`。
 - `ads`：MetaCubeX、Loyalsoldier、anti-AD、AWAvenue、RuleGo 和 NobyDa 的广告/恶意/跟踪集合，统一去重并按父域名最小化；Sub-Store 规则顺序中广告拦截位于所有服务和直连规则之前，严格以 `REJECT` 优先。
 - `privacy`：内置公网 IP 查询、WebRTC/STUN/TURN 和应用 HTTPDNS 端点；规则位于 `ads` 之后、`cn` 之前，统一走现有 `🚀 手动切换` 代理组而不另建隐私组，因此所有业务流量共享同一全局防泄漏出口；默认不阻断通用 STUN/TURN 端口，以保留实时音视频、联机游戏和 VoIP 可用性。动态 IP、未知端点、服务端到服务端请求和浏览器 WebRTC 本地候选仍需要应用侧控制。
@@ -89,6 +90,7 @@ CI 会固定下载并校验官方 Mihomo `v1.19.32` 转换器。构建脚本会�
 - [peiyingyao/Rule-for-OCD](https://github.com/peiyingyao/Rule-for-OCD)：补充开发、Google、Apple、媒体、社交和游戏规则。
 - [scomper/surge-list](https://github.com/scomper/surge-list)：补充 Apple、广告、媒体、Telegram 和国内服务规则。
 - [lyq2010/clash-ruleset](https://github.com/lyq2010/clash-ruleset)：仅接入 Claude、Binance、Mail 和 Docker 等公共服务增量；个人直连/代理列表不接入。
+- [szkane/ClashRuleSet](https://github.com/szkane/ClashRuleSet)：MIT，补充 Web3 专项规则，涵盖交易所、钱包、DEX、链浏览器、NFT、IPFS 和多链生态域名。
 - [reonokiy/sing-box-ruleset](https://github.com/reonokiy/sing-box-ruleset)：补充 sing-box JSON 格式的 Gemini、OpenAI、Anthropic、Apple、Microsoft 和广告规则。
 - [Accademia/Additional_Rule_For_Clash](https://github.com/Accademia/Additional_Rule_For_Clash)：补充 Copilot、Grok、AppleAI、MicrosoftAPPs、网盘、Signal、Kwai、Parsec、RustDesk、WaybackMachine、Pornhub 和 MacAppUpgrade 规则。
 - [ipverse/asn-ip](https://github.com/ipverse/asn-ip)：提供 AS20473 聚合 IPv4/IPv6 CIDR；仅作为云平台网络分类，不作为 OpenAI 专属地址证明。

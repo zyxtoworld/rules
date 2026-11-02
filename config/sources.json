@@ -57,7 +57,8 @@
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bitflyer.list","kind":"list","source":"MetaCubeX/meta-rules-dat: bitflyer"},
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-cryptocurrency.list","kind":"list","source":"MetaCubeX/meta-rules-dat: category-cryptocurrency"},
       {"url":"https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Crypto.list","kind":"clash","source":"ConnersHua/RuleGo: Crypto"},
-      {"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/Binance.list","kind":"clash","source":"lyq2010/clash-ruleset: Binance"}
+      {"url":"https://raw.githubusercontent.com/lyq2010/clash-ruleset/main/Binance.list","kind":"clash","source":"lyq2010/clash-ruleset: Binance"},
+      {"url":"https://raw.githubusercontent.com/szkane/ClashRuleSet/main/Clash/Web3.list","kind":"clash","source":"szkane/ClashRuleSet: Web3"}
     ],
     "biliintl": [
       {"url":"https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/biliintl.list","kind":"list","source":"MetaCubeX/meta-rules-dat: biliintl"}
