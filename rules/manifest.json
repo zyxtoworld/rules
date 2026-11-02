@@ -590,7 +590,7 @@
       },
       {
         "source": "built-in: download CDN domains",
-        "rules": 192
+        "rules": 191
       }
     ],
     "google": [
@@ -2642,8 +2642,8 @@
       "group": "download",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 490,
-      "bytes": 6167
+      "rules": 489,
+      "bytes": 6145
     },
     "download-classical": {
       "path": "rules/mihomo/download-classical.yaml",
@@ -3151,12 +3151,12 @@
       ]
     },
     "download": {
-      "inputRules": 731,
-      "normalizedRules": 684,
+      "inputRules": 730,
+      "normalizedRules": 683,
       "duplicateRules": 47,
       "coveredRules": 42,
       "crossGroupPruned": 8,
-      "rules": 634,
+      "rules": 633,
       "pruned": 97,
       "outputs": [
         "download",
@@ -3416,11 +3416,11 @@
   },
   "summary": {
     "groups": 33,
-    "inputRules": 627774,
-    "normalizedRules": 615697,
+    "inputRules": 627773,
+    "normalizedRules": 615696,
     "duplicateRules": 12077,
     "coveredRules": 89676,
-    "rules": 377001,
+    "rules": 377000,
     "crossGroupPruned": 149020,
     "crossGroupRules": 137039,
     "crossGroupDuplicateOccurrences": 149021
