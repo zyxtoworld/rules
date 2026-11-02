@@ -237,6 +237,9 @@ const builtInRules = {
     'DOMAIN-SUFFIX,cdn.ubi.com',
     'DOMAIN-SUFFIX,dyn.riotcdn.net',
     'DOMAIN-SUFFIX,steamcontent.com',
+    // Nintendo Switch/2 content-delivery CDN; keep eShop and account APIs in games.
+    'DOMAIN-SUFFIX,d4c.nintendo.net',
+    'DOMAIN-SUFFIX,d4c.n.nintendoswitch.cn',
     'PROCESS-NAME,aria2c',
     'PROCESS-NAME,aria2c.exe',
     'PROCESS-NAME,BitComet',
