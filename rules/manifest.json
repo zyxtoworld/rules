@@ -6,25 +6,25 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-gemini.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-gemini.list",
         "source": "MetaCubeX/meta-rules-dat: google-gemini",
-        "rules": 46,
-        "bytes": 1126,
-        "sha256": "5e6d316995b6247f36472ea8e51c92770a4b78c77947ce0e9704e9f255cae74c"
+        "rules": 49,
+        "bytes": 1237,
+        "sha256": "d7a51a33dccab26a25260836f23b02cc283590cd5384fcf93de82c3331ce56a9"
       },
       {
         "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-deepmind",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/v2fly/domain-list-community@master/data/google-deepmind",
         "source": "v2fly/domain-list-community: google-deepmind",
-        "rules": 46,
-        "bytes": 1401,
-        "sha256": "6a9195976e75c2b6adb255ec5cc4af6d8b66d0dd2a877437642deed6da244874"
+        "rules": 49,
+        "bytes": 1594,
+        "sha256": "6f768291aa81a8d88fa48fc20613f55be646674cfa24a3b3c152a97e859c33a8"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-chat-!cn.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-chat-!cn.list",
         "source": "MetaCubeX/meta-rules-dat: category-ai-chat-!cn",
-        "rules": 204,
-        "bytes": 3871,
-        "sha256": "970f4d9c4acf4e02e8aab9417aa89254371fce0b232d4b8e6b01c694c699222c"
+        "rules": 213,
+        "bytes": 4093,
+        "sha256": "99ea5b050e058edcaf66879a0a0afbee402a69379dee35e1a0058179acdf1cae"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml",
@@ -220,9 +220,9 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.list",
         "source": "MetaCubeX/meta-rules-dat: cn",
-        "rules": 110446,
-        "bytes": 1618296,
-        "sha256": "674705eeb0050036f8855586993bc6fe81fe6e1be56d77cea4b6289c14580c84"
+        "rules": 110177,
+        "bytes": 1613591,
+        "sha256": "703c706f925afa756a404136ce2cbea856763969d241280ce55345519dc9332f"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-cn.list",
@@ -244,17 +244,17 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-cn.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-cn.list",
         "source": "MetaCubeX/meta-rules-dat: category-games-cn",
-        "rules": 264,
-        "bytes": 3935,
-        "sha256": "d1d9b0fe423cf26475c85f7a4a2a8a1d7c8ad7fc06630424be1ca62c45c8ca85"
+        "rules": 263,
+        "bytes": 3922,
+        "sha256": "8e7b645fca69c09ea2f89e4c8d53bab1a3a37aaeeb82647b196fcca86522576a"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-entertainment-cn.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-entertainment-cn.list",
         "source": "MetaCubeX/meta-rules-dat: category-entertainment-cn",
-        "rules": 796,
-        "bytes": 11976,
-        "sha256": "26d515d6ad8fa2da8a4da6373a084ffef961c61a36ad71438f81c3c7f03db9bc"
+        "rules": 795,
+        "bytes": 11963,
+        "sha256": "f4334ac58ef12312e11bef1b484c5f25d74c23bb340b420d9c3731e5ca5edf84"
       }
     ],
     "geolocation": [
@@ -262,9 +262,9 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.list",
         "source": "MetaCubeX/meta-rules-dat: geolocation-!cn",
-        "rules": 27242,
-        "bytes": 457452,
-        "sha256": "803ee3a7c2cb490b50b903583ffb063a3b71a434b624f4c9f99b9354c3898ce0"
+        "rules": 27282,
+        "bytes": 457995,
+        "sha256": "ef9cdbb3ba562873f246b24286bbbf814d5b44764b303a7cdd5f2ab21c1b5bb5"
       }
     ],
     "github": [
@@ -274,7 +274,7 @@
         "source": "MetaCubeX/meta-rules-dat: github",
         "rules": 65,
         "bytes": 1942,
-        "sha256": "58fad9a70ecb92de3b36ecf8fc63cab3839836e611c8a5dea58df4947cb2df0c"
+        "sha256": "e1f8c98a265ce67ffaddded86e71d0d76595212eb4f331eb2d2e52e52d07beda"
       }
     ],
     "speedtest": [
@@ -282,9 +282,9 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/speedtest.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/speedtest.list",
         "source": "MetaCubeX/meta-rules-dat: speedtest",
-        "rules": 13,
-        "bytes": 249,
-        "sha256": "603d8f0460963711dcffa90a54068b802fe7ac4eb5cc76e8b3e400dae47daad0"
+        "rules": 20,
+        "bytes": 355,
+        "sha256": "bb527d8171b83cec05ce4eb2018ed5b92f15151a10535901b2a03ac29d446c23"
       }
     ],
     "crypto": [
@@ -326,7 +326,7 @@
         "source": "MetaCubeX/meta-rules-dat: category-cryptocurrency",
         "rules": 240,
         "bytes": 3716,
-        "sha256": "a0824e9874a2c5ad6c7f0f459b6f6bfa492a9cf9bcdb12c1fbd51f04dcae7ac7"
+        "sha256": "1e6a7639eaa49f1861d0f7559e487ba9521c9a05795cad777cbb46780caf30ae"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Crypto.list",
@@ -364,9 +364,9 @@
         "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt",
         "source": "Loyalsoldier/clash-rules: direct",
-        "rules": 110518,
-        "bytes": 2285398,
-        "sha256": "3a49ab7a5daa5a92895c65bd5f7c71b61f4b9ea8c548bf73225c207c3bf06ceb"
+        "rules": 110189,
+        "bytes": 2276776,
+        "sha256": "2ff0b806e1ba3f302ea14f2297230eb46bfb279412748db5c31cf6593013a5f3"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml",
@@ -470,17 +470,17 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.list",
         "source": "MetaCubeX/meta-rules-dat: category-ads-all",
-        "rules": 903,
-        "bytes": 17389,
-        "sha256": "0df8b46b6e311094c6d5d85799bdaf83d8eff937d8649ea8d6944c9bc36e1231"
+        "rules": 904,
+        "bytes": 17402,
+        "sha256": "fac69bc6a6e0e26173d3fb30af193a977d76d4e37c300e5a60766ff449e4cbeb"
       },
       {
         "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt",
         "source": "Loyalsoldier/clash-rules: reject",
-        "rules": 199567,
-        "bytes": 5754686,
-        "sha256": "d65bd71b9d1f493e83331c086419baa5e6dbfe894b0f3170312dc079ade7eca2"
+        "rules": 195404,
+        "bytes": 5655927,
+        "sha256": "9600c02738d1bf356aad4fa10df1bdedde229d4f8b67b1872eef7037a0ca2bf3"
       },
       {
         "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
@@ -494,9 +494,9 @@
         "url": "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-domains.txt",
         "source": "privacy-protection-tools/anti-AD: anti-ad-domains",
-        "rules": 111307,
-        "bytes": 2146238,
-        "sha256": "829b6e3145973be54c0e01c4263f55d94856161b04d550a2520189f9c42e015b"
+        "rules": 109119,
+        "bytes": 2102249,
+        "sha256": "1611f82cae5f16b63d4bfdd4f2edd1f773c00584fab941549af8c46f408f166e"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list",
@@ -598,9 +598,9 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.list",
         "source": "MetaCubeX/meta-rules-dat: google",
-        "rules": 1075,
-        "bytes": 18364,
-        "sha256": "c6921433763fefddacef92f7a46d73bc0107ecfb99b607b8bd4a31c9d7366e81"
+        "rules": 1078,
+        "bytes": 18475,
+        "sha256": "9f57881b428b415833a207e5f8556a54a8e0a07afe8f738b06c5c9ac1bcfc87b"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml",
@@ -650,23 +650,23 @@
         "source": "blackmatrix7/ios_rule_script: Apple",
         "rules": 33,
         "bytes": 1239,
-        "sha256": "9f81f8e6ee8485d4553544d7dcefd6e4b2e9534f6306c7e4ee38427a20898de1"
+        "sha256": "5baf78e9a4989a282797574de4d387132a67f8f8117aac6174baba920ad42e78"
       },
       {
         "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/v2fly/domain-list-community@master/data/apple",
         "source": "v2fly/domain-list-community: apple",
-        "rules": 850,
-        "bytes": 17100,
-        "sha256": "d46d18afe2f2d51bd48ddd239c43f460a32a9d605b384baa2cd6c70ec29cf29f"
+        "rules": 852,
+        "bytes": 17176,
+        "sha256": "e431cdd555b9c13eda401a433ec06353f67341fd81f3c454d58002e9e7e60457"
       },
       {
         "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/icloud",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/v2fly/domain-list-community@master/data/icloud",
         "source": "v2fly/domain-list-community: icloud",
-        "rules": 53,
-        "bytes": 774,
-        "sha256": "c46ade14884382a65b8bb9f1b6b8e484be639ffe17abcf2ec6f50464cb56f04f"
+        "rules": 52,
+        "bytes": 760,
+        "sha256": "208d610e2a7ef38ec62d09892bf4eed013c8558c5b48d66d28414b8ba5a75431"
       },
       {
         "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/itunes",
@@ -992,17 +992,17 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-!cn.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games-!cn.list",
         "source": "MetaCubeX/meta-rules-dat: category-games-!cn",
-        "rules": 867,
-        "bytes": 16390,
-        "sha256": "22412b60dab41ad023de41b1b2734fed607494e4af8db25a9aba733b4e9ca585"
+        "rules": 876,
+        "bytes": 16539,
+        "sha256": "bbc090a95d8881c718fab2dcc186a5f93657b0bb615b292e43830d9d23dbf196"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml",
         "source": "blackmatrix7/ios_rule_script: Steam",
-        "rules": 54,
-        "bytes": 2280,
-        "sha256": "585e423c866bb020421a79dd2842f279b56ef94bf487fbee13354796958dcad6"
+        "rules": 69,
+        "bytes": 2724,
+        "sha256": "5b5096fafff8bc3c77560590d095ebfccefe708d47ea04fc36d1b052a7e4dd5f"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.yaml",
@@ -1058,7 +1058,7 @@
         "source": "blackmatrix7/ios_rule_script: Blizzard",
         "rules": 39,
         "bytes": 2308,
-        "sha256": "becb572843c4a2b2d198d2e6a0705cf87a7860e3f17216e328e91f06845d1b70"
+        "sha256": "a6858f1053c95643e210d00e2913697703c8aec8df1af49580e406412fa8dc72"
       },
       {
         "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list",
@@ -1225,8 +1225,8 @@
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.list",
         "source": "MetaCubeX/meta-rules-dat: spotify",
         "rules": 28,
-        "bytes": 622,
-        "sha256": "848d93a2d8da4caa0d0338e303e3b3da8cb56a7e5d58431e43d8a94b5f2d3080"
+        "bytes": 624,
+        "sha256": "cc8ae18677b29c1b741ab47332f3696defe9b059d9a9a8763d7bcb5e28a53076"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml",
@@ -1247,8 +1247,8 @@
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.list",
         "source": "MetaCubeX/meta-rules-dat: netflix",
         "rules": 24,
-        "bytes": 452,
-        "sha256": "980ec18a1c566850622523310feb9ed38cd562c82e697c3da7f756b816f337d8"
+        "bytes": 454,
+        "sha256": "aa3e83152b51840332440177399fcae048733419f4dde7a65383757beedf369a"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml",
@@ -1268,9 +1268,9 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.list",
         "source": "MetaCubeX/meta-rules-dat: tiktok",
-        "rules": 37,
-        "bytes": 773,
-        "sha256": "09edefc16d3913b24fa7d0d2bae1679e9be03b6f4e1d879e96d937a1d020e7db"
+        "rules": 40,
+        "bytes": 827,
+        "sha256": "5da713785d488fd53a761fcd24dec192d18f2b7f92eed79e05b35e0912c74ab6"
       }
     ],
     "media": [
@@ -1278,9 +1278,9 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-entertainment.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-entertainment.list",
         "source": "MetaCubeX/meta-rules-dat: category-entertainment",
-        "rules": 2135,
-        "bytes": 39361,
-        "sha256": "6ceaed1b4087643521988aba351290c729c35810f74be1c9fcc51ff82be34154"
+        "rules": 2155,
+        "bytes": 39701,
+        "sha256": "73f8f26e513c3081497691abdecb8268c69c5a695b776ac1611bf5d92ea571df"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/hulu.list",
@@ -1622,9 +1622,9 @@
         "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/LM-Firefly/Rules@master/GlobalMedia.list",
         "source": "LM-Firefly/Rules: GlobalMedia",
-        "rules": 1931,
-        "bytes": 62822,
-        "sha256": "324ce42fb19dcf1c2e556fbd7828058175d970f29fef6763659e958662c8e807"
+        "rules": 1932,
+        "bytes": 62853,
+        "sha256": "5afec803ab3cbf445ad2c13323044d7d056f9a989240f61b1750841f51bf4d76"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list",
@@ -1756,7 +1756,7 @@
         "source": "MetaCubeX/meta-rules-dat: category-communication",
         "rules": 160,
         "bytes": 2544,
-        "sha256": "0765a44cea5579af992c3e944e4638eb694ddb5a2fcb912fc5b272f89efd1e85"
+        "sha256": "8f758b93cd05e7b97af1f1fdcd3be217b2e4fa89f1053028066e61bc3d909353"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bluesky.list",
@@ -1972,9 +1972,9 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-dev.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-dev.list",
         "source": "MetaCubeX/meta-rules-dat: category-dev",
-        "rules": 672,
-        "bytes": 12593,
-        "sha256": "6a4ef84426f31b90dea6377bb4dd6525d4baaed98cd460bff304b52adc541af2"
+        "rules": 689,
+        "bytes": 12876,
+        "sha256": "6bb0149c80732ced66476fdecf364f0f90a9de2861a105017ae62f7046fa4a4b"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/atlassian.list",
@@ -2078,9 +2078,9 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/dropbox.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/dropbox.list",
         "source": "MetaCubeX/meta-rules-dat: dropbox",
-        "rules": 16,
-        "bytes": 312,
-        "sha256": "08b94c5a0979054b356d45c4befc78a61345b3ba2d272a91ba57da5c3ab29ba9"
+        "rules": 25,
+        "bytes": 467,
+        "sha256": "50561e8d8da31493680927731bbc7b5abde50a5dff69ac17f023f9ecc49b4490"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/aws.list",
@@ -2094,9 +2094,9 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/azure.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/azure.list",
         "source": "MetaCubeX/meta-rules-dat: azure",
-        "rules": 151,
-        "bytes": 2844,
-        "sha256": "8294f7e677491cd0a5db5e425141f88c3a998646386afcccf51b4c823b41054a"
+        "rules": 154,
+        "bytes": 2947,
+        "sha256": "16eddc2aaa0e1424de3c0bb169c05fd0ceee52d4d57082c4f8f3c3ab16d2b00d"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare.list",
@@ -2104,7 +2104,7 @@
         "source": "MetaCubeX/meta-rules-dat: cloudflare",
         "rules": 76,
         "bytes": 1488,
-        "sha256": "ce050890a31f78d22732569a351ec857ab575089a86877a52aecb2f12eff024f"
+        "sha256": "f0b3b2c6dcbcd3f6e52fb8c3fc955dfe189cada562567f019b1e1d5d35b76aba"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/digitalocean.list",
@@ -2128,7 +2128,7 @@
         "source": "MetaCubeX/meta-rules-dat: oracle",
         "rules": 19,
         "bytes": 283,
-        "sha256": "aa65438e5a6cd5e6a4d452921bc792b436a8936c79b6659ddb74d7f52e9787f6"
+        "sha256": "5cc5624f94a1a1f94a992a1128c2dce999dd275d02c1771f0b8ea30fdd183d30"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/vercel.list",
@@ -2158,17 +2158,17 @@
         "url": "https://raw.githubusercontent.com/ipverse/asn-ip/master/as/20473/ipv4-aggregated.txt",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ipverse/asn-ip@master/as/20473/ipv4-aggregated.txt",
         "source": "ipverse/asn-ip: AS20473 IPv4 aggregated",
-        "rules": 707,
-        "bytes": 11032,
-        "sha256": "3eed9cddd3e041a543f25a6a251388a294502fb788525f17afdc4140e737a833"
+        "rules": 738,
+        "bytes": 11532,
+        "sha256": "fc19ddbbe744feef2414a11e6f4565f76f4ea0a57815f622811faecf917fdb7c"
       },
       {
         "url": "https://raw.githubusercontent.com/ipverse/asn-ip/master/as/20473/ipv6-aggregated.txt",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/ipverse/asn-ip@master/as/20473/ipv6-aggregated.txt",
         "source": "ipverse/asn-ip: AS20473 IPv6 aggregated",
-        "rules": 366,
-        "bytes": 6861,
-        "sha256": "2a918fd1399543e8160c3b1ba3d1714d13099fcce837a650d11a4fe447dddf83"
+        "rules": 490,
+        "bytes": 9220,
+        "sha256": "527e89be511932f761b534b5f1a37426e195ead8095cef6dac01ec240327eb8b"
       },
       {
         "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Notion/Notion.yaml",
@@ -2292,15 +2292,15 @@
         "source": "MetaCubeX/meta-rules-dat: paypal",
         "rules": 245,
         "bytes": 4650,
-        "sha256": "6fd7d4431e95cf94550a87685acb984334d469ec7b2cdb2945c6087cb9096147"
+        "sha256": "ceff7120641d50e10bb1dafa2578459db50a7511d28df1176322a9730c1ccda2"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-finance.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-finance.list",
         "source": "MetaCubeX/meta-rules-dat: category-finance",
-        "rules": 659,
-        "bytes": 10261,
-        "sha256": "662501d5bc3c2f10efe63fc32f53cce6aa774dc9c0a761c5c01e9be8d0a1aa75"
+        "rules": 661,
+        "bytes": 10295,
+        "sha256": "f2b7d9994c591e3aeccb94830eadc3790651992bd0792f026b07ab749898b7d6"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bloomberg.list",
@@ -2326,7 +2326,7 @@
         "source": "MetaCubeX/meta-rules-dat: amazon",
         "rules": 247,
         "bytes": 4437,
-        "sha256": "7302f792b9a57fe2e0e29a213663e975ba4ccd44f1725e6236b5c3b40abbee5c"
+        "sha256": "1541354df3b6b11f0295063878c7d5dfd1be437a6d2635f9f366a20dba7bbec2"
       },
       {
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/shopee.list",
@@ -2414,9 +2414,9 @@
         "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt",
         "source": "Loyalsoldier/clash-rules: proxy",
-        "rules": 27286,
-        "bytes": 621900,
-        "sha256": "0e003ba3ef806fdca059a51717e6dabdad80d1d0c6dbf67edb0a30865435142a"
+        "rules": 27335,
+        "bytes": 622877,
+        "sha256": "4aabeed0323290885a4e6741be8f1856aeac0d1e4537e2cb5eaf01f10e6efadf"
       },
       {
         "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list",
@@ -2450,8 +2450,8 @@
       "group": "ai",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 199,
-      "bytes": 2326
+      "rules": 208,
+      "bytes": 2437
     },
     "ai-classical": {
       "path": "rules/mihomo/ai-classical.yaml",
@@ -2530,8 +2530,8 @@
       "group": "cn",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 110798,
-      "bytes": 538281
+      "rules": 110528,
+      "bytes": 536702
     },
     "geolocation": {
       "path": "rules/mihomo/geolocation.mrs",
@@ -2554,8 +2554,8 @@
       "group": "speedtest",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 13,
-      "bytes": 254
+      "rules": 20,
+      "bytes": 323
     },
     "crypto": {
       "path": "rules/mihomo/crypto.mrs",
@@ -2586,8 +2586,8 @@
       "group": "direct",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1110,
-      "bytes": 9528
+      "rules": 1422,
+      "bytes": 11713
     },
     "direct-ipcidr": {
       "path": "rules/mihomo/direct-ipcidr.mrs",
@@ -2610,16 +2610,16 @@
       "group": "ads",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 116250,
-      "bytes": 1131830
+      "rules": 114206,
+      "bytes": 1115718
     },
     "ads-2": {
       "path": "rules/mihomo/ads-2.mrs",
       "group": "ads",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 116249,
-      "bytes": 1143591
+      "rules": 114205,
+      "bytes": 1127698
     },
     "ads-ipcidr": {
       "path": "rules/mihomo/ads-ipcidr.mrs",
@@ -2682,8 +2682,8 @@
       "group": "apple",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1666,
-      "bytes": 17639
+      "rules": 1667,
+      "bytes": 17664
     },
     "apple-ipcidr": {
       "path": "rules/mihomo/apple-ipcidr.mrs",
@@ -2722,8 +2722,16 @@
       "group": "games",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 81,
-      "bytes": 1180
+      "rules": 75,
+      "bytes": 1100
+    },
+    "games-ipcidr": {
+      "path": "rules/mihomo/games-ipcidr.mrs",
+      "group": "games",
+      "behavior": "ipcidr",
+      "format": "mrs",
+      "rules": 12,
+      "bytes": 141
     },
     "games-classical": {
       "path": "rules/mihomo/games-classical.yaml",
@@ -2842,16 +2850,16 @@
       "group": "tiktok",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 35,
-      "bytes": 518
+      "rules": 38,
+      "bytes": 556
     },
     "media": {
       "path": "rules/mihomo/media.mrs",
       "group": "media",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 2201,
-      "bytes": 21589
+      "rules": 2219,
+      "bytes": 21603
     },
     "media-ipcidr": {
       "path": "rules/mihomo/media-ipcidr.mrs",
@@ -2906,24 +2914,24 @@
       "group": "dev",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 1084,
-      "bytes": 10765
+      "rules": 1101,
+      "bytes": 10883
     },
     "cloud": {
       "path": "rules/mihomo/cloud.mrs",
       "group": "cloud",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 312,
-      "bytes": 3265
+      "rules": 314,
+      "bytes": 3343
     },
     "cloud-ipcidr": {
       "path": "rules/mihomo/cloud-ipcidr.mrs",
       "group": "cloud",
       "behavior": "ipcidr",
       "format": "mrs",
-      "rules": 1083,
-      "bytes": 6082
+      "rules": 1238,
+      "bytes": 7174
     },
     "onedrive": {
       "path": "rules/mihomo/onedrive.mrs",
@@ -2946,8 +2954,8 @@
       "group": "finance",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 958,
-      "bytes": 8525
+      "rules": 960,
+      "bytes": 8556
     },
     "shopping": {
       "path": "rules/mihomo/shopping.mrs",
@@ -2962,8 +2970,8 @@
       "group": "proxy-extra",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 18032,
-      "bytes": 136952
+      "rules": 18025,
+      "bytes": 136690
     },
     "proxy-extra-ipcidr": {
       "path": "rules/mihomo/proxy-extra-ipcidr.mrs",
@@ -2984,13 +2992,13 @@
   },
   "groups": {
     "ai": {
-      "inputRules": 482,
-      "normalizedRules": 300,
-      "duplicateRules": 182,
+      "inputRules": 497,
+      "normalizedRules": 309,
+      "duplicateRules": 188,
       "coveredRules": 40,
       "crossGroupPruned": 55,
-      "rules": 205,
-      "pruned": 277,
+      "rules": 214,
+      "pruned": 283,
       "outputs": [
         "ai",
         "ai-classical"
@@ -3049,25 +3057,25 @@
       ]
     },
     "cn": {
-      "inputRules": 111783,
-      "normalizedRules": 110911,
-      "duplicateRules": 872,
+      "inputRules": 111512,
+      "normalizedRules": 110641,
+      "duplicateRules": 871,
       "coveredRules": 41,
       "crossGroupPruned": 72,
-      "rules": 110798,
-      "pruned": 985,
+      "rules": 110528,
+      "pruned": 984,
       "outputs": [
         "cn"
       ]
     },
     "geolocation": {
-      "inputRules": 27242,
-      "normalizedRules": 27242,
+      "inputRules": 27282,
+      "normalizedRules": 27282,
       "duplicateRules": 0,
       "coveredRules": 1,
-      "crossGroupPruned": 27235,
+      "crossGroupPruned": 27275,
       "rules": 6,
-      "pruned": 27236,
+      "pruned": 27276,
       "outputs": [
         "geolocation"
       ]
@@ -3085,12 +3093,12 @@
       ]
     },
     "speedtest": {
-      "inputRules": 13,
-      "normalizedRules": 13,
+      "inputRules": 20,
+      "normalizedRules": 20,
       "duplicateRules": 0,
       "coveredRules": 0,
       "crossGroupPruned": 0,
-      "rules": 13,
+      "rules": 20,
       "pruned": 0,
       "outputs": [
         "speedtest"
@@ -3122,13 +3130,13 @@
       ]
     },
     "direct": {
-      "inputRules": 111497,
-      "normalizedRules": 110911,
+      "inputRules": 111168,
+      "normalizedRules": 110582,
       "duplicateRules": 586,
       "coveredRules": 176,
-      "crossGroupPruned": 109572,
-      "rules": 1163,
-      "pruned": 110334,
+      "crossGroupPruned": 108931,
+      "rules": 1475,
+      "pruned": 109693,
       "outputs": [
         "direct",
         "direct-ipcidr",
@@ -3136,13 +3144,13 @@
       ]
     },
     "ads": {
-      "inputRules": 325925,
-      "normalizedRules": 320884,
-      "duplicateRules": 5041,
-      "coveredRules": 88170,
+      "inputRules": 319575,
+      "normalizedRules": 314573,
+      "duplicateRules": 5002,
+      "coveredRules": 85947,
       "crossGroupPruned": 0,
-      "rules": 232714,
-      "pruned": 93211,
+      "rules": 228626,
+      "pruned": 90949,
       "outputs": [
         "ads",
         "ads-2",
@@ -3164,13 +3172,13 @@
       ]
     },
     "google": {
-      "inputRules": 1794,
-      "normalizedRules": 1168,
+      "inputRules": 1797,
+      "normalizedRules": 1171,
       "duplicateRules": 626,
       "coveredRules": 74,
-      "crossGroupPruned": 302,
+      "crossGroupPruned": 305,
       "rules": 792,
-      "pruned": 1002,
+      "pruned": 1005,
       "outputs": [
         "google",
         "google-ipcidr",
@@ -3178,12 +3186,12 @@
       ]
     },
     "apple": {
-      "inputRules": 3905,
-      "normalizedRules": 3662,
+      "inputRules": 3906,
+      "normalizedRules": 3663,
       "duplicateRules": 243,
       "coveredRules": 862,
       "crossGroupPruned": 156,
-      "rules": 2644,
+      "rules": 2645,
       "pruned": 1261,
       "outputs": [
         "apple",
@@ -3205,15 +3213,16 @@
       ]
     },
     "games": {
-      "inputRules": 1856,
-      "normalizedRules": 972,
-      "duplicateRules": 884,
+      "inputRules": 1880,
+      "normalizedRules": 993,
+      "duplicateRules": 887,
       "coveredRules": 59,
-      "crossGroupPruned": 829,
-      "rules": 84,
-      "pruned": 1772,
+      "crossGroupPruned": 844,
+      "rules": 90,
+      "pruned": 1790,
       "outputs": [
         "games",
+        "games-ipcidr",
         "games-classical"
       ]
     },
@@ -3260,9 +3269,9 @@
     },
     "spotify": {
       "inputRules": 90,
-      "normalizedRules": 38,
-      "duplicateRules": 52,
-      "coveredRules": 2,
+      "normalizedRules": 39,
+      "duplicateRules": 51,
+      "coveredRules": 3,
       "crossGroupPruned": 1,
       "rules": 35,
       "pruned": 55,
@@ -3286,25 +3295,25 @@
       ]
     },
     "tiktok": {
-      "inputRules": 37,
-      "normalizedRules": 37,
+      "inputRules": 40,
+      "normalizedRules": 40,
       "duplicateRules": 0,
       "coveredRules": 1,
       "crossGroupPruned": 1,
-      "rules": 35,
+      "rules": 38,
       "pruned": 2,
       "outputs": [
         "tiktok"
       ]
     },
     "media": {
-      "inputRules": 5515,
-      "normalizedRules": 3749,
+      "inputRules": 5536,
+      "normalizedRules": 3770,
       "duplicateRules": 1766,
       "coveredRules": 117,
-      "crossGroupPruned": 860,
-      "rules": 2772,
-      "pruned": 2743,
+      "crossGroupPruned": 863,
+      "rules": 2790,
+      "pruned": 2746,
       "outputs": [
         "media",
         "media-ipcidr",
@@ -3338,25 +3347,25 @@
       ]
     },
     "dev": {
-      "inputRules": 1291,
-      "normalizedRules": 1265,
+      "inputRules": 1308,
+      "normalizedRules": 1282,
       "duplicateRules": 26,
       "coveredRules": 11,
       "crossGroupPruned": 170,
-      "rules": 1084,
+      "rules": 1101,
       "pruned": 207,
       "outputs": [
         "dev"
       ]
     },
     "cloud": {
-      "inputRules": 1570,
-      "normalizedRules": 1564,
+      "inputRules": 1737,
+      "normalizedRules": 1731,
       "duplicateRules": 6,
-      "coveredRules": 2,
-      "crossGroupPruned": 167,
-      "rules": 1395,
-      "pruned": 175,
+      "coveredRules": 3,
+      "crossGroupPruned": 176,
+      "rules": 1552,
+      "pruned": 185,
       "outputs": [
         "cloud",
         "cloud-ipcidr"
@@ -3376,12 +3385,12 @@
       ]
     },
     "finance": {
-      "inputRules": 969,
-      "normalizedRules": 966,
+      "inputRules": 971,
+      "normalizedRules": 968,
       "duplicateRules": 3,
       "coveredRules": 2,
       "crossGroupPruned": 6,
-      "rules": 958,
+      "rules": 960,
       "pruned": 11,
       "outputs": [
         "finance"
@@ -3400,13 +3409,13 @@
       ]
     },
     "proxy-extra": {
-      "inputRules": 27804,
-      "normalizedRules": 27399,
+      "inputRules": 27853,
+      "normalizedRules": 27448,
       "duplicateRules": 405,
       "coveredRules": 18,
-      "crossGroupPruned": 9346,
-      "rules": 18035,
-      "pruned": 9769,
+      "crossGroupPruned": 9402,
+      "rules": 18028,
+      "pruned": 9825,
       "outputs": [
         "proxy-extra",
         "proxy-extra-ipcidr",
@@ -3416,13 +3425,13 @@
   },
   "summary": {
     "groups": 33,
-    "inputRules": 627773,
-    "normalizedRules": 615696,
-    "duplicateRules": 12077,
-    "coveredRules": 89676,
-    "rules": 377000,
-    "crossGroupPruned": 149020,
-    "crossGroupRules": 137039,
-    "crossGroupDuplicateOccurrences": 149021
+    "inputRules": 621172,
+    "normalizedRules": 609127,
+    "duplicateRules": 12045,
+    "coveredRules": 87455,
+    "rules": 373167,
+    "crossGroupPruned": 148505,
+    "crossGroupRules": 136447,
+    "crossGroupDuplicateOccurrences": 148506
   }
 }

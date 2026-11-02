@@ -340,7 +340,7 @@
     apple: ['domain', 'ipcidr', 'classical'],
     microsoft: ['domain', 'classical'],
     onedrive: ['domain', 'classical'],
-    games: ['domain', 'classical'],
+    games: ['domain', 'ipcidr', 'classical'],
     youtube: ['domain', 'ipcidr', 'classical'],
     telegram: ['domain', 'ipcidr', 'classical'],
     twitter: ['domain', 'classical'],
