@@ -6,10 +6,10 @@
 
 ClashMi、Clash Verge Rev、Nikki 等 Mihomo 客户端使用 `rules/mihomo/` 中的规则 provider。节点使用 SS、VMess、VLESS、Trojan、Hysteria 等哪一种协议，不影响规则文件；规则只决定请求进入哪个策略组。若订阅节点名与 `DIRECT`、`REJECT`、策略组或地区组重名，转换脚本只给冲突节点追加 ` (节点)` 后缀，避免 Mihomo 产生重复名称或自引用。
 
-`convert.js` 会引用本仓库的稳定 URL：
+`convert.js` 会直接引用本仓库 GitHub Raw 中的规则文件；规则 provider 仍由隐藏的 `📦 规则下载` 组优先使用 `DIRECT` 下载：
 
 ```text
-https://testingcf.jsdelivr.net/gh/zyxtoworld/rules@main/rules/mihomo/ai.mrs
+https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo/ai.mrs
 ```
 
 `convert.js` 不嵌入域名、IP 或进程名规则；这些条目全部由 MRS 或 classical YAML provider 生成。转换器只保留 provider 组合、动态 `GEOIP` 分类和最终兜底动作。

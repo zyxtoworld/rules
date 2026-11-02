@@ -356,7 +356,7 @@
     shopping: ['domain'],
     'proxy-extra': ['domain', 'ipcidr', 'classical']
   };
-  const ruleProviderBaseUrl = 'https://testingcf.jsdelivr.net/gh/zyxtoworld/rules@main/rules/mihomo';
+  const ruleProviderBaseUrl = 'https://raw.githubusercontent.com/zyxtoworld/rules/main/rules/mihomo';
   const isDomainPart = kind => kind === 'domain' || kind.startsWith('domain-');
   const isIpcidrPart = kind => kind === 'ipcidr' || kind.startsWith('ipcidr-');
   const providerPartSuffix = kind => {
