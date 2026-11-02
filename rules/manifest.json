@@ -262,9 +262,9 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.list",
         "fetchedUrl": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.list",
         "source": "MetaCubeX/meta-rules-dat: geolocation-!cn",
-        "rules": 27282,
-        "bytes": 457995,
-        "sha256": "ef9cdbb3ba562873f246b24286bbbf814d5b44764b303a7cdd5f2ab21c1b5bb5"
+        "rules": 27291,
+        "bytes": 458135,
+        "sha256": "768d3d5a52bb97f5a88eef8a120c18de0ccf248b21d0663c509ade303c88f637"
       }
     ],
     "github": [
@@ -346,7 +346,7 @@
       },
       {
         "source": "built-in: cryptocurrency service domains",
-        "rules": 20
+        "rules": 24
       }
     ],
     "biliintl": [
@@ -2562,8 +2562,8 @@
       "group": "crypto",
       "behavior": "domain",
       "format": "mrs",
-      "rules": 265,
-      "bytes": 2584
+      "rules": 268,
+      "bytes": 2604
     },
     "crypto-classical": {
       "path": "rules/mihomo/crypto-classical.yaml",
@@ -3069,13 +3069,13 @@
       ]
     },
     "geolocation": {
-      "inputRules": 27282,
-      "normalizedRules": 27282,
+      "inputRules": 27291,
+      "normalizedRules": 27291,
       "duplicateRules": 0,
       "coveredRules": 1,
-      "crossGroupPruned": 27275,
+      "crossGroupPruned": 27284,
       "rules": 6,
-      "pruned": 27276,
+      "pruned": 27285,
       "outputs": [
         "geolocation"
       ]
@@ -3105,13 +3105,13 @@
       ]
     },
     "crypto": {
-      "inputRules": 357,
-      "normalizedRules": 276,
-      "duplicateRules": 81,
+      "inputRules": 361,
+      "normalizedRules": 279,
+      "duplicateRules": 82,
       "coveredRules": 1,
       "crossGroupPruned": 9,
-      "rules": 266,
-      "pruned": 91,
+      "rules": 269,
+      "pruned": 92,
       "outputs": [
         "crypto",
         "crypto-classical"
@@ -3425,13 +3425,13 @@
   },
   "summary": {
     "groups": 33,
-    "inputRules": 621173,
-    "normalizedRules": 609128,
-    "duplicateRules": 12045,
+    "inputRules": 621186,
+    "normalizedRules": 609140,
+    "duplicateRules": 12046,
     "coveredRules": 87455,
-    "rules": 373168,
-    "crossGroupPruned": 148505,
-    "crossGroupRules": 136447,
-    "crossGroupDuplicateOccurrences": 148506
+    "rules": 373171,
+    "crossGroupPruned": 148514,
+    "crossGroupRules": 136449,
+    "crossGroupDuplicateOccurrences": 148515
   }
 }
