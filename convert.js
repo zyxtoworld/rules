@@ -490,13 +490,14 @@ function createProxyGroups({
     addGroup({ name, type, url: healthCheckUrl, interval: healthCheckInterval, ...(extra || {}), proxies });
   }
 
-  addSelectGroup(POLICY.manual, [POLICY.auto, POLICY.fallback, ...allProxyNames]);
+  addSelectGroup(POLICY.manual, [POLICY.auto, POLICY.fallback, ...allRegionGroups, ...allProxyNames]);
   addHealthCheckGroup(POLICY.auto, 'url-test', autoCandidates, { tolerance: 50, lazy: false, hidden: false });
   addHealthCheckGroup(POLICY.fallback, 'fallback', failoverCandidates, { hidden: true });
   addHealthCheckGroup(POLICY.ruleDownload, 'fallback', [DIRECT, POLICY.fallback], { lazy: true, hidden: true });
   addHealthCheckGroup(POLICY.lowRateDownload, 'fallback', lowRateDownloadCandidates, { lazy: true });
 
   // 策略组（偏好地区靠前 + 全部地区兜底）
+  const sharedFeatureOptions = unique([DIRECT, POLICY.manual, POLICY.auto, ...allRegionGroups]);
   const featureGroups = [
     [POLICY.ai, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB', 'DE', 'KR'])]],
     [POLICY.openai, [POLICY.manual, POLICY.auto, ...prefThenAll(['US', 'JP', 'SG', 'GB'])]],
@@ -524,10 +525,16 @@ function createProxyGroups({
     [POLICY.spotify, [...prefThenAll(['HK', 'TW', 'SG', 'JP', 'US']), POLICY.manual, DIRECT]],
     [POLICY.netflix, [POLICY.manual, ...prefThenAll(['SG', 'JP', 'US', 'HK', 'TW'])]],
     [POLICY.disney, [POLICY.manual, ...prefThenAll(['US', 'JP', 'SG', 'HK'])]],
-    [POLICY.speedtest, [DIRECT, POLICY.manual, POLICY.auto]],
-    [POLICY.leak, [POLICY.manual, DIRECT, POLICY.auto]],
+    [POLICY.speedtest, [DIRECT, POLICY.manual, POLICY.auto, ...allRegionGroups]],
+    [POLICY.leak, [POLICY.manual, DIRECT, POLICY.auto, POLICY.fallback, ...allRegionGroups, ...allProxyNames]],
   ];
-  for (const [name, groupProxies] of featureGroups) addSelectGroup(name, groupProxies);
+  for (const [name, groupProxies] of featureGroups) {
+    // The catch-all intentionally adds failover and individual nodes instead.
+    const options = name === POLICY.leak
+      ? groupProxies
+      : [...groupProxies, ...sharedFeatureOptions];
+    addSelectGroup(name, options);
+  }
 
   // 地区分组（按订阅实际出现自动生成）
   for (const label of regionOrder) {

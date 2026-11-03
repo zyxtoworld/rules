@@ -69,6 +69,10 @@ CI 会固定下载并校验官方 Mihomo `v1.19.32` 转换器。构建脚本会�
 - `cloud`：只处理非中国大陆云服务域名/IP；AS20473 的聚合 CIDR 也归入这里，只表示 Vultr/云平台网络，不代表某个具体业务；阿里云盘、百度网盘、腾讯微云等国内网盘归入 `direct`。
 - `ai`：除上游 AI 规则外，补充 RuleGo、SukkaW 和 Claude/Anthropic 服务域名，并统一走 `🤖 AI服务`。
 - `apple`：除上游 Apple 规则外，合并 RuleGo、NobyDa、SukkaW、LM-Firefly、scomper 等 Apple、Siri、Search、Apple Intelligence 和 Private Cloud Compute 主机；非中国大陆 Apple 流量默认优先走代理，`DIRECT` 仍可手动选择。
+- `speedtest`：使用 MetaCubeX 的 `speedtest` 规则，并受服务规则的非中国流量守卫约束；策略组可独立选择直连、手动切换、自动选择或订阅中实际存在的地区组。
+- `leak`（`🐟 漏网之鱼`）：最终 `MATCH` 兜底策略组可选手动切换、直连、自动选择、故障转移、订阅中实际存在的全部地区组和单个节点；首项仍为手动切换。
+- 除低倍率下载、漏网之鱼及自动选择、手动切换、故障转移等专用组外，功能组共用 `DIRECT`、手动切换、自动选择和全部地区组；保留各组原有选项顺序与默认项。
+- `🚀 手动切换` 组除自动选择、故障转移和单个节点外，也可直接选择订阅中实际存在的全部地区组。
 - 服务文件按 AI、OpenAI、Claude、Google、Apple、Microsoft、OneDrive、Disney+、游戏、媒体、社交、开发、云服务、金融和购物等策略组拆分；保留通用 AI/媒体/云服务组作为未单独拆分服务的兜底。
 - `IP-ASN` 不直接发布给客户端：OpenAI 来源过滤 `IP-ASN` 并保留明确的 IP-CIDR；AS20473 通过 `cidr-list` 转成 `cloud-ipcidr.mrs`，避免 ClashMi iOS 初始化 ASN 数据库。
 
