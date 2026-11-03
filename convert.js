@@ -490,7 +490,7 @@ function createProxyGroups({
     addGroup({ name, type, url: healthCheckUrl, interval: healthCheckInterval, ...(extra || {}), proxies });
   }
 
-  addSelectGroup(POLICY.manual, [POLICY.auto, POLICY.fallback, ...allRegionGroups, ...allProxyNames]);
+  addSelectGroup(POLICY.manual, [POLICY.auto, POLICY.fallback, ...allProxyNames]);
   addHealthCheckGroup(POLICY.auto, 'url-test', autoCandidates, { tolerance: 50, lazy: false, hidden: false });
   addHealthCheckGroup(POLICY.fallback, 'fallback', failoverCandidates, { hidden: true });
   addHealthCheckGroup(POLICY.ruleDownload, 'fallback', [DIRECT, POLICY.fallback], { lazy: true, hidden: true });
